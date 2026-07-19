@@ -9,205 +9,619 @@
 <meta name="apple-mobile-web-app-title" content="Spanien 2026">
 <title>Spanien Travelbook 2026</title>
 <style>
-:root{--bg:#f3f0e9;--card:#fff;--ink:#17313d;--muted:#667983;--navy:#12384a;--blue:#1c6079;--gold:#eab15f;--line:#dce3e6;--shadow:0 16px 40px #12384a18}
-[data-theme=dark]{--bg:#0c151b;--card:#142129;--ink:#edf4f6;--muted:#a4b5bd;--navy:#071219;--blue:#74bdd8;--line:#2b3d46;--shadow:0 16px 40px #0006}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:82px}a{color:inherit;text-decoration:none}
-.hero{min-height:60vh;color:#fff;display:flex;align-items:flex-end;padding:calc(36px + env(safe-area-inset-top)) 20px 42px;background:radial-gradient(circle at 80% 15%,#eab15f99,transparent 28%),linear-gradient(145deg,#23637b,#12384a 55%,#071820)}
-.hero-inner,.wrap{width:min(1080px,calc(100% - 28px));margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:850;color:var(--gold)}.eyebrow.dark{color:var(--blue)}
-h1{font-size:clamp(3rem,11vw,6.8rem);line-height:.86;letter-spacing:-.06em;margin:12px 0 20px}h2{font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:-.04em;margin:4px 0 18px}.pills{display:flex;flex-wrap:wrap;gap:9px}.pills span{padding:9px 13px;border:1px solid #ffffff33;background:#ffffff12;border-radius:999px;font-weight:700}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-25px;position:relative}.stats article,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.stats article{padding:18px}.stats small,.card small{display:block;color:var(--muted)}.stats strong{display:block;margin-top:3px}
-.section{padding-top:56px;scroll-margin-top:10px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px}.quick{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.quick a,.button{border:0;border-radius:999px;padding:12px 15px;background:var(--navy);color:#fff;font-weight:800;text-align:center;cursor:pointer}.button.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
-.timeline{border-left:2px solid var(--line);padding-left:22px}.stop{position:relative;margin-bottom:16px;padding:19px}.stop:before{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--gold);left:-30px;top:25px;border:4px solid var(--bg)}.stop-date{font-size:.78rem;font-weight:850;color:var(--blue)}.stop h3{margin:4px 0}.stop p,.card p{color:var(--muted)}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{display:inline-block;font-size:.82rem;font-weight:750;padding:8px 11px;border-radius:999px;background:var(--bg);border:1px solid var(--line);cursor:pointer}
-.cards{display:grid;gap:14px}.cards.two{grid-template-columns:repeat(2,1fr)}.cards.three{grid-template-columns:repeat(3,1fr)}.card{padding:21px}.card h3{margin:4px 0 9px}.note{padding:13px 15px;border-left:4px solid var(--gold);background:var(--card);border-radius:10px}
-.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:14px 0}.detail-grid div{padding:12px;background:var(--bg);border-radius:13px}.detail-grid small{margin-bottom:2px}.secret{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
-.charge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.charge-grid div{padding:15px;background:var(--bg);border-radius:15px}.charge-grid strong{display:block;margin-top:3px}.check{display:flex;gap:11px;padding:10px 0;border-bottom:1px solid var(--line)}.check input{width:22px;height:22px;accent-color:#2e7c62}.check.done span{text-decoration:line-through;color:var(--muted)}
-.budget form{display:grid;grid-template-columns:1fr 150px auto;gap:9px}.budget input{padding:13px;border:1px solid var(--line);border-radius:13px;background:var(--bg);color:var(--ink)}.budget-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}.budget-row button{border:0;background:transparent;color:#b34b43;font-weight:800}.total{text-align:right;padding-top:16px;font-size:1.15rem}.emergency strong{font-size:1.45rem}.emergency:first-child strong{font-size:2.2rem}
-footer{text-align:center;color:var(--muted);padding:60px 0 25px}.bottom-nav{position:fixed;z-index:20;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:8px;border-radius:20px;background:#102f3ddd;backdrop-filter:blur(18px);box-shadow:0 12px 35px #0005}.bottom-nav a{color:#fff;text-align:center;padding:9px 2px;font-size:.75rem;font-weight:800}.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#111;color:#fff;border-radius:999px;padding:10px 15px;opacity:0;transition:.2s}.toast.show{opacity:1}
-@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.quick{grid-template-columns:repeat(3,1fr)}.cards.two,.cards.three,.detail-grid{grid-template-columns:1fr}.charge-grid{grid-template-columns:repeat(2,1fr)}.budget form{grid-template-columns:1fr}.section-head{align-items:flex-start}.hero{min-height:56vh}}
-@media print{.bottom-nav,.button,.budget{display:none}body{padding:0}.hero{min-height:auto}.section{break-inside:avoid}}
+:root{--bg:#f3f0e9;--card:#fff;--ink:#17313d;--muted:#667983;--navy:#12384a;--blue:#1c6079;--gold:#eab15f;--green:#2f765d;--line:#dce3e6;--shadow:0 16px 40px #12384a18}[data-theme=dark]{--bg:#0c151b;--card:#142129;--ink:#edf4f6;--muted:#a4b5bd;--navy:#071219;--blue:#74bdd8;--green:#73b79d;--line:#2b3d46;--shadow:0 16px 40px #0006}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:88px}a{color:inherit;text-decoration:none}.hero{min-height:58vh;color:#fff;display:flex;align-items:flex-end;padding:calc(36px + env(safe-area-inset-top)) 20px 42px;background:radial-gradient(circle at 80% 15%,#eab15f99,transparent 28%),linear-gradient(145deg,#23637b,#12384a 55%,#071820)}.hero-inner,.wrap{width:min(1080px,calc(100% - 28px));margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:850;color:var(--gold)}.eyebrow.dark{color:var(--blue)}h1{font-size:clamp(3rem,11vw,6.8rem);line-height:.86;letter-spacing:-.06em;margin:12px 0 20px}h2{font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:-.04em;margin:4px 0 18px}.pills{display:flex;flex-wrap:wrap;gap:9px}.pills span{padding:9px 13px;border:1px solid #ffffff33;background:#ffffff12;border-radius:999px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-25px;position:relative}.stats article,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.stats article{padding:18px}.stats small,.card small{display:block;color:var(--muted)}.stats strong{display:block;margin-top:3px}.section{padding-top:56px;scroll-margin-top:10px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px}.quick{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.quick a,.button{border:0;border-radius:999px;padding:12px 15px;background:var(--navy);color:#fff;font-weight:800;text-align:center;cursor:pointer}.button.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}.cards{display:grid;gap:14px}.cards.two{grid-template-columns:repeat(2,1fr)}.cards.three{grid-template-columns:repeat(3,1fr)}.card{padding:21px}.card h3{margin:4px 0 9px}.card p{color:var(--muted)}.today{border:2px solid var(--gold)}.today-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}.today-badge{display:inline-block;background:var(--gold);color:#2b2113;font-weight:900;border-radius:999px;padding:7px 11px}.timeline{border-left:2px solid var(--line);padding-left:22px}.stop{position:relative;margin-bottom:16px;padding:19px}.stop:before{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--gold);left:-30px;top:25px;border:4px solid var(--bg)}.stop-date{font-size:.78rem;font-weight:850;color:var(--blue)}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{display:inline-block;font-size:.82rem;font-weight:750;padding:8px 11px;border-radius:999px;background:var(--bg);border:1px solid var(--line);cursor:pointer}.stage-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:13px 0}.stage-meta div,.detail-grid div,.info-box{padding:12px;background:var(--bg);border-radius:13px}.stage-meta strong,.detail-grid strong{display:block}.note{padding:13px 15px;border-left:4px solid var(--gold);background:var(--card);border-radius:10px}.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:14px 0}.secret{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}.guide-icon{font-size:1.8rem}.recommendation{border-top:4px solid var(--green)}.tag{display:inline-block;margin:2px 4px 2px 0;padding:5px 8px;border-radius:999px;background:var(--bg);font-size:.75rem;font-weight:800}.check{display:flex;gap:11px;padding:10px 0;border-bottom:1px solid var(--line)}.check input{width:22px;height:22px;accent-color:var(--green)}.check.done span{text-decoration:line-through;color:var(--muted)}.budget form{display:grid;grid-template-columns:1fr 150px auto;gap:9px}.budget input{padding:13px;border:1px solid var(--line);border-radius:13px;background:var(--bg);color:var(--ink)}.budget-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}.budget-row button{border:0;background:transparent;color:#b34b43;font-weight:800}.total{text-align:right;padding-top:16px;font-size:1.15rem}.emergency strong{font-size:1.45rem}.emergency:first-child strong{font-size:2.2rem}footer{text-align:center;color:var(--muted);padding:60px 0 25px}.bottom-nav{position:fixed;z-index:20;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:8px;border-radius:20px;background:#102f3ddd;backdrop-filter:blur(18px);box-shadow:0 12px 35px #0005}.bottom-nav a{color:#fff;text-align:center;padding:9px 2px;font-size:.75rem;font-weight:800}.toast{position:fixed;bottom:104px;left:50%;transform:translateX(-50%);background:#111;color:#fff;border-radius:999px;padding:10px 15px;opacity:0;transition:.2s}.toast.show{opacity:1}@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.quick{grid-template-columns:repeat(3,1fr)}.cards.two,.cards.three,.detail-grid,.today-grid{grid-template-columns:1fr}.stage-meta{grid-template-columns:1fr}.budget form{grid-template-columns:1fr}.hero{min-height:55vh}}@media print{.bottom-nav,.button,.budget{display:none}body{padding:0}.hero{min-height:auto}}
+
+.tip-hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:24px;padding:24px;margin-bottom:16px}
+.tip-hero p{color:#eaf3f6}
+.tip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tip-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+.tip-card h3{margin:5px 0 8px}
+.tip-card p{margin:6px 0;color:var(--muted)}
+.tip-card .address{font-weight:750;color:var(--ink)}
+.tip-card .why{padding:10px 12px;background:var(--bg);border-radius:12px;margin-top:10px}
+.tip-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.dayplan{display:grid;grid-template-columns:110px 1fr;gap:13px;padding:15px 0;border-bottom:1px solid var(--line)}
+.dayplan:last-child{border-bottom:0}
+.dayplan strong{color:var(--blue)}
+.rating{display:inline-block;padding:5px 9px;border-radius:999px;background:var(--bg);font-size:.78rem;font-weight:850}
+@media(max-width:800px){.tip-grid{grid-template-columns:1fr}.dayplan{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
-<header class="hero" id="home">
-  <div class="hero-inner">
-    <span class="eyebrow">Familien-Roadtrip · Ein-Datei-Version</span>
-    <h1>Spanien<br>Travelbook 2026</h1>
-    <p>Hasbergen · Dijon · Montpellier · L’Estartit · Clermont-Ferrand · Metz</p>
-    <div class="pills"><span>22.07.–02.08.2026</span><span>Audi Q4 e-tron</span><span>2 Erwachsene · 3 Kinder</span><span>Version 1.1</span></div>
-  </div>
-</header>
+<script>
+(function(){
+  const expected="Narfnarf034601&";
+  if(sessionStorage.getItem("travelbook-access")==="ok") return;
+  const entry=prompt("Passwort für das Spanien Travelbook:");
+  if(entry===expected){sessionStorage.setItem("travelbook-access","ok");}
+  else{
+    document.documentElement.innerHTML='<head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zugriff geschützt</title></head><body style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;background:#0c151b;color:white;display:grid;place-items:center;min-height:100vh;margin:0;text-align:center"><main><h1>Zugriff geschützt</h1><p>Das Passwort ist nicht korrekt.</p><button onclick="location.reload()" style="padding:12px 18px;border:0;border-radius:999px;font-weight:700">Erneut versuchen</button></main></body>';
+    throw new Error("Access denied");
+  }
+})();
+</script>
 
+<header class="hero" id="home"><div class="hero-inner"><span class="eyebrow">Persönlicher Familien-Reiseführer</span><h1>Spanien<br>Travelbook 2026</h1><p>Hasbergen · Dijon · Montpellier · L’Estartit · Clermont-Ferrand · Metz</p><div class="pills"><span>22.07.–02.08.2026</span><span>2 Erwachsene · 3 Kinder</span><span>Ein-Datei-Version</span><span>Version 1.5 · Dijon-Abend ergänzt</span></div></div></header>
 <main class="wrap">
-<section class="stats">
-  <article><small>Abreise</small><strong id="countdown">22. Juli 2026</strong></article>
-  <article><small>Dauer</small><strong>12 Tage</strong></article>
-  <article><small>Hauptziel</small><strong>L’Estartit</strong></article>
-  <article><small>Ladestrategie</small><strong>10 → 80–85 %</strong></article>
+<section class="stats"><article><small>Status</small><strong id="countdown">22. Juli 2026</strong></article><article><small>Dauer</small><strong>12 Tage</strong></article><article><small>Übernachtungen</small><strong>5 Unterkünfte</strong></article><article><small>Hauptziel</small><strong>L’Estartit</strong></article></section>
+<section class="section" id="today"><article class="card today"><span class="today-badge">Heute</span><div class="today-grid"><div><h2 id="todayTitle">Reisevorbereitung</h2><p id="todayText">Bis zur Abfahrt zeigt dieser Bereich die wichtigsten Vorbereitungen.</p></div><div class="info-box"><small>Nächster Schritt</small><strong id="todayAction">Dokumente und Buchungen prüfen</strong><div class="chips" id="todayLinks"></div></div></div></article></section>
+<section class="section"><div class="section-head"><div><span class="eyebrow dark">Schnellzugriff</span><h2>Unterwegs wichtig</h2></div><button class="button ghost" id="themeButton">Darstellung</button></div><div class="quick"><a href="#route">Etappen</a><a href="#stays">Unterkünfte</a><a href="#lestartit">L’Estartit</a><a href="#practical">Reiseinfos</a><a href="#lists">Listen</a><a href="#emergency">Notfall</a></div></section>
+<section class="section" id="route"><span class="eyebrow dark">Reiseverlauf</span><h2>Etappen</h2><div id="routeList" class="timeline"></div></section>
+
+<section class="section" id="stays">
+  <span class="eyebrow dark">22. Juli bis 2. August</span>
+  <h2>Unterkünfte & Zugangsdaten</h2>
+  <p class="note">Die Angaben stehen jetzt direkt in der HTML-Datei und sind auch sichtbar, wenn JavaScript auf dem iPhone nicht ausgeführt wird.</p>
+
+  <div class="cards two">
+
+    <article class="card accommodation-card">
+      <small>22.–23.07.2026 · Dijon</small>
+      <h3>L’Atypique</h3>
+      <p><strong>34 bis Rue d’Auxonne, 21000 Dijon, Frankreich</strong></p>
+      <div class="detail-grid">
+        <div><small>Bestätigte Ankunft</small><strong>18:00–19:00 Uhr</strong></div>
+        <div><small>Check-in</small><strong>Selbst-Check-in über Schlüsselbox</strong></div>
+        <div><small>Schlüsseltresor-Code</small><strong class="secret">474744</strong></div>
+        <div><small>Gastgeber</small><strong>Lucas Mandot</strong></div>
+        <div><small>Telefon</small><strong>+33 6 67 41 15 75</strong></div>
+        <div><small>WLAN</small><strong>Livebox-7820</strong></div>
+        <div><small>WLAN-Passwort</small><strong class="secret">aYC3Fg2T3NhFxnrz6g</strong></div>
+        <div><small>Parken</small><strong>kostenlos in der Rue Marguerite Thibert</strong></div>
+        <div><small>Alternative Navigation</small><strong>14 bis Rue de Longvic</strong></div>
+        <div><small>Zugang</small><strong>Gastgeber kann die Haustür aus der Ferne öffnen</strong></div>
+      </div>
+      <div class="chips">
+        <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=34%20bis%20Rue%20d%27Auxonne%2C%2021000%20Dijon">Unterkunft öffnen</a>
+        <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Rue%20Marguerite%20Thibert%2C%20Dijon">Parkplatz öffnen</a>
+        <a class="chip" href="tel:+33667411575">Lucas anrufen</a>
+      </div>
+    </article>
+
+    <article class="card accommodation-card">
+      <small>23.–24.07.2026 · Montpellier</small>
+      <h3>ibis Budget Montpellier Centre Millénaire</h3>
+      <p><strong>Rue des Frères Lumière, Montpellier, Frankreich</strong></p>
+      <div class="detail-grid">
+        <div><small>Geplante Ankunft</small><strong>ca. 16:00 Uhr</strong></div>
+        <div><small>Check-in</small><strong>ab 14:00 Uhr</strong></div>
+        <div><small>Check-out</small><strong>bis 12:00 Uhr</strong></div>
+        <div><small>Frühstück</small><strong>nicht gebucht · Bäckerei am Morgen</strong></div>
+        <div><small>Ausweis</small><strong>gültiger Lichtbildausweis erforderlich</strong></div>
+        <div><small>Parken</small><strong>Hotelparkplatz vorhanden</strong></div>
+        <div><small>Rezeption</small><strong>laut Hotelinformation durchgehend besetzt</strong></div>
+        <div><small>Reiseplan</small><strong>reine Zwischenübernachtung · frühe Weiterfahrt</strong></div>
+      </div>
+      <div class="chips">
+        <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=ibis%20Budget%20Montpellier%20Centre%20Mill%C3%A9naire">Hotel öffnen</a>
+      </div>
+    </article>
+
+    <article class="card accommodation-card">
+      <small>24.–31.07.2026 · L’Estartit</small>
+      <h3>ALMA BEACH ESTARTIT</h3>
+      <p><strong>11 Carrer Salines, 17258 L’Estartit, Spanien</strong></p>
+      <div class="detail-grid">
+        <div><small>Gastgeberin</small><strong>Monica</strong></div>
+        <div><small>Telefon</small><strong>+34 679 93 70 19</strong></div>
+        <div><small>Check-in</small><strong>15:00–18:00 Uhr</strong></div>
+        <div><small>Check-out</small><strong>08:00–10:00 Uhr</strong></div>
+        <div><small>Aufenthalt</small><strong>7 Nächte · 2 Erwachsene + 3 Kinder</strong></div>
+        <div><small>Zugang</small><strong>Türcodes laut Nachricht der Gastgeberin</strong></div>
+        <div><small>Schlüssel</small><strong>Haustür · Wohnung · Pool</strong></div>
+        <div><small>Pool</small><strong>09:00–20:00 Uhr</strong></div>
+        <div><small>Kurtaxe</small><strong>bar oder Bizum</strong></div>
+        <div><small>Parken</small><strong>kostenlos an öffentlichen Straßen</strong></div>
+        <div><small>GPS</small><strong>42.048983, 3.195917</strong></div>
+        <div><small>Hinweis</small><strong>Türcodes und aktuelle Gastgebernachrichten vor Ankunft prüfen</strong></div>
+      </div>
+      <div class="chips">
+        <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=11%20Carrer%20Salines%2C%2017258%20L%27Estartit">Unterkunft öffnen</a>
+        <a class="chip" href="tel:+34679937019">Monica anrufen</a>
+      </div>
+    </article>
+
+    <article class="card accommodation-card">
+      <small>31.07.–01.08.2026 · Clermont-Ferrand</small>
+      <h3>Charme – Mitten im Zentrum – 3 Schlafzimmer – Parkplatz</h3>
+      <p><strong>13 Boulevard Trudaine, Etage 2, 63000 Clermont-Ferrand, Frankreich</strong></p>
+      <div class="detail-grid">
+        <div><small>Gastgeber</small><strong>Emilien</strong></div>
+        <div><small>Co-Host</small><strong>Sophie</strong></div>
+        <div><small>Telefon</small><strong>+33 6 20 44 28 66</strong></div>
+        <div><small>Check-in</small><strong>31.07. ab 16:00 Uhr</strong></div>
+        <div><small>Check-out</small><strong>01.08. bis 10:00 Uhr</strong></div>
+        <div><small>Schlüsselbox-Code</small><strong class="secret">8848</strong></div>
+        <div><small>Garagen-Code</small><strong class="secret">8848</strong></div>
+        <div><small>Parken</small><strong>Parking Blaise Pascal</strong></div>
+        <div><small>Parkkarte</small><strong>befindet sich in der Wohnung</strong></div>
+        <div><small>Bestätigungscode</small><strong class="secret">HM8WKHHQ8Z</strong></div>
+        <div><small>Gesamtkosten</small><strong>151,33 €</strong></div>
+        <div><small>Wichtig bei Abreise</small><strong>Parkkarte wieder in der Wohnung zurücklegen</strong></div>
+      </div>
+      <div class="chips">
+        <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=13%20Boulevard%20Trudaine%2C%2063000%20Clermont-Ferrand">Unterkunft öffnen</a>
+        <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Parking%20Blaise%20Pascal%20Clermont-Ferrand">Parkhaus öffnen</a>
+        <a class="chip" href="tel:+33620442866">Emilien anrufen</a>
+      </div>
+    </article>
+
+    <article class="card accommodation-card">
+      <small>01.–02.08.2026 · Metz</small>
+      <h3>Appartement Rue Haute Seille</h3>
+      <p><strong>56 Rue Haute Seille, 57000 Metz, Frankreich</strong></p>
+      <div class="detail-grid">
+        <div><small>Unterkunft</small><strong>1-Schlafzimmer-Apartment · ca. 55 m²</strong></div>
+        <div><small>Check-in</small><strong>14:00–22:00 Uhr</strong></div>
+        <div><small>Check-out</small><strong>bis 11:00 Uhr</strong></div>
+        <div><small>PIN</small><strong class="secret">7716</strong></div>
+        <div><small>Kaution</small><strong>300 € in bar bei Anreise</strong></div>
+        <div><small>Erstattung</small><strong>nach Abnahme der Unterkunft</strong></div>
+        <div><small>Ausstattung</small><strong>WLAN · Klimaanlage · Balkon · Küche · Waschmaschine</strong></div>
+        <div><small>Haustiere</small><strong>erlaubt</strong></div>
+        <div><small>Parken</small><strong>Straßenparkplätze bevorzugen</strong></div>
+        <div><small>Dachbox</small><strong>Parkhäuser nur bei ausreichender Durchfahrtshöhe</strong></div>
+        <div><small>Lage</small><strong>Altstadt, Kathedrale und Zentrum fußläufig</strong></div>
+        <div><small>Abreise</small><strong>Kaution und Wohnungsabnahme einplanen</strong></div>
+      </div>
+      <div class="chips">
+        <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=56%20Rue%20Haute%20Seille%2C%2057000%20Metz">Unterkunft öffnen</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+
+<section class="section" id="dijon-abend">
+  <span class="eyebrow dark">Mittwoch, 22. Juli 2026</span>
+  <h2>Dijon am Abend – komplett zu Fuß</h2>
+
+  <div class="tip-hero">
+    <span class="eyebrow">Auto stehen lassen</span>
+    <h2>Altstadt, Eule, Burger und Eis</h2>
+    <p>Nach dem Einchecken bleibt das Auto an der Unterkunft beziehungsweise am bereits gewählten Parkplatz. Die gesamte Abendrunde startet und endet an L’Atypique in der Rue d’Auxonne und ist als familienfreundlicher Spaziergang geplant.</p>
+    <div class="chips">
+      <a class="chip" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=34%20bis%20Rue%20d%27Auxonne%2C%2021000%20Dijon&destination=34%20bis%20Rue%20d%27Auxonne%2C%2021000%20Dijon&travelmode=walking&waypoints=%C3%89glise%20Notre-Dame%20de%20Dijon%7CPlace%20de%20la%20Lib%C3%A9ration%20Dijon%7CFoodies%2012%20Rue%20Fran%C3%A7ois%20Rude%20Dijon%7CAmorino%2086%20Rue%20de%20la%20Libert%C3%A9%20Dijon">Komplette Fußrunde öffnen</a>
+      <a class="chip" target="_blank" href="https://www.destinationdijon.com/moments-a-vivre/le-parcours-de-la-chouette/">Offizieller Eulenweg</a>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="dayplan">
+      <strong>18:00–19:00</strong>
+      <div><b>Ankommen und einchecken</b><br>Gepäck abstellen, Zugangsdaten testen und das Auto anschließend nicht mehr bewegen.</div>
+    </div>
+    <div class="dayplan">
+      <strong>ca. 19:10</strong>
+      <div><b>Zu Fuß in Richtung Altstadt</b><br>Von der Unterkunft zur Kirche Notre-Dame rechnen wir mit ungefähr 20 Minuten gemütlicher Gehzeit.</div>
+    </div>
+    <div class="dayplan">
+      <strong>ca. 19:30</strong>
+      <div><b>Notre-Dame und die Eule von Dijon</b><br>Die berühmte Eule sitzt an einem Strebepfeiler der Kirche. Traditionell wird sie mit der linken Hand berührt und dabei ein Wunsch ausgesprochen.</div>
+    </div>
+    <div class="dayplan">
+      <strong>19:40–20:10</strong>
+      <div><b>Kompakter Altstadtrundgang</b><br>Rue de la Chouette, Maison Millière, Rue des Forges, Herzogspalast und Place de la Libération. Statt des vollständigen 22-Stationen-Wegs nehmen wir nach dem langen Fahrtag nur den schönsten Kernbereich.</div>
+    </div>
+    <div class="dayplan">
+      <strong>ca. 20:15</strong>
+      <div><b>Burger bei Foodies</b><br>12 Rue François Rude. Der Standort liegt zentral am Place François Rude und passt gut in die Runde. Für Mittwoch wird auf der Betreiberseite durchgehender Service bis 21:30 Uhr genannt. Bei fünf Personen besser kurz anrufen oder direkt nach der Ankunft online prüfen.</div>
+    </div>
+    <div class="dayplan">
+      <strong>ca. 21:15</strong>
+      <div><b>Eis bei Amorino</b><br>86 Rue de la Liberté. Die offizielle Filialseite nennt mittwochs eine Öffnung bis 22:00 Uhr. Damit ist Amorino für euren Mittwochabend verlässlicher als Simone &amp; Maurice, das mittwochs bereits um 18:30 Uhr schließt.</div>
+    </div>
+    <div class="dayplan">
+      <strong>ca. 21:35</strong>
+      <div><b>Rückweg zur Unterkunft</b><br>Über die Rue de la Liberté und anschließend direkt zurück zur Rue d’Auxonne. Je nach Tempo etwa 20–25 Minuten.</div>
+    </div>
+  </article>
+
+  <div class="tip-grid">
+    <article class="tip-card">
+      <span class="rating">Burger · Hauptempfehlung</span>
+      <h3>🍔 Foodies Dijon</h3>
+      <p class="address">12 Rue François Rude, 21000 Dijon</p>
+      <p>Zentraler Burger-Stopp direkt am Place François Rude. Für den geplanten Mittwochabend zeitlich passend.</p>
+      <div class="tip-actions">
+        <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Foodies%2012%20Rue%20Fran%C3%A7ois%20Rude%20Dijon">Karte</a>
+        <a class="chip" target="_blank" href="https://foodies.restaurant/">Webseite</a>
+      </div>
+    </article>
+
+    <article class="tip-card">
+      <span class="rating">Eis · Mittwochabend</span>
+      <h3>🍦 Amorino Dijon</h3>
+      <p class="address">86 Rue de la Liberté, 21000 Dijon</p>
+      <p>Gelato, Sorbets, Eisbecher, Crêpes und Waffeln. Laut offizieller Filialseite mittwochs bis 22:00 Uhr geöffnet.</p>
+      <div class="tip-actions">
+        <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Amorino%2086%20Rue%20de%20la%20Libert%C3%A9%20Dijon">Karte</a>
+        <a class="chip" target="_blank" href="https://www.amorino.com/de/stores/dijon">Öffnungszeiten</a>
+        <a class="chip" href="tel:+33982564874">+33 9 82 56 48 74</a>
+      </div>
+    </article>
+
+    <article class="tip-card">
+      <span class="rating">Sehenswürdigkeit</span>
+      <h3>🦉 Parcours de la Chouette</h3>
+      <p>Der offizielle Rundweg umfasst 22 Stationen und dauert ungefähr eine Stunde bis 1,5 Stunden. Für euren Ankunftsabend ist die gekürzte Altstadtrunde sinnvoller.</p>
+      <div class="tip-actions">
+        <a class="chip" target="_blank" href="https://www.destinationdijon.com/moments-a-vivre/le-parcours-de-la-chouette/">Offizielle Beschreibung</a>
+      </div>
+    </article>
+
+    <article class="tip-card">
+      <span class="rating">Nur als Alternative</span>
+      <h3>🍨 Simone &amp; Maurice</h3>
+      <p class="address">6 Rue de la Chouette</p>
+      <p>Sehr schön direkt bei der Eule gelegen, aber mittwochs laut eigener Webseite nur bis 18:30 Uhr geöffnet. Für euren geplanten Abend daher nicht als Eis-Stopp einplanen.</p>
+      <div class="tip-actions">
+        <a class="chip" target="_blank" href="https://simonemaurice.fr/">Webseite</a>
+      </div>
+    </article>
+  </div>
+
+  <article class="card">
+    <h3>Gut zu wissen</h3>
+    <p><strong>Gesamtdauer:</strong> ungefähr 3 bis 3½ Stunden einschließlich Essen.</p>
+    <p><strong>Gesamte Gehstrecke:</strong> je nach gewählter Verbindung ungefähr 4 bis 5 Kilometer.</p>
+    <p><strong>Familienfreundlich:</strong> Die Runde lässt sich jederzeit abkürzen. Nach dem Essen kann direkt zur Unterkunft zurückgelaufen werden.</p>
+    <p><strong>Vor Ort prüfen:</strong> Restaurant- und Ladenöffnungszeiten können sich kurzfristig ändern. Die verlinkten Betreiberseiten am Reisetag noch einmal öffnen.</p>
+  </article>
+</section>
+
+<section class="section" id="lestartit">
+  <span class="eyebrow dark">24.–31. Juli</span>
+  <h2>L’Estartit – unsere Tipps</h2>
+
+  <div class="tip-hero">
+    <span class="eyebrow">Urlaubszentrale</span>
+    <h2>Strand, gutes Essen und entspannte Ausflüge</h2>
+    <p>Die Wohnung liegt zentral in der Carrer Salines. Vieles im Ort ist zu Fuß erreichbar. Für Großeinkauf, Pals, Begur, Mooma und weitere Ausflüge lohnt sich das Auto.</p>
+    <div class="chips">
+      <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tourist+Office+L%27Estartit">Tourist-Info</a>
+      <a class="chip" target="_blank" href="https://visitestartit.com/en/">Offizielle Tourismusseite</a>
+      <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=11+Carrer+Salines+L%27Estartit">Unterkunft auf Karte</a>
+    </div>
+  </div>
+
+  <h2>Unsere besten Ziele</h2>
+  <div id="guideList" class="cards three"></div>
+
+  <section class="section">
+    <span class="eyebrow dark">Einkaufen & Grillen</span>
+    <h2>Konkrete Adressen</h2>
+    <div class="tip-grid">
+      <article class="tip-card">
+        <span class="rating">Unsere Metzger-Empfehlung</span>
+        <h3>🥩 Carnisseria Xarcuteria Laura</h3>
+        <p class="address">Carrer Santa Anna 78, L’Estartit</p>
+        <p>Traditionelle Metzgerei und Wurstwarenladen. Gute Adresse für Grillfleisch, Würste, Aufschnitt und regionale Produkte.</p>
+        <div class="why"><strong>Warum hin?</strong><br>Im Ortszentrum, gut mit einem Bummel durch die Carrer Santa Anna kombinierbar.</div>
+        <div class="tip-actions">
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Carnisseria+Xarcuteria+Laura+L%27Estartit">Karte</a>
+          <a class="chip" href="tel:+34972750632">+34 972 75 06 32</a>
+        </div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Metzger + Essen zum Mitnehmen</span>
+        <h3>🍗 Carnisseria Can Lluís</h3>
+        <p class="address">Plaça Doctor Fleming 2, L’Estartit</p>
+        <p>Metzgerei mit zubereiteten Speisen zum Mitnehmen. Praktisch für Grillfleisch, Würste oder einen unkomplizierten Abend in der Wohnung.</p>
+        <div class="why"><strong>Praktischer Tipp:</strong><br>Ideal, wenn niemand mehr kochen möchte – nach Tagesangeboten und Grillhähnchen fragen.</div>
+        <div class="tip-actions">
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Carnisseria+Can+Lluis+L%27Estartit">Karte</a>
+          <a class="chip" href="tel:+34972750333">+34 972 75 03 33</a>
+        </div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Frischer Fisch</span>
+        <h3>🐟 Riembau Peix i Marisc</h3>
+        <p class="address">Carrer Santa Anna, L’Estartit</p>
+        <p>Fischhandlung mit frischem Fisch und Meeresfrüchten. Eine gute Adresse für Fisch vom Grill, Garnelen oder Zutaten für eine Paella.</p>
+        <div class="why"><strong>Einkaufsidee:</strong><br>Fisch direkt küchenfertig vorbereiten lassen und nach einer einfachen Grill-Empfehlung fragen.</div>
+        <div class="tip-actions">
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Riembau+Peix+i+Marisc+L%27Estartit">Karte</a>
+          <a class="chip" target="_blank" href="https://joanriembaupeiximarisc.com/">Webseite</a>
+        </div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Brot & Frühstück</span>
+        <h3>🥖 Forn de Pa Ferrer</h3>
+        <p class="address">Carrer del Port 20, L’Estartit</p>
+        <p>Traditionelle Bäckerei mit Brot und Gebäck. Gut für frisches Brot, Croissants oder ein unkompliziertes Frühstück.</p>
+        <div class="why"><strong>Hinweis:</strong><br>Öffnungszeiten können saisonal variieren – am Vorabend kurz prüfen.</div>
+        <div class="tip-actions">
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Forn+de+Pa+Ferrer+L%27Estartit">Karte</a>
+        </div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Kuchen & Gebäck</span>
+        <h3>🍰 Pastisseria J. Brugués</h3>
+        <p class="address">Carrer Santa Anna 78, L’Estartit</p>
+        <p>Pastisseria für süßes Gebäck, Kuchen und kleine Mitbringsel. Liegt direkt bei Carnisseria Laura.</p>
+        <div class="tip-actions">
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pastisseria+J.+Brugues+L%27Estartit">Karte</a>
+          <a class="chip" href="tel:+34972751026">+34 972 75 10 26</a>
+        </div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Großeinkauf</span>
+        <h3>🛒 Supermarkt-Auswahl</h3>
+        <p><strong>Supermercat GP:</strong> an der Straße zwischen Torroella und L’Estartit.</p>
+        <p><strong>SPAR/Valvi:</strong> Camí de la Pletera 39 oder Plaça Doctor Fleming 9.</p>
+        <p><strong>Für sehr großen Einkauf:</strong> Lidl oder Carrefour in Torroella de Montgrí prüfen.</p>
+        <div class="why"><strong>Unser Plan:</strong><br>Am Ankunftstag Getränke, Frühstück, Obst, Snacks und Grundversorgung kaufen. Frischware später lokal nachholen.</div>
+        <div class="tip-actions">
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Supermercat+GP+L%27Estartit">GP</a>
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=SPAR+Cam%C3%AD+de+la+Pletera+39+L%27Estartit">SPAR</a>
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Lidl+Torroella+de+Montgri">Lidl</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="eyebrow dark">Essen gehen</span>
+    <h2>Restaurants für die Familie</h2>
+    <div class="tip-grid">
+      <article class="tip-card">
+        <h3>🍽️ N’Gruna</h3>
+        <p class="address">Passeig del Molinet 5</p>
+        <p>Katalanische Markt- und Tapasküche. Gute Wahl für einen Abend am Wasser; auch vegetarische, vegane und glutenfreie Optionen werden geführt.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=N%27Gruna+L%27Estartit">Karte</a><a class="chip" href="tel:+34872217100">Reservieren</a></div>
+      </article>
+
+      <article class="tip-card">
+        <h3>🍔 Gastrobar Can Sánchez</h3>
+        <p class="address">Avinguda de Roma 48</p>
+        <p>Unkomplizierte Gastrobar mit Kinderkarte. Passt gut für einen entspannten Familienabend ohne großes Menü.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gastrobar+Can+Sanchez+L%27Estartit">Karte</a><a class="chip" href="tel:+34972750332">Reservieren</a></div>
+      </article>
+
+      <article class="tip-card">
+        <h3>🐟 El Volantí</h3>
+        <p class="address">Carrer Cap de la Barra 1</p>
+        <p>Restaurant nahe Hafen und Molinet mit Kinderkarte und glutenfreien Angeboten. Gute Lage für einen Spaziergang vor oder nach dem Essen.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=El+Volanti+L%27Estartit">Karte</a><a class="chip" href="tel:+34972750712">Reservieren</a></div>
+      </article>
+
+      <article class="tip-card">
+        <h3>🥘 Arrosseria L’Escalada</h3>
+        <p>Option für Reisgerichte, Paella und mediterrane Küche. Für fünf Personen besser vorab reservieren und nach Portionsgrößen fragen.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Arrosseria+L%27Escalada+L%27Estartit">Karte</a><a class="chip" href="tel:+34972752022">Telefon</a></div>
+      </article>
+
+      <article class="tip-card">
+        <h3>🥘 Restaurant La Sal</h3>
+        <p class="address">Passeig Marítim 19</p>
+        <p>Direkt am Meer; spezialisiert auf Reisgerichte, Paella, Meeresfrüchte-Tapas und mediterrane Küche. Gute Wahl für einen geplanten Paella-Abend.</p>
+        <div class="tip-actions">
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Restaurant+La+Sal+L%27Estartit">Karte</a>
+          <a class="chip" target="_blank" href="https://www.restaurantlasal.com/de/">Webseite</a>
+          <a class="chip" href="tel:+34972750976">Reservieren</a>
+        </div>
+      </article>
+
+      <article class="tip-card">
+        <h3>⚓ Racó del Port</h3>
+        <p class="address">Passeig Marítim 40</p>
+        <p>Familiengeführtes Restaurant am Hafen mit Tapas, Fisch, Fleisch und internationaleren Gerichten. Praktisch für einen lockeren Abend an der Promenade.</p>
+        <div class="tip-actions">
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Raco+del+Port+L%27Estartit">Karte</a>
+          <a class="chip" target="_blank" href="https://www.elracodelportestartit.com/en/who-are-we/">Webseite</a>
+          <a class="chip" href="tel:+34685638181">Reservieren</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="eyebrow dark">Strand & Wasser</span>
+    <h2>Welche Stelle passt zu uns?</h2>
+    <div class="tip-grid">
+      <article class="tip-card">
+        <span class="rating">Am einfachsten</span>
+        <h3>🏖️ Platja Gran / Hauptstrand</h3>
+        <p>Sehr langer Sandstrand mit flachem Wasser und vielen Angeboten. Für Familien der unkomplizierteste Strandtag.</p>
+        <div class="why"><strong>Am besten:</strong> Vormittags kommen, Sonnenschutz mitnehmen und die Mittagshitze in der Wohnung oder im Schatten verbringen.</div>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Platja+Gran+L%27Estartit">Karte</a></div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Etwas ruhiger</span>
+        <h3>🌾 Platja dels Griells</h3>
+        <p>Südlicher Abschnitt des langen Strandes. Meist ruhiger als der zentrale Bereich und gut für einen entspannten Familientag.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Platja+dels+Griells">Karte</a></div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Natur</span>
+        <h3>🦩 La Pletera</h3>
+        <p>Naturnaher Strand- und Feuchtgebietsbereich. Gut für Spaziergänge, Vogelbeobachtung und einen ruhigeren Strandabschnitt.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=La+Pletera+L%27Estartit">Karte</a></div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Schnorchel-Tipp</span>
+        <h3>🤿 Passeig del Molinet</h3>
+        <p>Felsiger Küstenabschnitt mit Blick auf die Medes-Inseln. Bei ruhiger See für erfahrenere Schwimmer interessant.</p>
+        <div class="why"><strong>Sicherheit:</strong><br>Nur bei ruhigem Wasser, geeignetem Zugang und nie allein ins Wasser. Badeschuhe mitnehmen.</div>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Passeig+del+Molinet+L%27Estartit">Karte</a></div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Top-Ausflug</span>
+        <h3>⛵ Medes-Inseln</h3>
+        <p>Glasbodenboot, Bootstour, Kajak oder geführtes Schnorcheln. Das Meeresschutzgebiet ist das wichtigste Naturerlebnis am Urlaubsort.</p>
+        <div class="why"><strong>Familienvariante:</strong><br>Glasbodenboot ist für alle Altersgruppen entspannt. Für Schnorcheln einen geführten Anbieter wählen.</div>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Medes+Islands+boat+tour+L%27Estartit">Anbieter</a><a class="chip" target="_blank" href="https://www.enestartit.com/en/nautical-station">Nautikstation</a></div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Schlechtwetter / Pause</span>
+        <h3>🐠 Espai Medes</h3>
+        <p>Meeres-Interpretationszentrum im Hafen. Sinnvoll als kürzeres Familienprogramm, als Ergänzung zur Bootstour oder bei wechselhaftem Wetter.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Espai+Medes+L%27Estartit">Karte</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="eyebrow dark">Besondere Ausflüge</span>
+    <h2>Cidre, BBQ und Costa Brava</h2>
+    <div class="tip-grid">
+      <article class="tip-card">
+        <span class="rating">Hof · Cidre · Grillküche</span>
+        <h3>🍎🔥 Mooma Palau-sator</h3>
+        <p class="address">Ctra. Fontanilles · Mas Saulot s/n · Palau-sator</p>
+        <p>Der gesuchte Bauernhof-Tipp: eine Cidrerie mit Restaurant, Apfelplantagen, eigenen Cidres und Säften sowie mediterraner Küche. Auf der Karte stehen unter anderem Reisgerichte, Fisch und Fleisch; das Restaurant wird auch ausdrücklich als Grill-/Grillhaus geführt.</p>
+        <div class="why"><strong>Beste Kombination:</strong><br>Vormittags Pals besichtigen, anschließend bei Mooma essen, Cidre probieren und – je nach Angebot – Plantage oder Kellerei ansehen. Für Juli unbedingt reservieren.</div>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Sidreria+Mooma+Palau-sator">Karte</a><a class="chip" target="_blank" href="https://mooma.cat/en/book-mooma/">Reservieren</a><a class="chip" href="tel:+34872026088">+34 872 02 60 88</a></div>
+      </article>
+
+      <article class="tip-card">
+        <span class="rating">Katalanische Masia</span>
+        <h3>🌿 Mas Pou · Palau-sator</h3>
+        <p class="address">Plaça de la Mota 4 · Palau-sator</p>
+        <p>Traditionelles Restaurant in einer jahrhundertealten katalanischen Masia mit Terrasse und Garten. Eine gute Alternative oder Ergänzung zu Mooma, besonders bei einem Ausflug nach Pals und Palau-sator.</p>
+        <div class="why"><strong>Planung:</strong><br>Im Juli und August werden die Außenplätze stark nachgefragt. Vorab reservieren; montags ist laut Restaurant Ruhetag.</div>
+        <div class="tip-actions">
+          <a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Mas+Pou+Palau-sator">Karte</a>
+          <a class="chip" target="_blank" href="https://maspou.com/">Webseite</a>
+          <a class="chip" href="tel:+34972634125">+34 972 63 41 25</a>
+        </div>
+      </article>
+
+      <article class="tip-card">
+        <h3>🏘️ Pals</h3>
+        <p>Mittelalterlicher Ortskern, Steingassen und Aussicht über das Empordà. Am besten morgens, bevor es heiß und voll wird.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pals+old+town+parking">Parken & Altstadt</a></div>
+      </article>
+
+      <article class="tip-card">
+        <h3>🌊 Begur & Küste</h3>
+        <p>Begur als Altstadt-Ausflug oder in Kombination mit einer Bucht. In der Hochsaison früh starten, da Zufahrten und Parkplätze knapp werden können.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Begur+old+town+parking">Karte</a></div>
+      </article>
+
+      <article class="tip-card">
+        <h3>🏛️ Empúries & L’Escala</h3>
+        <p>Griechisch-römische Ausgrabungen direkt an der Küste. Danach Strand oder ein Spaziergang in L’Escala.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ruines+d%27Empuries">Karte</a></div>
+      </article>
+
+      <article class="tip-card">
+        <h3>🏰 Girona</h3>
+        <p>Altstadt, Stadtmauer, Kathedrale und jüdisches Viertel. Für einen heißen Tag früh losfahren und die Mittagszeit für Essen oder Rückfahrt nutzen.</p>
+        <div class="tip-actions"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Girona+old+town+parking">Parken & Altstadt</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="eyebrow dark">Nicht zu voll planen</span>
+    <h2>Vorschlag für unsere Urlaubswoche</h2>
+    <article class="card">
+      <div class="dayplan"><strong>Fr. 24.07.</strong><div><b>Ankommen</b><br>Einchecken, Großeinkauf, Unterkunft und Pool kennenlernen, kurzer Abendspaziergang.</div></div>
+      <div class="dayplan"><strong>Sa. 25.07.</strong><div><b>Erster Strandtag</b><br>Platja Gran oder Griells, nachmittags Pool, abends Carrer Santa Anna und Eis.</div></div>
+      <div class="dayplan"><strong>So. 26.07.</strong><div><b>Medes-Inseln</b><br>Glasbodenboot oder geführter Schnorchelausflug; restlicher Tag bewusst frei.</div></div>
+      <div class="dayplan"><strong>Mo. 27.07.</strong><div><b>Pals + Mooma</b><br>Früh nach Pals, anschließend reserviertes Essen oder Cidre-Stopp bei Mooma.</div></div>
+      <div class="dayplan"><strong>Di. 28.07.</strong><div><b>Freier Strand-/Pooltag</b><br>Keine feste Planung. Frisch einkaufen bei Metzger oder Fischhandlung und abends selbst essen.</div></div>
+      <div class="dayplan"><strong>Mi. 29.07.</strong><div><b>Ausflug nach Wetter</b><br>Empúries/L’Escala, Begur oder Girona. Bei Hitze lieber Strand und Espai Medes.</div></div>
+      <div class="dayplan"><strong>Do. 30.07.</strong><div><b>Letzter Urlaubstag</b><br>Lieblingsstrand, Souvenirs und ruhiger Abschluss. Abends für die Rückfahrt packen.</div></div>
+      <div class="dayplan"><strong>Fr. 31.07.</strong><div><b>Abreise</b><br>Wohnung, Schlüssel und Kühlschrank prüfen; früh Richtung Clermont-Ferrand starten.</div></div>
+    </article>
+  </section>
+
+  
+<section class="section">
+  <span class="eyebrow dark">Stand: 19.07.2026</span>
+  <h2>Recherche & Verlässlichkeit</h2>
+  <article class="card">
+    <p>Die konkreten Tipps wurden anhand aktueller Betreiberseiten, der offiziellen Tourismusseite von Torroella de Montgrí/L’Estartit sowie aktueller Restaurantverzeichnisse geprüft. Öffnungszeiten können sich im Sommer kurzfristig ändern; deshalb vor Abfahrt oder Reservierung den jeweiligen Link noch einmal öffnen.</p>
+    <div class="chips">
+      <a class="chip" target="_blank" href="https://visitestartit.com/de/">Offizielle Tourismusseite</a>
+      <a class="chip" target="_blank" href="https://visitestartit.com/de/planen/geniessen-sie-lokale-produkte/">Einkaufen & Märkte</a>
+      <a class="chip" target="_blank" href="https://mooma.cat/en/mooma-palau-sator/">Mooma</a>
+      <a class="chip" target="_blank" href="https://www.carnisseriaxarcuterialaura.com/">Metzgerei Laura</a>
+      <a class="chip" target="_blank" href="https://joanriembaupeiximarisc.com/">Riembau Fisch</a>
+    </div>
+  </article>
 </section>
 
 <section class="section">
-  <div class="section-head"><div><span class="eyebrow dark">Schnellzugriff</span><h2>Unterwegs wichtig</h2></div>
-  <button class="button ghost" id="themeButton">Darstellung</button></div>
-  <div class="quick">
-    <a href="#route">Route</a><a href="#stays">Unterkünfte</a><a href="#contacts">Kontakte</a>
-    <a href="#charging">Laden</a><a href="#lists">Checklisten</a><a href="#emergency">Notfall</a>
-  </div>
-</section>
-
-<section class="section" id="route">
-  <span class="eyebrow dark">Master-Route</span><h2>Reiseverlauf</h2>
-  <div id="routeList" class="timeline"></div>
-</section>
-
-<section class="section" id="stays">
-  <span class="eyebrow dark">Übernachtungen</span><h2>Unterkünfte & Zugangsdaten</h2>
-  <p class="note">Diese Seite enthält auf ausdrücklichen Wunsch auch sensible Zugangsdaten. Die GitHub-Pages-Version ist öffentlich erreichbar.</p>
-  <div id="stayList" class="cards two"></div>
-</section>
-
-<section class="section" id="contacts">
-  <span class="eyebrow dark">Ansprechpartner</span><h2>Kontakte</h2>
-  <div class="cards three">
-    <article class="card"><small>Dijon</small><h3>Lucas Mandot</h3><p>Ersatzkontakte: Diego und Quentin</p><a class="chip" href="tel:+33667411575">+33 6 67 41 15 75 anrufen</a></article>
-    <article class="card"><small>Montpellier</small><h3>ibis Budget Rezeption</h3><p>Hotelrezeption vor Ort.</p></article>
-    <article class="card"><small>L’Estartit</small><h3>Monica</h3><p>Gastgeberin der Ferienwohnung.</p></article>
-    <article class="card"><small>Clermont-Ferrand</small><h3>Emilien & Sophie</h3><p>Gastgeber und Co-Host.</p></article>
-    <article class="card"><small>Metz</small><h3>Gastgeber laut Buchung</h3><p>Kontaktdaten gemäß Buchungsunterlagen.</p></article>
-  </div>
-</section>
-
-<section class="section" id="charging">
-  <span class="eyebrow dark">Audi Q4 e-tron</span><h2>Ladeprofil</h2>
-  <article class="card">
-    <div class="charge-grid">
-      <div><small>Start-SoC</small><strong>95 %</strong></div>
-      <div><small>Zielankunft</small><strong>ca. 10 %</strong></div>
-      <div><small>Ladeziel</small><strong>80–85 %</strong></div>
-      <div><small>Leistung</small><strong>≥175 kW bevorzugt</strong></div>
+    <span class="eyebrow dark">Vor Ort hilfreich</span>
+    <h2>Kleine praktische Tipps</h2>
+    <div class="cards three">
+      <article class="card"><h3>🛍️ Wochenmarkt</h3><p>Der Wochenmarkt in L’Estartit findet laut Tourismusinformation donnerstags statt. Torroella de Montgrí hat montags Markt.</p></article>
+      <article class="card"><h3>🕙 Tagesrhythmus</h3><p>Strand und Ausflüge morgens planen. Zwischen Mittag und spätem Nachmittag Pool, Wohnung oder ruhiges Programm nutzen.</p></article>
+      <article class="card"><h3>🚗 Parken</h3><p>In Küstenorten früh ankommen. Keine Taschen sichtbar im Fahrzeug lassen und bei Parkhäusern die Dachboxhöhe beachten.</p></article>
+      <article class="card"><h3>🌬️ Wind</h3><p>Bei stärkerem Wind können Meer, Bootstouren und Schnorcheln unruhiger sein. Den Tagesplan dann flexibel tauschen.</p></article>
+      <article class="card"><h3>📞 Reservieren</h3><p>Bei fünf Personen Restaurants und besondere Ausflüge besser telefonisch oder online reservieren.</p></article>
+      <article class="card"><h3>🧴 Strandtasche</h3><p>Wasser, Sonnenschutz, Kopfbedeckung, Badeschuhe und leichte Snacks dauerhaft vorbereitet halten.</p></article>
     </div>
-    <ul>
-      <li>DKV-Mobility-kompatible HPC-Lader priorisieren.</li>
-      <li>Mindestens 150 kW; möglichst WC, Gastronomie und sichere Parklage.</li>
-      <li>Ladepunkt zusätzlich im Audi MMI als Ziel setzen, damit die Batterie vorkonditioniert wird.</li>
-      <li>Vor Abfahrt Verfügbarkeit und DKV-Akzeptanz aktuell in der App prüfen.</li>
-    </ul>
+  </section>
+</section>
+
+<section class="section" id="recommendations"><span class="eyebrow dark">Für die Zwischenstopps</span><h2>Praktische Empfehlungen</h2><div class="cards three"><article class="card recommendation"><small>Dijon</small><h3>Abend kompakt halten</h3><p>Nach der langen Anreise erst einchecken, dann unkompliziert in Unterkunftsnähe essen. Frühstück und Getränke für den Morgen direkt mitnehmen.</p><div class="chips"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Restaurant%20nahe%2034%20bis%20Rue%20d%27Auxonne%20Dijon">Restaurants</a><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Boulangerie%20Rue%20d%27Auxonne%20Dijon">Bäckerei</a></div></article><article class="card recommendation"><small>Montpellier</small><h3>Früh weiterfahren</h3><p>Ankunft gegen 16:00 Uhr. Die Übernachtung als Zwischenstation nutzen, abends leicht essen und morgens ohne Hotelfrühstück bei einer Bäckerei starten.</p><div class="chips"><a class="chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Restaurant%20nahe%20ibis%20budget%20Montpellier%20Centre%20Mill%C3%A9naire">Umgebung</a></div></article><article class="card recommendation"><small>Rückreise</small><h3>Altstadt am Abend</h3><p>Clermont-Ferrand und Metz eignen sich für einen kurzen Abendspaziergang. Gepäck im Fahrzeug nicht sichtbar liegen lassen.</p></article></div></section>
+<section class="section" id="practical"><span class="eyebrow dark">Frankreich & Spanien</span><h2>Praktische Reiseinformationen</h2><div class="cards three"><article class="card"><h3>Unterwegs</h3><p>Warnwesten griffbereit im Innenraum. Fahrzeugpapiere, Ausweise und Buchungen zusätzlich offline auf dem iPhone speichern.</p></article><article class="card"><h3>Maut & Parken</h3><p>In Städten Beschilderung, Durchfahrtshöhen und Umweltzonen beachten. Bei Dachbox Parkhäuser besonders prüfen.</p></article><article class="card"><h3>Hitze & Familie</h3><p>Getränke auffüllen, Sonnenschutz bereithalten und längere Aktivitäten auf Vormittag oder Abend legen.</p></article><article class="card"><h3>Diebstahlschutz</h3><p>Keine Taschen, Geräte oder Dokumente sichtbar im Auto lassen.</p></article><article class="card"><h3>Gesundheit</h3><p>Krankenversicherungskarten, Medikamente, Reiseapotheke und Sonnenschutz zentral zugänglich halten.</p></article><article class="card"><h3>Kommunikation</h3><p>Unterkunftsadressen und Gastgeberkontakte vor Abfahrt als Favoriten speichern.</p></article></div></section>
+<section class="section" id="contacts"><span class="eyebrow dark">Ansprechpartner</span><h2>Kontakte</h2><div class="cards three"><article class="card"><small>Dijon</small><h3>Lucas Mandot</h3><p>Ersatzkontakte: Diego und Quentin</p><a class="chip" href="tel:+33667411575">+33 6 67 41 15 75</a></article><article class="card"><small>Montpellier</small><h3>ibis Budget Rezeption</h3><p>Rezeption vor Ort.</p></article><article class="card"><small>L’Estartit</small><h3>Monica</h3><p>Gastgeberin der Ferienwohnung.</p></article><article class="card"><small>Clermont-Ferrand</small><h3>Emilien & Sophie</h3><p>Gastgeber und Co-Host.</p></article><article class="card"><small>Metz</small><h3>Gastgeber laut Buchung</h3><p>Kontaktdaten in den Buchungsunterlagen.</p></article></div></section>
+<section class="section" id="lists"><div class="section-head"><div><span class="eyebrow dark">Lokal gespeichert</span><h2>Checklisten</h2></div><button class="button ghost" id="resetChecks">Zurücksetzen</button></div><div id="checklists" class="cards two"></div></section>
+<section class="section" id="budget"><span class="eyebrow dark">Reisekosten</span><h2>Budget-Notizen</h2><article class="card budget"><form id="budgetForm"><input id="budgetText" required placeholder="z. B. Abendessen Dijon"><input id="budgetAmount" required type="number" step="0.01" min="0" placeholder="Betrag €"><button class="button" type="submit">Speichern</button></form><div id="budgetList"></div><div class="total">Summe: <strong id="budgetTotal">0,00 €</strong></div></article></section>
+<section class="section" id="emergency"><span class="eyebrow dark">Soforthilfe</span><h2>Notfall</h2><div class="cards three"><a class="card emergency" href="tel:112"><small>Europaweiter Notruf</small><strong>112</strong><span>Antippen zum Anrufen</span></a><article class="card"><small>Bei Panne</small><strong>Sicher handeln</strong><p>Warnblinker, Warnwesten, Fahrzeug sicher verlassen und hinter die Schutzplanke gehen.</p></article><article class="card"><small>Urlaubsadresse</small><strong>ALMA BEACH ESTARTIT</strong><p>11 Carrer Salines<br>17258 L’Estartit</p></article></div></section>
+
+<section class="section">
+  <article class="card">
+    <span class="eyebrow dark">Wichtiger Hinweis</span>
+    <h2>Vor Ort kurz prüfen</h2>
+    <p>Öffnungszeiten, Reservierungspflichten, Wochenmarkttage und saisonale Angebote können sich ändern. Deshalb die verlinkten Karten kurz vor dem Besuch prüfen.</p>
   </article>
 </section>
 
-<section class="section" id="trips">
-  <span class="eyebrow dark">Urlaubsort</span><h2>Ausflüge ab L’Estartit</h2>
-  <div id="tripList" class="cards three"></div>
-</section>
 
-<section class="section" id="lists">
-  <div class="section-head"><div><span class="eyebrow dark">Lokal gespeichert</span><h2>Checklisten</h2></div>
-  <button class="button ghost" id="resetChecks">Zurücksetzen</button></div>
-  <div id="checklists" class="cards two"></div>
-</section>
 
-<section class="section" id="budget">
-  <span class="eyebrow dark">Reisekosten</span><h2>Budget-Notizen</h2>
-  <article class="card budget">
-    <form id="budgetForm">
-      <input id="budgetText" required placeholder="z. B. Laden Dijon">
-      <input id="budgetAmount" required type="number" step="0.01" min="0" placeholder="Betrag €">
-      <button class="button" type="submit">Speichern</button>
-    </form>
-    <div id="budgetList"></div>
-    <div class="total">Summe: <strong id="budgetTotal">0,00 €</strong></div>
-  </article>
-</section>
-
-<section class="section" id="emergency">
-  <span class="eyebrow dark">Soforthilfe</span><h2>Notfall</h2>
-  <div class="cards three">
-    <a class="card emergency" href="tel:112"><small>Europaweiter Notruf</small><strong>112</strong><span>Antippen zum Anrufen</span></a>
-    <article class="card"><small>Bei Panne</small><strong>Sicher handeln</strong><p>Warnblinker, Warnwesten, Fahrzeug verlassen und hinter die Schutzplanke.</p></article>
-    <article class="card"><small>Urlaubsadresse</small><strong>ALMA BEACH ESTARTIT</strong><p>11 Carrer Salines<br>17258 L’Estartit</p></article>
-  </div>
-</section>
-
-<footer>Spanien Travelbook 2026 · Version 1.1 · GitHub Ein-Datei-Version</footer>
-</main>
-
-<nav class="bottom-nav">
-<a href="#home">Start</a><a href="#route">Route</a><a href="#stays">Hotels</a><a href="#charging">Laden</a><a href="#lists">Listen</a>
-</nav>
-<div id="toast" class="toast">Gespeichert</div>
-
+<footer>Spanien Travelbook 2026 · Version 1.5 · Dijon-Abend ergänzt · GitHub Ein-Datei-Version</footer></main>
+<nav class="bottom-nav"><a href="#home">Start</a><a href="#route">Etappen</a><a href="#stays">Hotels</a><a href="#lestartit">L’Estartit</a><a href="#lists">Listen</a></nav><div id="toast" class="toast">Gespeichert</div>
 <script>
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const maps=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
-const directions=(a,b)=>"https://www.google.com/maps/dir/?api=1&origin="+encodeURIComponent(a)+"&destination="+encodeURIComponent(b);
-const toast=()=>{const t=$("#toast");t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1100)};
-const copyText=async text=>{try{await navigator.clipboard.writeText(text);toast()}catch(e){prompt("Bitte kopieren:",text)}};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])),maps=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q),directions=(a,b)=>"https://www.google.com/maps/dir/?api=1&origin="+encodeURIComponent(a)+"&destination="+encodeURIComponent(b),toast=()=>{const t=$("#toast");t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1100)},copyText=async t=>{try{await navigator.clipboard.writeText(t);toast()}catch(e){prompt("Bitte kopieren:",t)}};
+const route=[
+["22.07.2026","Hasbergen → Dijon","Lange erste Etappe mit Übernachtung im Airbnb L’Atypique.","Hasbergen","34 bis Rue d’Auxonne, Dijon","ca. 720 km","ca. 7½–8½ Std.","früh morgens",["Zwei längere Familienpausen einplanen","Vor Dijon Getränke und Frühstück einkaufen","Nach Ankunft nur kurzer Abend"]],
+["23.07.2026","Dijon → Montpellier","Fahrt Richtung Süden zum ibis Budget Montpellier Centre Millénaire.","34 bis Rue d’Auxonne, Dijon","ibis budget Montpellier Centre Millénaire","ca. 500 km","ca. 5–6 Std.","vormittags",["Rhônetal-Verkehr berücksichtigen","Mittagspause abseits der Autobahn möglich","Hotel als reine Zwischenstation nutzen"]],
+["24.07.2026","Montpellier → L’Estartit","Letzte Anreiseetappe zur Ferienwohnung ALMA BEACH ESTARTIT.","ibis budget Montpellier Centre Millénaire","11 Carrer Salines, L'Estartit","ca. 260 km","ca. 3–4 Std.","nach Frühstück",["Grenzverkehr einkalkulieren","Gastgebernachrichten prüfen","Ersten Einkauf erledigen"]],
+["25.–30.07.2026","Urlaub in L’Estartit","Strand, Pool, Medes-Inseln und ausgewählte Tagesausflüge.","","","6 volle Tage","flexibel","ohne Zeitdruck",["Nicht jeden Tag verplanen","Ausflüge nach Wetter auswählen","Zwei reine Strand-/Pooltage lassen"]],
+["31.07.2026","L’Estartit → Clermont-Ferrand","Beginn der Rückreise mit Zwischenübernachtung im Zentrum.","11 Carrer Salines, L'Estartit","13 Boulevard Trudaine, Clermont-Ferrand","ca. 510 km","ca. 6–7 Std.","früh morgens",["Wohnung und Schlüssel prüfen","A75-Landschaft genießen","Abends kurzer Spaziergang"]],
+["01.08.2026","Clermont-Ferrand → Metz","Zweite Rückreiseetappe zum Appartement Rue Haute Seille.","13 Boulevard Trudaine, Clermont-Ferrand","56 Rue Haute Seille, Metz","ca. 530 km","ca. 5½–6½ Std.","vormittags",["Parkkarte zurücklegen","Dachboxhöhe beachten","Metzer Altstadt zu Fuß"]],
+["02.08.2026","Metz → Hasbergen","Letzte Etappe nach Hause.","56 Rue Haute Seille, Metz","Hasbergen","ca. 440 km","ca. 4½–5½ Std.","nach Frühstück",["Kaution und Wohnung prüfen","Letzte Pause flexibel","Ankunft am Nachmittag"]]];
+const stays=[
+["L’Atypique · Dijon","22.–23.07.2026","34 bis Rue d’Auxonne, 21000 Dijon, Frankreich",[["Gastgeber","Lucas Mandot"],["Telefon","+33 6 67 41 15 75"],["Check-in","Selbst-Check-in · Schlüsselbox"],["Bestätigte Ankunft","18:00–19:00 Uhr"],["Schlüsseltresor-Code","474744"],["WLAN","Livebox-7820"],["WLAN-Passwort","aYC3Fg2T3NhFxnrz6g"],["Parken","Rue Marguerite Thibert kostenlos · Intermarché Kurzzeit"],["Alternative Navigation","14 bis Rue de Longvic"],["Besonderheit","Gastgeber öffnet Haustür aus der Ferne"]]],
+["ibis Budget Montpellier Centre Millénaire","23.–24.07.2026","Rue des Frères Lumière, Montpellier, Frankreich",[["Geplante Ankunft","ca. 16:00 Uhr"],["Check-in","ab 14:00 Uhr"],["Check-out","bis 12:00 Uhr"],["Frühstück","nicht gebucht · Bäckerei am Morgen geplant"],["Ausweis","gültiger Lichtbildausweis erforderlich"],["Parken","Hotelparkplatz vorhanden"],["Rezeption","laut Hotelinformation durchgehend besetzt"],["Plan","frühe Weiterfahrt nach L’Estartit"]]],
+["ALMA BEACH ESTARTIT","24.–31.07.2026","11 Carrer Salines, 17258 L’Estartit, Spanien",[["Gastgeberin","Monica"],["Check-in","Türcodes nach Fertigstellung der Wohnung"],["Check-out","08:00–10:00 Uhr"],["Schlüssel","Haustür · Wohnung · Pool"],["Pool","09:00–20:00 Uhr"],["Kurtaxe","bar oder Bizum"],["Parken","kostenlos an öffentlichen Straßen"],["Besonderheit","zentrale Unterkunft des Urlaubs"]]],
+["Clermont-Ferrand Zentrum","31.07.–01.08.2026","13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich",[["Gastgeber","Emilien"],["Co-Host","Sophie"],["Check-in","Schlüsselbox"],["Schlüsselbox-Code","8848"],["Garagen-Code","8848"],["Parken","Parking Blaise Pascal"],["Parkkarte","befindet sich in der Wohnung"]]],
+["Appartement Rue Haute Seille · Metz","01.–02.08.2026","56 Rue Haute Seille, 57000 Metz, Frankreich",[["Gastgeber","laut Buchungsunterlagen"],["PIN","7716"],["Kaution","300 € bar"],["Check-out","bis 11:00 Uhr"],["Parken","Straßenparkplätze bevorzugen"],["Dachbox","Parkhäuser nur bei ausreichender Durchfahrtshöhe"]]]];
+const guide=[
+["🏖️","Platja Gran","Breiter, flacher Familienstrand mit vielen Angeboten.","Platja Gran L'Estartit"],
+["🌾","Griells & Pletera","Ruhigere und naturnähere Strandabschnitte südlich des Zentrums.","Platja dels Griells L'Estartit"],
+["🤿","Molinet","Felsiger Küstenabschnitt zum Schauen und – nur bei ruhiger See – Schnorcheln.","Passeig del Molinet L'Estartit"],
+["⛵","Medes-Inseln","Glasbodenboot, Bootstour, Kajak oder geführtes Schnorcheln.","Medes Islands boat tour L'Estartit"],
+["🐠","Espai Medes","Meereszentrum am Hafen als kürzeres Familien- oder Schlechtwetterprogramm.","Espai Medes L'Estartit"],
+["🏘️","Pals & Begur","Mittelalterliche Orte und Costa-Brava-Landschaft als Tagesausflug.","Pals Begur Spain"]
+];
+const checks={"Dokumente":["Personalausweise","Führerschein","Fahrzeugschein","Versicherungs- und Pannenhilfe-Unterlagen","Buchungsbestätigungen offline gespeichert","Krankenversicherungskarten","Bargeld und Karten"],"Fahrzeug & Gepäck":["Reifendruck geprüft","Warnwesten für alle Insassen griffbereit","Warndreieck und Verbandmaterial","Dachbox befestigt und Höhe bekannt","Kühltasche vorbereitet","Ladekabel und DKV-Karte eingepackt"],"Vor jeder Abfahrt":["Unterkunft vollständig kontrollieren","Schlüssel und Parkkarten vollständig","Navigation starten","Getränke auffüllen","Kühlbox kontrollieren","Dachbox prüfen","Mobiltelefone laden","Unterkunft abschließen"],"Für L’Estartit":["Badesachen und Handtücher","Sonnencreme und Kopfbedeckungen","Schnorchelausrüstung","Badeschuhe","Trinkflaschen","Strandtasche","Reiseapotheke"],"Vor der Rückreise":["Kurtaxe und offene Beträge bezahlt","Lebensmittel sortiert","Müll entsorgt","Poolschlüssel vorhanden","Wohnung fotografiert","Check-out-Zeit geprüft"]};
+$("#routeList").innerHTML=route.map(x=>`<article class="card stop"><div class="stop-date">${x[0]}</div><h3>${x[1]}</h3><p>${x[2]}</p><div class="stage-meta"><div><small>Umfang</small><strong>${x[5]}</strong></div><div><small>Fahrzeit/Plan</small><strong>${x[6]}</strong></div><div><small>Abfahrt</small><strong>${x[7]}</strong></div></div><ul>${x[8].map(t=>`<li>${t}</li>`).join("")}</ul>${x[3]?`<div class="chips"><a class="chip" target="_blank" href="${directions(x[3],x[4])}">Route öffnen</a><a class="chip" target="_blank" href="${maps(x[4])}">Ziel anzeigen</a></div>`:""}</article>`).join("");
 
-const data={
-route:[
-{date:"22.07.2026",title:"Hasbergen → Dijon",text:"Erste Reiseetappe und Übernachtung im Airbnb L’Atypique.",origin:"Hasbergen",destination:"34 bis Rue d’Auxonne, Dijon"},
-{date:"23.07.2026",title:"Dijon → Montpellier",text:"Weiterfahrt zum ibis Budget Montpellier Centre Millénaire.",origin:"34 bis Rue d’Auxonne, Dijon",destination:"ibis budget Montpellier Centre Millénaire"},
-{date:"24.07.2026",title:"Montpellier → L’Estartit",text:"Anreise zur Ferienwohnung ALMA BEACH ESTARTIT.",origin:"ibis budget Montpellier Centre Millénaire",destination:"11 Carrer Salines, L'Estartit"},
-{date:"25.–30.07.2026",title:"L’Estartit",text:"Strand, Medes-Inseln, Girona, Pals, Begur und Barcelona."},
-{date:"31.07.2026",title:"L’Estartit → Clermont-Ferrand",text:"Rückreise über die A75 mit Zwischenübernachtung.",origin:"11 Carrer Salines, L'Estartit",destination:"13 Boulevard Trudaine, Clermont-Ferrand"},
-{date:"01.08.2026",title:"Clermont-Ferrand → Metz",text:"Zweite Rückreiseetappe zum Appartement Rue Haute Seille.",origin:"13 Boulevard Trudaine, Clermont-Ferrand",destination:"56 Rue Haute Seille, Metz"},
-{date:"02.08.2026",title:"Metz → Hasbergen",text:"Letzte Etappe nach Hause.",origin:"56 Rue Haute Seille, Metz",destination:"Hasbergen"}
-],
-stays:[
-{title:"L’Atypique · Dijon",date:"22.–23.07.2026",address:"34 bis Rue d’Auxonne, 21000 Dijon, Frankreich",details:[
-["Gastgeber","Lucas Mandot"],["Telefon","+33 6 67 41 15 75"],["Check-in","Selbst-Check-in · Schlüsselbox"],["Türcode","folgt ca. 3 Tage vor Anreise"],["WLAN","Livebox-7820"],["WLAN-Passwort","aYC3Fg2T3NhFxnrz6g"],["Parken","Rue Marguerite Thibert kostenlos · Intermarché Kurzzeit"],["Alternative Navigation","14 bis Rue de Longvic"],["Besonderheit","Gastgeber öffnet Haustür aus der Ferne"]
-]},
-{title:"ibis Budget Montpellier Centre Millénaire",date:"23.–24.07.2026",address:"Montpellier, Frankreich",details:[
-["Check-in","ab 14:00 Uhr"],["Check-out","bis 12:00 Uhr"],["Parken","Hotelparkplatz vorhanden"],["Laden","Lademöglichkeiten vorhanden"],["Plan","Zwischenübernachtung · frühe Weiterfahrt · Frühstück unterwegs"]
-]},
-{title:"ALMA BEACH ESTARTIT",date:"24.–31.07.2026",address:"11 Carrer Salines, 17258 L’Estartit, Spanien",details:[
-["Gastgeberin","Monica"],["Check-in","Türcodes nach Fertigstellung der Wohnung"],["Check-out","08:00–10:00 Uhr"],["Schlüssel","Haustür · Wohnung · Pool"],["Pool","09:00–20:00 Uhr"],["Kurtaxe","bar oder Bizum"],["Parken","kostenlos an öffentlichen Straßen"],["Besonderheit","zentrale Unterkunft des Urlaubs"]
-]},
-{title:"Clermont-Ferrand Zentrum",date:"31.07.–01.08.2026",address:"13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich",details:[
-["Gastgeber","Emilien"],["Co-Host","Sophie"],["Check-in","Schlüsselbox"],["Schlüsselbox-Code","8848"],["Garagen-Code","8848"],["Parken","Parking Blaise Pascal"],["Parkkarte","befindet sich in der Wohnung"]
-]},
-{title:"Appartement Rue Haute Seille · Metz",date:"01.–02.08.2026",address:"56 Rue Haute Seille, 57000 Metz, Frankreich",details:[
-["Gastgeber","laut Buchungsunterlagen"],["PIN","7716"],["Kaution","300 € bar"],["Parken","Straßenparkplätze bevorzugen"],["Dachbox","Parkhäuser nur bei ausreichender Durchfahrtshöhe"]
-]}
-],
-trips:[
-{title:"Medes-Inseln",text:"Bootstour oder Schnorchelausflug; wetterabhängig planen."},
-{title:"Girona",text:"Altstadt, Stadtmauer und jüdisches Viertel."},
-{title:"Pals & Begur",text:"Historische Orte, Aussichtspunkte und Küste kombinieren."},
-{title:"Barcelona",text:"Tagesausflug mit Park-and-Ride oder Bahn; Umweltzonenregeln vorher prüfen."},
-{title:"Empúries",text:"Griechisch-römische Ausgrabungen direkt an der Küste."},
-{title:"Torroella de Montgrí",text:"Markt, Altstadt und optional Wanderung zum Castell."}
-],
-checklists:{
-"Dokumente":["Personalausweise","Führerschein","Fahrzeugschein","Versicherungs- und Pannenhilfe-Unterlagen","Buchungsbestätigungen","Krankenversicherungskarten"],
-"Fahrzeug & Laden":["DKV Mobility Karte","Typ-2-Ladekabel","Reifendruck geprüft","Warnwesten für alle Insassen","Warndreieck und Verbandmaterial","Audi App und Navi aktuell"],
-"Vor jeder Abfahrt":["Unterkunft kontrollieren","Schlüssel vollständig","Navigation starten","Akkustand prüfen","Getränke auffüllen","Kühlbox kontrollieren","Dachbox prüfen","Mobiltelefone laden","Unterkunft abschließen"],
-"Nach jeder Ankunft":["Fahrzeug sicher parken","Fotos bei Bedarf","WLAN verbinden","Klimaanlage prüfen","Ladeplanung für nächsten Tag prüfen","Restaurants in der Umgebung ansehen","Pool-/Hausregeln lesen"]
-}
-};
-
-$("#routeList").innerHTML=data.route.map(x=>`<article class="card stop"><div class="stop-date">${esc(x.date)}</div><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p>${x.origin?`<div class="chips"><a class="chip" target="_blank" rel="noopener" href="${directions(x.origin,x.destination)}">Navigation öffnen</a></div>`:""}</article>`).join("");
-
-$("#stayList").innerHTML=data.stays.map((x,si)=>`<article class="card"><small>${esc(x.date)}</small><h3>${esc(x.title)}</h3><p>${esc(x.address)}</p><div class="detail-grid">${x.details.map(([k,v],di)=>`<div><small>${esc(k)}</small><strong class="${/(Passwort|PIN|Code)/i.test(k)?"secret":""}">${esc(v)}</strong>${/(Passwort|PIN|Code)/i.test(k)?`<br><button class="chip copy-btn" data-copy="${esc(v)}">Kopieren</button>`:""}</div>`).join("")}</div><div class="chips"><a class="chip" target="_blank" rel="noopener" href="${maps(x.address)}">In Maps öffnen</a></div></article>`).join("");
-
-$$(".copy-btn").forEach(b=>b.onclick=()=>copyText(b.dataset.copy));
-
-$("#tripList").innerHTML=data.trips.map(x=>`<article class="card"><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p><a class="chip" target="_blank" rel="noopener" href="${maps(x.title)}">Karte öffnen</a></article>`).join("");
-
-$("#checklists").innerHTML=Object.entries(data.checklists).map(([title,items])=>`<article class="card"><h3>${esc(title)}</h3>${items.map((v,i)=>{let id=title+"-"+i,done=localStorage.getItem("check:"+id)==="1";return `<label class="check ${done?"done":""}"><input type="checkbox" data-id="${esc(id)}" ${done?"checked":""}><span>${esc(v)}</span></label>`}).join("")}</article>`).join("");
-
-$$("#checklists input").forEach(el=>el.addEventListener("change",e=>{localStorage.setItem("check:"+e.target.dataset.id,e.target.checked?"1":"0");e.target.closest(".check").classList.toggle("done",e.target.checked);toast()}));
-$("#resetChecks").onclick=()=>{$$("#checklists input").forEach(x=>{x.checked=false;x.closest(".check").classList.remove("done");localStorage.removeItem("check:"+x.dataset.id)});toast()};
-
-const trip=new Date("2026-07-22T00:00:00+02:00"), now=new Date(), diff=trip-now;
-$("#countdown").textContent=diff>0?`${Math.floor(diff/86400000)} Tage, ${Math.floor(diff%86400000/3600000)} Std.`:"Reisezeit";
-
-let theme=localStorage.getItem("theme")||"light";document.documentElement.dataset.theme=theme;
-$("#themeButton").onclick=()=>{theme=theme==="dark"?"light":"dark";document.documentElement.dataset.theme=theme;localStorage.setItem("theme",theme)};
-
-let budget=JSON.parse(localStorage.getItem("budget")||"[]");
-function drawBudget(){const el=$("#budgetList");el.innerHTML=budget.map((x,i)=>`<div class="budget-row"><span>${esc(x.text)}</span><strong>${Number(x.amount).toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</strong><button data-i="${i}">×</button></div>`).join("");$("#budgetTotal").textContent=budget.reduce((s,x)=>s+Number(x.amount),0).toLocaleString("de-DE",{style:"currency",currency:"EUR"});el.querySelectorAll("button").forEach(b=>b.onclick=()=>{budget.splice(+b.dataset.i,1);saveBudget()})}
-function saveBudget(){localStorage.setItem("budget",JSON.stringify(budget));drawBudget();toast()}
-$("#budgetForm").onsubmit=e=>{e.preventDefault();budget.push({text:$("#budgetText").value,amount:+$("#budgetAmount").value});e.target.reset();saveBudget()};drawBudget();
-</script>
-</body></html>
+$("#guideList").innerHTML=guide.map(x=>`<article class="card"><div class="guide-icon">${x[0]}</div><h3>${x[1]}</h3><p>${x[2]}</p><div class="chips"><a class="chip" target="_blank" href="${maps(x[3])}">Karte öffnen</a></div></article>`).join("");
+$("#checklists").innerHTML=Object.entries(checks).map(([t,it])=>`<article class="card"><h3>${t}</h3>${it.map((v,i)=>{let id=t+'-'+i,d=localStorage.getItem('check:'+id)==='1';return `<label class="check ${d?'done':''}"><input type="checkbox" data-id="${id}" ${d?'checked':''}><span>${v}</span></label>`}).join('')}</article>`).join('');$$('#checklists input').forEach(el=>el.onchange=e=>{localStorage.setItem('check:'+e.target.dataset.id,e.target.checked?'1':'0');e.target.closest('.check').classList.toggle('done',e.target.checked);toast()});$('#resetChecks').onclick=()=>{$$('#checklists input').forEach(x=>{x.checked=false;x.closest('.check').classList.remove('done');localStorage.removeItem('check:'+x.dataset.id)});toast()};
+const start=new Date('2026-07-22T00:00:00+02:00'),end=new Date('2026-08-03T00:00:00+02:00'),now=new Date();if(now<start){const d=start-now;$('#countdown').textContent=`${Math.floor(d/86400000)} Tage, ${Math.floor(d%86400000/3600000)} Std.`}else if(now<end)$('#countdown').textContent='Reise läuft';else $('#countdown').textContent='Reise beendet';
+const dayMap={'2026-07-22':['Hasbergen → Dijon','Heute beginnt die Reise. Fokus auf eine entspannte erste Etappe.','Hasbergen','34 bis Rue d’Auxonne, Dijon'],'2026-07-23':['Dijon → Montpellier','Weiter Richtung Süden zur letzten Zwischenstation.','34 bis Rue d’Auxonne, Dijon','ibis budget Montpellier Centre Millénaire'],'2026-07-24':['Montpellier → L’Estartit','Heute erreicht ihr das Hauptziel. Zugangsdaten prüfen.','ibis budget Montpellier Centre Millénaire',"11 Carrer Salines, L'Estartit"],'2026-07-31':['L’Estartit → Clermont-Ferrand','Wohnung und Schlüssel vollständig prüfen.','11 Carrer Salines, L\'Estartit','13 Boulevard Trudaine, Clermont-Ferrand'],'2026-08-01':['Clermont-Ferrand → Metz','Parkkarte zurücklegen und nach Metz weiterfahren.','13 Boulevard Trudaine, Clermont-Ferrand','56 Rue Haute Seille, Metz'],'2026-08-02':['Metz → Hasbergen','Letzte Etappe nach Hause.','56 Rue Haute Seille, Metz','Hasbergen']};const key=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(now),cur=dayMap[key];if(cur){$('#todayTitle').textContent=cur[0];$('#todayText').textContent=cur[1];$('#todayAction').textContent='Navigation starten';$('#todayLinks').innerHTML=`<a class="chip" target="_blank" href="${directions(cur[2],cur[3])}">Route öffnen</a>`}else{$('#todayLinks').innerHTML='<a class="chip" href="#lists">Checklisten öffnen</a><a class="chip" href="#stays">Unterkünfte prüfen</a>'}
+let theme=localStorage.getItem('theme')||'light';document.documentElement.dataset.theme=theme;$('#themeButton').onclick=()=>{theme=theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;localStorage.setItem('theme',theme)};
+let budget=JSON.parse(localStorage.getItem('budget')||'[]');function drawBudget(){const el=$('#budgetList');el.innerHTML=budget.map((x,i)=>`<div class="budget-row"><span>${esc(x.text)}</span><strong>${Number(x.amount).toLocaleString('de-DE',{style:'currency',currency:'EUR'})}</strong><button data-i="${i}">×</button></div>`).join('');$('#budgetTotal').textContent=budget.reduce((s,x)=>s+Number(x.amount),0).toLocaleString('de-DE',{style:'currency',currency:'EUR'});el.querySelectorAll('button').forEach(b=>b.onclick=()=>{budget.splice(+b.dataset.i,1);saveBudget()})}function saveBudget(){localStorage.setItem('budget',JSON.stringify(budget));drawBudget();toast()}$('#budgetForm').onsubmit=e=>{e.preventDefault();budget.push({text:$('#budgetText').value,amount:+$('#budgetAmount').value});e.target.reset();saveBudget()};drawBudget();
+</script></body></html>
