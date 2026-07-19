@@ -1,0 +1,23 @@
+{
+  "name": "Spanien Travelbook 2026",
+  "short_name": "Spanien 2026",
+  "description": "Offline-Reisebegleiter für den Familien-Roadtrip nach L'Estartit",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f0e9",
+  "theme_color": "#12384a",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

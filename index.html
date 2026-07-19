@@ -1,60 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#12384a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Spanien 2026">
 <title>Spanien Travelbook 2026</title>
-<style>
-body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0;background:#f6f3ed;color:#1d2a36}
-header{background:linear-gradient(135deg,#0b1f33,#234b6d);color:#fff;padding:40px 20px}
-h1{margin:0;font-size:2.2rem}
-main{max-width:900px;margin:auto;padding:20px}
-.card{background:#fff;border-radius:16px;padding:18px;margin:16px 0;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.route div{padding:10px 0;border-bottom:1px solid #eee}
-.badge{display:inline-block;background:#e8b15a;padding:6px 10px;border-radius:99px;font-weight:bold}
-</style>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<span class="badge">Version 0.1 iPhone</span>
-<h1>Spanien Travelbook 2026</h1>
-<p>22.07.–02.08.2026</p>
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <span class="eyebrow">Familien-Roadtrip · Offline-PWA</span>
+    <h1>Spanien<br>Travelbook 2026</h1>
+    <p>Hasbergen · Dijon · Montpellier · L’Estartit · Clermont-Ferrand · Metz</p>
+    <div class="pills"><span>22.07.–02.08.2026</span><span>Audi Q4 e-tron</span><span>2 Erwachsene · 3 Kinder</span></div>
+  </div>
 </header>
-<main>
-<div class="card">
-<h2>Reiseroute</h2>
-<div class="route">
-<div>22.07. Hasbergen → Dijon</div>
-<div>23.07. Dijon → Montpellier</div>
-<div>24.–31.07. L'Estartit (ALMA BEACH ESTARTIT)</div>
-<div>31.07. Clermont-Ferrand</div>
-<div>01.08. Metz (ibis Budget Technopole)</div>
-<div>02.08. Rückfahrt nach Hasbergen</div>
-</div>
-</div>
 
-<div class="card">
-<h2>Ladestrategie</h2>
-<ul>
-<li>Start mit ca. 95 %</li>
-<li>HPC bevorzugt (150–175+ kW)</li>
-<li>DKV-kompatibel</li>
-<li>Laden bis ca. 80–85 %</li>
-<li>Restaurant und WC bevorzugt</li>
-</ul>
-</div>
+<main class="wrap">
+<section class="stats">
+  <article><small>Abreise</small><strong id="countdown">22. Juli 2026</strong></article>
+  <article><small>Dauer</small><strong>12 Tage</strong></article>
+  <article><small>Hauptziel</small><strong>L’Estartit</strong></article>
+  <article><small>Ladestrategie</small><strong>10 → 80–85 %</strong></article>
+</section>
 
-<div class="card">
-<h2>Nächste Ausbaustufen</h2>
-<ul>
-<li>Interaktive Karten</li>
-<li>Hotels komplett</li>
-<li>Ladeplanung</li>
-<li>Restaurants</li>
-<li>Ausflüge</li>
-<li>Offline-App</li>
-</ul>
-</div>
+<section class="section">
+  <div class="section-head"><div><span class="eyebrow dark">Schnellzugriff</span><h2>Unterwegs wichtig</h2></div>
+  <button class="button ghost" id="themeButton">Darstellung</button></div>
+  <div class="quick">
+    <a href="#route">Route</a><a href="#stays">Unterkünfte</a><a href="#charging">Laden</a>
+    <a href="#trips">Ausflüge</a><a href="#lists">Checklisten</a><a href="#emergency">Notfall</a>
+  </div>
+</section>
+
+<section class="section" id="route">
+  <span class="eyebrow dark">Master-Route</span><h2>Reiseverlauf</h2>
+  <div id="routeList" class="timeline"></div>
+</section>
+
+<section class="section" id="stays">
+  <span class="eyebrow dark">Übernachtungen</span><h2>Unterkünfte</h2>
+  <p class="note">Aus Sicherheitsgründen enthält diese GitHub-Version keine PINs, Buchungsnummern oder Zugangsdaten.</p>
+  <div id="stayList" class="cards two"></div>
+</section>
+
+<section class="section" id="charging">
+  <span class="eyebrow dark">Audi Q4 e-tron</span><h2>Ladeprofil</h2>
+  <article class="card">
+    <div class="charge-grid">
+      <div><small>Start-SoC</small><strong>95 %</strong></div>
+      <div><small>Zielankunft</small><strong>ca. 10 %</strong></div>
+      <div><small>Ladeziel</small><strong>80–85 %</strong></div>
+      <div><small>Leistung</small><strong>≥175 kW bevorzugt</strong></div>
+    </div>
+    <ul>
+      <li>DKV-Mobility-kompatible HPC-Lader priorisieren.</li>
+      <li>Mindestens 150 kW; möglichst WC, Gastronomie und sichere Parklage.</li>
+      <li>Ladepunkt zusätzlich im Audi MMI als Ziel setzen, damit die Batterie vorkonditioniert wird.</li>
+      <li>Vor Abfahrt Verfügbarkeit und DKV-Akzeptanz aktuell in der App prüfen.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="section" id="trips">
+  <span class="eyebrow dark">Urlaubsort</span><h2>Ausflüge ab L’Estartit</h2>
+  <div id="tripList" class="cards three"></div>
+</section>
+
+<section class="section" id="lists">
+  <div class="section-head"><div><span class="eyebrow dark">Lokal gespeichert</span><h2>Checklisten</h2></div>
+  <button class="button ghost" id="resetChecks">Zurücksetzen</button></div>
+  <div id="checklists" class="cards two"></div>
+</section>
+
+<section class="section" id="budget">
+  <span class="eyebrow dark">Reisekosten</span><h2>Budget-Notizen</h2>
+  <article class="card budget">
+    <form id="budgetForm">
+      <input id="budgetText" required placeholder="z. B. Laden Dijon">
+      <input id="budgetAmount" required type="number" step="0.01" min="0" placeholder="Betrag €">
+      <button class="button" type="submit">Speichern</button>
+    </form>
+    <div id="budgetList"></div>
+    <div class="total">Summe: <strong id="budgetTotal">0,00 €</strong></div>
+  </article>
+</section>
+
+<section class="section" id="emergency">
+  <span class="eyebrow dark">Soforthilfe</span><h2>Notfall</h2>
+  <div class="cards three">
+    <a class="card emergency" href="tel:112"><small>Europaweiter Notruf</small><strong>112</strong><span>Antippen zum Anrufen</span></a>
+    <article class="card"><small>Bei Panne</small><strong>Sicher handeln</strong><p>Warnblinker, Warnwesten, Fahrzeug verlassen und hinter die Schutzplanke.</p></article>
+    <article class="card"><small>Urlaubsadresse</small><strong>ALMA BEACH ESTARTIT</strong><p>11 Carrer Salines<br>17258 L’Estartit</p></article>
+  </div>
+</section>
+
+<footer>Spanien Travelbook 2026 · GitHub/PWA Version 1.0</footer>
 </main>
-</body>
-</html>
+
+<nav class="bottom-nav">
+<a href="#home">Start</a><a href="#route">Route</a><a href="#stays">Hotels</a><a href="#charging">Laden</a><a href="#lists">Listen</a>
+</nav>
+<div id="toast" class="toast">Gespeichert</div>
+<script src="script.js"></script>
+</body></html>
