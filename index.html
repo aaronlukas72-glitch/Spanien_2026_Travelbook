@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Reiseversion · Block 28.2</title>
+<title>Spanien Travelbook 2026 · Reiseversion · Block 28.12</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -140,7 +140,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 @media(min-width:720px){.prep-groups{grid-template-columns:repeat(2,1fr)}}
 
 @media print{
-  .topbar,.bottom-nav,.drawer,.sheet,.search-overlay,.detail-sheet,.actions,.link-btn,.icon-btn{display:none!important}
+  .topbar,.bottom-nav,.drawer,.sheet,.search-overlay,.detail-sheet,.actions,.link-btn,.icon-btn,.today-map-wrap{display:none!important}
   body{background:#fff;color:#000}
   .app{max-width:none;padding-bottom:0}
   .view{display:block!important}
@@ -186,9 +186,33 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 
 
 .today-status{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:13px;font-weight:800;color:#dcfce7}
+.today-compact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px;position:relative;z-index:1}
+.today-compact-item{padding:12px 13px;border-radius:17px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14)}
+.today-compact-item span{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#bfdbfe}
+.today-compact-item b{display:block;font-size:17px;margin-top:4px;color:#fff}
+.today-compact-item small{display:block;font-size:11px;margin-top:3px;color:#dbeafe;line-height:1.35}
+@media(max-width:520px){.today-compact{grid-template-columns:1fr}}
+
 .status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.16)}
 .today-main{display:grid;gap:14px;margin-top:14px}
 .today-route{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:18px;box-shadow:var(--shadow2)}
+.today-map-wrap{margin-top:15px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel2)}
+.today-map-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 13px;border-bottom:1px solid var(--line)}
+.today-map-head b{font-size:14px}
+.today-map-head span{font-size:11px;color:var(--muted)}
+.today-map{display:none;width:100%;height:300px;border:0;background:var(--panel2)}
+.today-map-preview{padding:15px}
+.today-map-stops{display:grid;gap:0}
+.today-map-stop{display:grid;grid-template-columns:26px 1fr;gap:10px;min-height:48px}
+.today-map-dot{display:grid;justify-items:center}
+.today-map-dot i{width:12px;height:12px;border:3px solid var(--blue);background:var(--panel);border-radius:50%;display:block;margin-top:3px}
+.today-map-dot:after{content:"";width:2px;flex:1;min-height:28px;background:var(--line);margin-top:3px}
+.today-map-stop:last-child .today-map-dot:after{display:none}
+.today-map-stop b{display:block;font-size:14px}
+.today-map-stop span{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.today-map-note{margin-top:10px;padding:10px 12px;border-radius:14px;background:var(--panel);font-size:12px;color:var(--muted);line-height:1.4}
+@media(max-width:520px){.today-map{height:240px}.today-map-head{align-items:flex-start;flex-direction:column;gap:3px}}
+
 .route-line{display:grid;grid-template-columns:34px 1fr;gap:9px;margin:14px 0}
 .route-marker{display:grid;justify-items:center}.route-marker i{width:14px;height:14px;border:4px solid var(--blue);background:var(--panel);border-radius:50%;display:block}.route-marker:after{content:"";width:3px;min-height:36px;background:var(--line);margin-top:3px}.route-marker.last:after{display:none}
 .route-place b{display:block;font-size:18px}.route-place span{font-size:12px;color:var(--muted)}
@@ -268,12 +292,21 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <h1 id="todayTitle">Heute</h1>
 <p id="todaySubtitle">Dein persönlicher Reisebegleiter zeigt automatisch den passenden Reisetag.</p>
 <div class="today-status"><span class="status-dot"></span><span id="todayStatus">Reisevorbereitung läuft</span></div>
+<div class="today-compact">
+  <div class="today-compact-item">
+    <span>Heutiger Abschnitt</span>
+    <b id="todaySection">Vorbereitung</b>
+    <small id="todaySectionSub">Abfahrt am 22. Juli</small>
+  </div>
+  <div class="today-compact-item">
+    <span>Reisestatus</span>
+    <b id="todayState">Vorbereitung</b>
+    <small id="todayStateSub">Checkliste nutzen</small>
+  </div>
+</div>
 </article>
 <div class="dashboard">
-<article class="metric"><div class="label">Heutiger Abschnitt</div><div class="value" id="metricRoute">Vorbereitung</div><div class="sub" id="metricRouteSub">Abfahrt am 22. Juli</div></article>
 <article class="metric"><div class="label">Nächste Unterkunft</div><div class="value" id="metricHotel">L’Atypique</div><div class="sub" id="metricHotelSub">Dijon · 22.07.</div></article>
-
-<article class="metric"><div class="label">Reisestatus</div><div class="value" id="metricStatus">Vorbereitung</div><div class="sub" id="metricStatusSub">Checkliste nutzen</div></article>
 </div>
 </div>
 <div class="today-main">
@@ -285,6 +318,14 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <div class="route-kpi"><b id="todayDriveTime">8–9 Std.</b><span>inkl. Pausen</span></div>
 <div class="route-kpi"><b id="todayChargingCount">2 Stopps</b><span>Ladestrategie</span></div>
 <div class="route-kpi"><b id="todaySoc">98 %</b><span>Start-SoC</span></div>
+</div>
+<div class="today-map-wrap">
+  <div class="today-map-head"><b>Tagesroute</b><span id="todayMapLabel">Hasbergen → Dijon</span></div>
+  <div class="today-map-preview" id="todayMapPreview">
+    <div class="today-map-stops" id="todayMapStops"></div>
+    <div class="today-map-note" id="todayMapNote">Die vollständige Route öffnet sich über „Navigation starten“ in Google Maps.</div>
+  </div>
+  <iframe class="today-map" id="todayRouteMap" title="Google-Maps-Karte der Tagesroute" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 <div class="actions"><button class="btn primary" id="todayNavigate">Navigation starten</button><button class="btn secondary" id="todayStageDetails">Etappendetails</button><button class="btn secondary" id="todayEveningPlan">Abendprogramm</button><button class="btn secondary" id="todayEveningRoute">Abendroute Maps</button></div>
 </article>
@@ -303,14 +344,14 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <button class="btn secondary" data-url="https://vigilance.meteofrance.fr/">Wetter Frankreich</button>
 <button class="btn secondary" data-url="https://www.aemet.es/en/eltiempo/prediccion/avisos">Wetter Spanien</button>
 <button class="btn secondary" data-url="https://interior.gencat.cat/en/arees_dactuacio/proteccio_civil/">Warnungen Katalonien</button>
-<button class="btn secondary" data-url="https://maps.google.com/">Google Maps Verkehr</button>
+<button class="btn secondary" id="currentTrafficRoute">Aktuelle Route &amp; Verkehr</button>
 </div>
 </section>
 
 <section class="section" id="preparationSection">
 <div class="section-title"><h2>Reisevorbereitung</h2><button class="reset-btn" id="resetPrep">Zurücksetzen</button></div>
 <div class="prep-progress">
-<div class="prep-progress-head"><b id="prepLabel">0 von 16 erledigt</b><span id="prepPercent">0 %</span></div>
+<div class="prep-progress-head"><b id="prepLabel">0 von 17 erledigt</b><span id="prepPercent">0 %</span></div>
 <div class="prep-bar"><span id="prepBar"></span></div>
 </div>
 <div class="prep-groups" id="prepGroups"></div>
@@ -354,11 +395,11 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 <section class="view" data-view="more">
 <div class="page">
-<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.2 · Block 28.2</span></div>
+<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.12 · Block 28.12</span></div>
 
 <section class="section">
 <div class="section-title"><h2>Barcelona – Sonntag 26.07.</h2><button class="link-btn" data-detail-type="activity" data-id="a1">Details</button></div>
-<div class="notice"><div class="notice-icon">🚙</div><div><strong>Ohne Metro · Fahrzeughöhe 2,10 m</strong><p>Zwei Parkabschnitte: zuerst Camp Nou, danach Innenstadt/Sagrada Família. Nur Parkhäuser verwenden, deren Einfahrt mindestens 2,10 m erlaubt. SABA Catedral ist mit 1,95 m zu niedrig und wird nicht genutzt.</p></div></div>
+<div class="notice"><div class="notice-icon">🚙</div><div><strong>Ohne Metro · Fahrzeughöhe 2,10 m</strong><p>Drei Parkabschnitte: zuerst Camp Nou, danach Sagrada Família und anschließend das Parkhaus Bailèn für Altstadt und Hafen. Nur Parkhäuser verwenden, deren Einfahrt mindestens 2,10 m erlaubt. SABA Catedral ist mit 1,95 m zu niedrig und wird nicht genutzt.</p></div></div>
 <div class="cards two" style="margin-top:14px">
 <article class="card"><h3>1 · Camp Nou</h3><p>Parken im Parking Camp Nou – Avda. Madrid, Carrer de Lluçà 3. Maximale Höhe 2,10 m. Von dort zu Fuß zum Stadionumfeld.</p><div class="actions"><button class="btn primary" data-map="Carrer de Lluçà 3, 08028 Barcelona, Spanien">Parken Camp Nou</button></div></article>
 <article class="card"><h3>2 · Sagrada Família</h3><p>Weiterfahrt zum Parking Sagrada Família, Carrer de Lepant 325. Maximale Höhe 2,10 m. Sagrada Família zu Fuß besuchen.</p><div class="actions"><button class="btn primary" data-map="Carrer de Lepant 325, 08025 Barcelona, Spanien">Parken Sagrada Família</button></div></article>
@@ -379,7 +420,11 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <div><b>19:00</b><span>Rückfahrt und Audi auf 90–95 % laden</span></div>
 </div></article>
 <article class="card"><h3>Schwerpunkt</h3><p>Nur eine Badebucht auswählen. Dadurch bleibt genügend Zeit für Begur, Pals und Peratallada ohne unnötige Hektik.</p><div class="actions"><button class="btn primary" data-map="Begur%2C%20Girona">Begur</button><button class="btn secondary" data-map="Peratallada%2C%20Girona">Peratallada</button></div></article>
-<article class="card"><h3>Laden vor der Rückreise</h3><p>Nach der Rundtour den Audi gezielt auf 90–95 % laden. So startet die Rückfahrt am 31.07. ohne zusätzlichen Ortsstopp.</p><div class="actions"><button class="btn primary" data-charge-for-stage="s4">Ladeplan Rückfahrt</button></div></article>
+<article class="card"><h3>Laden in und um L’Estartit</h3><p>Bevorzugt am Carrefour Market Torroella mit bis zu 150 kW laden. Als nahe Alternativen stehen zwei 50-kW-Punkte bei Repsol zur Verfügung; deren Live-Status vorher prüfen.</p><div class="feature-list">
+<div class="feature-item"><b>HPC · Carrefour Market Torroella</b><span>Camí del Molí, s/n · 1 × CCS bis 150 kW</span></div>
+<div class="feature-item"><b>50 kW · Repsol Nimaci</b><span>Carretera de l’Estartit 163 · zuletzt als außer Betrieb gemeldet</span></div>
+<div class="feature-item"><b>50 kW · Repsol Ullà</b><span>C-31, PK 350,5 · Live-Status prüfen</span></div>
+</div><div class="actions"><button class="btn primary" data-map="Camí del Molí, s/n, 17257 Torroella de Montgrí, Spanien">150-kW-HPC</button><button class="btn secondary" data-map="Carretera de l’Estartit 163, 17257 Torroella de Montgrí, Spanien">Repsol 50 kW</button><button class="btn secondary" data-map="C-31 PK 350.5, 17140 Ullà, Spanien">Ullà 50 kW</button><button class="btn secondary" data-charge-for-stage="s4">Ladeplan Rückfahrt</button></div></article>
 <article class="card"><h3>Plan B</h3><p>Bei sehr großer Hitze: Begur kurz halten, Badepause verlängern und nur einen der beiden Orte Pals oder Peratallada besuchen.</p></article>
 </div>
 </section>
@@ -418,12 +463,12 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <h3>Barcelona: Sagrada Família, Altstadt und Hafen</h3>
 <div class="day-plan">
 <div><b>06:30</b><span>Frühstück und Abfahrt vorbereiten. Wasser, Snacks und leichte Kleidung mitnehmen.</span></div>
-<div><b>07:15</b><span>Abfahrt L’Estartit. Audi mit ausreichend Reserve starten; Parkhaus mit Metroanschluss anfahren.</span></div>
-<div><b>09:15</b><span>Parken und per Metro zur Sagrada Família.</span></div>
-<div><b>10:00</b><span>Sagrada Família im vorab gebuchten Zeitfenster.</span></div>
-<div><b>12:15</b><span>Barri Gòtic: Kathedrale, Plaça del Rei und kurze Mittagspause.</span></div>
-<div><b>14:30</b><span>Port Vell und Hafenpromenade; danach je nach Hitze Barceloneta nur kurz.</span></div>
-<div><b>17:15</b><span>Metro zurück zum Parkhaus.</span></div>
+<div><b>07:15</b><span>Abfahrt L’Estartit. Audi mit ausreichend Reserve starten und zuerst das dachboxgeeignete Parkhaus am Camp Nou anfahren.</span></div>
+<div><b>09:15</b><span>Camp Nou und Stadionumfeld besuchen; anschließend mit dem Auto zum Parkhaus an der Sagrada Família fahren.</span></div>
+<div><b>11:30</b><span>Sagrada Família im vorab gebuchten Zeitfenster.</span></div>
+<div><b>14:30</b><span>Nach dem Umparken: Kathedrale, Plaça del Rei, Barri Gòtic und Port Vell.</span></div>
+<div><b>16:30</b><span>Port Vell und Hafenpromenade; danach je nach Hitze Barceloneta nur kurz.</span></div>
+<div><b>17:15</b><span>Vom Innenstadtbereich zurück zum Parkhaus Bailèn gehen beziehungsweise kurz Taxi fahren.</span></div>
 <div><b>18:00</b><span>Rückfahrt nach L’Estartit.</span></div>
 <div><b>20:15</b><span>Leichtes Abendessen oder Take-away bei El Fornet; danach nur noch kurzer Strandspaziergang.</span></div>
 </div>
@@ -511,7 +556,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <div><b>21:15</b><span>Kurzer Abschiedsspaziergang an der Promenade und früher Abschluss.</span></div>
 </div>
 <div class="feature-list"><div class="feature-item"><b>Plan B bei Hitze</b><span>Begur kurz halten, Sa Tuna verlängern und nur Pals oder Peratallada besuchen.</span></div></div>
-<div class="actions"><button class="btn primary" data-trip-route="costaBravaDrive">Komplette Autoroute</button><button class="btn primary" data-map="Begur Girona">Begur</button><button class="btn secondary" data-map="Sa Tuna Begur">Sa Tuna</button><button class="btn secondary" data-map="Pals Girona">Pals</button><button class="btn secondary" data-map="Peratallada Girona">Peratallada</button><button class="btn secondary" data-map="Estació de recàrrega Passeig del Molinet L'Estartit">Laden</button></div>
+<div class="actions"><button class="btn primary" data-trip-route="costaBravaDrive">Komplette Autoroute</button><button class="btn primary" data-map="Begur Girona">Begur</button><button class="btn secondary" data-map="Sa Tuna Begur">Sa Tuna</button><button class="btn secondary" data-map="Pals Girona">Pals</button><button class="btn secondary" data-map="Peratallada Girona">Peratallada</button><button class="btn secondary" data-map="Camí del Molí, s/n, 17257 Torroella de Montgrí, Spanien">Laden</button></div>
 </div>
 </article>
 
@@ -519,7 +564,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section" id="estartitInsider">
-<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.2</span></div>
+<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.12</span></div>
 <div class="notice"><div class="notice-icon">🍸</div><div><strong>Direkt nutzbare Empfehlungen</strong><p>Cocktails, Restaurants, Metzgereien, Fischkauf und besondere Orte rund um L’Estartit sind jetzt an einer Stelle gebündelt. Öffnungszeiten am jeweiligen Tag kurz prüfen.</p></div></div>
 
 <div class="cards two" style="margin-top:14px">
@@ -932,7 +977,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <button class="btn primary" data-map="Peratallada Girona">Peratallada</button>
 <button class="btn secondary" data-map="Mas Pou Plaça de la Mota 4 Palau-sator">Mas Pou</button>
 <button class="btn secondary" data-map="Mooma Mas Saulot Palau-sator">Mooma</button>
-<button class="btn secondary" data-map="Estació de recàrrega Passeig del Molinet L’Estartit">Laden</button>
+<button class="btn secondary" data-map="Camí del Molí, s/n, 17257 Torroella de Montgrí, Spanien">Laden</button>
 </div>
 </div>
 </article>
@@ -953,7 +998,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <button class="btn primary" data-map="Parking Blaise Pascal Clermont-Ferrand">Parkhaus</button>
 <button class="btn secondary" data-map="Cathédrale Notre-Dame-de-l’Assomption Clermont-Ferrand">Kathedrale</button>
 <button class="btn secondary" data-map="Le Puy de la Lune 3 rue de la Michodière Clermont-Ferrand">Restaurant</button>
-<button class="btn secondary" data-map="Tesla Supercharger 52 avenue de Cournon Aubière">HPC</button>
+<button class="btn secondary" data-map="Tesla Supercharger Riom Rue Louis Armstrong 63200 Riom">HPC morgens</button>
 </div>
 </div>
 </article>
@@ -1009,7 +1054,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section">
-<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.2</span></div>
+<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.12</span></div>
 <div class="card">
 <div class="qa-grid">
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Einzeldatei</b><span>HTML, CSS, JavaScript und Reisedaten sind vollständig eingebettet.</span></div></div>
@@ -1137,36 +1182,36 @@ const travel = {
     plan:'Mit 98 % starten. GLOBUS Trier laut Audi-Prognose mit etwa 10 % erreichen und auf 85 % laden. Danach rund 290 km bis Langres fahren, dort ungefähr mit 10–15 % ankommen und erneut auf 85 % laden. Der kurze Restabschnitt nach Dijon führt zu einer Ankunft mit etwa 65–70 %. Am nächsten Morgen nur noch bis mindestens 80 %, für die lange Etappe besser bis 90 %, ergänzen.'},
 
     {id:'s2',originAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',destinationAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',date:'23.07.',weekday:'Do',from:'Dijon',to:'Montpellier',title:'Dijon → Montpellier',
-    summary:'Dijon morgens auf etwa 90 % laden. Der einzige Fahrtstopp liegt an der Aire de Portes-lès-Valence Ouest. Dort wird ungefähr bei 10–15 % auf 85 % geladen.',
+    summary:'Zuerst zur Bäckerei Point Chaud in Chenôve, danach IONITY Dijon Sud auf etwa 90 % laden. Anschließend führt die Etappe über den einzigen Fahrtstopp Aire de Portes-lès-Valence Ouest nach Montpellier.',
     tags:['Etappe','Montpellier','Hinfahrt'],distance:'ca. 490 km Straßenstrecke',driveTime:'ca. 6–6,5 Std. inkl. Ladepause',
     toll:'Richtwert ca. 35–45 € für Klasse 1; Kartenzahlung an den Mautstellen',
-    chargingPlan:'Tesla Aire de Portes-lès-Valence Ouest · ca. 10–15 % → 85 %',
+    chargingPlan:'Point Chaud Chenôve → IONITY Dijon Sud ca. 90 % → Tesla Aire de Portes-lès-Valence Ouest ca. 10–15 % → 85 %',
     evening:'18:00 Parking du Port · 19:00 L’Ombrine · 20:30 Strand',
     startSoc:'ca. 90 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Ibis Budget Montpellier Centre Millénaire',
     destinationCharging:'Ankunft voraussichtlich mit etwa 35–40 % vor 17:00 Uhr · am Hotel oder beim Abendprogramm auf mindestens 80 % laden',
-    routeWaypoints:['Tesla Supercharger Aire de Portes-lès-Valence Ouest A7'],
-    plan:'Dijon nach dem morgendlichen Laden mit etwa 90 % verlassen. Portes-lès-Valence nach ungefähr 300–310 km mit etwa 10–15 % erreichen und auf 85 % laden. Montpellier wird danach mit rund 35–40 % erreicht. Da die Ankunft vor 17:00 Uhr geplant ist, am selben Nachmittag oder Abend auf mindestens 80 % für L’Estartit laden.'},
+    routeWaypoints:['60 Rue de Longvic, 21300 Chenôve, Frankreich','5 Rue de Beauregard, 21600 Longvic, Frankreich','A7, 26800 Portes-lès-Valence, Frankreich'],
+    plan:'Von der Unterkunft zuerst zur Bäckerei Point Chaud, 60 Rue de Longvic in Chenôve. Danach zum IONITY Dijon Sud, 5 Rue de Beauregard in Longvic, und auf etwa 90 % laden. Anschließend Portes-lès-Valence nach ungefähr 300–310 km mit etwa 10–15 % erreichen und auf 85 % laden. Montpellier wird danach mit rund 35–40 % erreicht. Für den nächsten Tag möglichst noch am Abend auf mindestens 75–80 % laden; morgens ist nur die Bäckerei fest eingeplant.'},
 
     {id:'s3',originAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',destinationAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',date:'24.07.',weekday:'Fr',from:'Montpellier',to:'L’Estartit',title:'Montpellier → L’Estartit',
-    summary:'Mit mindestens 80 % starten. Für die rund 250 km ist kein Pflichtstopp nötig; L’Estartit wird voraussichtlich mit etwa 15–20 % erreicht.',
+    summary:'Morgens nur zur Bäckerei; der Startladestand wird möglichst am Vorabend hergestellt. Kurz vor dem Ziel am Carrefour Market Torroella auf 95–100 % laden und L’Estartit mit ungefähr 90 % erreichen.',
     tags:['Etappe','L’Estartit','Spanien'],distance:'ca. 250 km Straßenstrecke',driveTime:'ca. 3–3,5 Std. inkl. Grenzverkehr',
     toll:'Richtwert ca. 15–20 € auf der französischen A9; spanischer Abschnitt überwiegend mautfrei',
-    chargingPlan:'kein Pflichtstopp · IONITY Village Catalan nur Reserve bei Audi-Prognose unter 10 %',
+    chargingPlan:'Carrefour Market Torroella 150 kW als letzter Pflichtstopp · Narbonne-Vinassan Nord nur Reserve bei zu niedrigem Start-SoC',
     evening:'15:30 Check-in · 18:00 Strand · 19:30 El Fornet · 21:00 Sota Zero',
-    startSoc:'mindestens 80 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'ALMA BEACH ESTARTIT',
-    destinationCharging:'Ankunft vor 17:00 Uhr · keine sofortige Vollladung nötig; verbindlich am 30.07. auf 90–95 % für die Rückfahrt laden',
-    routeWaypoints:[],
-    plan:'Montpellier mit mindestens 80 % verlassen. Ohne außergewöhnlichen Gegenwind oder Stau reicht die Energie bis L’Estartit; erwartete Ankunft etwa 15–20 %. Village Catalan bleibt ausschließlich Reserve, falls das Audi-Navi weniger als 10 % prognostiziert. Die Rückfahrt wird erst am 30.07. mit einer Ladung auf 90–95 % vorbereitet.'},
+    startSoc:'vorzugsweise 75–80 % durch Laden am Vorabend',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'ALMA BEACH ESTARTIT',
+    destinationCharging:'letzter Stopp Carrefour Market Torroella · auf 95–100 % laden · Ankunft L’Estartit mit etwa 90 %',
+    routeWaypoints:['834 Avenue du Mas d’Argelliers, 34070 Montpellier, Frankreich','Camí del Molí, s/n, 17257 Torroella de Montgrí, Spanien'],
+    plan:'In Montpellier morgens nur die Bäckerei nutzen. Der Audi sollte möglichst bereits am Vorabend auf etwa 75–80 % geladen worden sein. Reicht die Prognose nicht bis Torroella, IONITY Narbonne-Vinassan Nord als Reserve nutzen. Am Carrefour Market Torroella, Camí del Molí s/n, am 150-kW-CCS auf 95–100 % laden. Von dort sind es nur noch wenige Kilometer bis L’Estartit, sodass die Unterkunft mit ungefähr 90 % erreicht wird.'},
 
     {id:'s4',originAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',destinationAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',date:'31.07.',weekday:'Fr',from:'L’Estartit',to:'Clermont-Ferrand',title:'L’Estartit → Clermont-Ferrand',
     summary:'Start mit 90–95 %. Der frühere Stopp am Caylar ist nur Reserve. Der planmäßige Ladestopp liegt nach Peyre und der Viadukt-Überfahrt an der Aire de l’Aveyron, möglichst bei 10–15 %.',
     tags:['Etappe','Millau','Rückfahrt'],distance:'ca. 530 km Straßenstrecke über A75/Millau',driveTime:'ca. 8–9 Std. inkl. Laden, Peyre, Viadukt und Belvédère',
     toll:'A75 größtenteils mautfrei; Millau-Viadukt Sommerpreis 2026: 13,80 € für Klasse 1',
-    chargingPlan:'Peyre → Viadukt → Aire de l’Aveyron ca. 10–15 % → 85 % · Aire du Caylar nur Reserve',
+    chargingPlan:'Peyre → Viadukt → Belvédère → Aire de l’Aveyron ca. 10–15 % → 85 % · Aire du Caylar nur Reserve',
     evening:'18:45 Kathedrale und Place de la Victoire · 20:00 Le Puy de la Lune',
     startSoc:'90–95 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Airbnb bei Emilien',
     destinationCharging:'Ankunft voraussichtlich mit etwa 30–40 % nach 17:00 Uhr · am 01.08. morgens auf 85–90 % laden',
-    routeWaypoints:['Parking Haut Peyre 12100 Comprégnac','Viaduc de Millau A75','Aire de l’Aveyron A75 Sévérac-d’Aveyron'],
+    routeWaypoints:['Parking Haut Peyre 12100 Comprégnac','Viaduc de Millau A75','Aire du Viaduc de Millau Brocuéjouls 12100 Millau Frankreich','Aire de l’Aveyron A75 Sévérac-d’Aveyron'],
     plan:'L’Estartit mit 90–95 % verlassen. Den Caylar nur nutzen, wenn das Audi-Navi vor Millau weniger als 15 % prognostiziert. Planmäßig zuerst Peyre besuchen, das Viadukt Richtung Clermont-Ferrand überfahren und anschließend an der Aire de l’Aveyron ungefähr bei 10–15 % auf 85 % laden. Danach reicht die Energie bis Clermont-Ferrand mit etwa 30–40 % Rest. Wegen der späten Ankunft am nächsten Morgen auf 85–90 % laden.'},
 
     {id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
@@ -1174,11 +1219,11 @@ const travel = {
     tags:['Etappe','Metz','Rückfahrt'],distance:'ca. 580 km Straßenstrecke',driveTime:'ca. 7–7,5 Std. inkl. einer Ladepause',
     toll:'Richtwert ca. 35–50 € je nach gewählter Route über A89/A6/A31',
     chargingPlan:'TotalEnergies Aire de Beaune-Tailly · ca. 10–18 % → 85 % · Moulins-lès-Metz nur Reserve',
-    evening:'18:00 Altstadtrunde · 19:45 Essen · 21:15 Laden für die Heimfahrt',
+    evening:'18:00 Altstadtrunde · 19:45 Essen · kein Laden am Abend',
     startSoc:'ca. 90 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Appartement Rue Haute Seille',
-    destinationCharging:'Ankunft voraussichtlich mit etwa 10–15 % vor 17:00 Uhr · in Metz am selben Abend auf 95 % laden',
-    routeWaypoints:['Aire de Beaune-Tailly A6'],
-    plan:'Clermont-Ferrand morgens auf etwa 90 % laden. Beaune-Tailly nach rund 290 km mit ungefähr 10–18 % erreichen und auf 85 % laden. Der zweite Abschnitt bis Metz ist ebenfalls etwa 290 km lang; erwartete Ankunft rund 10–15 %. Moulins-lès-Metz wird nur bei höherem Verbrauch genutzt. In Metz am selben Abend auf 95 % für die Heimfahrt laden.'},
+    destinationCharging:'Ankunft voraussichtlich mit etwa 10–15 % · Laden erst am 02.08. morgens in Moulins-lès-Metz auf etwa 95 %',
+    routeWaypoints:['Rue Louis Armstrong, 63200 Riom, Frankreich','Aire de Beaune-Tailly A6'],
+    plan:'Clermont-Ferrand morgens auf etwa 90 % laden. Beaune-Tailly nach rund 290 km mit ungefähr 10–18 % erreichen und auf 85 % laden. Der zweite Abschnitt bis Metz ist ebenfalls etwa 290 km lang; erwartete Ankunft rund 10–15 %. Moulins-lès-Metz bleibt während der Etappe Reserve. Das Laden auf etwa 95 % erfolgt erst am 02.08. morgens am Tesla Supercharger Waves Actisud.'},
 
     {id:'s6',originAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',destinationAddress:'Hasbergen, Deutschland',date:'02.08.',weekday:'So',from:'Metz',to:'Hasbergen',title:'Metz → Hasbergen',
     summary:'Metz mit etwa 95 % verlassen. Der bisherige Halt in Limburg liegt zu früh. Neuer Hauptstopp ist der EnBW-Schnellladepark am Kamener Kreuz, möglichst bei etwa 8–15 %.',
@@ -1188,22 +1233,22 @@ const travel = {
     evening:'Ankunft zuhause',
     startSoc:'ca. 95 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Zuhause',
     destinationCharging:'Ziel zuhause · keine weitere Reiseetappe',
-    routeWaypoints:['EnBW Schnellladepark Kamener Kreuz, Kamen Karree 12, 59174 Kamen'],
-    plan:'Metz nach dem Laden am Vorabend mit etwa 95 % verlassen. Limburg wird ohne Halt passiert. Der Hauptstopp liegt deutlich später am Kamener Kreuz; das Audi-Navi soll am Fahrtag die erwartete Ankunft kontrollieren. Ziel sind etwa 8–15 %, anschließend auf 85 % laden. Danach verbleibt nur noch der kurze Abschnitt nach Hasbergen.'}
+    routeWaypoints:['1 Rue de Chaponost, 57160 Moulins-lès-Metz, Frankreich','1 Chemin de la Pie Grièche, 57160 Moulins-lès-Metz, Frankreich','EnBW Schnellladepark Kamener Kreuz, Kamen Karree 12, 59174 Kamen'],
+    plan:'Metz nach dem morgendlichen Laden mit etwa 95 % verlassen. Limburg wird ohne Halt passiert. Der Hauptstopp liegt deutlich später am Kamener Kreuz; das Audi-Navi soll am Fahrtag die erwartete Ankunft kontrollieren. Ziel sind etwa 8–15 %, anschließend auf 85 % laden. Danach verbleibt nur noch der kurze Abschnitt nach Hasbergen.'}
   ],
   hotels: [
     {id:'h1',name:'L’Atypique',place:'Dijon',date:'22.07.',status:'vollständig',source:'Buchung und Gastgeberangaben · Adresse, Zugang, Parken und Check-out bestätigt',checkin:'Self Check-in · bestätigte Zugangsdaten aus Gastgeber-Nachricht verwenden',parking:'Rue Marguerite Thibert ca. 150 m',address:'34Bis rue d’Auxonne, 21000 Dijon',summary:'Straßenparken Mo–Sa 9:00–12:30 und 14:00–19:00 Uhr gebührenpflichtig. Kostenloser Parkplatz: Rue Marguerite Thibert (ca. 150 m). Intermarché: 2 Stunden kostenlos. Empfohlener Abend: kurzer Altstadtrundgang mit einem kleinen Teil des Eulenwegs, gezielter Besuch der Eule an Notre-Dame, französischer Burger und Eis.',checkout:'laut Gastgeber-Nachricht bestätigt',charging:'23.07. morgens: Option 1 IONITY Dijon Sud mit Hotelcafé · Option 2 Allego Chenôve mit Bäckerei Point Chaud direkt daneben',nearby:'Altstadt, Place de la Libération, Notre-Dame, Intermarché, Rue Marguerite Thibert',hotelChecklist:'Gepäck ausladen · Fahrzeug parken · Self-Check-in · kurzer Eulenweg · Eule besuchen · Burger · Eis · Laden'},
-    {id:'h2',name:'Ibis Budget Montpellier Centre Millénaire',place:'Montpellier',date:'23.07.',status:'vollständig',source:'Hotelinformation und Buchung',checkin:'ab 14:00 Uhr',parking:'kostenloser, geschlossener Hotelparkplatz',address:'25 rue des Frères Lumière, 34000 Montpellier',summary:'Check-out bis 12:00 Uhr. Gültiger Ausweis erforderlich. Kostenloser, geschlossener Hotelparkplatz, vier kostenpflichtige Ladepunkte, La Grande-Motte mit Hafen und Restaurant L\'Ombrine als Abendziel.',checkout:'bis 12:00 Uhr',charging:'zuerst Hotel-Ladepunkte prüfen; falls nicht DKV-tauglich: Electra Campanile, Avenue du Mas d’Argelliers, 34070 Montpellier',nearby:'La Grande-Motte, Hafen, L’Ombrine',hotelChecklist:'einchecken · Ladestand prüfen · Abendtasche · Abfahrt am Morgen'},
+    {id:'h2',name:'Ibis Budget Montpellier Centre Millénaire',place:'Montpellier',date:'23.07.',status:'vollständig',source:'Hotelinformation und Buchung',checkin:'ab 14:00 Uhr',parking:'kostenloser, geschlossener Hotelparkplatz',address:'25 rue des Frères Lumière, 34000 Montpellier',summary:'Check-out bis 12:00 Uhr. Gültiger Ausweis erforderlich. Kostenloser, geschlossener Hotelparkplatz, vier kostenpflichtige Ladepunkte, La Grande-Motte mit Hafen und Restaurant L\'Ombrine als Abendziel.',checkout:'bis 12:00 Uhr',charging:'möglichst am Vorabend auf etwa 75–80 % laden; morgens nur Bäckerei. Falls nötig Electra Campanile als Ladealternative nutzen',nearby:'La Grande-Motte, Hafen, L’Ombrine',hotelChecklist:'einchecken · Ladestand prüfen · Abendtasche · Abfahrt am Morgen'},
     {id:'h3',name:'ALMA BEACH ESTARTIT',place:'L’Estartit',date:'24.–31.07.',status:'vollständig',source:'Booking.com-Unterkunftsseite · Kontaktangaben von Mónica',checkin:'15:00–18:00 Uhr · Ankunftszeit vorab mitteilen',parking:'kostenloses Parken in den umliegenden Straßen',address:'11 Carrer Salines, 17258 L’Estartit, Spanien',summary:'Familienunterkunft für den einwöchigen Strandaufenthalt an der Costa Brava. Idealer Ausgangspunkt für Strand, Hafenpromenade, Medes-Inseln, Barcelona-Tagesausflug und die geplante Costa-Brava-Rundtour über Begur, Pals und Peratallada.',checkout:'08:00–10:00 Uhr',charging:'vor Rückfahrt am 30.07. verbindlich auf 90–95 % laden',nearby:'Strandlage, saisonaler Supermarkt im Gebäude, Zentrum ca. 750 m, Medes-Inseln ca. 1 km',contactName:'Mónica',email:'almabeachestartit@gmail.com',phone:'+34679937019',whatsapp:'+34679937019',hotelChecklist:'Gepäck · Einkauf · Strandtasche · Hafenbummel · Barcelona planen · Audi vor Rückreise auf 90–95 % laden'},
     {id:'h4',name:'Airbnb bei Emilien',place:'Clermont-Ferrand',date:'31.07.',status:'teilweise',source:'Airbnb-Screenshots · Gastgeber Emilien · Co-Host Sophie; Zugang vollständig, Check-out-Uhrzeit noch offen',checkin:'Self Check-in über Schlüsselbox · Code 8848',parking:'Parkhaus Blaise Pascal ca. 200 m · Ticket/Pass 31 Tage gültig · für Ein- und Ausfahrt aufbewahren · nicht direkt am Handy lagern',address:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',summary:'Zugang über das grüne Tor und den Innenhof. Wohnung im 2. Stock rechts; Tür mit festem Griff. Gegensprechanlage Wohnung 24. Der Schlüssel für die Fahrrad-/Motorradgarage befindet sich hinten links im Hof. Google Maps lokalisiert die Adresse teilweise ungenau; besser ein alternatives GPS-System oder die vollständige Adresse verwenden.',checkout:'Uhrzeit in der Airbnb-App prüfen · Schlüssel zurück in die Box',charging:'01.08. morgens: Tesla Supercharger Riom, Rue Louis Armstrong, 63200 Riom · Frühstück im direkten Hotel-/Gastronomieumfeld',nearby:'Place Delille ca. 5 Minuten zu Fuß · Bahnhof ca. 10 Minuten zu Fuß · Altstadt und Kathedrale gut erreichbar',hotelChecklist:'Schlüsselbox 8848 · grünes Tor · Innenhof · 2. Stock rechts · Gegensprechanlage 24 · Parkticket aufbewahren'},
-    {id:'h5',name:'Appartement Rue Haute Seille',place:'Metz',date:'01.08.',status:'teilweise',source:'Booking.com-Unterkunftsseite · Adresse und Zeiten bestätigt; Zugangsdaten folgen über Gastgeber',checkin:'14:00–22:00 Uhr · Ankunftszeit vorab mitteilen · Zugangsnachricht prüfen',parking:'öffentliche Parkmöglichkeiten in der Umgebung',address:'56 Rue Haute Seille, 57000 Metz, Frankreich',summary:'Innenstadtnahe Unterkunft für die letzte Übernachtung vor der Heimreise. Idealer Ausgangspunkt für einen Spaziergang über die Place Saint-Louis, zur Kathedrale Saint-Étienne und entlang der Mosel.',checkout:'bis 11:00 Uhr',charging:'02.08. morgens: Tesla Supercharger Waves Actisud, 1 Chemin de la Pie Grièche, 57160 Moulins-lès-Metz · Bäckerei Mougel Bio, 1 Rue de Chaponost',nearby:'Centre Pompidou-Metz ca. 1 km, Bahnhof ca. 1,1 km, Kathedrale und Place Saint-Louis fußläufig',hotelChecklist:'Gepäck · Parken · Altstadtrunde · auf 95 % laden · Check-out'}
+    {id:'h5',name:'Appartement Rue Haute Seille',place:'Metz',date:'01.08.',status:'teilweise',source:'Booking.com-Unterkunftsseite · Adresse und Zeiten bestätigt; Zugangsdaten folgen über Gastgeber',checkin:'14:00–22:00 Uhr · Ankunftszeit vorab mitteilen · Zugangsnachricht prüfen',parking:'öffentliche Parkmöglichkeiten in der Umgebung',address:'56 Rue Haute Seille, 57000 Metz, Frankreich',summary:'Innenstadtnahe Unterkunft für die letzte Übernachtung vor der Heimreise. Idealer Ausgangspunkt für einen Spaziergang über die Place Saint-Louis, zur Kathedrale Saint-Étienne und entlang der Mosel.',checkout:'bis 11:00 Uhr',charging:'02.08. morgens: Tesla Supercharger Waves Actisud, 1 Chemin de la Pie Grièche, 57160 Moulins-lès-Metz · Bäckerei Mougel Bio, 1 Rue de Chaponost',nearby:'Centre Pompidou-Metz ca. 1 km, Bahnhof ca. 1,1 km, Kathedrale und Place Saint-Louis fußläufig',hotelChecklist:'Gepäck · Parken · Altstadtrunde · morgens auf 95 % laden · Check-out'}
   ],
 
   hotelHubs: {
     h1:{
       restaurant:'DZ’envies, 12 rue Odebert, 21000 Dijon',
       breakfast:'Boulangerie Du Pain Pour Demain, 31 rue d’Auxonne, Dijon',
-      charging:'Tesla Supercharger Dijon Toison d’Or, Route de Langres, Dijon',
+      charging:'IONITY Dijon Sud, 5 Rue de Beauregard, 21600 Longvic',
       supermarket:'Intermarché Dijon rue d’Auxonne',
       pharmacy:'pharmacie rue d’Auxonne Dijon',
       parking:'Rue Marguerite Thibert Dijon',
@@ -1212,7 +1257,7 @@ const travel = {
     h2:{
       restaurant:"L’Ombrine, Quai d’Honneur, La Grande-Motte",
       breakfast:'Boulangerie près de Ibis Budget Montpellier Centre Millénaire',
-      charging:'Bornes de recharge, Parking du Port, La Grande-Motte',
+      charging:'Electra Campanile, Avenue du Mas d’Argelliers, 34070 Montpellier',
       supermarket:'supermarché près de 25 rue des Frères Lumière Montpellier',
       pharmacy:'pharmacie près de 25 rue des Frères Lumière Montpellier',
       parking:'Parking du Port, Quai Robert Fages, La Grande-Motte',
@@ -1221,7 +1266,7 @@ const travel = {
     h3:{
       restaurant:"restaurants près de ALMA BEACH ESTARTIT",
       breakfast:"boulangerie L'Estartit",
-      charging:'Estació de recàrrega, Passeig del Molinet, L’Estartit',
+      charging:'Carrefour Market Torroella, Camí del Molí s/n, Torroella de Montgrí',
       supermarket:"SPAR L'Estartit",
       pharmacy:"farmàcia L'Estartit",
       parking:'Carrer Salines 11, L’Estartit',
@@ -1230,7 +1275,7 @@ const travel = {
     h4:{
       restaurant:'Le Puy de la Lune, 3 rue de la Michodière, Clermont-Ferrand',
       breakfast:'Le Fournil Saint-Esprit, Clermont-Ferrand',
-      charging:'Tesla Supercharger Clermont-Ferrand, 52 avenue de Cournon, Aubière',
+      charging:'Tesla Supercharger Riom, Rue Louis Armstrong, 63200 Riom',
       supermarket:'supermarché près de Boulevard Trudaine Clermont-Ferrand',
       pharmacy:'pharmacie près de Boulevard Trudaine Clermont-Ferrand',
       parking:'Parking Blaise Pascal Clermont-Ferrand',
@@ -1239,7 +1284,7 @@ const travel = {
     h5:{
       restaurant:'Au Coeur du Liban, 6 rue des Tanneurs, Metz',
       breakfast:'Boulangerie Fort, Metz centre',
-      charging:'Parking République, Avenue Ney, Metz',
+      charging:'Tesla Supercharger Waves Actisud, 1 Chemin de la Pie Grièche, 57160 Moulins-lès-Metz',
       supermarket:'supermarché près de Rue Haute Seille Metz',
       pharmacy:'pharmacie près de Rue Haute Seille Metz',
       parking:'Parking Coislin, Place Coislin, Metz',
@@ -1247,7 +1292,7 @@ const travel = {
     }
   },
   activities: [
-    {id:'a1',title:'Barcelona – Premium-Tagesplan',place:'Barcelona',summary:'Camp Nou, Sagrada Família, Kathedrale, Barri Gòtic und Port Vell ohne Metro und mit zwei dachboxgeeigneten Parkhäusern.',map:'Sagrada Família Barcelona',extra:'Camp Nou an Carrer de Lluçà 3, danach Sagrada Família und Aparcament de Bailèn. Fahrzeughöhe 2,10 m beachten.'},
+    {id:'a1',title:'Barcelona – Premium-Tagesplan',place:'Barcelona',summary:'Camp Nou, Sagrada Família, Kathedrale, Barri Gòtic und Port Vell ohne Metro und mit drei dachboxgeeigneten Parkhäusern.',map:'Sagrada Família Barcelona',extra:'Camp Nou an Carrer de Lluçà 3, danach Sagrada Família und Aparcament de Bailèn. Fahrzeughöhe 2,10 m beachten.'},
     {id:'a2',title:'Costa Brava – Rundtour',place:'Begur · Pals · Peratallada',summary:'Begur, eine Badebucht, Pals und Peratallada in sinnvoller Reihenfolge.',map:'Begur Girona',extra:'Nur eine Badebucht auswählen und den Audi danach auf 90–95 % laden.'},
     {id:'a3',title:'Mooma Palau-sator',place:'Palau-sator',summary:'Cidrerie mit Apfelplantage und mediterraner Grillküche.',map:'Mooma Mas Saulot s/n 17257 Palau-sator',extra:'Mit Pals kombinieren und im Juli möglichst reservieren.',url:'https://mooma.myrestoo.net/en/reservar',tel:'+34872026088'},
     {id:'a4',title:'Schnorcheln & Medes-Inseln',place:"L'Estartit",summary:'Cala Pedrosa, Glasbodenboot, geführtes Schnorcheln und Espai Medes.',map:"Medes Islands boat tour L'Estartit",extra:'Morgens starten, ruhiges Wasser wählen und Wasserschuhe mitnehmen.'},
@@ -1317,22 +1362,31 @@ const chargingStages = [
     },reserve:null
   },
   {
-    stageId:'s3',date:'24.07.',route:'Montpellier → L’Estartit',distance:'ca. 250 km',
-    maxDetourKm:2,minimumStalls:6,dkvRequired:true,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',
-    calibration:'Audi-kalibriert',reference:'Start mindestens 80 %',modelRate:'kein Pflichtstopp',
-    note:'Direktfahrt. Nur bei einer Audi-Prognose unter 10 % wird unterwegs geladen.',
+    stageId:'s3',date:'24.07.',route:'Montpellier → L’Estartit',distance:'ca. 250 km',reserveBeforePrimary:true,
+    maxDetourKm:3,minimumStalls:1,dkvRequired:false,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',
+    calibration:'Ziel-SoC priorisiert',reference:'Ankunft L’Estartit ca. 90 %',modelRate:'Audi-Prognose hat Vorrang',
+    note:'Morgens nur Bäckerei. Der letzte Pflichtstopp liegt kurz vor L’Estartit am Carrefour Market Torroella.',
     primary:{
+      name:'Zielstopp · Carrefour Market Torroella',legFrom:'Montpellier',legTo:'Torroella de Montgrí',location:'Camí del Molí, s/n, 17257 Torroella de Montgrí',
+      provider:'Carrefour / Betreiber vor Ort',power:'bis 150 kW',stops:'1 CCS-HPC',routeOffsetKm:1.5,legDistanceKm:235,
+      arrivalSoc:'je nach Start etwa 10–25 %',departureSoc:'95–100 %',
+      toilet:'im Carrefour Market während der Öffnungszeiten',toiletName:'Carrefour-Kundentoilette',toiletConfirmed:true,
+      food:'Carrefour Market · Einkauf und Verpflegung',
+      map:'Camí del Molí s/n 17257 Torroella de Montgrí Spanien',
+      routeRole:'letzter Pflichtstopp vor der Unterkunft',nextLeg:'Torroella de Montgrí → ALMA BEACH ESTARTIT',targetSoc:'auf 95–100 % laden · Ankunft L’Estartit ca. 90 %',alternatives:[]
+    },
+    reserve:{
       name:'Reserve · IONITY Narbonne-Vinassan Nord',legFrom:'Montpellier',legTo:'Narbonne-Vinassan Nord',location:'A9, 11110 Vinassan',
       provider:'IONITY',power:'bis 350 kW',stops:'8 HPC',routeOffsetKm:0,
-      arrivalSoc:'nur bei Abweichung',departureSoc:'nach Bedarf bis max. 85 %',
+      arrivalSoc:'nur bei zu niedrigem Start-SoC',departureSoc:'nur so weit laden, dass Torroella sicher erreicht wird',
       toilet:'rund um die Uhr auf der Rastanlage',toiletName:'öffentliche Raststättentoilette',toiletConfirmed:true,
       food:'Burger King, Café, Shop und Raststättenangebot',
       map:'IONITY Aire de Service Narbonne-Vinassan Nord A9 11110 Vinassan France',
-      routeRole:'reine Reserve',nextLeg:'Narbonne-Vinassan Nord → ALMA BEACH ESTARTIT',targetSoc:'nur laden, wenn L’Estartit sonst unter 10 % erreicht würde',alternatives:[]
-    },reserve:null
+      routeRole:'Reichweitenreserve',nextLeg:'Narbonne-Vinassan Nord → Carrefour Torroella',targetSoc:'nur nach Audi-Prognose',alternatives:[]
+    },secondaryLabel:'Reserve'
   },
   {
-    stageId:'s4',date:'31.07.',route:'L’Estartit → Clermont-Ferrand',distance:'ca. 530 km über Millau',
+    stageId:'s4',date:'31.07.',route:'L’Estartit → Clermont-Ferrand',distance:'ca. 530 km über Millau',reserveBeforePrimary:true,
     maxDetourKm:2,minimumStalls:6,dkvRequired:true,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',
     calibration:'Audi-kalibriert',reference:'Start 90–95 %',modelRate:'Peyre und Viadukt berücksichtigt',
     note:'Der Hauptstopp liegt nach dem Viadukt an der Aire de l’Aveyron. Caylar ist nur eine frühere Reserve.',
@@ -1398,12 +1452,18 @@ const chargingStages = [
 const destinationChargingPlans = [
   {stageId:'s1',place:'Dijon / Longvic',arrival:'ca. 65–70 % nach 17:00 Uhr',when:'23.07. morgens',target:'ca. 90 %',reason:'Option 1 IONITY Dijon Sud mit Hotelcafé · Option 2 Allego Chenôve mit Bäckerei direkt daneben'},
   {stageId:'s2',place:'Montpellier',arrival:'ca. 35–40 % vor 17:00 Uhr',when:'am Hotel; bei fehlender DKV-Akzeptanz Electra Campanile',target:'mindestens 80 %',reason:'Avenue du Mas d’Argelliers · 4 HPC bis 150 kW'},
-  {stageId:'s3',place:'L’Estartit',arrival:'ca. 15–20 % vor 17:00 Uhr',when:'flexibel spätestens am 30.07.',target:'90–95 %',reason:'Rückfahrt über Millau'},
+  {stageId:'s3',place:'L’Estartit / Torroella',arrival:'nach Zielstopp ca. 90 %',when:'24.07. kurz vor Ankunft',target:'95–100 % am Carrefour, ca. 90 % an der Unterkunft',reason:'Carrefour Market Torroella · 150-kW-HPC'},
   {stageId:'s4',place:'Clermont-Ferrand / Riom',arrival:'ca. 30–40 % nach 17:00 Uhr',when:'01.08. morgens',target:'ca. 90 %',reason:'Tesla Riom · Rue Louis Armstrong · 28 HPC'},
   {stageId:'s5',place:'Metz / Moulins-lès-Metz',arrival:'ca. 10–15 % vor 17:00 Uhr',when:'02.08. morgens',target:'ca. 95 %',reason:'Tesla Waves Actisud · Bäckerei Mougel Bio sonntags ab 07:00 Uhr'},
   {stageId:'s6',place:'Hasbergen',arrival:'Ziel erreicht',when:'nicht erforderlich',target:'—',reason:'keine Folgetappe'}
 ];
 
+
+const estartitChargingOptions = [
+  {label:'Nächster HPC',station:'Carrefour Market Torroella de Montgrí',address:'Camí del Molí, s/n, 17257 Torroella de Montgrí, Spanien',power:'1 × CCS bis 150 kW',note:'Bevorzugter Schnellladepunkt kurz vor L’Estartit. Live-Status vor Anfahrt prüfen.'},
+  {label:'Nahe 50-kW-Option',station:'Repsol Nimaci',address:'Carretera de l’Estartit 163, 17257 Torroella de Montgrí, Spanien',power:'1 × CCS 50 kW',note:'Sehr nah an L’Estartit; zuletzt als außer Betrieb gemeldet, daher nur nach Live-Prüfung nutzen.'},
+  {label:'Weitere 50-kW-Option',station:'Repsol Ullà',address:'C-31, PK 350,5, 17140 Ullà, Spanien',power:'1 × CCS 50 kW',note:'Alternative nahe Torroella; Verfügbarkeit und Freischaltung in der Lade-App prüfen.'}
+];
 
 const morningChargingPlans = {
   s1:{
@@ -1433,14 +1493,14 @@ const morningChargingPlans = {
     note:'Beide Optionen liegen südlich von Dijon und passen zur Weiterfahrt Richtung Montpellier.'
   },
   s2:{
-    title:'Montpellier laden',
-    station:'Hotel-Ladepunkte zuerst prüfen',
-    address:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',
-    power:'Hotel-Ladepunkte',
-    stalls:'4 Ladepunkte',
-    bakery:'DKV-Alternative',
-    bakeryAddress:'Avenue du Mas d’Argelliers, 34070 Montpellier, Frankreich',
-    note:'Wenn die Hotel-Ladepunkte nicht mit DKV funktionieren, Electra Campanile mit 4 HPC bis 150 kW nutzen.'
+    mode:'bakeryOnly',
+    title:'Montpellier morgens · nur Bäckerei',
+    bakery:'Au Fournil d’Adam',
+    bakeryAddress:'834 Avenue du Mas d’Argelliers, 34070 Montpellier, Frankreich',
+    fallbackStation:'Electra Campanile Montpellier',
+    fallbackAddress:'Avenue du Mas d’Argelliers, 34070 Montpellier, Frankreich',
+    fallbackPower:'4 HPC bis 150 kW',
+    note:'Der Ladestand wird möglichst am Vorabend hergestellt. Morgens ist nur die Bäckerei fest; Electra nur nutzen, wenn die Audi-Prognose Torroella nicht sicher erreicht.'
   },
   s4:{
     title:'Clermont-Ferrand morgens laden',
@@ -1450,7 +1510,7 @@ const morningChargingPlans = {
     stalls:'28 Ladepunkte',
     bakery:'Frühstück im direkten Hotel- und Gastrobereich',
     bakeryAddress:'Rue Louis Armstrong, 63200 Riom, Frankreich',
-    note:'Direkt nördlich auf der Route nach Metz und nur etwa 500 m von der A71 entfernt.'
+    note:'Direkt nördlich auf der Route nach Metz. Beim Fremdfahrzeug den Ladevorgang über die Tesla-App starten; DKV Card +Charge vorher als Zahlungsmittel hinterlegen.'
   },
   s5:{
     title:'Metz morgens laden',
@@ -1460,7 +1520,7 @@ const morningChargingPlans = {
     stalls:'28 Ladepunkte',
     bakery:'Boulangerie Mougel Bio',
     bakeryAddress:'1 Rue de Chaponost, 57160 Moulins-lès-Metz, Frankreich',
-    note:'Sonntag morgens geöffnet. Erst Backwaren holen, dann am Waves-Standort auf etwa 95 % laden.'
+    note:'Sonntag morgens: erst Backwaren holen, dann am Waves-Standort auf etwa 95 % laden. Beim Fremdfahrzeug über die Tesla-App starten; DKV Card +Charge vorher hinterlegen.'
   }
 };
 
@@ -1472,6 +1532,12 @@ const views = $$('.view');
 const navButtons = $$('.nav-btn[data-view-target]');
 const categories = ['Alle','Etappe','Unterkunft','Laden','Aktivität','Info'];
 let activeFilter = 'Alle';
+
+const safeStorage = {
+  get(key){try{return window.localStorage.getItem(key);}catch(e){return null;}},
+  set(key,value){try{window.localStorage.setItem(key,value);return true;}catch(e){return false;}},
+  remove(key){try{window.localStorage.removeItem(key);return true;}catch(e){return false;}}
+};
 
 const preparation = [
   {group:'Dokumente',items:[
@@ -1485,7 +1551,7 @@ const preparation = [
     'Vor jedem weiteren Fahrtag mindestens 80 % Start-SoC sicherstellen',
     'DKV-Karte und alternative Ladekarte einpacken',
     'Typ-2-Kabel und Ladekabel prüfen',
-    'Lade-Apps aktualisieren und anmelden'
+    'Lade-Apps aktualisieren; DKV Card +Charge in der Tesla-App hinterlegen'
   ]},
   {group:'Sicherheit',items:[
     'Warnwesten für alle fünf Personen einpacken',
@@ -1518,10 +1584,10 @@ function renderPreparation(){
     </article>
   `).join('');
   $$('[data-prep]').forEach(cb=>{
-    cb.checked = localStorage.getItem('travelprep:'+cb.dataset.prep)==='1';
+    cb.checked = safeStorage.get('travelprep:'+cb.dataset.prep)==='1';
     cb.closest('.prep-item').classList.toggle('done',cb.checked);
     cb.addEventListener('change',()=>{
-      localStorage.setItem('travelprep:'+cb.dataset.prep,cb.checked?'1':'0');
+      safeStorage.set('travelprep:'+cb.dataset.prep,cb.checked?'1':'0');
       cb.closest('.prep-item').classList.toggle('done',cb.checked);
       updatePreparationProgress();
     });
@@ -1600,6 +1666,64 @@ function openDirections(origin,destination,waypoints=[]){
     .map(value=>encodeURIComponent(normalizeMapValue(value)));
   openExternal(`https://www.google.com/maps/dir/${points.join('/')}/`);
 }
+function googleMapsEmbedUrl(origin,destination,waypoints=[]){
+  const start=normalizeMapValue(origin||'');
+  const end=normalizeMapValue(destination||'');
+  const stops=(Array.isArray(waypoints)?waypoints:[]).map(normalizeMapValue).filter(Boolean);
+  const destinationChain=[...stops,end].filter(Boolean).map(encodeURIComponent).join('+to:');
+  return `https://maps.google.com/maps?saddr=${encodeURIComponent(start)}&daddr=${destinationChain}&output=embed`;
+}
+function updateTodayMap(stage,mode){
+  const frame=$('#todayRouteMap');
+  const label=$('#todayMapLabel');
+  const stopsHost=$('#todayMapStops');
+  const note=$('#todayMapNote');
+  if(!frame||!label||!stopsHost||!note) return;
+
+  let points=[];
+  let title='';
+  if(mode==='holiday'){
+    title='L’Estartit und Umgebung';
+    points=['L’Estartit','Strand, Hafen und flexible Ausflüge'];
+  }else if(mode==='after'){
+    title='Hasbergen';
+    points=['Hasbergen','Reise abgeschlossen'];
+  }else{
+    const actual=travel.stages.find(x=>x.id===stage?.id)||travel.stages[0];
+    title=actual.title;
+    points=[
+      actual.originAddress||actual.from,
+      ...(actual.routeWaypoints||[]),
+      actual.destinationAddress||actual.to
+    ];
+  }
+
+  label.textContent=title;
+  stopsHost.innerHTML=points.map((point,index)=>`
+    <div class="today-map-stop">
+      <div class="today-map-dot"><i></i></div>
+      <div><b>${esc(normalizeMapValue(point))}</b><span>${index===0?'Start':index===points.length-1?'Ziel':`Zwischenstopp ${index}`}</span></div>
+    </div>`).join('');
+
+  const canEmbed=location.protocol==='https:'||location.protocol==='http:';
+  if(canEmbed && mode!=='holiday' && mode!=='after'){
+    const actual=travel.stages.find(x=>x.id===stage?.id)||travel.stages[0];
+    frame.src=googleMapsEmbedUrl(
+      actual.originAddress||actual.from,
+      actual.destinationAddress||actual.to,
+      actual.routeWaypoints||[]
+    );
+    frame.style.display='block';
+    note.textContent='Falls Google die eingebettete Karte blockiert, bitte „Navigation starten“ verwenden.';
+  }else{
+    frame.removeAttribute('src');
+    frame.style.display='none';
+    note.textContent=canEmbed
+      ? 'Die vollständige Route öffnet sich über „Navigation starten“ in Google Maps.'
+      : 'Lokale Dateivorschauen blockieren eingebettete Google-Karten. „Navigation starten“ öffnet die vollständige Route mit allen Stopps.';
+  }
+}
+
 function openStageRoute(stage){
   openDirections(
     stage.originAddress||stage.from,
@@ -1699,7 +1823,7 @@ function chargingForStage(id){
   return ({
     s1:['Pfalzwerke · GLOBUS Trier','Pfalzwerke HPC Globus Baumarkt Castelforte-Straße 1 54292 Trier','2 Stopps'],
     s2:['Tesla · Portes-lès-Valence Ouest','Tesla Supercharger Aire de Portes-lès-Valence Ouest A7 26800 France','1 Stopp'],
-    s3:['Direktfahrt','IONITY Aire de Service Narbonne-Vinassan Nord A9 11110 Vinassan France','kein Pflichtstopp'],
+    s3:['Carrefour Torroella · 150 kW','Camí del Molí s/n 17257 Torroella de Montgrí Spanien','1 Zielstopp + Reserve'],
     s4:['Aire de l’Aveyron','Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron France','1 Stopp + Reserve'],
     s5:['TotalEnergies · Beaune-Tailly','Aire de Beaune-Tailly A6 21190 Merceuil France','1 Stopp + Reserve'],
     s6:['EnBW · Kamener Kreuz','EnBW Schnellladepark Kamener Kreuz Kamen Karree 12 59174 Kamen','1 Stopp']
@@ -1723,16 +1847,19 @@ function renderToday(){
   const chargeStageId=stage.id==='holiday'?'s3':stage.id;
   const c=chargingForStage(chargeStageId);
   $('#todayDateBadge').textContent=stage.date; $('#todayRouteTitle').textContent=stage.title; $('#todayFrom').textContent=stage.from; $('#todayTo').textContent=stage.to; $('#todayDistance').textContent=stage.distance; $('#todayDriveTime').textContent=stage.driveTime.replace('ca. ',''); $('#todayChargingCount').textContent=c[2]; $('#todaySoc').textContent=stage.startSoc;
-  $('#metricRoute').textContent=stage.to; $('#metricRouteSub').textContent=stage.title;
+  $('#todaySection').textContent=ctx.mode==='before'?'Vorbereitung':ctx.mode==='after'?'Reise beendet':stage.to;
+  $('#todaySectionSub').textContent=ctx.mode==='before'?'Abfahrt am 22. Juli':ctx.mode==='after'?'Spanienreise 2026 abgeschlossen':stage.title;
   $('#metricHotel').textContent=hotel?hotel.name:'Zuhause';
   $('#metricHotelSub').textContent=hotel?`${hotel.place} · ${hotel.date}`:'keine weitere Unterkunft';
-  $('#metricStatus').textContent=ctx.mode==='stage'?'Fahrtag':ctx.mode==='holiday'?'Urlaub':ctx.mode==='after'?'Abgeschlossen':'Vorbereitung'; $('#metricStatusSub').textContent=$('#todayStatus').textContent;
+  $('#todayState').textContent=ctx.mode==='stage'?'Fahrtag':ctx.mode==='holiday'?'Urlaub':ctx.mode==='after'?'Abgeschlossen':'Vorbereitung';
+  $('#todayStateSub').textContent=$('#todayStatus').textContent;
   $('#todayHotelName').textContent=hotel?hotel.name:'Zuhause';
   $('#todayHotelInfo').textContent=hotel?`${hotel.place} · ${hotel.checkin}`:'Reise abgeschlossen';
   $('#todayChargeName').textContent=c[0]; $('#todayChargeInfo').textContent=`${c[2]} · DKV-Kompatibilität und Live-Status prüfen`;
   $('#todayNavigate').onclick=()=>{const actual=travel.stages.find(x=>x.id===stage.id);actual?openStageRoute(actual):openDirections(stage.from,stage.to);};
   const todayStageDetails=$('#todayStageDetails');
   const actualStage=travel.stages.find(x=>x.id===stage.id);
+  updateTodayMap(stage,ctx.mode);
   if(todayStageDetails){
     todayStageDetails.disabled=!actualStage;
     todayStageDetails.onclick=actualStage?()=>openDetail('stage',actualStage.id):null;
@@ -1774,6 +1901,21 @@ function renderToday(){
     quickHotel.disabled=!hotel;
     if(hotel) quickHotel.dataset.id=hotel.id;
   }
+  const trafficButton=$('#currentTrafficRoute');
+  if(trafficButton){
+    trafficButton.onclick=()=>{
+      if(actualStage){
+        openStageRoute(actualStage);
+      }else if(ctx.mode==='holiday'){
+        openMap('L’Estartit, Spanien');
+      }else if(ctx.mode==='before'){
+        openStageRoute(travel.stages[0]);
+      }else{
+        openMap('Hasbergen, Deutschland');
+      }
+    };
+  }
+
   const warningText=$('#dailyWarningText');
   if(warningText){
     if(ctx.mode==='stage') warningText.textContent=`${stage.title}: Verkehr, Baustellen, Hitze- oder Unwetterwarnungen, Waldbrandlage und Live-Verfügbarkeit aller Ladepunkte vor Abfahrt prüfen.`;
@@ -1868,7 +2010,7 @@ const tripRoutes = {
     destination:'11 Carrer Salines, 17258 L’Estartit, Spanien',
     waypoints:[
       'Carrer de Lluçà 3, 08028 Barcelona, Spanien',
-      'Carrer de Mallorca 401, 08013 Barcelona, Spanien',
+      'Carrer de Lepant 325, 08025 Barcelona, Spanien',
       'Carrer de Bailèn 225, 08037 Barcelona, Spanien'
     ]
   },
@@ -1922,7 +2064,24 @@ function openEveningForStage(stageId){
   },100);
 }
 
+function normalizeActionStyles(root=document){
+  $$('.actions',root).forEach(group=>{
+    let primarySeen=false;
+    $$('.btn',group).forEach(button=>{
+      if(button.classList.contains('primary')){
+        if(primarySeen){
+          button.classList.remove('primary');
+          button.classList.add('secondary');
+        }else{
+          primarySeen=true;
+        }
+      }
+    });
+  });
+}
+
 function bindDynamic(root=document){
+  normalizeActionStyles(root);
   $$('[data-detail-type]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>openDetail(b.dataset.detailType,b.dataset.id));});
   $$('[data-map]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>openMap(b.dataset.map));});
   $$('[data-route-from][data-route-to]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>openDirections(b.dataset.routeFrom,b.dataset.routeTo));});
@@ -1997,24 +2156,92 @@ function stopAlternatives(stop){
   return alternativeGroup(`${earlier.length} frühere Lademöglichkeit${earlier.length===1?'':'en'}`,earlier)+alternativeGroup(`${later.length} spätere Lademöglichkeit${later.length===1?'':'en'}`,later);
 }
 
+
+function departurePlanForStage(stageId){
+  const index=travel.stages.findIndex(s=>s.id===stageId);
+  if(index<=0) return null;
+  const previousStage=travel.stages[index-1];
+  return morningChargingPlans[previousStage.id]||null;
+}
+function destinationMorningPlan(stageId){
+  return morningChargingPlans[stageId]||null;
+}
+function departureCard(plan,step){
+  const stage=travel.stages.find(s=>s.id===plan.stageId);
+  const morning=departurePlanForStage(plan.stageId);
+  if(!stage) return '';
+  if(!morning){
+    return `<article class="charge-stop"><div class="meta"><span class="pill">${step} · Start</span></div>
+      <h3>Abfahrt ${esc(stage.from)}</h3>
+      <div class="charge-facts">
+        <div class="charge-fact"><span>Geplanter Start-SoC</span><b>${esc(stage.startSoc)}</b></div>
+        <div class="charge-fact"><span>Erster Abschnitt</span><b>${esc(plan.primary?.legFrom||stage.from)} → ${esc(plan.primary?.legTo||stage.to)}</b></div>
+      </div>
+    </article>`;
+  }
+  const options=morning.options||null;
+  if(morning.mode==='bakeryOnly'){
+    return `<article class="charge-stop"><div class="meta"><span class="pill">${step} · Vor Abfahrt</span></div>
+      <h3>${esc(morning.title)}</h3>
+      <div class="charge-facts">
+        <div class="charge-fact"><span>Fester Morgenstopp</span><b>${esc(morning.bakery)} · ${esc(morning.bakeryAddress)}</b></div>
+        <div class="charge-fact"><span>Laden</span><b>nicht planmäßig erforderlich</b></div>
+        <div class="charge-fact"><span>Reserve bei zu niedrigem SoC</span><b>${esc(morning.fallbackStation)} · ${esc(morning.fallbackPower)}</b></div>
+      </div>
+      <div class="actions"><button class="btn primary" data-map="${esc(morning.bakeryAddress)}">Bäckerei</button><button class="btn secondary" data-map="${esc(morning.fallbackAddress)}">Optionaler Ladepunkt</button></div>
+    </article>`;
+  }
+  return `<article class="charge-stop"><div class="meta"><span class="pill">${step} · Vor Abfahrt</span></div>
+    <h3>${esc(morning.title)}</h3>
+    ${options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Frühstück:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}<br>${esc(o.note)}</span><div class="actions"><button class="btn primary" data-map="${esc(o.address)}">Ladepunkt</button><button class="btn secondary" data-map="${esc(o.bakeryAddress)}">Bäckerei / Frühstück</button></div></div>`).join('')}</div>`:
+    `<div class="charge-facts">
+      <div class="charge-fact"><span>Ladepunkt</span><b>${esc(morning.station)} · ${esc(morning.address)}</b></div>
+      <div class="charge-fact"><span>Kapazität</span><b>${esc(morning.stalls)} · ${esc(morning.power)}</b></div>
+      <div class="charge-fact"><span>Bäckerei / Frühstück</span><b>${esc(morning.bakery)} · ${esc(morning.bakeryAddress)}</b></div>
+    </div><div class="actions"><button class="btn primary" data-map="${esc(morning.address)}">Ladepunkt</button><button class="btn secondary" data-map="${esc(morning.bakeryAddress)}">Bäckerei / Frühstück</button></div>`}
+  </article>`;
+}
+function arrivalCard(plan,step){
+  const d=destinationChargingPlans.find(x=>x.stageId===plan.stageId);
+  const morning=destinationMorningPlan(plan.stageId);
+  if(!d) return '';
+  const options=morning?.options||null;
+  const hasMorningCharge=Boolean(morning && morning.mode!=='bakeryOnly');
+  return `<article class="charge-stop"><div class="meta"><span class="pill">${step} · Ankunft${hasMorningCharge?' / nächster Morgen':''}</span></div>
+    <h3>${esc(d.place)}</h3>
+    <div class="charge-facts">
+      <div class="charge-fact"><span>Ankunft</span><b>${esc(d.arrival)}</b></div>
+      <div class="charge-fact"><span>Laden</span><b>${esc(d.when)}</b></div>
+      <div class="charge-fact"><span>Ziel-SoC</span><b>${esc(d.target)}</b></div>
+      <div class="charge-fact"><span>Zweck</span><b>${esc(d.reason)}</b></div>
+    </div>
+    ${hasMorningCharge?options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Frühstück:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}</span><div class="actions"><button class="btn primary" data-map="${esc(o.address)}">Ladepunkt</button><button class="btn secondary" data-map="${esc(o.bakeryAddress)}">Bäckerei / Frühstück</button></div></div>`).join('')}</div>`:
+    `<div class="actions"><button class="btn primary" data-map="${esc(morning.address)}">Ladepunkt nächster Morgen</button><button class="btn secondary" data-map="${esc(morning.bakeryAddress)}">Bäckerei / Frühstück</button></div>`:''}
+  </article>`;
+}
+function orderedRouteStops(plan,startStep){
+  const stops=[];
+  if(plan.reserveBeforePrimary && plan.reserve) stops.push({stop:plan.reserve,label:plan.secondaryLabel||'Reserve'});
+  if(plan.primary) stops.push({stop:plan.primary,label:'Hauptstopp'});
+  if(!plan.reserveBeforePrimary && plan.reserve) stops.push({stop:plan.reserve,label:plan.secondaryLabel||'Reserve'});
+  return stops.map((entry,index)=>chargingStopCard(entry.stop,`${startStep+index} · ${entry.label}`,index===0 && !plan.reserveBeforePrimary)).join('');
+}
+
 function renderCharging(){
   const strip=$('#chargingDayStrip');
   const host=$('#chargingStageContent');
   if(!strip||!host) return;
   strip.innerHTML=chargingStages.map(x=>`<button class="day-chip ${x.stageId===activeChargingStage?'active':''}" data-charge-stage="${x.stageId}"><b>${x.date}</b><span>${esc(x.route.split('→').pop().trim())}</span></button>`).join('');
   const plan=chargingStages.find(x=>x.stageId===activeChargingStage)||chargingStages[0];
+  const routeStopCount=(plan.primary?1:0)+(plan.reserve?1:0);
+  const arrivalStep=2+routeStopCount;
   host.innerHTML=`<div class="charge-stage">
     <article class="charge-summary"><div class="eyebrow">${esc(plan.date)} · ${esc(plan.distance)}</div><h3>${esc(plan.route)}</h3><p>${esc(plan.note)}</p>${plan.stageId==='s4'?`<div class="feature-list" style="margin-top:14px">
-      <div class="feature-item"><b>1 · Reserve</b><span>Aire du Caylar nur bei Bedarf</span></div>
-      <div class="feature-item"><b>2 · Blick von unten</b><span>Peyre · Parking Haut</span></div>
-      <div class="feature-item"><b>3 · Überfahrt</b><span>A75-Zufahrt 46 → Viaduc de Millau</span></div>
-      <div class="feature-item"><b>4 · Blick von oben</b><span>Aire du Viaduc de Millau · Belvédère</span></div>
-      <div class="feature-item"><b>5 · Laden</b><span>Aire de l’Aveyron · planmäßiger Hauptstopp</span></div>
+      <div class="feature-item"><b>Reale Reihenfolge</b><span>L’Estartit → Caylar nur bei Bedarf → Peyre → Viadukt → Belvédère → Aire de l’Aveyron → Clermont-Ferrand</span></div>
     </div>`:''}</article>
-    ${(()=>{const d=destinationChargingPlans.find(x=>x.stageId===plan.stageId);const m=morningChargingPlans[plan.stageId];if(!d)return '';const options=m?.options||null;return `<article class="charge-stop"><div class="meta"><span class="pill">Laden am Ziel / Folgemorgen</span></div><h3>${esc(d.place)}</h3><div class="charge-facts"><div class="charge-fact"><span>Ankunft</span><b>${esc(d.arrival)}</b></div><div class="charge-fact"><span>Laden</span><b>${esc(d.when)}</b></div><div class="charge-fact"><span>Ziel-SoC</span><b>${esc(d.target)}</b></div><div class="charge-fact"><span>Zweck</span><b>${esc(d.reason)}</b></div></div>${options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Frühstück:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}<br>${esc(o.note)}</span><div class="actions"><button class="btn primary" data-map="${esc(o.address)}">Ladepunkt</button><button class="btn secondary" data-map="${esc(o.bakeryAddress)}">Bäckerei / Frühstück</button></div></div>`).join('')}</div>`:m?`<div class="charge-facts"><div class="charge-fact"><span>Ladepunkt</span><b>${esc(m.station)} · ${esc(m.address)}</b></div><div class="charge-fact"><span>Kapazität</span><b>${esc(m.stalls)} · ${esc(m.power)}</b></div><div class="charge-fact"><span>Bäckerei / Frühstück</span><b>${esc(m.bakery)} · ${esc(m.bakeryAddress)}</b></div></div><div class="actions"><button class="btn primary" data-map="${esc(m.address)}">Ladepunkt</button><button class="btn secondary" data-map="${esc(m.bakeryAddress)}">Bäckerei / Frühstück</button></div>`:''}</article>`;})()}<div class="charge-stage-grid">
-      ${chargingStopCard(plan.primary,'Hauptstopp',true)}
-      ${chargingStopCard(plan.reserve,plan.secondaryLabel||'Reserve',false)}
-    </div>
+    ${departureCard(plan,1)}
+    <div class="charge-stage-grid">${orderedRouteStops(plan,2)}</div>
+    ${arrivalCard(plan,arrivalStep)}
   </div>`;
   $$('[data-charge-stage]',strip).forEach(btn=>btn.addEventListener('click',()=>{
     activeChargingStage=btn.dataset.chargeStage;
@@ -2088,7 +2315,7 @@ if($('#quickHoliday')) $('#quickHoliday').addEventListener('click',()=>{
 if($('#resetPrep')) $('#resetPrep').addEventListener('click',()=>{
   if(confirm('Reisevorbereitung wirklich zurücksetzen?')){
     $$('[data-prep]').forEach(cb=>{
-      localStorage.removeItem('travelprep:'+cb.dataset.prep);
+      safeStorage.remove('travelprep:'+cb.dataset.prep);
       cb.checked=false;
       cb.closest('.prep-item').classList.remove('done');
     });
@@ -2134,7 +2361,7 @@ function runSelfTest(){
   results.push(!$$('[data-map]').some(el=>/^(HPC |EV charging near)/i.test(normalizeMapValue(el.dataset.map))));
   results.push(!travel.activities.some(a=>/^(HPC |EV charging near)/i.test(a.map||'')));
   results.push(!chargingStages.some(c=>JSON.stringify(c).match(/"map":"?(HPC |EV charging near)/i)));
-  results.push(!document.documentElement.innerHTML.includes('${esc(item.id)}'));
+  results.push(!$$('[data-id]').some(el=>String(el.dataset.id||'').includes('${')));
   results.push($$('#todayChargePlan').length===1);
   results.push(chargingStages.every(x=>x.stageId&&x.primary?.map&&x.distance));
   results.push(chargingStages.every(stage=>
@@ -2159,8 +2386,33 @@ function runSelfTest(){
   results.push($$('[data-evening-route]').every(btn=>Boolean(eveningRoutes[btn.dataset.eveningRoute])));
   results.push($$('[data-trip-route]').every(btn=>Boolean(tripRoutes[btn.dataset.tripRoute])));
   results.push(travel.stages.every(s=>Boolean(s.originAddress&&s.destinationAddress)));
-  results.push(chargingStages.every(s=>s.minimumStalls===6));
+  results.push(chargingStages.filter(s=>s.stageId!=='s3').every(s=>s.minimumStalls===6) && chargingStages.find(s=>s.stageId==='s3')?.minimumStalls===1);
   results.push(Boolean(document.getElementById('dailyWarnings')));
+  results.push(Boolean(document.getElementById('currentTrafficRoute')));
+  results.push(Boolean(document.getElementById('todayRouteMap')) && Boolean(document.getElementById('todayMapLabel')) && Boolean(document.getElementById('todayMapStops')));
+  results.push(typeof googleMapsEmbedUrl==='function' && googleMapsEmbedUrl('A','B',['C']).includes('output=embed'));
+  results.push(Boolean(document.getElementById('todaySection')) && Boolean(document.getElementById('todayState')));
+  results.push(!document.getElementById('metricRoute') && !document.getElementById('metricStatus'));
+  results.push(document.querySelectorAll('.dashboard .metric').length===1);
+  results.push(morningChargingPlans.s2?.mode==='bakeryOnly' && Boolean(morningChargingPlans.s2?.fallbackAddress));
+  results.push(travel.stages.find(s=>s.id==='s4')?.routeWaypoints?.some(x=>x.includes('Aire du Viaduc de Millau')));
+  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[0]?.includes('Rue Louis Armstrong'));
+  results.push(travel.stages.find(s=>s.id==='s6')?.routeWaypoints?.[0]?.includes('Rue de Chaponost') && travel.stages.find(s=>s.id==='s6')?.routeWaypoints?.[1]?.includes('Pie Grièche'));
+  results.push(document.getElementById('day2607')?.textContent.includes('11:30') && document.getElementById('day2607')?.textContent.includes('16:30'));
+  results.push(
+    chargingStages.find(x=>x.stageId==='s3')?.reserveBeforePrimary===true &&
+    chargingStages.find(x=>x.stageId==='s4')?.reserveBeforePrimary===true &&
+    departurePlanForStage('s1')===null &&
+    departurePlanForStage('s2')===morningChargingPlans.s1 &&
+    departurePlanForStage('s3')===morningChargingPlans.s2 &&
+    departurePlanForStage('s5')===morningChargingPlans.s4 &&
+    departurePlanForStage('s6')===morningChargingPlans.s5
+  );
+  results.push(Boolean(safeStorage&&typeof safeStorage.get==='function'&&typeof safeStorage.set==='function'));
+  results.push(!$$('[data-map]').some(el=>normalizeMapValue(el.dataset.map).includes('Estació de recàrrega Passeig del Molinet')));
+  results.push(!$$('[data-url]').some(el=>/^https:\/\/maps\.google\.com\/?$/i.test(el.dataset.url||'')));
+  results.push(estartitChargingOptions.length===3 && estartitChargingOptions.some(x=>/150 kW/.test(x.power)));
+  results.push(!document.getElementById('day2607')?.textContent.toLowerCase().includes('metro'));
   results.push(
     travel.stages.find(s=>s.id==='s1')?.routeWaypoints?.every(p=>/\d/.test(p)) &&
     !travel.stages.find(s=>s.id==='s1')?.routeWaypoints?.some(p=>/^Luxemburg$/i.test(p))
@@ -2173,7 +2425,7 @@ function runSelfTest(){
   results.push(
     Boolean(document.getElementById('evening2207')) &&
     document.getElementById('evening2207').textContent.includes('Kein vollständiger Eulenrundgang') &&
-    document.getElementById('evening2207').textContent.includes('La Chouette')
+    eveningRoutes.evening2207.waypoints.some(p=>p.includes('Rue de la Chouette'))
   );
   results.push(chargingStages.every(stage=>
     [stage.primary,stage.reserve].filter(Boolean).every(stop=>
@@ -2184,8 +2436,8 @@ function runSelfTest(){
   results.push(!JSON.stringify(chargingStages).toLowerCase().includes('e-center'));
   results.push(chargingStages.every(stage=>stage.calibration&&stage.reference&&stage.modelRate));
   results.push(chargingStages.every(stage=>
-    stage.dkvRequired===true &&
-    stage.minimumStalls>=6 &&
+    (stage.stageId==='s3'?stage.dkvRequired===false:stage.dkvRequired===true) &&
+    (stage.stageId==='s3'?stage.minimumStalls>=1:stage.minimumStalls>=6) &&
     stage.maxMotorwaySpeed==='130 km/h' &&
     stage.expectedAverageSpeed==='90–100 km/h'
   ));
@@ -2198,7 +2450,7 @@ function runSelfTest(){
   results.push(
     chargingStages.find(x=>x.stageId==='s5')?.primary?.name.includes('Beaune-Tailly') &&
     chargingStages.find(x=>x.stageId==='s5')?.reserve?.name.includes('Moulins-lès-Metz') &&
-    destinationChargingPlans.find(x=>x.stageId==='s5')?.when==='am selben Abend'
+    destinationChargingPlans.find(x=>x.stageId==='s5')?.when==='02.08. morgens'
   );
   results.push(destinationChargingPlans.filter(x=>x.stageId!=='s6').every(x=>/80|90|95/.test(x.target)));
   results.push(chargingStages.find(x=>x.stageId==='s1')?.primary?.arrivalSoc==='ca. 10 %');
@@ -2235,11 +2487,14 @@ function runSelfTest(){
     )
   )));
   results.push(!chargingStages.some(stage=>JSON.stringify(stage).toLowerCase().includes('lidl')||JSON.stringify(stage).toLowerCase().includes('aldi')));
-  results.push(!document.documentElement.innerHTML.includes('plannedLegKm'));
+  results.push(!JSON.stringify({travel,chargingStages,destinationChargingPlans,morningChargingPlans}).includes('plannedLegKm'));
   results.push(!chargingStages.some(stage=>JSON.stringify(stage).toLowerCase().includes('toilette im umfeld')));
   results.push($$('button').every(btn=>
     btn.id || ['detailType','map','routeFrom','stageRoute','url','tel','email','whatsapp','go','chargeForStage','eveningStage','eveningRoute','tripRoute','viewTarget','close','detailClose','day','chargeStage','filter','hit','prep'].some(k=>k in btn.dataset)
   ));
+  results.push(
+    $$('.actions').every(group=>$$('.btn.primary',group).length<=1)
+  );
   const failed=results.filter(x=>!x).length;
   const box=$('#selfTestResult');
   if(!box)return;
