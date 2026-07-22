@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Reiseversion · Block 28.12</title>
+<title>Spanien Travelbook 2026 · Reiseversion · Block 28.16</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -52,7 +52,7 @@ linear-gradient(135deg,#0b1020 0%,#172554 55%,#2563eb 100%);color:#fff;box-shado
 .badge{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:var(--panel2);font-size:12px;font-weight:800;color:var(--muted)}
 .progress{height:9px;background:var(--panel2);border-radius:999px;overflow:hidden}
 .progress span{display:block;height:100%;width:34%;background:linear-gradient(90deg,var(--brand),var(--amber));border-radius:inherit}
-.route-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.route-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .route-kpi{background:var(--panel2);border-radius:16px;padding:12px}
 .route-kpi b{display:block;font-size:16px}
 .route-kpi span{font-size:12px;color:var(--muted)}
@@ -186,15 +186,47 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 
 
 .today-status{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:13px;font-weight:800;color:#dcfce7}
-.today-compact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px;position:relative;z-index:1}
-.today-compact-item{padding:12px 13px;border-radius:17px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14)}
-.today-compact-item span{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#bfdbfe}
-.today-compact-item b{display:block;font-size:17px;margin-top:4px;color:#fff}
-.today-compact-item small{display:block;font-size:11px;margin-top:3px;color:#dbeafe;line-height:1.35}
-@media(max-width:520px){.today-compact{grid-template-columns:1fr}}
 
 .status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.16)}
 .today-main{display:grid;gap:14px;margin-top:14px}
+.weather-card{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:15px;box-shadow:var(--shadow2)}
+.weather-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px}
+.weather-head h3{margin:0;font-size:18px}
+.weather-head button{border:0;background:var(--panel2);color:var(--text);border-radius:12px;padding:8px 10px;font-weight:800}
+.weather-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.weather-day{padding:13px;border-radius:18px;background:var(--panel2);min-width:0}
+.weather-day-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.weather-day-label{font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.weather-place{font-size:16px;font-weight:850;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.weather-icon{font-size:30px;line-height:1}
+.weather-temp{font-size:22px;font-weight:900;margin-top:10px}
+.weather-condition{font-size:12px;color:var(--muted);margin-top:2px}
+.weather-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.weather-meta span{font-size:11px;padding:6px 8px;border-radius:999px;background:var(--panel)}
+.weather-note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.4}
+.weather-error{padding:12px;border-radius:15px;background:color-mix(in srgb,var(--amber) 10%,var(--panel));color:var(--muted);font-size:12px;line-height:1.4}
+.weather-local-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.weather-local-tile{padding:14px;border-radius:18px;background:var(--panel2)}
+.weather-local-tile b{display:block;font-size:16px}
+.weather-local-tile span{display:block;margin-top:4px;font-size:12px;color:var(--muted)}
+.weather-local-tile button{width:100%;margin-top:11px;border:0;border-radius:13px;padding:10px;background:var(--brand);color:#fff;font-weight:850}
+@media(max-width:520px){.weather-local-actions{grid-template-columns:1fr}}
+
+@media(max-width:520px){.weather-grid{grid-template-columns:1fr}}
+
+.today-brief{margin-top:14px;padding:15px;border-radius:20px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.16);position:relative;z-index:1}
+.today-brief-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.today-brief-head b{font-size:17px}
+.today-brief-head span{font-size:12px;color:#dbeafe;text-align:right}
+.today-brief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.today-brief-item{padding:10px;border-radius:14px;background:rgba(255,255,255,.09)}
+.today-brief-item span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#bfdbfe;font-weight:800}
+.today-brief-item b{display:block;margin-top:4px;font-size:15px;color:#fff}
+.today-checks{display:grid;gap:7px;margin-top:12px}
+.today-check{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#e0ecff;line-height:1.35}
+.today-check:before{content:"✓";font-weight:900;color:#86efac}
+@media(max-width:520px){.today-brief-grid{grid-template-columns:1fr}}
+
 .today-route{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:18px;box-shadow:var(--shadow2)}
 .today-map-wrap{margin-top:15px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel2)}
 .today-map-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 13px;border-bottom:1px solid var(--line)}
@@ -292,16 +324,17 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <h1 id="todayTitle">Heute</h1>
 <p id="todaySubtitle">Dein persönlicher Reisebegleiter zeigt automatisch den passenden Reisetag.</p>
 <div class="today-status"><span class="status-dot"></span><span id="todayStatus">Reisevorbereitung läuft</span></div>
-<div class="today-compact">
-  <div class="today-compact-item">
-    <span>Heutiger Abschnitt</span>
-    <b id="todaySection">Vorbereitung</b>
-    <small id="todaySectionSub">Abfahrt am 22. Juli</small>
+<div class="today-brief" id="todayBrief">
+  <div class="today-brief-head"><b id="todayBriefTitle">Heute: Hasbergen → Dijon</b><span id="todayBriefWindow">07:45 → 18:15 Uhr</span></div>
+  <div class="today-brief-grid">
+    <div class="today-brief-item"><span>Abfahrt</span><b id="todayBriefDeparture">07:45 Uhr</b></div>
+    <div class="today-brief-item"><span>Zielankunft</span><b id="todayBriefArrival">18:00–18:30 Uhr</b></div>
+    <div class="today-brief-item"><span>Ladestopps</span><b id="todayBriefStops">Trier + Langres</b></div>
   </div>
-  <div class="today-compact-item">
-    <span>Reisestatus</span>
-    <b id="todayState">Vorbereitung</b>
-    <small id="todayStateSub">Checkliste nutzen</small>
+  <div class="today-checks" id="todayChecks">
+    <div class="today-check">Audi vor Abfahrt auf 98 % und Navigationsprognose bis Trier prüfen.</div>
+    <div class="today-check">DKV-Karte, Lade-Apps, Warnwesten, Dokumente, Snacks und Getränke griffbereit.</div>
+    <div class="today-check">Vor Abfahrt aktuelle Route, Wetterwarnungen und Live-Status beider Ladepunkte öffnen.</div>
   </div>
 </div>
 </article>
@@ -309,13 +342,24 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <article class="metric"><div class="label">Nächste Unterkunft</div><div class="value" id="metricHotel">L’Atypique</div><div class="sub" id="metricHotelSub">Dijon · 22.07.</div></article>
 </div>
 </div>
+<section class="weather-card" id="weatherCard">
+  <div class="weather-head">
+    <h3>Wetter heute & morgen</h3>
+    <button id="refreshWeather" type="button">Aktualisieren</button>
+  </div>
+  <div class="weather-grid" id="weatherGrid">
+    <div class="weather-error">Wetterdaten werden geladen …</div>
+  </div>
+  <div class="weather-note">Wetter für den jeweiligen Reiseort.</div>
+</section>
 <div class="today-main">
 <article class="today-route">
 <div class="route-head"><div><span class="badge" id="todayDateBadge">Nächster Reisetag</span><h3 id="todayRouteTitle">Hasbergen → Dijon</h3></div><span class="badge" id="todayDistance">ca. 710 km</span></div>
 <div class="route-line"><div class="route-marker"><i></i></div><div class="route-place"><b id="todayFrom">Hasbergen</b><span>Start</span></div></div>
 <div class="route-line"><div class="route-marker last"><i></i></div><div class="route-place"><b id="todayTo">Dijon</b><span>Ziel</span></div></div>
 <div class="route-grid">
-<div class="route-kpi"><b id="todayDriveTime">8–9 Std.</b><span>inkl. Pausen</span></div>
+<div class="route-kpi"><b id="todayDeparture">07:45</b><span>Abfahrt</span></div>
+<div class="route-kpi"><b id="todayDriveTime">10,5 Std.</b><span>Gesamtzeit</span></div>
 <div class="route-kpi"><b id="todayChargingCount">2 Stopps</b><span>Ladestrategie</span></div>
 <div class="route-kpi"><b id="todaySoc">98 %</b><span>Start-SoC</span></div>
 </div>
@@ -395,7 +439,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 <section class="view" data-view="more">
 <div class="page">
-<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.12 · Block 28.12</span></div>
+<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.16 · Block 28.16</span></div>
 
 <section class="section">
 <div class="section-title"><h2>Barcelona – Sonntag 26.07.</h2><button class="link-btn" data-detail-type="activity" data-id="a1">Details</button></div>
@@ -564,7 +608,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section" id="estartitInsider">
-<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.12</span></div>
+<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.16</span></div>
 <div class="notice"><div class="notice-icon">🍸</div><div><strong>Direkt nutzbare Empfehlungen</strong><p>Cocktails, Restaurants, Metzgereien, Fischkauf und besondere Orte rund um L’Estartit sind jetzt an einer Stelle gebündelt. Öffnungszeiten am jeweiligen Tag kurz prüfen.</p></div></div>
 
 <div class="cards two" style="margin-top:14px">
@@ -797,14 +841,14 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <div class="meta"><span class="pill">Dijon</span><span class="pill">kleiner Eulenweg</span><span class="pill">Eule gezielt besuchen</span></div>
 <h3>Dijon – kompakter Altstadtabend mit der Eule</h3>
 <div class="day-plan">
-<div><b>17:30</b><span>Ankunft an der Unterkunft, Gepäck ausladen und Self-Check-in.</span></div>
-<div><b>18:00</b><span>Auto am kostenlosen Parkplatz Rue Marguerite Thibert abstellen. Durch die Ladung in Langres ist kein weiterer Ladestopp erforderlich.</span></div>
-<div><b>18:20</b><span>Das Auto bleibt am öffentlichen Parkplatz nahe der Unterkunft. Der gesamte Abend wird zu Fuß durchgeführt.</span></div>
-<div><b>18:30</b><span>Start an der Place Notre-Dame. Zuerst die Kirche Notre-Dame ansehen, dann direkt in die Rue de la Chouette gehen und die berühmte Eule an der Nordseite der Kirche besuchen.</span></div>
-<div><b>18:45</b><span>Kleiner Teil des Eulenwegs: Rue de la Chouette → Maison Millière → Rue Verrerie → Palais des Ducs → Place de la Libération. Strecke etwa 1 bis 1,5 km und ungefähr 45–60 Minuten.</span></div>
-<div><b>19:30</b><span>Über Rue des Forges und Place François Rude gemütlich Richtung Restaurant gehen.</span></div>
-<div><b>19:45</b><span>Abendessen bei DZ’envies, 12 rue Odebert. Französischer Burger beziehungsweise moderne Bistroküche.</span></div>
-<div><b>21:00</b><span>Eis rund um Rue Musette oder Rue des Forges. Danach zu Fuß zurück zur Unterkunft.</span></div>
+<div><b>18:15</b><span>Geplante Ankunft an der Unterkunft, Gepäck ausladen und Self-Check-in. Zielkorridor 18:00–18:30 Uhr.</span></div>
+<div><b>18:40</b><span>Auto am kostenlosen Parkplatz Rue Marguerite Thibert abstellen. Durch die Ladung in Langres ist kein weiterer Ladestopp erforderlich.</span></div>
+<div><b>19:00</b><span>Das Auto bleibt am öffentlichen Parkplatz nahe der Unterkunft. Der gesamte Abend wird zu Fuß durchgeführt.</span></div>
+<div><b>19:10</b><span>Start an der Place Notre-Dame. Zuerst die Kirche Notre-Dame ansehen, dann direkt in die Rue de la Chouette gehen und die berühmte Eule an der Nordseite der Kirche besuchen.</span></div>
+<div><b>19:25</b><span>Kleiner Teil des Eulenwegs: Rue de la Chouette → Maison Millière → Rue Verrerie → Palais des Ducs → Place de la Libération. Strecke etwa 1 bis 1,5 km und ungefähr 45–60 Minuten.</span></div>
+<div><b>20:10</b><span>Über Rue des Forges und Place François Rude gemütlich Richtung Restaurant gehen.</span></div>
+<div><b>20:20</b><span>Abendessen bei DZ’envies, 12 rue Odebert. Französischer Burger beziehungsweise moderne Bistroküche.</span></div>
+<div><b>21:35</b><span>Eis rund um Rue Musette oder Rue des Forges. Danach zu Fuß zurück zur Unterkunft.</span></div>
 </div>
 <div class="feature-list">
 <div class="feature-item"><b>Wichtig</b><span>Kein vollständiger Eulenrundgang: nur Notre-Dame, die Eule und ein kurzer Altstadtabschnitt mit den schönsten Stationen.</span></div>
@@ -1054,7 +1098,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section">
-<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.12</span></div>
+<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.16</span></div>
 <div class="card">
 <div class="qa-grid">
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Einzeldatei</b><span>HTML, CSS, JavaScript und Reisedaten sind vollständig eingebettet.</span></div></div>
@@ -1169,7 +1213,7 @@ const travel = {
     minimumStageStartSoc:'80 %'
   },
   stages: [
-    {id:'s1',originAddress:'Hasbergen, 49205, Deutschland',destinationAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',date:'22.07.',weekday:'Mi',from:'Hasbergen',to:'Dijon',title:'Hasbergen → Dijon',
+    {id:'s1',originAddress:'Hasbergen, 49205, Deutschland',destinationAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',date:'22.07.',weekday:'Mi',departureTime:'07:45',arrivalTime:'18:15',arrivalWindow:'18:00–18:30',totalDayTime:'ca. 10,5 Std.',todayStops:'Trier + Langres',todayChecks:['Audi auf 98 % und Prognose bis Trier prüfen','DKV-Karte, Apps, Dokumente, Warnwesten, Snacks und Getränke griffbereit','Live-Verkehr, Wetterwarnungen sowie GLOBUS Trier und IONITY Langres vor Abfahrt prüfen'],from:'Hasbergen',to:'Dijon',title:'Hasbergen → Dijon',
     summary:'Start mit 98 %. Das Audi-Navi erwartet am GLOBUS Trier etwa 10 %. Nach dem Laden auf 85 % folgt der zweite Stopp erst an der IONITY Aire de Langres Noidant bei ungefähr 10–15 %. Dijon wird danach mit hoher Reserve erreicht.',
     tags:['Etappe','Dijon','Hinfahrt'],distance:'ca. 710 km Straßenstrecke',driveTime:'ca. 9,5–10,5 Std. inkl. zwei Lade- und Familienpausen',
     toll:'Richtwert ca. 20–30 €; tatsächlichen Betrag beim Start im Routenplaner prüfen',
@@ -1181,7 +1225,7 @@ const travel = {
     routeWaypoints:['Castelforte-Straße 1, 54292 Trier, Deutschland','A31, 52200 Noidant-le-Rocheux, Frankreich'],
     plan:'Mit 98 % starten. GLOBUS Trier laut Audi-Prognose mit etwa 10 % erreichen und auf 85 % laden. Danach rund 290 km bis Langres fahren, dort ungefähr mit 10–15 % ankommen und erneut auf 85 % laden. Der kurze Restabschnitt nach Dijon führt zu einer Ankunft mit etwa 65–70 %. Am nächsten Morgen nur noch bis mindestens 80 %, für die lange Etappe besser bis 90 %, ergänzen.'},
 
-    {id:'s2',originAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',destinationAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',date:'23.07.',weekday:'Do',from:'Dijon',to:'Montpellier',title:'Dijon → Montpellier',
+    {id:'s2',originAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',destinationAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',date:'23.07.',weekday:'Do',departureTime:'09:15',arrivalTime:'16:15',arrivalWindow:'16:00–16:30',totalDayTime:'ca. 7 Std.',todayStops:'Point Chaud + IONITY Dijon Sud + Portes-lès-Valence',todayChecks:['Zuerst Bäckerei, danach auf etwa 90 % laden','Tesla-App und DKV-Zahlung prüfen','Hotelankunft und Laden am Hotel vorbereiten'],from:'Dijon',to:'Montpellier',title:'Dijon → Montpellier',
     summary:'Zuerst zur Bäckerei Point Chaud in Chenôve, danach IONITY Dijon Sud auf etwa 90 % laden. Anschließend führt die Etappe über den einzigen Fahrtstopp Aire de Portes-lès-Valence Ouest nach Montpellier.',
     tags:['Etappe','Montpellier','Hinfahrt'],distance:'ca. 490 km Straßenstrecke',driveTime:'ca. 6–6,5 Std. inkl. Ladepause',
     toll:'Richtwert ca. 35–45 € für Klasse 1; Kartenzahlung an den Mautstellen',
@@ -1192,7 +1236,7 @@ const travel = {
     routeWaypoints:['60 Rue de Longvic, 21300 Chenôve, Frankreich','5 Rue de Beauregard, 21600 Longvic, Frankreich','A7, 26800 Portes-lès-Valence, Frankreich'],
     plan:'Von der Unterkunft zuerst zur Bäckerei Point Chaud, 60 Rue de Longvic in Chenôve. Danach zum IONITY Dijon Sud, 5 Rue de Beauregard in Longvic, und auf etwa 90 % laden. Anschließend Portes-lès-Valence nach ungefähr 300–310 km mit etwa 10–15 % erreichen und auf 85 % laden. Montpellier wird danach mit rund 35–40 % erreicht. Für den nächsten Tag möglichst noch am Abend auf mindestens 75–80 % laden; morgens ist nur die Bäckerei fest eingeplant.'},
 
-    {id:'s3',originAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',destinationAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',date:'24.07.',weekday:'Fr',from:'Montpellier',to:'L’Estartit',title:'Montpellier → L’Estartit',
+    {id:'s3',originAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',destinationAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',date:'24.07.',weekday:'Fr',departureTime:'10:15',arrivalTime:'15:00',arrivalWindow:'15:00',totalDayTime:'ca. 4 Std. 45 Min.',todayStops:'Bäckerei + Carrefour Torroella',todayChecks:['Morgens nur Bäckerei; Start-SoC vom Vorabend prüfen','Narbonne nur bei Bedarf','Carrefour Torroella auf 95–100 % laden'],from:'Montpellier',to:'L’Estartit',title:'Montpellier → L’Estartit',
     summary:'Morgens nur zur Bäckerei; der Startladestand wird möglichst am Vorabend hergestellt. Kurz vor dem Ziel am Carrefour Market Torroella auf 95–100 % laden und L’Estartit mit ungefähr 90 % erreichen.',
     tags:['Etappe','L’Estartit','Spanien'],distance:'ca. 250 km Straßenstrecke',driveTime:'ca. 3–3,5 Std. inkl. Grenzverkehr',
     toll:'Richtwert ca. 15–20 € auf der französischen A9; spanischer Abschnitt überwiegend mautfrei',
@@ -1203,7 +1247,7 @@ const travel = {
     routeWaypoints:['834 Avenue du Mas d’Argelliers, 34070 Montpellier, Frankreich','Camí del Molí, s/n, 17257 Torroella de Montgrí, Spanien'],
     plan:'In Montpellier morgens nur die Bäckerei nutzen. Der Audi sollte möglichst bereits am Vorabend auf etwa 75–80 % geladen worden sein. Reicht die Prognose nicht bis Torroella, IONITY Narbonne-Vinassan Nord als Reserve nutzen. Am Carrefour Market Torroella, Camí del Molí s/n, am 150-kW-CCS auf 95–100 % laden. Von dort sind es nur noch wenige Kilometer bis L’Estartit, sodass die Unterkunft mit ungefähr 90 % erreicht wird.'},
 
-    {id:'s4',originAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',destinationAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',date:'31.07.',weekday:'Fr',from:'L’Estartit',to:'Clermont-Ferrand',title:'L’Estartit → Clermont-Ferrand',
+    {id:'s4',originAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',destinationAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',date:'31.07.',weekday:'Fr',departureTime:'07:15',arrivalTime:'16:30',arrivalWindow:'16:30',totalDayTime:'ca. 9 Std. 15 Min.',todayStops:'Peyre + Viadukt + Belvédère + Aire de l’Aveyron',todayChecks:['Mit 90–95 % starten','Caylar nur bei Reichweitenbedarf','Peyre, Viadukt und Belvédère zeitlich berücksichtigen'],from:'L’Estartit',to:'Clermont-Ferrand',title:'L’Estartit → Clermont-Ferrand',
     summary:'Start mit 90–95 %. Der frühere Stopp am Caylar ist nur Reserve. Der planmäßige Ladestopp liegt nach Peyre und der Viadukt-Überfahrt an der Aire de l’Aveyron, möglichst bei 10–15 %.',
     tags:['Etappe','Millau','Rückfahrt'],distance:'ca. 530 km Straßenstrecke über A75/Millau',driveTime:'ca. 8–9 Std. inkl. Laden, Peyre, Viadukt und Belvédère',
     toll:'A75 größtenteils mautfrei; Millau-Viadukt Sommerpreis 2026: 13,80 € für Klasse 1',
@@ -1214,7 +1258,7 @@ const travel = {
     routeWaypoints:['Parking Haut Peyre 12100 Comprégnac','Viaduc de Millau A75','Aire du Viaduc de Millau Brocuéjouls 12100 Millau Frankreich','Aire de l’Aveyron A75 Sévérac-d’Aveyron'],
     plan:'L’Estartit mit 90–95 % verlassen. Den Caylar nur nutzen, wenn das Audi-Navi vor Millau weniger als 15 % prognostiziert. Planmäßig zuerst Peyre besuchen, das Viadukt Richtung Clermont-Ferrand überfahren und anschließend an der Aire de l’Aveyron ungefähr bei 10–15 % auf 85 % laden. Danach reicht die Energie bis Clermont-Ferrand mit etwa 30–40 % Rest. Wegen der späten Ankunft am nächsten Morgen auf 85–90 % laden.'},
 
-    {id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
+    {id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'08:15',arrivalTime:'16:30',arrivalWindow:'16:30',totalDayTime:'ca. 8 Std. 15 Min.',todayStops:'Riom + Beaune-Tailly',todayChecks:['Vor Abfahrt in Riom auf etwa 90 % laden','Tesla-App mit DKV Card +Charge nutzen','Beaune-Tailly auf etwa 85 % laden'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
     summary:'Nach dem morgendlichen Laden mit etwa 90 % starten. Ein Fahrtstopp in Beaune-Tailly reicht; dort ungefähr bei 10–18 % auf 85 % laden. Moulins-lès-Metz bleibt reine Reserve.',
     tags:['Etappe','Metz','Rückfahrt'],distance:'ca. 580 km Straßenstrecke',driveTime:'ca. 7–7,5 Std. inkl. einer Ladepause',
     toll:'Richtwert ca. 35–50 € je nach gewählter Route über A89/A6/A31',
@@ -1225,7 +1269,7 @@ const travel = {
     routeWaypoints:['Rue Louis Armstrong, 63200 Riom, Frankreich','Aire de Beaune-Tailly A6'],
     plan:'Clermont-Ferrand morgens auf etwa 90 % laden. Beaune-Tailly nach rund 290 km mit ungefähr 10–18 % erreichen und auf 85 % laden. Der zweite Abschnitt bis Metz ist ebenfalls etwa 290 km lang; erwartete Ankunft rund 10–15 %. Moulins-lès-Metz bleibt während der Etappe Reserve. Das Laden auf etwa 95 % erfolgt erst am 02.08. morgens am Tesla Supercharger Waves Actisud.'},
 
-    {id:'s6',originAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',destinationAddress:'Hasbergen, Deutschland',date:'02.08.',weekday:'So',from:'Metz',to:'Hasbergen',title:'Metz → Hasbergen',
+    {id:'s6',originAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',destinationAddress:'Hasbergen, Deutschland',date:'02.08.',weekday:'So',departureTime:'09:00',arrivalTime:'16:00',arrivalWindow:'16:00',totalDayTime:'ca. 7 Std.',todayStops:'Mougel Bio + Waves Actisud + Kamener Kreuz',todayChecks:['Zuerst Bäckerei, danach Tesla auf etwa 95 %','Kamener Kreuz als planmäßiger Fahrtstopp','Ankunft zuhause gegen 16:00 Uhr'],from:'Metz',to:'Hasbergen',title:'Metz → Hasbergen',
     summary:'Metz mit etwa 95 % verlassen. Der bisherige Halt in Limburg liegt zu früh. Neuer Hauptstopp ist der EnBW-Schnellladepark am Kamener Kreuz, möglichst bei etwa 8–15 %.',
     tags:['Etappe','Heimreise','Rückfahrt'],distance:'ca. 440 km Straßenstrecke',driveTime:'ca. 5,5–6 Std. inkl. Ladepause',
     toll:'Überwiegend mautfrei; je nach Ausfahrt geringe französische Maut möglich',
@@ -1620,7 +1664,7 @@ function stageCard(s){
   return `<article class="stop">
     <div class="date"><div><b>${s.date}</b><span>${s.weekday}</span></div></div>
     <div class="stop-card">
-      <div class="meta">${s.tags.map(t=>`<span class="pill">${t}</span>`).join('')}</div>
+      <div class="meta">${s.tags.map(t=>`<span class="pill">${t}</span>`).join('')}<span class="pill">Abfahrt ${esc(s.departureTime)}</span><span class="pill">Ankunft ${esc(s.arrivalWindow)}</span></div>
       <h3>${s.title}</h3><p>${s.summary}</p>
       <div class="actions"><button class="btn secondary" data-detail-type="stage" data-id="${s.id}">Details</button><button class="btn primary" data-stage-route="${esc(s.id)}">Navigation</button>${s.id!=='s6'?`<button class="btn secondary" data-evening-stage="${esc(s.id)}">Abendprogramm</button>`:''}${s.id==='s4'?`<button class="btn secondary" data-detail-type="activity" data-id="a5">Millau-Viadukt</button>`:''}</div>
     </div>
@@ -1742,8 +1786,10 @@ function openDetail(type,id){
     const hotel=travel.hotels.find(h=>h.name===item.overnight);
     html=`<div class="detail-hero"><div class="eyebrow">${esc(item.date)} · ${esc(item.weekday)}</div><h2>${esc(item.title)}</h2><p>${esc(item.summary)}</p></div>
     <div class="detail-grid">
+      <div class="detail-box"><span>Abfahrt</span><b>${esc(item.departureTime)} Uhr</b></div>
+      <div class="detail-box"><span>Geplante Ankunft</span><b>${esc(item.arrivalWindow)} Uhr</b></div>
+      <div class="detail-box"><span>Gesamtzeit</span><b>${esc(item.totalDayTime)}</b></div>
       <div class="detail-box"><span>Strecke</span><b>${esc(item.distance)}</b></div>
-      <div class="detail-box"><span>Fahrzeit</span><b>${esc(item.driveTime)}</b></div>
       <div class="detail-box"><span>Start-SoC</span><b>${esc(item.startSoc)}</b></div>
       <div class="detail-box"><span>Unterkunft</span><b>${esc(item.overnight)}</b></div>
     </div>
@@ -1808,6 +1854,133 @@ function openDetail(type,id){
   $('#detailSheet').classList.add('open');
   bindDynamic($('#detailContent'));
 }
+
+const weatherItinerary = {
+  '2026-07-22':{place:'Dijon',lat:47.3220,lon:5.0415},
+  '2026-07-23':{place:'Montpellier',lat:43.6108,lon:3.8767},
+  '2026-07-24':{place:'L’Estartit',lat:42.0537,lon:3.1972},
+  '2026-07-25':{place:'L’Estartit',lat:42.0537,lon:3.1972},
+  '2026-07-26':{place:'L’Estartit',lat:42.0537,lon:3.1972},
+  '2026-07-27':{place:'L’Estartit',lat:42.0537,lon:3.1972},
+  '2026-07-28':{place:'L’Estartit',lat:42.0537,lon:3.1972},
+  '2026-07-29':{place:'L’Estartit',lat:42.0537,lon:3.1972},
+  '2026-07-30':{place:'L’Estartit',lat:42.0537,lon:3.1972},
+  '2026-07-31':{place:'Clermont-Ferrand',lat:45.7772,lon:3.0870},
+  '2026-08-01':{place:'Metz',lat:49.1193,lon:6.1757},
+  '2026-08-02':{place:'Hasbergen',lat:52.2377,lon:7.9616}
+};
+function localIsoDate(date){
+  const y=date.getFullYear();
+  const m=String(date.getMonth()+1).padStart(2,'0');
+  const d=String(date.getDate()).padStart(2,'0');
+  return `${y}-${m}-${d}`;
+}
+function weatherCodeInfo(code){
+  const c=Number(code);
+  if(c===0) return ['☀️','Sonnig'];
+  if([1,2].includes(c)) return ['🌤️','Heiter bis wolkig'];
+  if(c===3) return ['☁️','Bewölkt'];
+  if([45,48].includes(c)) return ['🌫️','Nebel'];
+  if([51,53,55,56,57].includes(c)) return ['🌦️','Nieselregen'];
+  if([61,63,65,66,67].includes(c)) return ['🌧️','Regen'];
+  if([71,73,75,77].includes(c)) return ['🌨️','Schnee'];
+  if([80,81,82].includes(c)) return ['🌦️','Regenschauer'];
+  if([85,86].includes(c)) return ['🌨️','Schneeschauer'];
+  if([95,96,99].includes(c)) return ['⛈️','Gewitter'];
+  return ['🌡️','Wetter'];
+}
+function plannedWeatherLocation(date){
+  const key=localIsoDate(date);
+  return weatherItinerary[key]||{place:'Hasbergen',lat:52.2377,lon:7.9616};
+}
+async function fetchWeatherFor(date,label){
+  const loc=plannedWeatherLocation(date);
+  const key=localIsoDate(date);
+  const url=`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max&timezone=auto&start_date=${key}&end_date=${key}`;
+  const response=await fetch(url,{cache:'no-store'});
+  if(!response.ok) throw new Error('weather request failed');
+  const data=await response.json();
+  const daily=data.daily||{};
+  const code=daily.weather_code?.[0];
+  const [icon,condition]=weatherCodeInfo(code);
+  return {
+    label,place:loc.place,icon,condition,
+    max:daily.temperature_2m_max?.[0],
+    min:daily.temperature_2m_min?.[0],
+    rain:daily.precipitation_probability_max?.[0],
+    wind:daily.wind_speed_10m_max?.[0]
+  };
+}
+function weatherDayHtml(w){
+  const temp=(Number.isFinite(w.max)&&Number.isFinite(w.min))?`${Math.round(w.max)}° / ${Math.round(w.min)}°`:'–';
+  const rain=Number.isFinite(w.rain)?`${Math.round(w.rain)} % Regen`:'Regen –';
+  const wind=Number.isFinite(w.wind)?`Wind ${Math.round(w.wind)} km/h`:'Wind –';
+  return `<article class="weather-day">
+    <div class="weather-day-top">
+      <div><div class="weather-day-label">${esc(w.label)}</div><div class="weather-place">${esc(w.place)}</div></div>
+      <div class="weather-icon" aria-hidden="true">${w.icon}</div>
+    </div>
+    <div class="weather-temp">${temp}</div>
+    <div class="weather-condition">${esc(w.condition)}</div>
+    <div class="weather-meta"><span>☔ ${esc(rain)}</span><span>💨 ${esc(wind)}</span></div>
+  </article>`;
+}
+function weatherSearchUrl(place,dayLabel){
+  return `https://www.google.com/search?q=${encodeURIComponent(`Wetter ${place} ${dayLabel}`)}`;
+}
+function renderLocalWeatherFallback(){
+  const host=$('#weatherGrid');
+  if(!host) return;
+  const today=new Date();
+  const tomorrow=new Date(today);
+  tomorrow.setDate(today.getDate()+1);
+  const todayLoc=plannedWeatherLocation(today);
+  const tomorrowLoc=plannedWeatherLocation(tomorrow);
+  host.innerHTML=`<div class="weather-local-actions">
+    <article class="weather-local-tile">
+      <div class="weather-day-label">Heute</div>
+      <b>${esc(todayLoc.place)}</b>
+      <span>Lokale Dateivorschau: Live-Wetter extern öffnen.</span>
+      <button type="button" data-weather-url="${esc(weatherSearchUrl(todayLoc.place,'heute'))}">Wetter heute öffnen</button>
+    </article>
+    <article class="weather-local-tile">
+      <div class="weather-day-label">Morgen</div>
+      <b>${esc(tomorrowLoc.place)}</b>
+      <span>Vorhersage für den nächsten Reiseort.</span>
+      <button type="button" data-weather-url="${esc(weatherSearchUrl(tomorrowLoc.place,'morgen'))}">Wetter morgen öffnen</button>
+    </article>
+  </div>`;
+  $$('[data-weather-url]',host).forEach(button=>{
+    button.addEventListener('click',()=>openExternal(button.dataset.weatherUrl));
+  });
+  const note=$('.weather-note');
+  if(note) note.textContent='Die lokale iPhone-/Edge-Dateivorschau blockiert Wetter-APIs. Die Buttons öffnen deshalb die aktuelle Vorhersage direkt.';
+}
+async function renderWeather(){
+  const host=$('#weatherGrid');
+  if(!host) return;
+  const isLocal=location.protocol==='file:'||location.protocol==='edge:'||location.href.startsWith('edge://external-file');
+  if(isLocal){
+    renderLocalWeatherFallback();
+    return;
+  }
+  host.innerHTML='<div class="weather-error">Wetterdaten werden geladen …</div>';
+  try{
+    const today=new Date();
+    const tomorrow=new Date(today);
+    tomorrow.setDate(today.getDate()+1);
+    const results=await Promise.all([
+      fetchWeatherFor(today,'Heute'),
+      fetchWeatherFor(tomorrow,'Morgen')
+    ]);
+    host.innerHTML=results.map(weatherDayHtml).join('');
+    const note=$('.weather-note');
+    if(note) note.textContent='Live-Vorhersage für den jeweiligen Reiseort. Quelle: Open-Meteo.';
+  }catch(error){
+    renderLocalWeatherFallback();
+  }
+}
+
 function getTodayContext(){
   const now=new Date();
   const y=now.getFullYear(), m=now.getMonth()+1, d=now.getDate();
@@ -1834,25 +2007,27 @@ function renderToday(){
   let stage=ctx.stage;
   if(ctx.mode==='holiday'){
     $('#todayEyebrow').textContent='Urlaub in L’Estartit'; $('#todayTitle').textContent='Heute genießen'; $('#todaySubtitle').textContent='Strand, Hafen oder ein flexibler Ausflug an der Costa Brava.'; $('#todayStatus').textContent='Urlaubstag · Programm frei wählbar';
-    stage={id:'holiday',date:'25.–30.07.',from:'L’Estartit',to:'Costa Brava',title:'Flexibler Urlaubstag',distance:'kurze Wege',driveTime:'frei planbar',startSoc:'nach Bedarf',overnight:'ALMA BEACH ESTARTIT'};
+    stage={id:'holiday',date:'25.–30.07.',departureTime:'flexibel',arrivalTime:'flexibel',arrivalWindow:'flexibel',totalDayTime:'frei planbar',todayStops:'nach Tageswahl',todayChecks:['Wetter, Wind und Wellengang prüfen','Programm nach Hitze und Reservierungen wählen','Ladestand für spontane Ausflüge prüfen'],from:'L’Estartit',to:'Costa Brava',title:'Flexibler Urlaubstag',distance:'kurze Wege',driveTime:'frei planbar',startSoc:'nach Bedarf',overnight:'ALMA BEACH ESTARTIT'};
   } else if(ctx.mode==='before'){
     $('#todayTitle').textContent='Reise vorbereiten'; $('#todaySubtitle').textContent='Alles Wichtige für die Abfahrt am 22. Juli griffbereit machen.'; $('#todayStatus').textContent='Nächster Reisetag: Hasbergen → Dijon';
   } else if(ctx.mode==='after'){
     $('#todayTitle').textContent='Willkommen zurück'; $('#todaySubtitle').textContent='Die Spanienreise 2026 ist abgeschlossen.'; $('#todayStatus').textContent='Reise beendet';
   } else {
-    $('#todayTitle').textContent=stage.title; $('#todaySubtitle').textContent=stage.summary; $('#todayStatus').textContent='Heutige Etappe ist geöffnet';
+    $('#todayTitle').textContent=stage.title; $('#todaySubtitle').textContent=stage.summary; $('#todayStatus').textContent=`Abfahrt ${stage.departureTime} · Zielankunft ${stage.arrivalWindow}`;
   }
   const hotel=travel.hotels.find(h=>h.name===stage.overnight)||
     (ctx.mode==='holiday'?travel.hotels.find(h=>h.id==='h3'):null);
   const chargeStageId=stage.id==='holiday'?'s3':stage.id;
   const c=chargingForStage(chargeStageId);
-  $('#todayDateBadge').textContent=stage.date; $('#todayRouteTitle').textContent=stage.title; $('#todayFrom').textContent=stage.from; $('#todayTo').textContent=stage.to; $('#todayDistance').textContent=stage.distance; $('#todayDriveTime').textContent=stage.driveTime.replace('ca. ',''); $('#todayChargingCount').textContent=c[2]; $('#todaySoc').textContent=stage.startSoc;
-  $('#todaySection').textContent=ctx.mode==='before'?'Vorbereitung':ctx.mode==='after'?'Reise beendet':stage.to;
-  $('#todaySectionSub').textContent=ctx.mode==='before'?'Abfahrt am 22. Juli':ctx.mode==='after'?'Spanienreise 2026 abgeschlossen':stage.title;
+  $('#todayDateBadge').textContent=stage.date; $('#todayRouteTitle').textContent=stage.title; $('#todayFrom').textContent=stage.from; $('#todayTo').textContent=stage.to; $('#todayDistance').textContent=stage.distance; $('#todayDeparture').textContent=stage.departureTime||'flexibel'; $('#todayDriveTime').textContent=stage.totalDayTime||stage.driveTime.replace('ca. ',''); $('#todayChargingCount').textContent=c[2]; $('#todaySoc').textContent=stage.startSoc;
+  $('#todayBriefTitle').textContent=`Heute: ${stage.title}`;
+  $('#todayBriefWindow').textContent=`${stage.departureTime||'flexibel'} → ${stage.arrivalTime||'flexibel'} Uhr`;
+  $('#todayBriefDeparture').textContent=`${stage.departureTime||'flexibel'}${stage.departureTime&&stage.departureTime!=='flexibel'?' Uhr':''}`;
+  $('#todayBriefArrival').textContent=`${stage.arrivalWindow||'flexibel'}${stage.arrivalWindow&&stage.arrivalWindow!=='flexibel'?' Uhr':''}`;
+  $('#todayBriefStops').textContent=stage.todayStops||c[2];
+  $('#todayChecks').innerHTML=(stage.todayChecks||[]).map(x=>`<div class="today-check">${esc(x)}</div>`).join('');
   $('#metricHotel').textContent=hotel?hotel.name:'Zuhause';
   $('#metricHotelSub').textContent=hotel?`${hotel.place} · ${hotel.date}`:'keine weitere Unterkunft';
-  $('#todayState').textContent=ctx.mode==='stage'?'Fahrtag':ctx.mode==='holiday'?'Urlaub':ctx.mode==='after'?'Abgeschlossen':'Vorbereitung';
-  $('#todayStateSub').textContent=$('#todayStatus').textContent;
   $('#todayHotelName').textContent=hotel?hotel.name:'Zuhause';
   $('#todayHotelInfo').textContent=hotel?`${hotel.place} · ${hotel.checkin}`:'Reise abgeschlossen';
   $('#todayChargeName').textContent=c[0]; $('#todayChargeInfo').textContent=`${c[2]} · DKV-Kompatibilität und Live-Status prüfen`;
@@ -2389,6 +2564,10 @@ function runSelfTest(){
   results.push(chargingStages.filter(s=>s.stageId!=='s3').every(s=>s.minimumStalls===6) && chargingStages.find(s=>s.stageId==='s3')?.minimumStalls===1);
   results.push(Boolean(document.getElementById('dailyWarnings')));
   results.push(Boolean(document.getElementById('currentTrafficRoute')));
+  results.push(travel.stages.every(s=>/^\d{2}:\d{2}$/.test(s.departureTime) && /^\d{2}:\d{2}$/.test(s.arrivalTime)));
+  results.push(Boolean(document.getElementById('todayBrief')) && Boolean(document.getElementById('todayDeparture')) && !document.getElementById('todaySection') && !document.getElementById('todayState'));
+  results.push(Boolean(document.getElementById('weatherCard')) && Boolean(document.getElementById('weatherGrid')) && typeof renderWeather==='function');
+  results.push(travel.stages[0].todayStops==='Trier + Langres');
   results.push(Boolean(document.getElementById('todayRouteMap')) && Boolean(document.getElementById('todayMapLabel')) && Boolean(document.getElementById('todayMapStops')));
   results.push(typeof googleMapsEmbedUrl==='function' && googleMapsEmbedUrl('A','B',['C']).includes('output=embed'));
   results.push(Boolean(document.getElementById('todaySection')) && Boolean(document.getElementById('todayState')));
@@ -2511,6 +2690,8 @@ renderPreparation();
 renderDayStrip();
 render();
 renderToday();
+renderWeather();
+if($('#refreshWeather')) $('#refreshWeather').addEventListener('click',renderWeather);
 })();
 </script>
 </body>
