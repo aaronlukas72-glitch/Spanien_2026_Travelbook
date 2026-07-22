@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Reiseversion · Block 28.27</title>
+<title>Spanien Travelbook 2026 · Reiseversion · Block 28.28</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -506,7 +506,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
     <button class="btn primary" id="runRouteAudit" type="button">Routen prüfen</button>
   </div>
   <div class="audit-status" id="routeAuditStatus">Noch keine automatische Prüfung durchgeführt.</div>
-  <div class="audit-status"><b>Verbindliche Ladestrategie ab Version 10.8.27:</b> Unterwegs möglichst mit 5–12 % ankommen und auf 85 % laden. Am Etappenziel nur laden, wenn der Ankunfts-SoC unter 60 % liegt; dann auf 85 %. Sonderregel am 22.07.: Erftstadt bleibt ein kurzer Teil-Ladestopp, GLOBUS Trier wird bis 95 % geladen.</div>
+  <div class="audit-status"><b>Verbindliche Ladestrategie ab Version 10.8.28:</b> Unterwegs möglichst mit 5–12 % ankommen und auf 85 % laden. Am Etappenziel nur laden, wenn der Ankunfts-SoC unter 60 % liegt; dann auf 85 %. Sonderregel am 22.07.: Erftstadt bleibt ein kurzer Teil-Ladestopp, GLOBUS Trier wird bis 95 % geladen.</div>
   <div class="audit-status"><b>Plausibilitätsprüfung 28.22:</b> Startseite, Tagespläne, Ladefolge, Teilstrecken und SoC-Angaben wurden abgeglichen. Aktuelle feste Ladefolge: Tesla Erftstadt → Pfalzwerke GLOBUS Trier → Tesla Val-de-Meuse. Langres wurde verworfen, weil die Audi-Prognose dort rund 10 Prozentpunkte zu wenig Reserve anzeigt. Abweichende Live-Prognosen des Audi haben Vorrang.</div>
   <div class="route-audit-grid" id="routeAuditResults"></div>
 </section>
@@ -517,7 +517,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 <section class="view" data-view="more">
 <div class="page">
-<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.27 · Block 28.27</span></div>
+<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.28 · Block 28.28</span></div>
 
 <section class="section">
 <div class="section-title"><h2>Barcelona – Sonntag 26.07.</h2><button class="link-btn" data-detail-type="activity" data-id="a1">Details</button></div>
@@ -686,7 +686,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section" id="estartitInsider">
-<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.27</span></div>
+<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.28</span></div>
 <div class="notice"><div class="notice-icon">🍸</div><div><strong>Direkt nutzbare Empfehlungen</strong><p>Cocktails, Restaurants, Metzgereien, Fischkauf und besondere Orte rund um L’Estartit sind jetzt an einer Stelle gebündelt. Öffnungszeiten am jeweiligen Tag kurz prüfen.</p></div></div>
 
 <div class="cards two" style="margin-top:14px">
@@ -1176,7 +1176,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section">
-<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.27</span></div>
+<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.28</span></div>
 <div class="card">
 <div class="qa-grid">
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Einzeldatei</b><span>HTML, CSS, JavaScript und Reisedaten sind vollständig eingebettet.</span></div></div>
@@ -1303,16 +1303,16 @@ const travel = {
     routeWaypoints:['An der Patria 21, 50374 Erftstadt, Deutschland','Castelforte-Straße 1, 54292 Trier, Deutschland','D132, Sortie Montigny – A31, 52140 Val-de-Meuse, Frankreich'],
     plan:'Mit 98 % starten. In Erftstadt weiterhin nur 25 Prozentpunkte nachladen. Am Pfalzwerke GLOBUS Trier ausnahmsweise bis 95 % laden. Der zuvor vorgesehene Stopp Langres wird nicht angefahren, weil die Audi-Prognose dort rund 10 Prozentpunkte zu wenig Reserve anzeigt. Neuer dritter Pflichtstopp ist Tesla Val-de-Meuse an der A31. Die Audi-Prognose ist maßgeblich: ideal mit 5–12 % ankommen und dort auf 85 % laden. Danach direkt nach Dijon weiterfahren. Am Etappenziel nur laden, wenn der tatsächliche Ankunfts-SoC unter 60 % liegt.'},
 
-    {id:'s2',originAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',destinationAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',date:'23.07.',weekday:'Do',departureTime:'09:15',arrivalTime:'16:15',arrivalWindow:'16:00–16:30',totalDayTime:'ca. 7 Std.',todayStops:'Point Chaud + IONITY Dijon Sud + Salaise-sur-Sanne',todayChecks:['Zuerst Bäckerei, danach auf etwa 90 % laden','Tesla-App und DKV-Zahlung prüfen','Hotelankunft und Laden am Hotel vorbereiten'],from:'Dijon',to:'Montpellier',title:'Dijon → Montpellier',
+    {id:'s2',originAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',destinationAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',date:'23.07.',weekday:'Do',departureTime:'09:15',arrivalTime:'16:15',arrivalWindow:'16:00–16:30',totalDayTime:'ca. 7 Std.',todayStops:'Marie Blachère Chenôve + IONITY Dijon Sud + Salaise-sur-Sanne',todayChecks:['Zuerst Bäckerei, danach auf etwa 90 % laden','Tesla-App und DKV-Zahlung prüfen','Hotelankunft und Laden am Hotel vorbereiten'],from:'Dijon',to:'Montpellier',title:'Dijon → Montpellier',
     summary:'Nach Bäckerei und IONITY Dijon Sud mit etwa 90 % starten. Bis Salaise-sur-Sanne sind rund 242 km; dort werden etwa 20–22 % erwartet. Nach dem Laden auf 85 % sind es bis Montpellier je nach Route ungefähr 252–286 km. Deshalb ist die Ankunft mit etwa 3–13 % knapp und das Audi-Navi entscheidet, ob ein späterer kurzer Zusatzstopp nötig ist.',
     tags:['Etappe','Montpellier','Hinfahrt'],distance:'ca. 495–505 km ab Dijon inklusive Ladezufahrten',driveTime:'ca. 6–6,5 Std. inkl. Ladepause',
     toll:'Richtwert ca. 35–45 € für Klasse 1; Kartenzahlung an den Mautstellen',
-    chargingPlan:'Point Chaud Chenôve → IONITY Dijon Sud ca. 90 % → Tesla Salaise-sur-Sanne ca. 15–20 % → 85 %',
+    chargingPlan:'Marie Blachère Chenôve → IONITY Dijon Sud → Tesla Salaise-sur-Sanne 5–12 % → 85 %',
     evening:'18:00 Parking du Port · 19:00 L’Ombrine · 20:30 Strand',
     startSoc:'ca. 95 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Ibis Budget Montpellier Centre Millénaire',
     destinationCharging:'Am Etappenziel nur bei Ankunft unter 60 % auf 85 % laden; ab 60 % nicht laden',
-    routeWaypoints:['60 Rue de Longvic, 21300 Chenôve, Frankreich','5 Rue de Beauregard, 21600 Longvic, Frankreich','N7, 38150 Salaise-sur-Sanne, Frankreich'],
-    plan:'Von der Unterkunft zuerst zur Bäckerei Point Chaud und anschließend zu IONITY Dijon Sud fahren. Auf etwa 90 % laden. Bis Salaise-sur-Sanne sind rund 242 km; rechnerisch bleiben etwa 20–22 %. Dort auf 85 % laden. Die Weiterfahrt nach Montpellier wird je nach Routenführung mit rund 252 bis 286 km angegeben. Zeigt das Audi-Navi am Ziel weniger als 10 % an, vor Montpellier einen kurzen Zusatzstopp einlegen. Am Hotel anschließend auf 80–85 % laden.'},
+    routeWaypoints:['1 Rue Henri Barbusse, 21300 Chenôve, Frankreich','5 Rue de Beauregard, 21600 Longvic, Frankreich','N7, 38150 Salaise-sur-Sanne, Frankreich'],
+    plan:'Von der Unterkunft zuerst zur Marie Blachère Chenôve und anschließend zu IONITY Dijon Sud fahren. Dort nach der geltenden Ladeplanung laden. Bis Salaise-sur-Sanne sind rund 242 km; rechnerisch bleiben etwa 20–22 %. Dort auf 85 % laden. Die Weiterfahrt nach Montpellier wird je nach Routenführung mit rund 252 bis 286 km angegeben. Zeigt das Audi-Navi am Ziel weniger als 10 % an, vor Montpellier einen kurzen Zusatzstopp einlegen. Am Hotel anschließend auf 80–85 % laden.'},
 
     {id:'s3',originAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',destinationAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',date:'24.07.',weekday:'Fr',departureTime:'10:15',arrivalTime:'15:00',arrivalWindow:'15:00',totalDayTime:'ca. 4 Std. 45 Min.',todayStops:'Bäckerei + Carrefour Torroella',todayChecks:['Morgens nur Bäckerei; Start-SoC vom Vorabend prüfen','Narbonne nur bei Bedarf','Carrefour Torroella auf 95–100 % laden'],from:'Montpellier',to:'L’Estartit',title:'Montpellier → L’Estartit',
     summary:'Morgens nur zur Bäckerei. Für 22 kWh/100 km sind mindestens 80–85 % Start-SoC erforderlich. Kurz vor dem Ziel am Carrefour Market Torroella auf 95–100 % laden und L’Estartit mit ungefähr 90–95 % erreichen.',
@@ -1359,7 +1359,7 @@ const travel = {
     plan:'Nach Bäckerei und Laden am Waves Actisud mit etwa 95 % starten. Tesla Bonn nach ungefähr 240 km mit etwa 25–30 % erreichen und auf 85 % laden. Bonn bis Hasbergen sind eher rund 235–245 km, nicht 195–205 km. Bei 22 kWh/100 km ergibt das eine Ankunft zuhause mit ungefähr 15–18 %. Kamener Kreuz bleibt eine spätere Notfalloption.'}
   ],
   hotels: [
-    {id:'h1',name:'L’Atypique',place:'Dijon',date:'22.07.',status:'vollständig',source:'Buchung und Gastgeberangaben · Adresse, Zugang, Parken und Check-out bestätigt',checkin:'Self Check-in · bestätigte Zugangsdaten aus Gastgeber-Nachricht verwenden',parking:'Rue Marguerite Thibert ca. 150 m',address:'34Bis rue d’Auxonne, 21000 Dijon',summary:'Straßenparken Mo–Sa 9:00–12:30 und 14:00–19:00 Uhr gebührenpflichtig. Kostenloser Parkplatz: Rue Marguerite Thibert (ca. 150 m). Intermarché: 2 Stunden kostenlos. Empfohlener Abend: kurzer Altstadtrundgang mit einem kleinen Teil des Eulenwegs, gezielter Besuch der Eule an Notre-Dame, französischer Burger und Eis.',checkout:'laut Gastgeber-Nachricht bestätigt',charging:'23.07. morgens: Option 1 IONITY Dijon Sud mit Hotelcafé · Option 2 Allego Chenôve mit Bäckerei Point Chaud direkt daneben',nearby:'Altstadt, Place de la Libération, Notre-Dame, Intermarché, Rue Marguerite Thibert',hotelChecklist:'Gepäck ausladen · Fahrzeug parken · Self-Check-in · kurzer Eulenweg · Eule besuchen · Burger · Eis · Laden'},
+    {id:'h1',name:'L’Atypique',place:'Dijon',date:'22.07.',status:'vollständig',source:'Buchung und Gastgeberangaben · Adresse, Zugang, Parken und Check-out bestätigt',checkin:'Self Check-in · bestätigte Zugangsdaten aus Gastgeber-Nachricht verwenden',parking:'Rue Marguerite Thibert ca. 150 m',address:'34Bis rue d’Auxonne, 21000 Dijon',summary:'Straßenparken Mo–Sa 9:00–12:30 und 14:00–19:00 Uhr gebührenpflichtig. Kostenloser Parkplatz: Rue Marguerite Thibert (ca. 150 m). Intermarché: 2 Stunden kostenlos. Empfohlener Abend: kurzer Altstadtrundgang mit einem kleinen Teil des Eulenwegs, gezielter Besuch der Eule an Notre-Dame, französischer Burger und Eis.',checkout:'laut Gastgeber-Nachricht bestätigt',charging:'23.07. morgens: Option 1 IONITY Dijon Sud mit Hotelcafé · Option 2 Allego Chenôve mit Marie Blachère Chenôve',nearby:'Altstadt, Place de la Libération, Notre-Dame, Intermarché, Rue Marguerite Thibert',hotelChecklist:'Gepäck ausladen · Fahrzeug parken · Self-Check-in · kurzer Eulenweg · Eule besuchen · Burger · Eis · Laden'},
     {id:'h2',name:'Ibis Budget Montpellier Centre Millénaire',place:'Montpellier',date:'23.07.',status:'vollständig',source:'Hotelinformation und Buchung',checkin:'ab 14:00 Uhr',parking:'kostenloser, geschlossener Hotelparkplatz',address:'25 rue des Frères Lumière, 34000 Montpellier',summary:'Check-out bis 12:00 Uhr. Gültiger Ausweis erforderlich. Kostenloser, geschlossener Hotelparkplatz, vier kostenpflichtige Ladepunkte, La Grande-Motte mit Hafen und Restaurant L\'Ombrine als Abendziel.',checkout:'bis 12:00 Uhr',charging:'am Vorabend auf mindestens 85 % laden; morgens nur Bäckerei. Falls nötig Electra Campanile als Ladealternative nutzen',nearby:'La Grande-Motte, Hafen, L’Ombrine',hotelChecklist:'einchecken · Ladestand prüfen · Abendtasche · Abfahrt am Morgen'},
     {id:'h3',name:'ALMA BEACH ESTARTIT',place:'L’Estartit',date:'24.–31.07.',status:'vollständig',source:'Booking.com-Unterkunftsseite · Kontaktangaben von Mónica',checkin:'15:00–18:00 Uhr · Ankunftszeit vorab mitteilen',parking:'kostenloses Parken in den umliegenden Straßen',address:'11 Carrer Salines, 17258 L’Estartit, Spanien',summary:'Familienunterkunft für den einwöchigen Strandaufenthalt an der Costa Brava. Idealer Ausgangspunkt für Strand, Hafenpromenade, Medes-Inseln, Barcelona-Tagesausflug und die geplante Costa-Brava-Rundtour über Begur, Pals und Peratallada.',checkout:'08:00–10:00 Uhr',charging:'vor Rückfahrt am 30.07. verbindlich auf etwa 95 % laden',nearby:'Strandlage, saisonaler Supermarkt im Gebäude, Zentrum ca. 750 m, Medes-Inseln ca. 1 km',contactName:'Mónica',email:'almabeachestartit@gmail.com',phone:'+34679937019',whatsapp:'+34679937019',hotelChecklist:'Gepäck · Einkauf · Strandtasche · Hafenbummel · Barcelona planen · Audi vor Rückreise auf etwa 95 % laden'},
     {id:'h4',name:'Airbnb bei Emilien',place:'Clermont-Ferrand',date:'31.07.',status:'teilweise',source:'Airbnb-Screenshots · Gastgeber Emilien · Co-Host Sophie; Zugang vollständig, Check-out-Uhrzeit noch offen',checkin:'Self Check-in über Schlüsselbox · Code 8848',parking:'Parkhaus Blaise Pascal ca. 200 m · Ticket/Pass 31 Tage gültig · für Ein- und Ausfahrt aufbewahren · nicht direkt am Handy lagern',address:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',summary:'Zugang über das grüne Tor und den Innenhof. Wohnung im 2. Stock rechts; Tür mit festem Griff. Gegensprechanlage Wohnung 24. Der Schlüssel für die Fahrrad-/Motorradgarage befindet sich hinten links im Hof. Google Maps lokalisiert die Adresse teilweise ungenau; besser ein alternatives GPS-System oder die vollständige Adresse verwenden.',checkout:'Uhrzeit in der Airbnb-App prüfen · Schlüssel zurück in die Box',charging:'01.08. morgens: Tesla Supercharger Riom, Rue Louis Armstrong, 63200 Riom · Frühstück im direkten Hotel-/Gastronomieumfeld',nearby:'Place Delille ca. 5 Minuten zu Fuß · Bahnhof ca. 10 Minuten zu Fuß · Altstadt und Kathedrale gut erreichbar',hotelChecklist:'Schlüsselbox 8848 · grünes Tor · Innenhof · 2. Stock rechts · Gegensprechanlage 24 · Parkticket aufbewahren'},
@@ -1656,9 +1656,11 @@ const morningChargingPlans = {
         address:'54 Rue de Longvic, 21300 Chenôve, Frankreich',
         power:'bis 300 kW',
         stalls:'4 HPC plus 4 AC-Ladepunkte',
-        bakery:'Point Chaud',
-        bakeryAddress:'60 Rue de Longvic, 21300 Chenôve, Frankreich',
-        note:'Komfortable Frühstücksoption mit Bäckerei nur wenige Meter entfernt. Die Zahl der echten HPC liegt unter dem allgemeinen Wunschwert von sechs.'
+        bakery:'Marie Blachère Chenôve',
+        bakeryAddress:'1 Rue Henri Barbusse, 21300 Chenôve, Frankreich',
+        stationMaps:'https://www.google.com/maps/search/?api=1&query=Allego+Hypercharger+54+Rue+de+Longvic+21300+Chenove',
+        bakeryMaps:'https://www.google.com/maps/search/?api=1&query=Marie+Blachere+1+Rue+Henri+Barbusse+21300+Chenove',
+        note:'Marie Blachère ist die verlässlichere Frühstücksoption. Die Bäckerei liegt nicht direkt an der Ladesäule; beide Ziele sind deshalb separat mit Google Maps verlinkt. Die Allego-Anlage bietet vier HPC bis 300 kW sowie vier AC-Ladepunkte.'
       }
     ],
     note:'Beide Optionen liegen südlich von Dijon. Für 22 kWh/100 km vor der Weiterfahrt auf etwa 90 % laden.'
@@ -2703,7 +2705,7 @@ function departureCard(plan,step){
   }
   return `<article class="charge-stop"><div class="meta"><span class="pill">${step} · Vor Abfahrt</span></div>
     <h3>${esc(morning.title)}</h3>
-    ${options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Frühstück:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}<br>${esc(o.note)}</span><div class="actions"><button class="btn primary" data-map="${esc(o.address)}">Ladepunkt</button><button class="btn secondary" data-map="${esc(o.bakeryAddress)}">Bäckerei / Frühstück</button></div></div>`).join('')}</div>`:
+    ${options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Frühstück:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}<br>${esc(o.note)}</span><div class="actions"><button class="btn primary" ${o.stationMaps?`data-url="${esc(o.stationMaps)}"`:`data-map="${esc(o.address)}"`}>Ladestation in Google Maps</button><button class="btn secondary" ${o.bakeryMaps?`data-url="${esc(o.bakeryMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Bäckerei in Google Maps</button></div></div>`).join('')}</div>`:
     `<div class="charge-facts">
       <div class="charge-fact"><span>Ladepunkt</span><b>${esc(morning.station)} · ${esc(morning.address)}</b></div>
       <div class="charge-fact"><span>Kapazität</span><b>${esc(morning.stalls)} · ${esc(morning.power)}</b></div>
@@ -2725,8 +2727,8 @@ function arrivalCard(plan,step){
       <div class="charge-fact"><span>Ziel-SoC</span><b>${esc(d.target)}</b></div>
       <div class="charge-fact"><span>Zweck</span><b>${esc(d.reason)}</b></div>
     </div>
-    ${hasMorningCharge?options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Frühstück:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}</span><div class="actions"><button class="btn primary" data-map="${esc(o.address)}">Ladepunkt</button><button class="btn secondary" data-map="${esc(o.bakeryAddress)}">Bäckerei / Frühstück</button></div></div>`).join('')}</div>`:
-    `<div class="actions"><button class="btn primary" data-map="${esc(morning.address)}">Ladepunkt nächster Morgen</button><button class="btn secondary" data-map="${esc(morning.bakeryAddress)}">Bäckerei / Frühstück</button></div>`:''}
+    ${hasMorningCharge?options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Frühstück:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}</span><div class="actions"><button class="btn primary" ${o.stationMaps?`data-url="${esc(o.stationMaps)}"`:`data-map="${esc(o.address)}"`}>Ladestation in Google Maps</button><button class="btn secondary" ${o.bakeryMaps?`data-url="${esc(o.bakeryMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Bäckerei in Google Maps</button></div></div>`).join('')}</div>`:
+    `<div class="actions"><button class="btn primary" data-map="${esc(morning.address)}">Ladestation in Google Maps</button><button class="btn secondary" data-map="${esc(morning.bakeryAddress)}">Bäckerei in Google Maps</button></div>`:''}
   </article>`;
 }
 function orderedRouteStops(plan,startStep){
