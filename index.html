@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Reiseversion · Block 28.21</title>
+<title>Spanien Travelbook 2026 · Reiseversion · Block 28.22</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -315,6 +315,8 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 .charge-alternatives summary::-webkit-details-marker{display:none}
 .charge-alternatives summary:after{content:"＋";color:var(--blue)}
 .charge-alternatives[open] summary:after{content:"−"}
+.alt-window-note{margin:10px 14px 0;padding:10px 12px;border-radius:14px;background:color-mix(in srgb,var(--blue) 8%,var(--panel));font-size:12px;color:var(--muted);line-height:1.4}
+
 .alt-grid{display:grid;gap:10px;padding:0 14px 14px}
 .alt-stop{background:var(--panel2);border-radius:16px;padding:13px}
 .alt-stop h4{margin:0 0 5px;font-size:15px}
@@ -345,10 +347,10 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <p id="todaySubtitle">Dein persönlicher Reisebegleiter zeigt automatisch den passenden Reisetag.</p>
 <div class="today-status"><span class="status-dot"></span><span id="todayStatus">Reisevorbereitung läuft</span></div>
 <div class="today-brief" id="todayBrief">
-  <div class="today-brief-head"><b id="todayBriefTitle">Heute: Hasbergen → Dijon</b><span id="todayBriefWindow">07:45 → 18:15 Uhr</span></div>
+  <div class="today-brief-head"><b id="todayBriefTitle">Heute: Hasbergen → Dijon</b><span id="todayBriefWindow">07:45 → 18:45 Uhr</span></div>
   <div class="today-brief-grid">
     <div class="today-brief-item"><span>Abfahrt</span><b id="todayBriefDeparture">07:45 Uhr</b></div>
-    <div class="today-brief-item"><span>Zielankunft</span><b id="todayBriefArrival">18:00–18:30 Uhr</b></div>
+    <div class="today-brief-item"><span>Zielankunft</span><b id="todayBriefArrival">18:30–19:00 Uhr</b></div>
     <div class="today-brief-item"><span>Ladestopps</span><b id="todayBriefStops">Erftstadt + Trier + Laxou</b></div>
   </div>
   <div class="today-checks" id="todayChecks">
@@ -379,8 +381,8 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <div class="route-line"><div class="route-marker last"><i></i></div><div class="route-place"><b id="todayTo">Dijon</b><span>Ziel</span></div></div>
 <div class="route-grid">
 <div class="route-kpi"><b id="todayDeparture">07:45</b><span>Abfahrt</span></div>
-<div class="route-kpi"><b id="todayDriveTime">10,5 Std.</b><span>Gesamtzeit</span></div>
-<div class="route-kpi"><b id="todayChargingCount">2 Stopps</b><span>Ladestrategie</span></div>
+<div class="route-kpi"><b id="todayDriveTime">ca. 11 Std.</b><span>Gesamtzeit</span></div>
+<div class="route-kpi"><b id="todayChargingCount">3 Stopps</b><span>Ladestrategie</span></div>
 <div class="route-kpi"><b id="todaySoc">98 %</b><span>Start-SoC</span></div>
 </div>
 <div class="today-map-wrap">
@@ -461,7 +463,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
     <button class="btn primary" id="runRouteAudit" type="button">Routen prüfen</button>
   </div>
   <div class="audit-status" id="routeAuditStatus">Noch keine automatische Prüfung durchgeführt.</div>
-  <div class="audit-status"><b>Plausibilitätsprüfung 28.20:</b> Startseite, Tagespläne, Ladefolge, Teilstrecken und SoC-Angaben wurden abgeglichen. Aktuelle feste Ladefolge: Tesla Erftstadt → Pfalzwerke GLOBUS Trier → Tesla Laxou. Erftstadt–Trier ca. 146 km; Laxou–Dijon ca. 211 km; Dijon–Salaise ca. 242 km; Montpellier–Torroella ca. 243 km; Beaune-Tailly–Laxou ca. 250 km; Bonn–Hasbergen ca. 235–245 km. Abweichende Live-Prognosen des Audi haben Vorrang.</div>
+  <div class="audit-status"><b>Plausibilitätsprüfung 28.22:</b> Startseite, Tagespläne, Ladefolge, Teilstrecken und SoC-Angaben wurden abgeglichen. Aktuelle feste Ladefolge: Tesla Erftstadt → Pfalzwerke GLOBUS Trier → Tesla Laxou. Erftstadt–Trier ca. 146 km; Laxou–Dijon ca. 211 km; Dijon–Salaise ca. 242 km; Montpellier–Torroella ca. 243 km; Beaune-Tailly–Laxou ca. 250 km; Bonn–Hasbergen ca. 235–245 km. Abweichende Live-Prognosen des Audi haben Vorrang.</div>
   <div class="route-audit-grid" id="routeAuditResults"></div>
 </section>
 <div class="day-strip" id="chargingDayStrip" style="margin-top:14px"></div>
@@ -471,7 +473,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 <section class="view" data-view="more">
 <div class="page">
-<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.21 · Block 28.21</span></div>
+<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.22 · Block 28.22</span></div>
 
 <section class="section">
 <div class="section-title"><h2>Barcelona – Sonntag 26.07.</h2><button class="link-btn" data-detail-type="activity" data-id="a1">Details</button></div>
@@ -640,7 +642,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section" id="estartitInsider">
-<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.21</span></div>
+<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.22</span></div>
 <div class="notice"><div class="notice-icon">🍸</div><div><strong>Direkt nutzbare Empfehlungen</strong><p>Cocktails, Restaurants, Metzgereien, Fischkauf und besondere Orte rund um L’Estartit sind jetzt an einer Stelle gebündelt. Öffnungszeiten am jeweiligen Tag kurz prüfen.</p></div></div>
 
 <div class="cards two" style="margin-top:14px">
@@ -1130,7 +1132,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section">
-<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.21</span></div>
+<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.22</span></div>
 <div class="card">
 <div class="qa-grid">
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Einzeldatei</b><span>HTML, CSS, JavaScript und Reisedaten sind vollständig eingebettet.</span></div></div>
@@ -1411,7 +1413,14 @@ const chargingStages = [
       food:'McDonald’s direkt am Standort',
       map:'Tesla Supercharger An der Patria 21 50374 Erftstadt Deutschland',
       routeRole:'kurzer erster Pflichtstopp',nextLeg:'Erftstadt → Pfalzwerke GLOBUS Trier · ca. 146 km',targetSoc:'nur 25 Prozentpunkte nachladen',
-      alternatives:[]
+      alternatives:[
+        {deltaKm:-63,actualDelta:'ca. 63 km vor Erftstadt',routeOffsetKm:2,name:'Tesla Hilden',location:'Nordpark 2–4, 40724 Hilden',provider:'Tesla',power:'bis 250 kW',stops:'20 HPC',toilet:'Gastronomie und Hotelumfeld',toiletName:'Kundentoilette im Umfeld',toiletConfirmed:true,food:'Bäckerei, Restaurants und Hotel',map:'Tesla Supercharger Nordpark 2-4 40724 Hilden'},
+        {deltaKm:-48,actualDelta:'ca. 48 km vor Erftstadt',routeOffsetKm:2,name:'IONITY Ohligser Heide Ost',location:'A3, 40764 Langenfeld',provider:'IONITY',power:'bis 350 kW',stops:'mehrere HPC',toilet:'Raststätte rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Tankstellenshop und Raststättenangebot',map:'IONITY Ohligser Heide Ost A3 Langenfeld'},
+        {deltaKm:-24,actualDelta:'ca. 24 km vor Erftstadt',routeOffsetKm:2,name:'Tesla Frechen',location:'Europaallee 8, 50226 Frechen',provider:'Tesla',power:'bis 250 kW',stops:'mehrere HPC',toilet:'Hotel- und Gastronomieumfeld',toiletName:'Kundentoilette im Umfeld',toiletConfirmed:true,food:'Hotel, Restaurants und Einkauf',map:'Tesla Supercharger Europaallee 8 50226 Frechen'},
+        {deltaKm:31,actualDelta:'ca. 31 km nach Erftstadt',routeOffsetKm:1.5,name:'IONITY Peppenhoven',location:'A61, Raststätte Peppenhoven Ost, 53359 Rheinbach',provider:'IONITY',power:'bis 350 kW',stops:'mehrere HPC',toilet:'Raststätte rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Café, Shop und Raststättenangebot',map:'IONITY Peppenhoven Ost A61 Rheinbach'},
+        {deltaKm:52,actualDelta:'ca. 52 km nach Erftstadt',routeOffsetKm:2,name:'Aral pulse Euskirchen',location:'Euskirchen an der A1 / B51',provider:'Aral pulse',power:'bis 300 kW',stops:'mehrere CCS-HPC',toilet:'Tankstelle während der Öffnungszeiten',toiletName:'Tankstellen-WC',toiletConfirmed:true,food:'Shop, Kaffee und Snacks',map:'Aral pulse Schnellladen Euskirchen A1'},
+        {deltaKm:73,actualDelta:'ca. 73 km nach Erftstadt',routeOffsetKm:2,name:'Aral pulse Mechernich',location:'Mechernich an der A1 / B266',provider:'Aral pulse',power:'bis 300 kW',stops:'mehrere CCS-HPC',toilet:'Tankstelle während der Öffnungszeiten',toiletName:'Tankstellen-WC',toiletConfirmed:true,food:'Shop, Kaffee und Snacks',map:'Aral pulse Schnellladen Mechernich A1'}
+      ]
     },
     reserve:{
       name:'2. Ladestopp · Pfalzwerke GLOBUS Trier',legFrom:'Erftstadt',legTo:'Trier',location:'Castelforte-Straße 1, 54292 Trier',
@@ -1422,7 +1431,12 @@ const chargingStages = [
       map:'Pfalzwerke GLOBUS Castelforte-Straße 1 54292 Trier',
       routeRole:'zweiter Pflichtstopp',nextLeg:'Trier → Tesla Laxou',targetSoc:'bis 85 % laden',
       alternatives:[
-        {deltaKm:0,actualDelta:'nur bei Ausfall des GLOBUS-Standorts',routeOffsetKm:3,name:'Tesla Trier E-Center',location:'Zurmaiener Straße 160–168, 54292 Trier',provider:'Tesla',power:'bis 250 kW',stops:'8 HPC',toilet:'im E-Center während der Öffnungszeiten',toiletName:'E-Center-Kundentoilette',toiletConfirmed:true,food:'E-Center und Gastronomie',map:'Tesla Supercharger Zurmaiener Straße 160 54292 Trier'}
+        {deltaKm:-72,actualDelta:'ca. 72 km vor Trier',routeOffsetKm:2,name:'Tesla Prüm',location:'Bahnhofstraße 17, 54595 Prüm',provider:'Tesla',power:'bis 250 kW',stops:'8 HPC',toilet:'Gastronomie im direkten Umfeld',toiletName:'Kundentoilette im Umfeld',toiletConfirmed:true,food:'Bäckerei, Café und Gastronomie',map:'Tesla Supercharger Bahnhofstraße 17 54595 Prüm'},
+        {deltaKm:-48,actualDelta:'ca. 48 km vor Trier',routeOffsetKm:2,name:'Aral pulse Bitburg',location:'Bitburg an der B51',provider:'Aral pulse',power:'bis 300 kW',stops:'mehrere CCS-HPC',toilet:'Tankstelle während der Öffnungszeiten',toiletName:'Tankstellen-WC',toiletConfirmed:true,food:'Shop, Kaffee und Snacks',map:'Aral pulse Schnellladen Bitburg B51'},
+        {deltaKm:-24,actualDelta:'ca. 24 km vor Trier',routeOffsetKm:2,name:'Shell Recharge Hochwald Ost',location:'A1 Hochwald Ost, 54421 Reinsfeld',provider:'Shell Recharge',power:'HPC',stops:'mehrere CCS',toilet:'Raststätte rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Shop, Kaffee und Snacks',map:'Shell Recharge A1 Hochwald Ost Reinsfeld'},
+        {deltaKm:3,actualDelta:'ca. 3 km nach GLOBUS Trier',routeOffsetKm:2,name:'Tesla Trier E-Center',location:'Zurmaiener Straße 160–168, 54292 Trier',provider:'Tesla',power:'bis 250 kW',stops:'8 HPC',toilet:'im E-Center während der Öffnungszeiten',toiletName:'E-Center-Kundentoilette',toiletConfirmed:true,food:'E-Center und Gastronomie',map:'Tesla Supercharger Zurmaiener Straße 160 54292 Trier'},
+        {deltaKm:5,actualDelta:'ca. 5 km nach GLOBUS Trier',routeOffsetKm:2,name:'Shell Recharge Zurmaiener Straße',location:'Zurmaiener Straße 150, 54292 Trier',provider:'Shell Recharge',power:'bis 150 kW',stops:'2 CCS',toilet:'Tankstelle mit WC',toiletName:'Shell-WC',toiletConfirmed:true,food:'deli2go, Café und Shop',map:'Shell Recharge Zurmaiener Straße 150 54292 Trier'},
+        {deltaKm:8,actualDelta:'ca. 8 km nach GLOBUS Trier',routeOffsetKm:2,name:'Shell Recharge St. Barbaraufer',location:'St. Barbaraufer 42, 54290 Trier',provider:'Shell Recharge',power:'bis 300 kW',stops:'4 CCS-HPC',toilet:'Tankstelle mit WC',toiletName:'Shell-WC',toiletConfirmed:true,food:'Shop und Getränke',map:'Shell Recharge St. Barbaraufer 42 54290 Trier'}
       ]
     },
     tertiary:{
@@ -1434,9 +1448,14 @@ const chargingStages = [
       map:'Tesla Supercharger Rue de la Sapinière 54520 Laxou France',
       routeRole:'dritter Pflichtstopp',nextLeg:'Laxou → Dijon · ca. 211 km',targetSoc:'so laden, dass Dijon mit mindestens 20 % erreicht wird · maximal 85 %',
       alternatives:[
-        {deltaKm:45,actualDelta:'ungefähr 45 km später · im Navi prüfen',routeOffsetKm:0,name:'IONITY Langres Noidant',location:'A31, 52200 Noidant-le-Rocheux',provider:'IONITY',power:'bis 400 kW',stops:'18 HPC',toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Restaurant, Café und Shop',map:'IONITY Aire de Langres Noidant A31 France'}
+        {deltaKm:-72,actualDelta:'ca. 72 km vor Laxou',routeOffsetKm:2,name:'IONITY Berchem',location:'A3 Aire de Berchem, Luxemburg',provider:'IONITY',power:'bis 350 kW',stops:'mehrere HPC',toilet:'Raststätte rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Restaurant, Café und Shop',map:'IONITY Aire de Berchem Luxembourg'},
+        {deltaKm:-48,actualDelta:'ca. 48 km vor Laxou',routeOffsetKm:2,name:'Tesla Munsbach',location:'Munsbach, Luxemburg',provider:'Tesla',power:'bis 250 kW',stops:'mehrere HPC',toilet:'Hotel- und Gastronomieumfeld',toiletName:'Kundentoilette im Umfeld',toiletConfirmed:true,food:'Hotel und Gastronomie',map:'Tesla Supercharger Munsbach Luxembourg'},
+        {deltaKm:-22,actualDelta:'ca. 22 km vor Laxou',routeOffsetKm:2,name:'Fastned Toul',location:'Toul / A31, Frankreich',provider:'Fastned',power:'bis 300 kW',stops:'mehrere HPC',toilet:'Gastronomie- oder Tankstellenumfeld',toiletName:'Kundentoilette im Umfeld',toiletConfirmed:true,food:'Kaffee, Shop und Snacks',map:'Fastned charging Toul France'},
+        {deltaKm:1,actualDelta:'ca. 1 km nach Tesla Laxou',routeOffsetKm:1,name:'Dream Energy Laxou',location:'10 Rue de la Saône, 54520 Laxou',provider:'Dream Energy',power:'bis 300 kW',stops:'4 CCS-HPC',toilet:'Ibis Styles am Standort',toiletName:'Hotel-Kundentoilette',toiletConfirmed:true,food:'Hotel-Frühstück und Gastronomie',map:'Dream Energy 10 Rue de la Saône 54520 Laxou'},
+        {deltaKm:2,actualDelta:'ca. 2 km nach Tesla Laxou',routeOffsetKm:1,name:'Norauto Laxou HPC',location:'1 Rue de la Sapinière, 54520 Laxou',provider:'R3 / Norauto',power:'HPC',stops:'mehrere CCS',toilet:'Einkaufszentrum während der Öffnungszeiten',toiletName:'Kundentoilette im Einkaufszentrum',toiletConfirmed:true,food:'Auchan, Bäckerei und Fastfood',map:'Norauto EV charging 1 Rue de la Sapinière 54520 Laxou'},
+        {deltaKm:12,actualDelta:'ca. 12 km nach Tesla Laxou',routeOffsetKm:2,name:'E.Leclerc Vandœuvre-lès-Nancy HPC',location:'Vandœuvre-lès-Nancy, Frankreich',provider:'E.Leclerc / Betreiber vor Ort',power:'HPC',stops:'mehrere CCS',toilet:'im Markt während der Öffnungszeiten',toiletName:'E.Leclerc-Kundentoilette',toiletConfirmed:true,food:'Supermarkt, Bäckerei und Imbiss',map:'E.Leclerc HPC Vandoeuvre-les-Nancy France'}
       ]
-    },secondaryLabel:'2. Ladestopp'
+    },primaryLabel:'1. Ladestopp',secondaryLabel:'2. Ladestopp',tertiaryLabel:'3. Ladestopp'
   },
   {
     stageId:'s2',date:'23.07.',route:'Dijon → Montpellier',distance:'ca. 500 km',
@@ -2558,7 +2577,8 @@ function stopAlternatives(stop){
     .filter(a=>Number.isFinite(a.deltaKm)&&Math.abs(a.deltaKm)<=75&&Number.isFinite(a.routeOffsetKm)&&a.routeOffsetKm<=2&&hasGoodToilet(a));
   const earlier=valid.filter(a=>a.deltaKm<0).sort((a,b)=>Math.abs(a.deltaKm)-Math.abs(b.deltaKm)).slice(0,3);
   const later=valid.filter(a=>a.deltaKm>0).sort((a,b)=>Math.abs(a.deltaKm)-Math.abs(b.deltaKm)).slice(0,3);
-  return alternativeGroup(`${earlier.length} frühere Lademöglichkeit${earlier.length===1?'':'en'}`,earlier)+alternativeGroup(`${later.length} spätere Lademöglichkeit${later.length===1?'':'en'}`,later);
+  const note=`<div class="alt-window-note">Ausweichkorridor: bis zu 75 km vor und nach dem Planstopp. Live-Belegung und tatsächliche Routenabweichung vor der Abfahrt im Audi-Navi beziehungsweise in der Betreiber-App prüfen.</div>`;
+  return note+alternativeGroup(`${earlier.length} Alternativen bis 75 km vorher`,earlier)+alternativeGroup(`${later.length} Alternativen bis 75 km nachher`,later);
 }
 
 
@@ -2627,8 +2647,9 @@ function arrivalCard(plan,step){
 function orderedRouteStops(plan,startStep){
   const stops=[];
   if(plan.reserveBeforePrimary && plan.reserve) stops.push({stop:plan.reserve,label:plan.secondaryLabel||'Reserve'});
-  if(plan.primary) stops.push({stop:plan.primary,label:'Hauptstopp'});
-  if(!plan.reserveBeforePrimary && plan.reserve) stops.push({stop:plan.reserve,label:plan.secondaryLabel||'Reserve'});
+  if(plan.primary) stops.push({stop:plan.primary,label:plan.primaryLabel||'1. Ladestopp'});
+  if(!plan.reserveBeforePrimary && plan.reserve) stops.push({stop:plan.reserve,label:plan.secondaryLabel||'2. Ladestopp'});
+  if(plan.tertiary) stops.push({stop:plan.tertiary,label:plan.tertiaryLabel||'3. Ladestopp'});
   return stops.map((entry,index)=>chargingStopCard(entry.stop,`${startStep+index} · ${entry.label}`,index===0 && !plan.reserveBeforePrimary)).join('');
 }
 
@@ -2638,7 +2659,7 @@ function renderCharging(){
   if(!strip||!host) return;
   strip.innerHTML=chargingStages.map(x=>`<button class="day-chip ${x.stageId===activeChargingStage?'active':''}" data-charge-stage="${x.stageId}"><b>${x.date}</b><span>${esc(x.route.split('→').pop().trim())}</span></button>`).join('');
   const plan=chargingStages.find(x=>x.stageId===activeChargingStage)||chargingStages[0];
-  const routeStopCount=(plan.primary?1:0)+(plan.reserve?1:0);
+  const routeStopCount=(plan.primary?1:0)+(plan.reserve?1:0)+(plan.tertiary?1:0);
   const arrivalStep=2+routeStopCount;
   host.innerHTML=`<div class="charge-stage">
     <article class="charge-summary"><div class="eyebrow">${esc(plan.date)} · ${esc(plan.distance)}</div><h3>${esc(plan.route)}</h3><p>${esc(plan.note)}</p>${plan.stageId==='s4'?`<div class="feature-list" style="margin-top:14px">
@@ -2678,7 +2699,7 @@ function renderFilters(){
 const searchIndex = [
   ...travel.stages.map(x=>({type:'Etappe',title:x.title,text:x.summary,view:'trip',kind:'stage',id:x.id})),
   ...travel.hotels.map(x=>({type:'Unterkunft',title:x.name,text:`${x.place} ${x.address} ${x.summary} ${x.status||''} ${x.source||''}`,view:'hotels',kind:'hotel',id:x.id})),
-  ...chargingStages.map(x=>({type:'Laden',title:`Ladeplan ${x.route}`,text:`${x.note} ${x.primary?.provider||''} ${x.primary?.name||''} ${(x.primary?.alternatives||[]).map(a=>`${a.provider||''} ${a.name}`).join(' ')} ${x.reserve?.provider||''} ${x.reserve?.name||''} ${(x.reserve?.alternatives||[]).map(a=>`${a.provider||''} ${a.name}`).join(' ')}`,view:'charging',kind:'charging',id:x.stageId})),
+  ...chargingStages.map(x=>({type:'Laden',title:`Ladeplan ${x.route}`,text:`${x.note} ${x.primary?.provider||''} ${x.primary?.name||''} ${(x.primary?.alternatives||[]).map(a=>`${a.provider||''} ${a.name}`).join(' ')} ${x.reserve?.provider||''} ${x.reserve?.name||''} ${(x.reserve?.alternatives||[]).map(a=>`${a.provider||''} ${a.name}`).join(' ')} ${x.tertiary?.provider||''} ${x.tertiary?.name||''} ${(x.tertiary?.alternatives||[]).map(a=>`${a.provider||''} ${a.name}`).join(' ')}`,view:'charging',kind:'charging',id:x.stageId})),
   ...travel.activities.map(x=>({type:'Aktivität',title:x.title,text:`${x.place} ${x.summary} ${x.extra} ${(x.pois||[]).map(p=>`${p.title} ${p.address}`).join(' ')}`,view:'more',kind:'activity',id:x.id})),
   ...travel.info.map(x=>({type:x.tags.includes('Aktivität')?'Aktivität':'Info',title:x.title,text:x.summary,view:'more',anchor:x.anchor||''}))
 ];
@@ -2802,6 +2823,9 @@ function runSelfTest(){
   results.push(chargingStages.find(s=>s.stageId==='s1')?.primary?.name.includes('Erftstadt') && chargingStages.find(s=>s.stageId==='s1')?.reserve?.name.includes('GLOBUS Trier') && chargingStages.find(s=>s.stageId==='s1')?.tertiary?.name.includes('Laxou'));
   results.push(chargingStages.find(s=>s.stageId==='s5')?.reserve?.legDistanceKm===250);
   results.push(plannedLegKm('s6',1)===240);
+  const todayPlan=chargingStages.find(s=>s.stageId==='s1');
+  results.push(Boolean(todayPlan?.tertiary) && [todayPlan.primary,todayPlan.reserve,todayPlan.tertiary].every(stop=>(stop.alternatives||[]).filter(a=>a.deltaKm<0).length===3 && (stop.alternatives||[]).filter(a=>a.deltaKm>0).length===3));
+  results.push(orderedRouteStops(todayPlan,2).includes('Tesla Laxou'));
   results.push(chargingStages.find(s=>s.stageId==='s1')?.primary?.name.includes('Erftstadt') && chargingStages.find(s=>s.stageId==='s1')?.reserve?.name.includes('GLOBUS Trier') && chargingStages.find(s=>s.stageId==='s1')?.tertiary?.name.includes('Laxou'));
   results.push(chargingStages.find(s=>s.stageId==='s4')?.reserve?.name.includes('Aire de l’Aveyron'));
   results.push(chargingStages.find(s=>s.stageId==='s5')?.reserve?.name.includes('Laxou'));
