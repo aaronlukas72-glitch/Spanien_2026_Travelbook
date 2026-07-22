@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Reiseversion · Block 28.22</title>
+<title>Spanien Travelbook 2026 · Reiseversion · Block 28.24</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -301,6 +301,15 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 .charge-summary p{margin:0;color:#dbeafe;line-height:1.45}
 .charge-stop{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:17px;box-shadow:var(--shadow2)}
 .charge-stop.primary-stop{border-color:color-mix(in srgb,var(--brand) 45%,var(--line))}
+.charge-stop-complete{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding:11px 12px;border-radius:15px;background:color-mix(in srgb,var(--green) 10%,var(--panel));border:1px solid color-mix(in srgb,var(--green) 30%,var(--line))}
+.charge-stop-complete span{font-size:12px;color:var(--muted);line-height:1.35}
+.charge-done-btn{border:0;border-radius:13px;padding:10px 12px;background:var(--green);color:#fff;font-weight:850;white-space:nowrap}
+.charge-progress-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px;padding:11px 12px;border-radius:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16)}
+.charge-progress-tools span{font-size:12px;color:#dbeafe}
+.charge-progress-tools button{border:0;border-radius:12px;padding:9px 11px;background:rgba(255,255,255,.16);color:#fff;font-weight:800}
+.charge-empty{padding:24px;text-align:center;border:1px dashed var(--line);border-radius:22px;background:var(--panel);color:var(--muted)}
+@media(max-width:520px){.charge-stop-complete{align-items:stretch;flex-direction:column}.charge-done-btn{width:100%}}
+
 .charge-stop h3{margin:0 0 7px}
 .charge-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:12px}
 .charge-fact{background:var(--panel2);border-radius:15px;padding:11px 12px}
@@ -463,6 +472,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
     <button class="btn primary" id="runRouteAudit" type="button">Routen prüfen</button>
   </div>
   <div class="audit-status" id="routeAuditStatus">Noch keine automatische Prüfung durchgeführt.</div>
+  <div class="audit-status"><b>Verbindliche Ladestrategie ab Version 10.8.24:</b> Unterwegs möglichst mit 5–12 % ankommen und auf 85 % laden. Am Etappenziel nur laden, wenn der Ankunfts-SoC unter 60 % liegt; dann auf 85 %. Sonderregel am 22.07.: Erftstadt bleibt ein kurzer Teil-Ladestopp, GLOBUS Trier wird bis 95 % geladen.</div>
   <div class="audit-status"><b>Plausibilitätsprüfung 28.22:</b> Startseite, Tagespläne, Ladefolge, Teilstrecken und SoC-Angaben wurden abgeglichen. Aktuelle feste Ladefolge: Tesla Erftstadt → Pfalzwerke GLOBUS Trier → Tesla Laxou. Erftstadt–Trier ca. 146 km; Laxou–Dijon ca. 211 km; Dijon–Salaise ca. 242 km; Montpellier–Torroella ca. 243 km; Beaune-Tailly–Laxou ca. 250 km; Bonn–Hasbergen ca. 235–245 km. Abweichende Live-Prognosen des Audi haben Vorrang.</div>
   <div class="route-audit-grid" id="routeAuditResults"></div>
 </section>
@@ -473,7 +483,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 <section class="view" data-view="more">
 <div class="page">
-<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.22 · Block 28.22</span></div>
+<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.24 · Block 28.24</span></div>
 
 <section class="section">
 <div class="section-title"><h2>Barcelona – Sonntag 26.07.</h2><button class="link-btn" data-detail-type="activity" data-id="a1">Details</button></div>
@@ -642,7 +652,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section" id="estartitInsider">
-<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.22</span></div>
+<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.24</span></div>
 <div class="notice"><div class="notice-icon">🍸</div><div><strong>Direkt nutzbare Empfehlungen</strong><p>Cocktails, Restaurants, Metzgereien, Fischkauf und besondere Orte rund um L’Estartit sind jetzt an einer Stelle gebündelt. Öffnungszeiten am jeweiligen Tag kurz prüfen.</p></div></div>
 
 <div class="cards two" style="margin-top:14px">
@@ -1132,14 +1142,14 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section">
-<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.22</span></div>
+<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.24</span></div>
 <div class="card">
 <div class="qa-grid">
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Einzeldatei</b><span>HTML, CSS, JavaScript und Reisedaten sind vollständig eingebettet.</span></div></div>
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>iPhone &amp; GitHub Pages</b><span>Keine Unterordner oder Zusatzdateien erforderlich.</span></div></div>
 
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Dark Mode</b><span>Die Darstellung folgt automatisch der Geräteeinstellung.</span></div></div>
-<div class="qa-item"><div class="qa-icon">✓</div><div><b>Lademodell</b><span>Alle Etappen sind mit 22 kWh/100 km und etwa 77 kWh nutzbarer Batterie neu gerechnet. Die Audi-Prognose hat am Fahrtag Vorrang.</span></div></div>
+<div class="qa-item"><div class="qa-icon">✓</div><div><b>Lademodell</b><span>Alle Etappen verwenden 22 kWh/100 km. Unterwegs gilt 5–12 % → 85 %; am Etappenziel nur unter 60 % auf 85 %. GLOBUS Trier ist die feste Ausnahme mit 95 %.</span></div></div>
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Zentrale Reisevorbereitung</b><span>Nur die kompakte, dauerhaft gespeicherte Reisevorbereitung bleibt sichtbar.</span></div></div>
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Verknüpfungen</b><span>Startseite, Etappendetails, Ladepläne, feste Tagesabläufe, Suche, Karten, Telefonnummern und externe Webseiten werden im erweiterten Selbsttest geprüft.</span></div></div>
 </div>
@@ -1244,17 +1254,17 @@ const travel = {
     vehicle: 'Audi Q4 e-tron',
     maxMotorwaySpeed:'130 km/h',
     expectedAverageSpeed:'90–100 km/h',
-    minimumStageStartSoc:'80 %',planningConsumption:'22 kWh/100 km',usableBattery:'ca. 77 kWh'
+    minimumStageStartSoc:'nach Ladeplanung',planningConsumption:'22 kWh/100 km',usableBattery:'ca. 77 kWh',enRouteArrivalSoc:'5–12 %',enRouteChargeTarget:'85 %',destinationChargeThreshold:'unter 60 %',destinationChargeTarget:'85 %'
   },
   stages: [
-    {id:'s1',originAddress:'Hasbergen, 49205, Deutschland',destinationAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',date:'22.07.',weekday:'Mi',departureTime:'07:45',arrivalTime:'18:45',arrivalWindow:'18:30–19:00',totalDayTime:'ca. 11 Std.',todayStops:'Erftstadt + Trier + Laxou',todayChecks:['Audi auf 98 % und Prognose bis Erftstadt prüfen','In Erftstadt nur 25 Prozentpunkte nachladen','In Trier auf 85 % laden · Laxou als dritter Pflichtstopp'],from:'Hasbergen',to:'Dijon',title:'Hasbergen → Dijon',
+    {id:'s1',originAddress:'Hasbergen, 49205, Deutschland',destinationAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',date:'22.07.',weekday:'Mi',departureTime:'07:45',arrivalTime:'18:45',arrivalWindow:'18:30–19:00',totalDayTime:'ca. 11 Std.',todayStops:'Erftstadt + Trier + Laxou',todayChecks:['Audi auf 98 % und Prognose bis Erftstadt prüfen','In Erftstadt nur 25 Prozentpunkte nachladen','In Trier auf 95 % laden · danach wieder 5–12 % → 85 %'],from:'Hasbergen',to:'Dijon',title:'Hasbergen → Dijon',
     summary:'Neue feste Ladefolge: Tesla Erftstadt, Pfalzwerke GLOBUS Trier und Tesla Laxou. In Erftstadt werden nur 25 Prozentpunkte nachgeladen, in Trier bis 85 %. Danach gelten wieder die üblichen Vorgaben mit mindestens 10 % Reserve und Laden bis 80–85 %.',
     tags:['Etappe','Dijon','Hinfahrt'],distance:'ca. 730–750 km über Erftstadt, Trier und Laxou',driveTime:'ca. 10,5–11 Std. inkl. drei Lade- und Familienpausen',
     toll:'Richtwert ca. 20–30 €; tatsächlichen Betrag beim Start im Routenplaner prüfen',
-    chargingPlan:'Tesla Erftstadt: nur +25 Prozentpunkte · Pfalzwerke GLOBUS Trier: bis 85 % · Tesla Laxou: bis 85 %',
+    chargingPlan:'Tesla Erftstadt: nur +25 Prozentpunkte · Pfalzwerke GLOBUS Trier: bis 95 % · Tesla Laxou: bis 85 %',
     evening:'Ankunft etwa 18:30–19:00 · kompakter Altstadtrundgang mit Eule · anschließend Essen und Eis',
     startSoc:'98 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'L’Atypique',
-    destinationCharging:'Ankunft nach Laxou voraussichtlich etwa 24–26 % · am 23.07. morgens auf etwa 90 % laden',
+    destinationCharging:'Am Etappenziel nur bei Ankunft unter 60 % auf 85 % laden; ab 60 % nicht laden',
     routeRoads:'A1 → A61 → A1/A48 → A1/E44 → A31 → A39',
     routeWaypoints:['An der Patria 21, 50374 Erftstadt, Deutschland','Castelforte-Straße 1, 54292 Trier, Deutschland','Rue de la Sapinière, 54520 Laxou, Frankreich'],
     plan:'Mit 98 % starten. Nach ungefähr 220 km Tesla Erftstadt erreichen. Dort nicht bis 80 oder 85 % laden, sondern lediglich 25 Prozentpunkte ergänzen. Je nach tatsächlichem Ankunfts-SoC ergibt das typischerweise etwa 58–65 % Abfahrts-SoC. Bis Pfalzwerke GLOBUS Trier sind es ungefähr 146 km; dort mit etwa 16–23 % ankommen und auf 85 % laden. Anschließend Tesla Laxou anfahren. Dort nach Audi-Prognose bis höchstens 85 % laden. Der letzte Abschnitt Laxou–Dijon beträgt ungefähr 211 km und führt rechnerisch zu etwa 24–26 % Ankunfts-SoC.'},
@@ -1266,7 +1276,7 @@ const travel = {
     chargingPlan:'Point Chaud Chenôve → IONITY Dijon Sud ca. 90 % → Tesla Salaise-sur-Sanne ca. 15–20 % → 85 %',
     evening:'18:00 Parking du Port · 19:00 L’Ombrine · 20:30 Strand',
     startSoc:'ca. 95 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Ibis Budget Montpellier Centre Millénaire',
-    destinationCharging:'Ankunft je nach gewählter Route etwa 3–13 % · bei Audi-Prognose unter 10 % kurzen Zusatzstopp einlegen · am Hotel auf 80–85 % laden',
+    destinationCharging:'Am Etappenziel nur bei Ankunft unter 60 % auf 85 % laden; ab 60 % nicht laden',
     routeWaypoints:['60 Rue de Longvic, 21300 Chenôve, Frankreich','5 Rue de Beauregard, 21600 Longvic, Frankreich','N7, 38150 Salaise-sur-Sanne, Frankreich'],
     plan:'Von der Unterkunft zuerst zur Bäckerei Point Chaud und anschließend zu IONITY Dijon Sud fahren. Auf etwa 90 % laden. Bis Salaise-sur-Sanne sind rund 242 km; rechnerisch bleiben etwa 20–22 %. Dort auf 85 % laden. Die Weiterfahrt nach Montpellier wird je nach Routenführung mit rund 252 bis 286 km angegeben. Zeigt das Audi-Navi am Ziel weniger als 10 % an, vor Montpellier einen kurzen Zusatzstopp einlegen. Am Hotel anschließend auf 80–85 % laden.'},
 
@@ -1277,7 +1287,7 @@ const travel = {
     chargingPlan:'Carrefour Market Torroella 150 kW als letzter Pflichtstopp · Narbonne-Vinassan Nord nur Reserve bei zu niedrigem Start-SoC',
     evening:'15:30 Check-in · 18:00 Strand · 19:30 El Fornet · 21:00 Sota Zero',
     startSoc:'mindestens 80 %, besser 85 % durch Laden am Vorabend',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'ALMA BEACH ESTARTIT',
-    destinationCharging:'Carrefour Market Torroella auf 95–100 % laden · Ankunft L’Estartit etwa 90–95 %',
+    destinationCharging:'Am Etappenziel nur bei Ankunft unter 60 % auf 85 % laden; ab 60 % nicht laden',
     routeWaypoints:['834 Avenue du Mas d’Argelliers, 34070 Montpellier, Frankreich','Camí del Molí, s/n, 17257 Torroella de Montgrí, Spanien'],
     plan:'In Montpellier morgens nur die Bäckerei nutzen. Der Audi sollte mindestens 85 % haben. Montpellier bis Torroella sind rund 243 km; bei 85 % Start ergibt das rechnerisch etwa 15–16 % Rest. Zeigt das Audi-Navi weniger als 10–12 % bis Torroella, IONITY Narbonne-Vinassan Nord als Reserve nutzen. Am Carrefour auf 95–100 % laden; bis L’Estartit sind es nur noch wenige Kilometer.'},
 
@@ -1288,7 +1298,7 @@ const travel = {
     chargingPlan:'Aire du Caylar ca. 18–22 % → 85 % · Peyre → Viadukt → Belvédère → Aire de l’Aveyron ca. 50–55 % → 80 %',
     evening:'18:45 Kathedrale und Place de la Victoire · 20:00 Le Puy de la Lune',
     startSoc:'95 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Airbnb bei Emilien',
-    destinationCharging:'Ankunft voraussichtlich mit etwa 28–35 % · am 01.08. morgens auf etwa 95 % laden',
+    destinationCharging:'Am Etappenziel nur bei Ankunft unter 60 % auf 85 % laden; ab 60 % nicht laden',
     routeWaypoints:['Aire du Caylar A75 34520 Le Caylar Frankreich','Parking Haut Peyre 12100 Comprégnac','Viaduc de Millau A75','Aire du Viaduc de Millau Brocuéjouls 12100 Millau Frankreich','Aire de l’Aveyron A75 Sévérac-d’Aveyron'],
     plan:'L’Estartit mit 95 % verlassen. Nach etwa 260 km Aire du Caylar mit rund 18–22 % erreichen und auf 85 % laden. Danach Peyre, Viadukt und Belvédère besuchen. An der Aire de l’Aveyron liegt der SoC voraussichtlich noch bei etwa 50–55 %; dort nur kurz bis ungefähr 80 % nachladen. Clermont-Ferrand wird mit etwa 28–35 % erreicht. Am nächsten Morgen in Riom auf ungefähr 95 % laden.'},
 
@@ -1299,7 +1309,7 @@ const travel = {
     chargingPlan:'Beaune-Tailly nach rund 280–295 km → 85 % · Tesla Laxou nach rund 250 km mit etwa 13–15 % → 55–60 %',
     evening:'18:00 Altstadtrunde · 19:45 Essen · kein Laden am Abend',
     startSoc:'ca. 95 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Appartement Rue Haute Seille',
-    destinationCharging:'Ankunft voraussichtlich mit etwa 30–40 % · am 02.08. morgens in Moulins-lès-Metz auf etwa 95 % laden',
+    destinationCharging:'Am Etappenziel nur bei Ankunft unter 60 % auf 85 % laden; ab 60 % nicht laden',
     routeWaypoints:['Rue Louis Armstrong, 63200 Riom, Frankreich','Aire de Beaune-Tailly A6','Rue de la Sapinière, 54520 Laxou, Frankreich'],
     plan:'Von Clermont-Ferrand zuerst nach Riom fahren und dort auf etwa 95 % laden. Bis Beaune-Tailly sind je nach Route rund 280–295 km; dort auf 85 % laden. Beaune-Tailly bis Laxou sind ungefähr 250 km, daher ist die bisherige Prognose von 20–25 % zu hoch. Rechnerisch sind eher 13–15 % zu erwarten. In Laxou kurz auf 55–60 % laden; Metz wird anschließend mit ungefähr 38–43 % erreicht.'},
 
@@ -1425,11 +1435,11 @@ const chargingStages = [
     reserve:{
       name:'2. Ladestopp · Pfalzwerke GLOBUS Trier',legFrom:'Erftstadt',legTo:'Trier',location:'Castelforte-Straße 1, 54292 Trier',
       provider:'Pfalzwerke / DKV',power:'bis 300 kW',stops:'6 CCS-HPC',routeOffsetKm:1.5,legDistanceKm:146,
-      arrivalSoc:'rechnerisch etwa 16–23 %',departureSoc:'85 %',
+      arrivalSoc:'rechnerisch etwa 16–23 %',departureSoc:'95 % · feste Sonderregel',
       toilet:'im GLOBUS Baumarkt während der Öffnungszeiten',toiletName:'GLOBUS-Kundentoilette',toiletConfirmed:true,
       food:'Baumarkt-Café, Bäckerei und Einkauf im Umfeld',
       map:'Pfalzwerke GLOBUS Castelforte-Straße 1 54292 Trier',
-      routeRole:'zweiter Pflichtstopp',nextLeg:'Trier → Tesla Laxou',targetSoc:'bis 85 % laden',
+      routeRole:'zweiter Pflichtstopp',nextLeg:'Trier → Tesla Laxou',targetSoc:'bis 95 % laden · feste Sonderregel',
       alternatives:[
         {deltaKm:-72,actualDelta:'ca. 72 km vor Trier',routeOffsetKm:2,name:'Tesla Prüm',location:'Bahnhofstraße 17, 54595 Prüm',provider:'Tesla',power:'bis 250 kW',stops:'8 HPC',toilet:'Gastronomie im direkten Umfeld',toiletName:'Kundentoilette im Umfeld',toiletConfirmed:true,food:'Bäckerei, Café und Gastronomie',map:'Tesla Supercharger Bahnhofstraße 17 54595 Prüm'},
         {deltaKm:-48,actualDelta:'ca. 48 km vor Trier',routeOffsetKm:2,name:'Aral pulse Bitburg',location:'Bitburg an der B51',provider:'Aral pulse',power:'bis 300 kW',stops:'mehrere CCS-HPC',toilet:'Tankstelle während der Öffnungszeiten',toiletName:'Tankstellen-WC',toiletConfirmed:true,food:'Shop, Kaffee und Snacks',map:'Aral pulse Schnellladen Bitburg B51'},
@@ -1442,11 +1452,11 @@ const chargingStages = [
     tertiary:{
       name:'3. Ladestopp · Tesla Laxou',legFrom:'Trier',legTo:'Laxou / Nancy',location:'Rue de la Sapinière, 54520 Laxou, Frankreich',
       provider:'Tesla · für andere CCS-Fahrzeuge geöffnet',power:'bis 250 kW',stops:'28 HPC',routeOffsetKm:1.5,legDistanceKm:150,
-      arrivalSoc:'nach Audi-Prognose prüfen',departureSoc:'bis höchstens 85 %',
+      arrivalSoc:'Zielkorridor 5–12 % · Audi-Prognose maßgeblich',departureSoc:'85 %',
       toilet:'im Auchan während der Öffnungszeiten',toiletName:'Auchan-Kundentoilette',toiletConfirmed:true,
       food:'Auchan, Flunch, McDonald’s und Bäckerei',
       map:'Tesla Supercharger Rue de la Sapinière 54520 Laxou France',
-      routeRole:'dritter Pflichtstopp',nextLeg:'Laxou → Dijon · ca. 211 km',targetSoc:'so laden, dass Dijon mit mindestens 20 % erreicht wird · maximal 85 %',
+      routeRole:'dritter Pflichtstopp',nextLeg:'Laxou → Dijon · ca. 211 km',targetSoc:'5–12 % → 85 %',
       alternatives:[
         {deltaKm:-72,actualDelta:'ca. 72 km vor Laxou',routeOffsetKm:2,name:'IONITY Berchem',location:'A3 Aire de Berchem, Luxemburg',provider:'IONITY',power:'bis 350 kW',stops:'mehrere HPC',toilet:'Raststätte rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Restaurant, Café und Shop',map:'IONITY Aire de Berchem Luxembourg'},
         {deltaKm:-48,actualDelta:'ca. 48 km vor Laxou',routeOffsetKm:2,name:'Tesla Munsbach',location:'Munsbach, Luxemburg',provider:'Tesla',power:'bis 250 kW',stops:'mehrere HPC',toilet:'Hotel- und Gastronomieumfeld',toiletName:'Kundentoilette im Umfeld',toiletConfirmed:true,food:'Hotel und Gastronomie',map:'Tesla Supercharger Munsbach Luxembourg'},
@@ -1465,11 +1475,11 @@ const chargingStages = [
     primary:{
       name:'Hauptstopp · Tesla Salaise-sur-Sanne',legFrom:'Dijon',legTo:'Salaise-sur-Sanne',location:'N7, 38150 Salaise-sur-Sanne',
       provider:'Tesla · Start über Tesla-App, DKV Card +Charge hinterlegen',power:'bis 250 kW',stops:'28 HPC',routeOffsetKm:1.7,legDistanceKm:250,
-      arrivalSoc:'ca. 20–22 % bei 90 % Start',departureSoc:'ca. 85 %',
+      arrivalSoc:'Zielkorridor 5–12 % · gegebenenfalls späteren Alternativstopp wählen',departureSoc:'ca. 85 %',
       toilet:'im Einkaufspark während der Öffnungszeiten',toiletName:'Green-7-Kundentoilette',toiletConfirmed:true,
       food:'Einkaufszentrum, Bäckerei und Fastfood',
       map:'Tesla Supercharger Green 7 N7 38150 Salaise-sur-Sanne France',
-      routeRole:'planmäßiger Hauptstopp',nextLeg:'Salaise-sur-Sanne → Montpellier · ca. 252–286 km',targetSoc:'auf 85 % · Zusatzstopp bei Audi-Zielprognose unter 10 %',
+      routeRole:'planmäßiger Hauptstopp',nextLeg:'Salaise-sur-Sanne → Montpellier · ca. 252–286 km',targetSoc:'5–12 % → 85 %',
       alternatives:[
         {deltaKm:-20,actualDelta:'ungefähr 20 km früher · im Navi prüfen',routeOffsetKm:1.5,name:'Tesla Valence Sonacotral',location:'97 Chemin de la Sonacotral, 26000 Valence',provider:'Tesla',power:'bis 250 kW',stops:'28 HPC',toilet:'im Einkaufsumfeld',toiletName:'Kundentoilette',toiletConfirmed:true,food:'Bäckerei, Fastfood und Supermarkt',map:'Tesla Supercharger 97 Chemin de la Sonacotral Valence France'}
       ]
@@ -1483,11 +1493,11 @@ const chargingStages = [
     primary:{
       name:'Zielstopp · Carrefour Market Torroella',legFrom:'Montpellier',legTo:'Torroella de Montgrí',location:'Camí del Molí, s/n, 17257 Torroella de Montgrí',
       provider:'Carrefour / Betreiber vor Ort',power:'bis 150 kW',stops:'1 CCS-HPC',routeOffsetKm:1.5,legDistanceKm:243,
-      arrivalSoc:'bei 85 % Start ca. 15–16 %',departureSoc:'95–100 %',
+      arrivalSoc:'bei 85 % Start ca. 15–16 %',departureSoc:'85 %',
       toilet:'im Carrefour Market während der Öffnungszeiten',toiletName:'Carrefour-Kundentoilette',toiletConfirmed:true,
       food:'Carrefour Market · Einkauf und Verpflegung',
       map:'Camí del Molí s/n 17257 Torroella de Montgrí Spanien',
-      routeRole:'letzter Pflichtstopp vor der Unterkunft',nextLeg:'Torroella → L’Estartit',targetSoc:'95–100 % · Ankunft ca. 90–95 %',
+      routeRole:'letzter Pflichtstopp vor der Unterkunft',nextLeg:'Torroella → L’Estartit',targetSoc:'5–12 % → 85 %',
       alternatives:[
         {deltaKm:8,actualDelta:'ungefähr 8 km später · im Navi prüfen',routeOffsetKm:1,name:'Repsol Nimaci',location:'Carretera de l’Estartit 163',provider:'Repsol',power:'50 kW',stops:'1 CCS',toilet:'Tankstelle',toiletName:'Kundentoilette',toiletConfirmed:true,food:'Tankstellenshop',map:'Repsol Nimaci Torroella de Montgrí Spanien'},
         {deltaKm:-5,actualDelta:'ungefähr 5 km früher · im Navi prüfen',routeOffsetKm:1.5,name:'Repsol Ullà',location:'C-31 PK 350,5, 17140 Ullà',provider:'Repsol',power:'50 kW',stops:'1 CCS',toilet:'Tankstelle',toiletName:'Kundentoilette',toiletConfirmed:true,food:'Tankstellenshop',map:'Repsol Ulla C-31 PK 350.5 Spanien'}
@@ -1496,11 +1506,11 @@ const chargingStages = [
     reserve:{
       name:'Reserve · IONITY Narbonne-Vinassan Nord',legFrom:'Montpellier',legTo:'Narbonne-Vinassan Nord',location:'A9, 11110 Vinassan',
       provider:'IONITY',power:'bis 350 kW',stops:'8 HPC',routeOffsetKm:0,legDistanceKm:105,
-      arrivalSoc:'nur bei zu niedrigem Start-SoC',departureSoc:'nur bis Torroella sicher mit mindestens 12 % erreichbar ist',
+      arrivalSoc:'nur bei zu niedrigem Start-SoC',departureSoc:'85 %',
       toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
       food:'Burger King, Café und Shop',
       map:'IONITY Aire de Service Narbonne-Vinassan Nord A9 France',
-      routeRole:'Reichweitenreserve',nextLeg:'Narbonne → Torroella',targetSoc:'nur nach Audi-Prognose',alternatives:[]
+      routeRole:'Reichweitenreserve',nextLeg:'Narbonne → Torroella',targetSoc:'bei Nutzung 5–12 % → 85 %',alternatives:[]
     },secondaryLabel:'Reserve'
   },
   {
@@ -1511,20 +1521,20 @@ const chargingStages = [
     primary:{
       name:'1. Ladestopp · Aire du Caylar',legFrom:'L’Estartit',legTo:'Aire du Caylar',location:'A75, 34520 Le Caylar',
       provider:'Tesla · Start über Tesla-App, DKV Card +Charge hinterlegen',power:'bis 250 kW',stops:'16 HPC',routeOffsetKm:0,legDistanceKm:260,
-      arrivalSoc:'ca. 18–22 %',departureSoc:'ca. 85 %',
+      arrivalSoc:'Zielkorridor 5–12 % · Audi-Prognose maßgeblich',departureSoc:'ca. 85 %',
       toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
       food:'Raststättenrestaurant, Café und Shop',
       map:'Tesla Supercharger Aire du Caylar A75 France',
-      routeRole:'erster Pflichtstopp',nextLeg:'Caylar → Peyre → Viadukt → Aire de l’Aveyron',targetSoc:'ca. 18–22 % → 85 %',alternatives:[]
+      routeRole:'erster Pflichtstopp',nextLeg:'Caylar → Peyre → Viadukt → Aire de l’Aveyron',targetSoc:'5–12 % → 85 %',alternatives:[]
     },
     reserve:{
       name:'2. Ladestopp · Aire de l’Aveyron',legFrom:'Caylar über Peyre und Millau',legTo:'Aire de l’Aveyron',location:'A75, 12150 Sévérac-d’Aveyron',
       provider:'Aire de l’Aveyron HPC',power:'HPC',stops:'8 Ladepunkte',routeOffsetKm:0,legDistanceKm:100,
-      arrivalSoc:'ca. 50–55 %',departureSoc:'ca. 80 %',
+      arrivalSoc:'nur anfahren, wenn Audi 5–12 % prognostiziert',departureSoc:'85 %',
       toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
       food:'Léo Resto, Cafeteria, Sandwiches und Shop',
       map:'Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron France',
-      routeRole:'kurze zweite Pflichtladung',nextLeg:'Aire de l’Aveyron → Clermont-Ferrand',targetSoc:'ca. 50–55 % → 80 %',
+      routeRole:'kurze zweite Pflichtladung',nextLeg:'Aire de l’Aveyron → Clermont-Ferrand',targetSoc:'nur bei 5–12 % Ankunft laden · dann 85 %',
       alternatives:[
         {deltaKm:65,actualDelta:'ungefähr 65 km später · im Navi prüfen',routeOffsetKm:0,name:'Aire de La Garde',location:'A75, 48200 Albaret-Sainte-Marie',provider:'Tesla',power:'bis 250 kW',stops:'20 HPC',toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Café und Shop',map:'Tesla Supercharger Aire de la Garde France'}
       ]
@@ -1538,20 +1548,20 @@ const chargingStages = [
     primary:{
       name:'1. Ladestopp · Aire de Beaune-Tailly',legFrom:'Riom',legTo:'Beaune-Tailly',location:'A6, 21190 Merceuil',
       provider:'TotalEnergies Charge Rapide',power:'bis 175 kW',stops:'12 Ladepunkte',routeOffsetKm:0,legDistanceKm:290,
-      arrivalSoc:'ca. 10–15 %',departureSoc:'ca. 85 %',
+      arrivalSoc:'Zielkorridor 5–12 %',departureSoc:'ca. 85 %',
       toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
       food:'Restaurant, Café und Shop',
       map:'Aire de Beaune-Tailly A6 21190 Merceuil France',
-      routeRole:'erster Fahrtstopp',nextLeg:'Beaune-Tailly → Laxou',targetSoc:'ca. 10–15 % → 85 %',alternatives:[]
+      routeRole:'erster Fahrtstopp',nextLeg:'Beaune-Tailly → Laxou',targetSoc:'5–12 % → 85 %',alternatives:[]
     },
     reserve:{
       name:'2. Ladestopp · Tesla Laxou',legFrom:'Beaune-Tailly',legTo:'Laxou',location:'Rue de la Sapinière, 54520 Laxou',
       provider:'Tesla · Start über Tesla-App, DKV Card +Charge hinterlegen',power:'bis 250 kW',stops:'28 HPC',routeOffsetKm:1.5,legDistanceKm:250,
-      arrivalSoc:'ca. 13–15 %',departureSoc:'ca. 55–60 %',
+      arrivalSoc:'Zielkorridor 5–12 % · gegebenenfalls späteren Alternativstopp wählen',departureSoc:'85 %',
       toilet:'im Auchan während der Öffnungszeiten',toiletName:'Auchan-Kundentoilette',toiletConfirmed:true,
       food:'Auchan, Flunch, McDonald’s und Bäckerei',
       map:'Tesla Supercharger Rue de la Sapinière 54520 Laxou France',
-      routeRole:'kurze zweite Pflichtladung',nextLeg:'Laxou → Metz · ca. 58 km',targetSoc:'ca. 13–15 % → 55–60 %',
+      routeRole:'kurze zweite Pflichtladung',nextLeg:'Laxou → Metz · ca. 58 km',targetSoc:'5–12 % → 85 %',
       alternatives:[
         {deltaKm:55,actualDelta:'ungefähr 55 km später · im Navi prüfen',routeOffsetKm:1.5,name:'Tesla Waves Actisud',location:'1 Chemin de la Pie Grièche, 57160 Moulins-lès-Metz',provider:'Tesla',power:'bis 250 kW',stops:'28 HPC',toilet:'Einkaufszentrum',toiletName:'Kundentoilette',toiletConfirmed:true,food:'Bäckerei und Gastronomie',map:'Tesla Waves Actisud Moulins-lès-Metz France'}
       ]
@@ -1565,11 +1575,11 @@ const chargingStages = [
     primary:{
       name:'Hauptstopp · Tesla Bonn Kameha Grand',legFrom:'Metz',legTo:'Bonn',location:'Am Bonner Bogen 1, 53227 Bonn',
       provider:'Tesla · Start über Tesla-App, DKV Card +Charge hinterlegen',power:'bis 250 kW',stops:'12 HPC',routeOffsetKm:3,legDistanceKm:240,
-      arrivalSoc:'ca. 25–30 %',departureSoc:'ca. 85 %',
+      arrivalSoc:'Zielkorridor 5–12 % · gegebenenfalls späteren Alternativstopp wählen',departureSoc:'ca. 85 %',
       toilet:'im Hotel- und Gastronomieumfeld',toiletName:'Kameha-Umfeld',toiletConfirmed:true,
       food:'Hotel, Restaurants und Café im Bonner Bogen',
       map:'Tesla Supercharger Am Bonner Bogen 1 53227 Bonn Deutschland',
-      routeRole:'einziger planmäßiger Fahrtstopp',nextLeg:'Bonn → Hasbergen · ca. 235–245 km',targetSoc:'auf 85 % · Hasbergen ca. 15–18 %',
+      routeRole:'einziger planmäßiger Fahrtstopp',nextLeg:'Bonn → Hasbergen · ca. 235–245 km',targetSoc:'5–12 % → 85 %',
       alternatives:[
         {deltaKm:15,actualDelta:'ungefähr 15 km später · im Navi prüfen',routeOffsetKm:2,name:'Tesla Troisdorf',location:'Am Golfplatz 1, 53844 Troisdorf',provider:'Tesla',power:'bis 250 kW',stops:'20 HPC',toilet:'im Golf-/Gastronomieumfeld',toiletName:'Kundentoilette',toiletConfirmed:true,food:'Gastronomie am Standort',map:'Tesla Supercharger Am Golfplatz 1 Troisdorf Deutschland'}
       ]
@@ -1578,12 +1588,12 @@ const chargingStages = [
 ];
 
 const destinationChargingPlans = [
-  {stageId:'s1',place:'Dijon / Longvic',arrival:'ca. 24–26 % nach drei Stopps',when:'23.07. morgens',target:'ca. 90 %',reason:'IONITY Dijon Sud oder Allego Chenôve'},
-  {stageId:'s2',place:'Montpellier',arrival:'je nach Route ca. 3–13 %',when:'am Hotel',target:'mindestens 80–85 %',reason:'Hotel-Lader; Electra Campanile nur falls erforderlich'},
-  {stageId:'s3',place:'L’Estartit / Torroella',arrival:'nach Zielstopp ca. 90–95 %',when:'24.07. kurz vor Ankunft',target:'95–100 % am Carrefour',reason:'Carrefour Market Torroella · 150 kW'},
-  {stageId:'s4',place:'Clermont-Ferrand / Riom',arrival:'ca. 28–35 %',when:'01.08. morgens',target:'ca. 95 %',reason:'Tesla Riom · 28 HPC'},
-  {stageId:'s5',place:'Metz / Moulins-lès-Metz',arrival:'ca. 38–43 %',when:'02.08. morgens',target:'ca. 95 %',reason:'Tesla Waves Actisud · Bäckerei Mougel Bio'},
-  {stageId:'s6',place:'Hasbergen',arrival:'ca. 15–18 %',when:'nicht erforderlich',target:'—',reason:'keine Folgetappe'}
+  {stageId:'s1',place:'Dijon / Longvic',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
+  {stageId:'s2',place:'Montpellier',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
+  {stageId:'s3',place:'L’Estartit',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
+  {stageId:'s4',place:'Clermont-Ferrand / Riom',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
+  {stageId:'s5',place:'Metz / Moulins-lès-Metz',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
+  {stageId:'s6',place:'Hasbergen',arrival:'Audi-Prognose maßgeblich',when:'nach Bedarf zuhause',target:'—',reason:'keine Folgetappe'}
 ];
 
 const estartitChargingOptions = [
@@ -1818,6 +1828,26 @@ function loadRouteAudit(){
 }
 
 let activeChargingStage = 's1';
+const CHARGE_DONE_PREFIX='travelbook-charge-done:';
+function chargeDoneKey(stageId,slot){return `${CHARGE_DONE_PREFIX}${stageId}:${slot}`;}
+function isChargeStopDone(stageId,slot){return safeStorage.get(chargeDoneKey(stageId,slot))==='1';}
+function setChargeStopDone(stageId,slot,done){
+  if(done) safeStorage.set(chargeDoneKey(stageId,slot),'1');
+  else safeStorage.remove(chargeDoneKey(stageId,slot));
+}
+function plannedChargeEntries(plan){
+  const entries=[];
+  if(plan.reserveBeforePrimary&&plan.reserve) entries.push({slot:'reserve',stop:plan.reserve,label:plan.secondaryLabel||'Reserve'});
+  if(plan.primary) entries.push({slot:'primary',stop:plan.primary,label:plan.primaryLabel||'1. Ladestopp'});
+  if(!plan.reserveBeforePrimary&&plan.reserve) entries.push({slot:'reserve',stop:plan.reserve,label:plan.secondaryLabel||'2. Ladestopp'});
+  if(plan.tertiary) entries.push({slot:'tertiary',stop:plan.tertiary,label:plan.tertiaryLabel||'3. Ladestopp'});
+  return entries;
+}
+function resetChargeStops(stageId){
+  ['primary','reserve','tertiary'].forEach(slot=>setChargeStopDone(stageId,slot,false));
+  renderCharging();
+}
+
 
 const $ = (s,r=document)=>r.querySelector(s);
 const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
@@ -2522,14 +2552,19 @@ function bindDynamic(root=document){
   });});
   $$('[data-go]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>showView(b.dataset.go));});
   $$('[data-charge-for-stage]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>openChargingForStage(b.dataset.chargeForStage));});
+  $$('[data-charge-done]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>{
+    const [stageId,slot]=String(b.dataset.chargeDone||'').split(':');
+    if(stageId&&slot){setChargeStopDone(stageId,slot,true);renderCharging();}
+  });});
+  $$('[data-charge-reset]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>resetChargeStops(b.dataset.chargeReset));});
   $$('[data-evening-stage]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>openEveningForStage(b.dataset.eveningStage));});
   $$('[data-evening-route]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>openEveningRoute(b.dataset.eveningRoute));});
   $$('[data-trip-route]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>openTripRoute(b.dataset.tripRoute));});
 }
 
-function chargingStopCard(stop,label,isPrimary){
-  if(!stop) return '';
-  return `<article class="charge-stop ${isPrimary?'primary-stop':''}">
+function chargingStopCard(stop,label,isPrimary,stageId,slot){
+  if(!stop||isChargeStopDone(stageId,slot)) return '';
+  return `<article class="charge-stop ${isPrimary?'primary-stop':''}" data-charge-card="${esc(stageId)}:${esc(slot)}">
     <div class="meta"><span class="pill">${label}</span><span class="pill">⚡ ${esc(stop.provider)}</span><span class="pill">${esc(stop.power)}</span><span class="pill">✓ gute Toilette</span></div>
     <h3>${esc(stop.name)}</h3>
     <p>${esc(stop.location)}</p>
@@ -2545,6 +2580,10 @@ function chargingStopCard(stop,label,isPrimary){
     </div>
     <div class="actions"><button class="btn primary" data-map="${esc(stop.map)}">Navigation</button></div>
     ${stopAlternatives(stop)}
+    <div class="charge-stop-complete">
+      <span>Nach abgeschlossenem Ladevorgang wird dieser Stopp einschließlich seiner Alternativen ausgeblendet.</span>
+      <button class="charge-done-btn" type="button" data-charge-done="${esc(stageId)}:${esc(slot)}">✓ Erledigt – ausblenden</button>
+    </div>
   </article>`;
 }
 function hasGoodToilet(alt){
@@ -2645,12 +2684,16 @@ function arrivalCard(plan,step){
   </article>`;
 }
 function orderedRouteStops(plan,startStep){
-  const stops=[];
-  if(plan.reserveBeforePrimary && plan.reserve) stops.push({stop:plan.reserve,label:plan.secondaryLabel||'Reserve'});
-  if(plan.primary) stops.push({stop:plan.primary,label:plan.primaryLabel||'1. Ladestopp'});
-  if(!plan.reserveBeforePrimary && plan.reserve) stops.push({stop:plan.reserve,label:plan.secondaryLabel||'2. Ladestopp'});
-  if(plan.tertiary) stops.push({stop:plan.tertiary,label:plan.tertiaryLabel||'3. Ladestopp'});
-  return stops.map((entry,index)=>chargingStopCard(entry.stop,`${startStep+index} · ${entry.label}`,index===0 && !plan.reserveBeforePrimary)).join('');
+  const entries=plannedChargeEntries(plan);
+  const visible=entries.filter(entry=>!isChargeStopDone(plan.stageId,entry.slot));
+  if(!visible.length) return '<div class="charge-empty">✓ Alle planmäßigen Ladestopps dieser Etappe sind erledigt.</div>';
+  return visible.map((entry,index)=>chargingStopCard(
+    entry.stop,
+    `${startStep+index} · ${entry.label}`,
+    index===0&&!plan.reserveBeforePrimary,
+    plan.stageId,
+    entry.slot
+  )).join('');
 }
 
 function renderCharging(){
@@ -2662,7 +2705,11 @@ function renderCharging(){
   const routeStopCount=(plan.primary?1:0)+(plan.reserve?1:0)+(plan.tertiary?1:0);
   const arrivalStep=2+routeStopCount;
   host.innerHTML=`<div class="charge-stage">
-    <article class="charge-summary"><div class="eyebrow">${esc(plan.date)} · ${esc(plan.distance)}</div><h3>${esc(plan.route)}</h3><p>${esc(plan.note)}</p>${plan.stageId==='s4'?`<div class="feature-list" style="margin-top:14px">
+    <article class="charge-summary"><div class="eyebrow">${esc(plan.date)} · ${esc(plan.distance)}</div><h3>${esc(plan.route)}</h3><p>${esc(plan.note)}</p>
+    <div class="charge-progress-tools">
+      <span>${plannedChargeEntries(plan).filter(e=>isChargeStopDone(plan.stageId,e.slot)).length} von ${plannedChargeEntries(plan).length} Ladestopps erledigt</span>
+      <button type="button" data-charge-reset="${esc(plan.stageId)}">Erledigte wieder anzeigen</button>
+    </div>${plan.stageId==='s4'?`<div class="feature-list" style="margin-top:14px">
       <div class="feature-item"><b>Reale Reihenfolge</b><span>L’Estartit → Caylar nur bei Bedarf → Peyre → Viadukt → Belvédère → Aire de l’Aveyron → Clermont-Ferrand</span></div>
     </div>`:''}</article>
     ${departureCard(plan,1)}
@@ -2826,6 +2873,11 @@ function runSelfTest(){
   const todayPlan=chargingStages.find(s=>s.stageId==='s1');
   results.push(Boolean(todayPlan?.tertiary) && [todayPlan.primary,todayPlan.reserve,todayPlan.tertiary].every(stop=>(stop.alternatives||[]).filter(a=>a.deltaKm<0).length===3 && (stop.alternatives||[]).filter(a=>a.deltaKm>0).length===3));
   results.push(orderedRouteStops(todayPlan,2).includes('Tesla Laxou'));
+  results.push(typeof isChargeStopDone==='function'&&typeof setChargeStopDone==='function'&&typeof resetChargeStops==='function');
+  results.push(travel.trip.enRouteArrivalSoc==='5–12 %'&&travel.trip.enRouteChargeTarget==='85 %'&&travel.trip.destinationChargeThreshold==='unter 60 %');
+  results.push(chargingStages.find(s=>s.stageId==='s1')?.reserve?.departureSoc.includes('95 %'));
+  results.push(destinationChargingPlans.filter(x=>x.stageId!=='s6').every(x=>x.reason.includes('unter 60 %')));
+  results.push(chargingStopCard(todayPlan.primary,'Test',true,'s1','primary').includes('data-charge-done="s1:primary"'));
   results.push(chargingStages.find(s=>s.stageId==='s1')?.primary?.name.includes('Erftstadt') && chargingStages.find(s=>s.stageId==='s1')?.reserve?.name.includes('GLOBUS Trier') && chargingStages.find(s=>s.stageId==='s1')?.tertiary?.name.includes('Laxou'));
   results.push(chargingStages.find(s=>s.stageId==='s4')?.reserve?.name.includes('Aire de l’Aveyron'));
   results.push(chargingStages.find(s=>s.stageId==='s5')?.reserve?.name.includes('Laxou'));
