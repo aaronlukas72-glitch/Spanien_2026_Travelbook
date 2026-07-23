@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Reiseversion · Block 28.28</title>
+<title>Spanien Travelbook 2026 · Reiseversion · Block 28.32</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -371,6 +371,26 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 @media(max-width:520px){.alt-facts{grid-template-columns:1fr}}
 .evening-highlight .stop-card{outline:3px solid var(--brand);box-shadow:0 0 0 7px color-mix(in srgb,var(--brand) 18%,transparent),var(--shadow)}
 
+
+.restaurant-grid{display:grid;gap:16px}
+.restaurant-card{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:var(--panel);box-shadow:var(--shadow2)}
+.restaurant-card-head{padding:16px 17px 13px;border-bottom:1px solid var(--line)}
+.restaurant-card-head>div{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}
+.restaurant-card-head h3{margin:0;font-size:21px}
+.restaurant-category{margin:5px 0 0;color:var(--muted);line-height:1.4}
+.restaurant-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:14px 17px}
+.restaurant-facts div{padding:11px 12px;border-radius:14px;background:var(--panel2)}
+.restaurant-facts .wide{grid-column:1/-1}
+.restaurant-facts span{display:block;font-size:11px;color:var(--muted);font-weight:750}
+.restaurant-facts b{display:block;margin-top:4px;font-size:13px;line-height:1.4}
+.restaurant-menu{margin:0 17px 12px;border:1px solid var(--line);border-radius:15px;overflow:hidden}
+.restaurant-menu summary{padding:11px 13px;font-weight:850;cursor:pointer}
+.restaurant-menu p{margin:0;padding:0 13px 13px;color:var(--muted);line-height:1.5}
+.restaurant-note{margin:0 17px;color:var(--muted);font-size:12px;line-height:1.45}
+.restaurant-card .actions{padding:0 17px 17px}
+@media(min-width:760px){.restaurant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.restaurant-facts{grid-template-columns:1fr}.restaurant-facts .wide{grid-column:auto}}
+
 </style>
 </head>
 <body>
@@ -390,21 +410,21 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <p id="todaySubtitle">Dein persönlicher Reisebegleiter zeigt automatisch den passenden Reisetag.</p>
 <div class="today-status"><span class="status-dot"></span><span id="todayStatus">Reisevorbereitung läuft</span></div>
 <div class="today-brief" id="todayBrief">
-  <div class="today-brief-head"><b id="todayBriefTitle">Heute: Hasbergen → Dijon</b><span id="todayBriefWindow">07:45 → 18:45 Uhr</span></div>
+  <div class="today-brief-head"><b id="todayBriefTitle">Heute: Dijon → Montpellier</b><span id="todayBriefWindow">09:15 → 16:15 Uhr</span></div>
   <div class="today-brief-grid">
-    <div class="today-brief-item"><span>Abfahrt</span><b id="todayBriefDeparture">07:45 Uhr</b></div>
-    <div class="today-brief-item"><span>Zielankunft</span><b id="todayBriefArrival">18:30–19:00 Uhr</b></div>
-    <div class="today-brief-item"><span>Ladestopps</span><b id="todayBriefStops">Erftstadt + Trier + Val-de-Meuse</b></div>
+    <div class="today-brief-item"><span>Abfahrt</span><b id="todayBriefDeparture">09:15 Uhr</b></div>
+    <div class="today-brief-item"><span>Zielankunft</span><b id="todayBriefArrival">16:00–16:30 Uhr</b></div>
+    <div class="today-brief-item"><span>Ladestopps</span><b id="todayBriefStops">Chenôve + Salaise-sur-Sanne</b></div>
   </div>
   <div class="today-checks" id="todayChecks">
-    <div class="today-check">Audi vor Abfahrt auf 98 % und Navigationsprognose bis Erftstadt prüfen.</div>
-    <div class="today-check">DKV-Karte, Lade-Apps, Warnwesten, Dokumente, Snacks und Getränke griffbereit.</div>
-    <div class="today-check">Vor Abfahrt aktuelle Route, Wetterwarnungen und Live-Status von Erftstadt, Trier und Val-de-Meuse öffnen.</div>
+    <div class="today-check">Marie Blachère ab 07:00 Uhr nutzen und einen nahen DKV-HPC auswählen.</div>
+    <div class="today-check">DKV Mobility App: Akzeptanz, Preis und Live-Belegung des gewählten HPC prüfen.</div>
+    <div class="today-check">Audi auf etwa 90–95 % laden und Prognose bis Salaise-sur-Sanne prüfen.</div>
   </div>
 </div>
 </article>
 <div class="dashboard">
-<article class="metric"><div class="label">Nächste Unterkunft</div><div class="value" id="metricHotel">L’Atypique</div><div class="sub" id="metricHotelSub">Dijon · 22.07.</div></article>
+<article class="metric"><div class="label">Nächste Unterkunft</div><div class="value" id="metricHotel">Ibis Budget Montpellier Centre Millénaire</div><div class="sub" id="metricHotelSub">Montpellier · 23.07.</div></article>
 </div>
 </div>
 <section class="weather-card" id="weatherCard">
@@ -419,17 +439,17 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 <div class="today-main">
 <article class="today-route">
-<div class="route-head"><div><span class="badge" id="todayDateBadge">Nächster Reisetag</span><h3 id="todayRouteTitle">Hasbergen → Dijon</h3></div><span class="badge" id="todayDistance">ca. 710 km</span></div>
-<div class="route-line"><div class="route-marker"><i></i></div><div class="route-place"><b id="todayFrom">Hasbergen</b><span>Start</span></div></div>
-<div class="route-line"><div class="route-marker last"><i></i></div><div class="route-place"><b id="todayTo">Dijon</b><span>Ziel</span></div></div>
+<div class="route-head"><div><span class="badge" id="todayDateBadge">Nächster Reisetag</span><h3 id="todayRouteTitle">Dijon → Montpellier</h3></div><span class="badge" id="todayDistance">ca. 500 km</span></div>
+<div class="route-line"><div class="route-marker"><i></i></div><div class="route-place"><b id="todayFrom">Dijon</b><span>Start</span></div></div>
+<div class="route-line"><div class="route-marker last"><i></i></div><div class="route-place"><b id="todayTo">Montpellier</b><span>Ziel</span></div></div>
 <div class="route-grid">
-<div class="route-kpi"><b id="todayDeparture">07:45</b><span>Abfahrt</span></div>
-<div class="route-kpi"><b id="todayDriveTime">ca. 11 Std.</b><span>Gesamtzeit</span></div>
-<div class="route-kpi"><b id="todayChargingCount">3 Stopps</b><span>Ladestrategie</span></div>
-<div class="route-kpi"><b id="todaySoc">98 %</b><span>Start-SoC</span></div>
+<div class="route-kpi"><b id="todayDeparture">09:15</b><span>Abfahrt</span></div>
+<div class="route-kpi"><b id="todayDriveTime">ca. 7 Std.</b><span>Gesamtzeit</span></div>
+<div class="route-kpi"><b id="todayChargingCount">2 Stopps</b><span>Ladestrategie</span></div>
+<div class="route-kpi"><b id="todaySoc">ca. 90–95 %</b><span>Start-SoC</span></div>
 </div>
 <div class="today-map-wrap">
-  <div class="today-map-head"><b>Tagesroute</b><span id="todayMapLabel">Hasbergen → Dijon</span></div>
+  <div class="today-map-head"><b>Tagesroute</b><span id="todayMapLabel">Dijon → Montpellier</span></div>
   <div class="today-map-preview" id="todayMapPreview">
     <div class="today-map-stops" id="todayMapStops"></div>
     <div class="today-map-note" id="todayMapNote">Die vollständige Route öffnet sich über „Navigation starten“ in Google Maps.</div>
@@ -439,8 +459,8 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <div class="actions"><button class="btn primary" id="todayNavigate">Navigation starten</button><button class="btn secondary" id="todayStageDetails">Etappendetails</button><button class="btn secondary" id="todayEveningPlan">Abendprogramm</button><button class="btn secondary" id="todayEveningRoute">Abendroute Maps</button></div>
 </article>
 <div class="today-columns">
-<article class="today-panel"><span class="badge">Nächste Unterkunft</span><h3 id="todayHotelName">L’Atypique</h3><p id="todayHotelInfo">Dijon · Self-Check-in</p><div class="actions"><button class="btn primary" id="todayHotelNav">Navigation</button><button class="btn secondary" id="todayHotelDetails">Details</button></div></article>
-<article class="today-panel"><span class="badge">Nächster Ladestopp</span><h3 id="todayChargeName">Tesla Erftstadt</h3><p id="todayChargeInfo">HPC an der Route · DKV-Kompatibilität am Reisetag prüfen</p><div class="actions"><button class="btn primary" id="todayChargeNav">Zum Ladepunkt</button><button class="btn secondary" id="todayChargePlan">Ladeplan</button></div></article>
+<article class="today-panel"><span class="badge">Nächste Unterkunft</span><h3 id="todayHotelName">Ibis Budget Montpellier Centre Millénaire</h3><p id="todayHotelInfo">Montpellier · Check-in ab 14:00 Uhr</p><div class="actions"><button class="btn primary" id="todayHotelNav">Navigation</button><button class="btn secondary" id="todayHotelDetails">Details</button></div></article>
+<article class="today-panel"><span class="badge">Nächster Ladestopp</span><h3 id="todayChargeName">Tesla Salaise-sur-Sanne</h3><p id="todayChargeInfo">Fahrtstopp · DKV-/Tesla-Freischaltung und Live-Status prüfen</p><div class="actions"><button class="btn primary" id="todayChargeNav">Zum Ladepunkt</button><button class="btn secondary" id="todayChargePlan">Ladeplan</button></div></article>
 </div>
 </div>
 
@@ -506,8 +526,9 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
     <button class="btn primary" id="runRouteAudit" type="button">Routen prüfen</button>
   </div>
   <div class="audit-status" id="routeAuditStatus">Noch keine automatische Prüfung durchgeführt.</div>
-  <div class="audit-status"><b>Verbindliche Ladestrategie ab Version 10.8.28:</b> Unterwegs möglichst mit 5–12 % ankommen und auf 85 % laden. Am Etappenziel nur laden, wenn der Ankunfts-SoC unter 60 % liegt; dann auf 85 %. Sonderregel am 22.07.: Erftstadt bleibt ein kurzer Teil-Ladestopp, GLOBUS Trier wird bis 95 % geladen.</div>
-  <div class="audit-status"><b>Plausibilitätsprüfung 28.22:</b> Startseite, Tagespläne, Ladefolge, Teilstrecken und SoC-Angaben wurden abgeglichen. Aktuelle feste Ladefolge: Tesla Erftstadt → Pfalzwerke GLOBUS Trier → Tesla Val-de-Meuse. Langres wurde verworfen, weil die Audi-Prognose dort rund 10 Prozentpunkte zu wenig Reserve anzeigt. Abweichende Live-Prognosen des Audi haben Vorrang.</div>
+  <div class="audit-status"><b>Verbindliche Ladestrategie ab Version 10.8.32:</b> Unterwegs möglichst mit 5–12 % ankommen und auf 85 % laden. Am Etappenziel nur laden, wenn der Ankunfts-SoC unter 60 % liegt; dann auf 85 %. Sonderregel am 22.07.: Erftstadt bleibt ein kurzer Teil-Ladestopp, GLOBUS Trier wird bis 95 % geladen.</div>
+  <div class="audit-status"><b>Heute, 23.07. · Dijon:</b> Marie Blachère Chenôve öffnet um 07:00 Uhr. Im engen Fußradius sind Allego 300 kW sowie zwei Powerdot-Anlagen mit 200 kW hinterlegt. Vor Auswahl in der DKV Mobility App Akzeptanz, Preis und Live-Belegung sowie in Google Maps den aktuellen Fußweg prüfen.</div>
+  <div class="audit-status"><b>Plausibilitätsprüfung 28.32:</b> Startseite, Tagespläne, Ladefolge, Teilstrecken, dynamische Ansichten, Verknüpfungen und SoC-Angaben wurden abgeglichen. Aktuelle feste Ladefolge: Tesla Erftstadt → Pfalzwerke GLOBUS Trier → Tesla Val-de-Meuse. Langres wurde verworfen, weil die Audi-Prognose dort rund 10 Prozentpunkte zu wenig Reserve anzeigt. Abweichende Live-Prognosen des Audi haben Vorrang.</div>
   <div class="route-audit-grid" id="routeAuditResults"></div>
 </section>
 <div class="day-strip" id="chargingDayStrip" style="margin-top:14px"></div>
@@ -517,7 +538,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 <section class="view" data-view="more">
 <div class="page">
-<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.28 · Block 28.28</span></div>
+<div class="section-title"><h2>Urlaub &amp; Reisehilfen</h2><span class="badge">Version 10.8.32 · Block 28.32</span></div>
 
 <section class="section">
 <div class="section-title"><h2>Barcelona – Sonntag 26.07.</h2><button class="link-btn" data-detail-type="activity" data-id="a1">Details</button></div>
@@ -686,7 +707,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section" id="estartitInsider">
-<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.28</span></div>
+<div class="section-title"><h2>L’Estartit – Essen, Bars &amp; Geheimtipps</h2><span class="badge">Reiseversion · Block 28.32</span></div>
 <div class="notice"><div class="notice-icon">🍸</div><div><strong>Direkt nutzbare Empfehlungen</strong><p>Cocktails, Restaurants, Metzgereien, Fischkauf und besondere Orte rund um L’Estartit sind jetzt an einer Stelle gebündelt. Öffnungszeiten am jeweiligen Tag kurz prüfen.</p></div></div>
 
 <div class="cards two" style="margin-top:14px">
@@ -907,6 +928,345 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 
 
 
+
+<section class="section" id="restaurantGuide">
+  <div class="section-title"><h2>Restaurantführer</h2><span class="badge">15 Restaurants · Stand 23.07.2026</span></div>
+  <div class="notice"><div class="notice-icon">🍽</div><div><strong>Kategorie, Preise, Zeiten und deutsche Menüübersicht</strong><p>Preisniveau: € günstig, €€ mittel, €€€ gehoben. Die deutsche Menüübersicht fasst die wichtigsten Gerichte zusammen; Preise und Saisonzeiten können sich ändern. Am Besuchstag Öffnung und Reservierung nochmals prüfen.</p></div></div>
+  <div class="restaurant-grid" style="margin-top:14px">
+    
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">Dijon</span><span class="pill">€€€ · abends gehoben</span></div>
+    <h3>DZ’envies</h3>
+    <p class="restaurant-category">Moderne französische Bistroküche · Burgund</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€€ · abends gehoben</b></div>
+    <div><span>Öffnungszeiten</span><b>Di–Sa 19:00–22:00; mittags Di–Fr 12:00–14:00, Sa 12:00–14:30</b></div>
+    <div class="wide"><span>Adresse</span><b>12 Rue Odebert, 21000 Dijon, Frankreich</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Abends wechselndes 3-Gänge-Menü mit saisonalen Marktprodukten; moderne französische Küche mit burgundischen und internationalen Einflüssen. Kein klassisches Burgerrestaurant.</p>
+  </details>
+  <p class="restaurant-note">Für einen besonderen Bistroabend; Reservierung sinnvoll.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="12 Rue Odebert, 21000 Dijon, Frankreich">Navigation</button>
+    <button class="btn secondary" data-url="https://dzenvies.com/">Webseite</button>
+    <button class="btn secondary" data-url="https://dzenvies.com/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">La Grande-Motte / Montpellier</span><span class="pill">€€ · Menüs 24,90–31,90 €; Kindermenü 9,50 €</span></div>
+    <h3>Café Soleil</h3>
+    <p class="restaurant-category">Fisch · Meeresfrüchte · Muscheln · Pizza · Familienküche</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€ · Menüs 24,90–31,90 €; Kindermenü 9,50 €</b></div>
+    <div><span>Öffnungszeiten</span><b>Täglich 08:00–23:30; im Juli/August Küche durchgehend 12:00–23:00</b></div>
+    <div class="wide"><span>Adresse</span><b>Centre Commercial Le Mercure, Avenue de l’Europe, 34280 La Grande-Motte, Frankreich</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>24,90-€-Menü: z. B. Calamari, Fischsuppe oder gratinierte Muscheln; danach Moules-frites oder Kabeljau-Fish-and-Chips. 27,90 €: u. a. Meeresfrüchteteller, gegrillte Sepia oder Lachs. 31,90 €: sechs Austern, Dorade oder gegrillte Gambas. Kindermenü mit Moules-frites, Pizza oder Fleischgericht.</p>
+  </details>
+  <p class="restaurant-note">Beste kalkulierbare Preis-Leistungs-Option für die Familie.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Centre Commercial Le Mercure, Avenue de l’Europe, 34280 La Grande-Motte, Frankreich">Navigation</button>
+    <button class="btn secondary" data-url="https://www.cafe-soleil-restaurant-la-grande-motte.fr/">Webseite</button>
+    <button class="btn secondary" data-url="https://www.cafe-soleil-restaurant-la-grande-motte.fr/menus-cafe-soleil-la-grande-motte">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">La Grande-Motte / Montpellier</span><span class="pill">€€ · Auswahl nach Stückzahl oder Platte</span></div>
+    <h3>La Barque Bleue</h3>
+    <p class="restaurant-category">Austern · Muscheln · Krustentiere · Meeresfrüchte</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€ · Auswahl nach Stückzahl oder Platte</b></div>
+    <div><span>Öffnungszeiten</span><b>Täglich 09:00–14:00 und 18:00–22:00</b></div>
+    <div class="wide"><span>Adresse</span><b>35 Avenue Pierre Racine, 34280 La Grande-Motte, Frankreich</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Frische Austern, Garnelen, Muscheln und Meeresfrüchteplatten; außerdem gratinierte Austern und Muscheln sowie Moules-frites. Vor Ort, zum Mitnehmen oder Verkauf an der Theke.</p>
+  </details>
+  <p class="restaurant-note">Unkomplizierter Seafood-Geheimtipp; Auswahl und Preise wechseln nach Tagesfang.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="35 Avenue Pierre Racine, 34280 La Grande-Motte, Frankreich">Navigation</button>
+    <button class="btn secondary" data-url="https://www.lagrandemotte.com/restaurants-cafes/135/La-Barque-Bleue/">Webseite</button>
+    <button class="btn secondary" data-url="https://www.lagrandemotte.com/restaurants-cafes/135/La-Barque-Bleue/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">La Grande-Motte / Montpellier</span><span class="pill">€€–€€€ · Tagesangebot</span></div>
+    <h3>Le Poisson Bleu</h3>
+    <p class="restaurant-category">Fisch · Meeresfrüchte</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€–€€€ · Tagesangebot</b></div>
+    <div><span>Öffnungszeiten</span><b>Keine verlässlich veröffentlichten festen Zeiten; am Besuchstag telefonisch oder in Maps prüfen</b></div>
+    <div class="wide"><span>Adresse</span><b>130 Rue du Port, 34280 La Grande-Motte, Frankreich</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Kleine Fisch- und Meeresfrüchtekarte am Hafen; Schwerpunkt auf frischem Fisch und wechselnden Tagesgerichten. Eine vollständige aktuelle Karte ist online nicht verlässlich veröffentlicht.</p>
+  </details>
+  <p class="restaurant-note">Vorher Öffnung, Tagesfang und Preise telefonisch prüfen.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="130 Rue du Port, 34280 La Grande-Motte, Frankreich">Navigation</button>
+    <button class="btn secondary" data-url="https://www.lagrandemotte.com/restaurants-cafes/345/LE-POISSON-BLEU/">Webseite</button>
+    <button class="btn secondary" data-url="https://www.lagrandemotte.com/restaurants-cafes/345/LE-POISSON-BLEU/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">L’Estartit</span><span class="pill">€€ · gutes mittleres Preisniveau</span></div>
+    <h3>Racó del Port</h3>
+    <p class="restaurant-category">Tapas · Fisch · Fleisch · Cocktails · Gastrobar</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€ · gutes mittleres Preisniveau</b></div>
+    <div><span>Öffnungszeiten</span><b>Laut eigener Webseite täglich 12:00–01:00; saisonale Schließhinweise beachten</b></div>
+    <div class="wide"><span>Adresse</span><b>Passeig Marítim 40, 17258 L’Estartit, Spanien</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Tapas und kleine Teller, hausgemachte und internationale Gerichte, frischer Fisch, Fleisch, Salate, Desserts, Vermut, Wein, Cava und Cocktails.</p>
+  </details>
+  <p class="restaurant-note">Sehr flexibel für Familien und einen entspannten Hafenabend.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Passeig Marítim 40, 17258 L’Estartit, Spanien">Navigation</button>
+    <button class="btn secondary" data-url="https://www.elracodelportestartit.com/en/">Webseite</button>
+    <button class="btn secondary" data-url="https://www.elracodelportestartit.com/en/menu/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">L’Estartit</span><span class="pill">€ · günstig bis mittel</span></div>
+    <h3>Sota Zero</h3>
+    <p class="restaurant-category">Eis · Crêpes · Waffeln · Café · Cocktails</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€ · günstig bis mittel</b></div>
+    <div><span>Öffnungszeiten</span><b>Saisonal; aktuell keine verlässlich veröffentlichten festen Öffnungszeiten</b></div>
+    <div class="wide"><span>Adresse</span><b>Passeig Marítim 24, 17258 L’Estartit, Spanien</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Eisbecher und Kugeln, Crêpes, Waffeln, Kaffee, Milchshakes und Cocktails. Die aktuelle Sorten- und Preisliste ist online nicht vollständig veröffentlicht.</p>
+  </details>
+  <p class="restaurant-note">Ideal, wenn Kinder Eis und Erwachsene einen Cocktail möchten.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Passeig Marítim 24, 17258 L’Estartit, Spanien">Navigation</button>
+    <button class="btn secondary" data-url="https://sotazero.net/">Webseite</button>
+    <button class="btn secondary" data-url="https://sotazero.net/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">L’Estartit</span><span class="pill">€€ · Paellas meist ca. 21,50 €; Menü 32 €</span></div>
+    <h3>La Sal</h3>
+    <p class="restaurant-category">Paella · Reisgerichte · Fisch · Meeresfrüchte · Tapas</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€ · Paellas meist ca. 21,50 €; Menü 32 €</b></div>
+    <div><span>Öffnungszeiten</span><b>Täglich 12:30–15:30 und 19:00–22:00</b></div>
+    <div class="wide"><span>Adresse</span><b>Passeig Marítim 19, 17258 L’Estartit, Spanien</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Tapas ab etwa 8,90 €, Muscheln ca. 12,50–13,90 €, Calamari ca. 16,80 €. Paella mit Meeresfrüchten, gemischte Paella, schwarzer Reis, Fideuà und Arroz a Banda meist ca. 21,50 €. Fischgerichte etwa 19,90–29 €. Paella-Menü mit Vorspeisen und Dessert 32 €.</p>
+  </details>
+  <p class="restaurant-note">Sehr gute klassische Wahl für Paella und Meerblick.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Passeig Marítim 19, 17258 L’Estartit, Spanien">Navigation</button>
+    <button class="btn secondary" data-url="https://www.restaurantlasal.com/de/">Webseite</button>
+    <button class="btn secondary" data-url="https://www.restaurantlasal.com/fr/the-menu/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">L’Estartit</span><span class="pill">€€€ · besonderer Abend</span></div>
+    <h3>Marisqueria Cal Tet</h3>
+    <p class="restaurant-category">Meeresfrüchte · Austern · Hummer · frischer Fisch</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€€ · besonderer Abend</b></div>
+    <div><span>Öffnungszeiten</span><b>Keine verlässlich bestätigten aktuellen Zeiten online; Reservierung und Öffnung telefonisch prüfen</b></div>
+    <div class="wide"><span>Adresse</span><b>Carrer Santa Anna 38, 17258 L’Estartit, Spanien</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Meeresfrüchteplatten, Austern, Hummer und frischer Fisch nach Tagesangebot. Eine offizielle aktuelle Online-Speisekarte ist nicht zuverlässig verfügbar.</p>
+  </details>
+  <p class="restaurant-note">Vorher reservieren und Tagespreise erfragen.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Carrer Santa Anna 38, 17258 L’Estartit, Spanien">Navigation</button>
+    <button class="btn secondary" data-url="https://www.google.com/maps/search/?api=1&amp;query=Marisqueria+Cal+Tet+Carrer+Santa+Anna+38+L%27Estartit">Webseite</button>
+    <button class="btn secondary" data-url="https://www.google.com/maps/search/?api=1&amp;query=Marisqueria+Cal+Tet+Carrer+Santa+Anna+38+L%27Estartit+menu">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">L’Estartit</span><span class="pill">€ · familienfreundlich</span></div>
+    <h3>El Fornet</h3>
+    <p class="restaurant-category">Pizza · Hähnchen · Rippchen · Holzofen · Take-away</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€ · familienfreundlich</b></div>
+    <div><span>Öffnungszeiten</span><b>Saisonal; aktuelle Öffnungszeiten am Besuchstag telefonisch oder in Maps prüfen</b></div>
+    <div class="wide"><span>Adresse</span><b>Carrer d’Eivissa 9–11, 17258 L’Estartit, Spanien</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Hausgemachte Pizza aus dem Holzofen, Hähnchen und Rippchen vom Holzfeuer, Kartoffelbeilagen, abwechslungsreiche Menüs, Take-away sowie hausgemachte Desserts wie Tiramisu und Käsekuchen.</p>
+  </details>
+  <p class="restaurant-note">Die günstigste und unkomplizierteste Familienoption im Travelbook.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Carrer d’Eivissa 9–11, 17258 L’Estartit, Spanien">Navigation</button>
+    <button class="btn secondary" data-url="https://www.elfornetestartit.com/en/">Webseite</button>
+    <button class="btn secondary" data-url="https://www.elfornetestartit.com/en/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">L’Estartit</span><span class="pill">€€ · mittleres Preisniveau</span></div>
+    <h3>La Xula</h3>
+    <p class="restaurant-category">Katalanisch · mediterran · Fisch</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€ · mittleres Preisniveau</b></div>
+    <div><span>Öffnungszeiten</span><b>Keine verlässlich veröffentlichten aktuellen Zeiten; am Tag prüfen</b></div>
+    <div class="wide"><span>Adresse</span><b>Carrer de la Platja 26, 17258 L’Estartit, Spanien</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Katalanische und mediterrane Fischküche mit wechselnden Tagesgerichten. Eine offizielle vollständige Online-Karte ist aktuell nicht verlässlich veröffentlicht.</p>
+  </details>
+  <p class="restaurant-note">Ruhigere Alternative zu den Restaurants direkt an der Promenade.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Carrer de la Platja 26, 17258 L’Estartit, Spanien">Navigation</button>
+    <button class="btn secondary" data-url="https://visitestartit.com/restaurant/la-xula/">Webseite</button>
+    <button class="btn secondary" data-url="https://www.google.com/maps/search/?api=1&amp;query=La+Xula+Carrer+de+la+Platja+26+L%27Estartit+menu">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">L’Estartit</span><span class="pill">€€–€€€ · Michelin-Kategorie €€</span></div>
+    <h3>Les Corones</h3>
+    <p class="restaurant-category">Frischer Fisch vom Holzkohlegrill · mediterran</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€–€€€ · Michelin-Kategorie €€</b></div>
+    <div><span>Öffnungszeiten</span><b>Aktuelle offizielle Angabe: täglich 13:00–15:00 und 20:00–22:00; einzelne Seiten nennen Dienstag als Ruhetag – Reservierung prüfen</b></div>
+    <div class="wide"><span>Adresse</span><b>Avinguda de Roma 50, 17258 L’Estartit, Spanien</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Frischer Tagesfang vom Grill, etwa Steinbutt, Wolfsbarsch oder Petersfisch; außerdem gegrillter Oktopus, Garnelen-Carpaccio und mediterrane Vorspeisen. Preise hängen stark vom Tagesfisch ab.</p>
+  </details>
+  <p class="restaurant-note">Für fünf Personen vorher telefonisch reservieren.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Avinguda de Roma 50, 17258 L’Estartit, Spanien">Navigation</button>
+    <button class="btn secondary" data-url="https://lescorones.cat/en/">Webseite</button>
+    <button class="btn secondary" data-url="https://lescorones.cat/en/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">Palau-sator</span><span class="pill">€€ · Ausflugsrestaurant</span></div>
+    <h3>Mooma Palau-sator</h3>
+    <p class="restaurant-category">Mediterran · Grill · Reisgerichte · Fisch · Cidre</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€ · Ausflugsrestaurant</b></div>
+    <div><span>Öffnungszeiten</span><b>Saisonal nach Kalender und Reservierungsseite; vor Fahrt online prüfen</b></div>
+    <div class="wide"><span>Adresse</span><b>Mas Saulot s/n, 17257 Palau-sator, Spanien</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Zeitgemäße mediterrane Küche mit regionalen und saisonalen Zutaten: Gerichte zum Teilen, Salate, Tapas, Reisgerichte, Grillfleisch, Fisch sowie hauseigene Säfte und Cidres. Vegetarische, vegane und glutenfreie Optionen vorhanden.</p>
+  </details>
+  <p class="restaurant-note">Gut mit Pals oder Torroella kombinierbar; Reservierung im Sommer empfohlen.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Mas Saulot s/n, 17257 Palau-sator, Spanien">Navigation</button>
+    <button class="btn secondary" data-url="https://mooma.cat/en/mooma-palau-sator/">Webseite</button>
+    <button class="btn secondary" data-url="https://mooma.cat/en/mooma-palau-sator/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">Palau-sator</span><span class="pill">€€ · mittleres Preisniveau</span></div>
+    <h3>Mas Pou</h3>
+    <p class="restaurant-category">Traditionell katalanisch · Masia · Fleisch · regionale Küche</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€ · mittleres Preisniveau</b></div>
+    <div><span>Öffnungszeiten</span><b>Di–So 13:00–15:30 und 20:00–22:30; im Juli/August montags geschlossen</b></div>
+    <div class="wide"><span>Adresse</span><b>Plaça de la Mota 4, 17256 Palau-sator, Spanien</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Traditionelle katalanische Küche in historischer Masia; regionale Vorspeisen, Fleisch- und Grillgerichte, saisonale Spezialitäten und Desserts. Die vollständige aktuelle Karte ist auf der Webseite über „La Nostra Carta“ erreichbar.</p>
+  </details>
+  <p class="restaurant-note">Eigener Kundenparkplatz; nicht im eingeschränkten Ortskern parken.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="Plaça de la Mota 4, 17256 Palau-sator, Spanien">Navigation</button>
+    <button class="btn secondary" data-url="https://maspou.com/en/">Webseite</button>
+    <button class="btn secondary" data-url="https://maspou.com/">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">Clermont-Ferrand</span><span class="pill">€€ · Menü mittags ab 10,80–17,80 €</span></div>
+    <h3>Le Puy de la Lune</h3>
+    <p class="restaurant-category">Auvergnatisch · Truffade · Burger · Tartare · vegetarisch</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€ · Menü mittags ab 10,80–17,80 €</b></div>
+    <div><span>Öffnungszeiten</span><b>Mi 18:00–22:00; Do–So 11:45–22:00; spätes Essen nur auf Reservierung</b></div>
+    <div class="wide"><span>Adresse</span><b>3 Rue de la Michodière, 63000 Clermont-Ferrand, Frankreich</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Auvergnatische Hausmannskost mit Truffade, Tartare, Burgern und Froschschenkeln; außerdem moderne Gerichte und vegane Option. Mittags: Hauptgericht etwa 10,80 €, zwei Gänge etwa 13,80 €, drei Gänge etwa 17,80 €; abends und sonntags meist 2 € Aufpreis.</p>
+  </details>
+  <p class="restaurant-note">Gute Preis-Leistung und regionale Küche.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="3 Rue de la Michodière, 63000 Clermont-Ferrand, Frankreich">Navigation</button>
+    <button class="btn secondary" data-url="https://www.lepuydelalune.com/le-restaurant">Webseite</button>
+    <button class="btn secondary" data-url="https://www.lepuydelalune.com/la-carte">Original-Menü</button>
+  </div>
+</article>
+<article class="restaurant-card">
+  <div class="restaurant-card-head">
+    <div><span class="pill">Metz</span><span class="pill">€€ · mittleres Preisniveau</span></div>
+    <h3>Au Cœur du Liban</h3>
+    <p class="restaurant-category">Libanesisch · Mezze · Falafel · Grillgerichte</p>
+  </div>
+  <div class="restaurant-facts">
+    <div><span>Preisniveau</span><b>€€ · mittleres Preisniveau</b></div>
+    <div><span>Öffnungszeiten</span><b>Di–Do 11:45–13:30 und 18:45–21:30; Fr–Sa bis 21:45; So–Mo geschlossen</b></div>
+    <div class="wide"><span>Adresse</span><b>11 Place de Chambre, 57000 Metz, Frankreich</b></div>
+  </div>
+  <details class="restaurant-menu">
+    <summary>Menü auf Deutsch</summary>
+    <p>Kalte und warme Mezze wie Hummus, Taboulé und Falafel; libanesische Grillgerichte, Fleischspieße und traditionelle Schmorgerichte. Die aktuelle Karte ist auf der Restaurantseite als Vollbild/PDF verfügbar.</p>
+  </details>
+  <p class="restaurant-note">Aktuelle offizielle Adresse ersetzt die ältere Travelbook-Angabe Rue des Tanneurs.</p>
+  <div class="actions">
+    <button class="btn primary" data-map="11 Place de Chambre, 57000 Metz, Frankreich">Navigation</button>
+    <button class="btn secondary" data-url="https://www.aucoeurduliban.com/">Webseite</button>
+    <button class="btn secondary" data-url="https://aucoeurduliban.com/carte-menus">Original-Menü</button>
+  </div>
+</article>
+  </div>
+</section>
+
 <section class="section" id="fixedPlans">
 <div class="section-title"><h2>Abendprogramme – chronologisch</h2><span class="badge">22.07.–01.08.</span></div>
 <div class="notice"><div class="notice-icon">🌙</div><div><strong>Alle Abende in Reise-Reihenfolge</strong><p>Jeder Abend ist mit Ankunft, Parken oder Laden, Spaziergang, Essen und Rückweg geordnet. Über „Komplette Abendroute“ öffnet Google Maps ausschließlich mit Adressen: Unterkunft als Start und Ziel sowie alle wichtigen Zwischenpunkte in der vorgesehenen Reihenfolge.</p></div></div>
@@ -947,20 +1307,35 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <article class="stop" id="evening2307">
 <div class="date"><div><b>23.07.</b><span>Donnerstag</span></div></div>
 <div class="stop-card">
-<div class="meta"><span class="pill">La Grande-Motte</span><span class="pill">Hafen</span><span class="pill">L’Ombrine</span></div>
-<h3>Montpellier – Hafen- und Strandabend</h3>
+<div class="meta"><span class="pill">La Grande-Motte</span><span class="pill">Hafen</span><span class="pill">Preis-Leistung</span><span class="pill">Fisch &amp; Meeresfrüchte</span></div>
+<h3>Montpellier – Hafenrunde, Café Soleil und Strand</h3>
 <div class="day-plan">
-<div><b>16:30</b><span>Check-in im Ibis Budget Montpellier Centre Millénaire. Audi direkt an einen freien Hotel-Ladepunkt anschließen und bis mindestens 80 % laden.</span></div>
-<div><b>18:00</b><span>Abfahrt nach La Grande-Motte. Ziel: Parking du Port am Quai Robert Fages. Das Hotel-Laden vor der Abfahrt beenden; im Hafen nur nachladen, falls das Hotel-Laden nicht möglich war.</span></div>
-<div><b>18:20</b><span>Spaziergang über Quai d’Honneur, Yachthafen und die charakteristische Architektur an der Promenade.</span></div>
-<div><b>19:00</b><span>Abendessen im L’Ombrine am Hafen. Mediterrane Küche und Fisch; Reservierung sinnvoll.</span></div>
+<div><b>16:30</b><span>Check-in im Ibis Budget Montpellier Centre Millénaire. Den Audi am Hotel nur laden, wenn der Ankunfts-SoC unter 60 % liegt; dann auf 85 %.</span></div>
+<div><b>18:00</b><span>Abfahrt nach La Grande-Motte. Ziel ist der Parking du Port am Quai Robert Fages.</span></div>
+<div><b>18:25</b><span>Zu Fuß über Quai d’Honneur und den Yachthafen. Die moderne Architektur und die Boote ansehen; etwa 30–40 Minuten einplanen.</span></div>
+<div><b>19:05</b><span>Abendessen im Café Soleil, Centre Commercial Le Mercure an der Avenue de l’Europe. Preis-Leistungs-Hauptoption mit Fisch-, Muschel- und Familienmenüs.</span></div>
 <div><b>20:30</b><span>Weiter zur Plage du Centre Ville. Kurzer Strandspaziergang und Sonnenuntergang.</span></div>
-<div><b>21:30</b><span>Rückfahrt zum Hotel. Ohne starken Verkehr etwa 20–25 Minuten.</span></div>
+<div><b>21:30</b><span>Rückfahrt zum Hotel. Ohne starken Verkehr ungefähr 20–25 Minuten.</span></div>
 </div>
-<div class="actions"><button class="btn primary" data-evening-route="evening2307">Komplette Abendroute</button>
-<button class="btn primary" data-map="Parking du Port Quai Robert Fages La Grande-Motte">Parken &amp; Laden</button>
-<button class="btn secondary" data-map="L’Ombrine Quai d’Honneur La Grande-Motte">L’Ombrine</button>
-<button class="btn secondary" data-map="Plage du Centre Ville La Grande-Motte">Strand</button>
+
+<div class="feature-list">
+<div class="feature-item"><b>Hauptempfehlung · Café Soleil</b><span>Menüs zu 24,90 €, 27,90 € und 31,90 €. Darunter Moules-frites, Kabeljau-Fish-and-Chips, Seiche, Lachs, Dorade und Gambas. Kindermenü 9,50 € bis 10 Jahre. Täglich laut Restaurantseite 08:00–23:30 Uhr.</span></div>
+<div class="feature-item"><b>Seafood-Geheimtipp · La Barque Bleue</b><span>35 Avenue Pierre Racine. Austern, Muscheln, Garnelen und Meeresfrüchteplatten; vor Ort oder zum Mitnehmen. Laut Tourismusbüro 18:00–22:00 Uhr am Abend.</span></div>
+<div class="feature-item"><b>Fisch-Alternative · Le Poisson Bleu</b><span>130 Rue du Port. Kleine Fisch- und Meeresfrüchteadresse am Hafen. Öffnung und freie Plätze vor der Anfahrt telefonisch prüfen.</span></div>
+<div class="feature-item"><b>Entscheidung vor Ort</b><span>Café Soleil bleibt der feste Plan wegen kalkulierbarer Preise und Kindermenü. La Barque Bleue wählen, wenn frische Austern oder eine Meeresfrüchteplatte wichtiger sind.</span></div>
+</div>
+
+<div class="actions">
+<button class="btn primary" data-evening-route="evening2307">Komplette Abendroute</button>
+<button class="btn primary" data-map="Parking du Port Quai Robert Fages 34280 La Grande-Motte France">Parken</button>
+<button class="btn secondary" data-map="Quai d’Honneur 34280 La Grande-Motte France">Hafenrunde</button>
+<button class="btn secondary" data-map="Café Soleil Centre Commercial Le Mercure Avenue de l’Europe 34280 La Grande-Motte France">Café Soleil</button>
+<button class="btn secondary" data-map="La Barque Bleue 35 Avenue Pierre Racine 34280 La Grande-Motte France">La Barque Bleue</button>
+<button class="btn secondary" data-tel="+33467843660">La Barque Bleue anrufen</button>
+<button class="btn secondary" data-map="Le Poisson Bleu 130 Rue du Port 34280 La Grande-Motte France">Le Poisson Bleu</button>
+<button class="btn secondary" data-tel="+33679511118">Le Poisson Bleu anrufen</button>
+<button class="btn secondary" data-map="Plage du Centre Ville 34280 La Grande-Motte France">Strand</button>
+<button class="btn secondary" data-url="https://www.cafe-soleil-restaurant-la-grande-motte.fr/menus-cafe-soleil-la-grande-motte">Speisekarte Café Soleil</button>
 </div>
 </div>
 </article>
@@ -1134,14 +1509,14 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <div><b>16:30</b><span>Gepäck an 56 Rue Haute Seille ausladen und das Auto auf einem öffentlichen Parkplatz nahe der Unterkunft abstellen. Es bleibt dort bis zum nächsten Morgen.</span></div>
 <div><b>17:15</b><span>Check-in und kurze Pause.</span></div>
 <div><b>18:00</b><span>Rundgang: Porte des Allemands → Place Saint-Louis → Kathedrale Saint-Étienne → Place de la Comédie → Moselufer.</span></div>
-<div><b>19:45</b><span>Abendessen im Bereich Rue des Tanneurs und Place Saint-Louis; als feste Option Au Coeur du Liban, 6 rue des Tanneurs.</span></div>
+<div><b>19:45</b><span>Abendessen im Bereich Rue des Tanneurs und Place Saint-Louis; als feste Option Au Cœur du Liban, 11 Place de Chambre.</span></div>
 <div><b>21:15</b><span>Kein Laden am Abend. Der gesamte Rundgang einschließlich Restaurant und Rückweg erfolgt zu Fuß.</span></div>
 <div><b>22:00</b><span>Kurzer Abschluss an der Place Saint-Louis und Rückkehr zur Unterkunft.</span></div>
 </div>
 <div class="actions"><button class="btn primary" data-evening-route="evening0108">Komplette Abendroute</button>
 <button class="btn primary" data-map="Parking Coislin Place Coislin Metz">Parken</button>
 <button class="btn secondary" data-map="Porte des Allemands Metz">Rundgang starten</button>
-<button class="btn secondary" data-map="Au Coeur du Liban 6 rue des Tanneurs Metz">Restaurant</button>
+<button class="btn secondary" data-map="Au Cœur du Liban 11 Place de Chambre Metz">Restaurant</button>
 
 
 </div>
@@ -1176,7 +1551,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 
 <section class="section">
-<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.28</span></div>
+<div class="section-title"><h2>Technischer Status</h2><span class="badge">Block 28.32</span></div>
 <div class="card">
 <div class="qa-grid">
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Einzeldatei</b><span>HTML, CSS, JavaScript und Reisedaten sind vollständig eingebettet.</span></div></div>
@@ -1185,7 +1560,8 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Dark Mode</b><span>Die Darstellung folgt automatisch der Geräteeinstellung.</span></div></div>
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Lademodell</b><span>Alle Etappen verwenden 22 kWh/100 km. Unterwegs gilt 5–12 % → 85 %; am Etappenziel nur unter 60 % auf 85 %. GLOBUS Trier ist die feste Ausnahme mit 95 %.</span></div></div>
 <div class="qa-item"><div class="qa-icon">✓</div><div><b>Zentrale Reisevorbereitung</b><span>Nur die kompakte, dauerhaft gespeicherte Reisevorbereitung bleibt sichtbar.</span></div></div>
-<div class="qa-item"><div class="qa-icon">✓</div><div><b>Verknüpfungen</b><span>Startseite, Etappendetails, Ladepläne, feste Tagesabläufe, Suche, Karten, Telefonnummern und externe Webseiten werden im erweiterten Selbsttest geprüft.</span></div></div>
+<div class="qa-item"><div class="qa-icon">✓</div><div><b>Restaurantführer</b><span>Alle Restaurantempfehlungen sind mit Kategorie, Preisniveau, Öffnungszeiten, Adresse, Webseite und deutscher Menüübersicht zusammengeführt.</span></div></div>
+<div class="qa-item"><div class="qa-icon">✓</div><div><b>Verknüpfungen</b><span>Startseite, Etappendetails, Ladepläne, feste Tagesabläufe, Suche, dynamische Ansichten, Karten, Routen, Telefonnummern und externe Webseiten werden im erweiterten Selbsttest geprüft.</span></div></div>
 </div>
 <div class="actions"><button class="btn secondary" id="runSelfTest">Selbsttest starten</button></div>
 <div id="selfTestResult" class="hotel-alert" style="display:none"></div>
@@ -1293,7 +1669,7 @@ const travel = {
   stages: [
     {id:'s1',originAddress:'Hasbergen, 49205, Deutschland',destinationAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',date:'22.07.',weekday:'Mi',departureTime:'07:45',arrivalTime:'18:45',arrivalWindow:'18:30–19:00',totalDayTime:'ca. 11 Std.',todayStops:'Erftstadt + Trier + Val-de-Meuse',todayChecks:['Audi auf 98 % und Prognose bis Erftstadt prüfen','In Erftstadt nur 25 Prozentpunkte nachladen','In Trier auf 95 % laden · danach wieder 5–12 % → 85 %'],from:'Hasbergen',to:'Dijon',title:'Hasbergen → Dijon',
     summary:'Feste Ladefolge: Tesla Erftstadt, Pfalzwerke GLOBUS Trier und Tesla Val-de-Meuse. Der zuvor geplante Standort Langres wird verworfen, weil die Audi-Prognose dort etwa 10 Prozentpunkte zu wenig Reserve anzeigt. Val-de-Meuse liegt früher auf der A31 und ist deshalb der sichere dritte Ladestopp.',
-    tags:['Etappe','Dijon','Hinfahrt'],distance:'ca. 730–750 km über Erftstadt, Trier und Laxou',driveTime:'ca. 10,5–11 Std. inkl. drei Lade- und Familienpausen',
+    tags:['Etappe','Dijon','Hinfahrt'],distance:'ca. 730–750 km über Erftstadt, Trier und Val-de-Meuse',driveTime:'ca. 10,5–11 Std. inkl. drei Lade- und Familienpausen',
     toll:'Richtwert ca. 20–30 €; tatsächlichen Betrag beim Start im Routenplaner prüfen',
     chargingPlan:'Tesla Erftstadt: nur +25 Prozentpunkte · Pfalzwerke GLOBUS Trier: bis 95 % · Tesla Val-de-Meuse: bis 85 %',
     evening:'Ankunft etwa 18:30–19:00 · kompakter Altstadtrundgang mit Eule · anschließend Essen und Eis',
@@ -1303,16 +1679,16 @@ const travel = {
     routeWaypoints:['An der Patria 21, 50374 Erftstadt, Deutschland','Castelforte-Straße 1, 54292 Trier, Deutschland','D132, Sortie Montigny – A31, 52140 Val-de-Meuse, Frankreich'],
     plan:'Mit 98 % starten. In Erftstadt weiterhin nur 25 Prozentpunkte nachladen. Am Pfalzwerke GLOBUS Trier ausnahmsweise bis 95 % laden. Der zuvor vorgesehene Stopp Langres wird nicht angefahren, weil die Audi-Prognose dort rund 10 Prozentpunkte zu wenig Reserve anzeigt. Neuer dritter Pflichtstopp ist Tesla Val-de-Meuse an der A31. Die Audi-Prognose ist maßgeblich: ideal mit 5–12 % ankommen und dort auf 85 % laden. Danach direkt nach Dijon weiterfahren. Am Etappenziel nur laden, wenn der tatsächliche Ankunfts-SoC unter 60 % liegt.'},
 
-    {id:'s2',originAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',destinationAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',date:'23.07.',weekday:'Do',departureTime:'09:15',arrivalTime:'16:15',arrivalWindow:'16:00–16:30',totalDayTime:'ca. 7 Std.',todayStops:'Marie Blachère Chenôve + IONITY Dijon Sud + Salaise-sur-Sanne',todayChecks:['Zuerst Bäckerei, danach auf etwa 90 % laden','Tesla-App und DKV-Zahlung prüfen','Hotelankunft und Laden am Hotel vorbereiten'],from:'Dijon',to:'Montpellier',title:'Dijon → Montpellier',
-    summary:'Nach Bäckerei und IONITY Dijon Sud mit etwa 90 % starten. Bis Salaise-sur-Sanne sind rund 242 km; dort werden etwa 20–22 % erwartet. Nach dem Laden auf 85 % sind es bis Montpellier je nach Route ungefähr 252–286 km. Deshalb ist die Ankunft mit etwa 3–13 % knapp und das Audi-Navi entscheidet, ob ein späterer kurzer Zusatzstopp nötig ist.',
+    {id:'s2',originAddress:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',destinationAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',date:'23.07.',weekday:'Do',departureTime:'09:15',arrivalTime:'16:15',arrivalWindow:'16:00–16:30',totalDayTime:'ca. 7 Std.',todayStops:'Marie Blachère + DKV-HPC Chenôve + Salaise-sur-Sanne',todayChecks:['Marie Blachère ab 07:00 Uhr · Backwaren holen','DKV-HPC im Umkreis von höchstens etwa 6 Fußminuten auswählen','Audi vor Abfahrt auf etwa 90–95 % laden und Prognose bis Salaise prüfen'],from:'Dijon',to:'Montpellier',title:'Dijon → Montpellier',
+    summary:'Nach Bäckerei und einem nahen DKV-HPC in Chenôve mit etwa 90–95 % starten. Bis Salaise-sur-Sanne sind rund 242 km; dort werden etwa 20–22 % erwartet. Nach dem Laden auf 85 % sind es bis Montpellier je nach Route ungefähr 252–286 km. Deshalb ist die Ankunft mit etwa 3–13 % knapp und das Audi-Navi entscheidet, ob ein späterer kurzer Zusatzstopp nötig ist.',
     tags:['Etappe','Montpellier','Hinfahrt'],distance:'ca. 495–505 km ab Dijon inklusive Ladezufahrten',driveTime:'ca. 6–6,5 Std. inkl. Ladepause',
     toll:'Richtwert ca. 35–45 € für Klasse 1; Kartenzahlung an den Mautstellen',
-    chargingPlan:'Marie Blachère Chenôve → IONITY Dijon Sud → Tesla Salaise-sur-Sanne 5–12 % → 85 %',
-    evening:'18:00 Parking du Port · 19:00 L’Ombrine · 20:30 Strand',
+    chargingPlan:'Marie Blachère Chenôve + naher DKV-HPC → Tesla Salaise-sur-Sanne 5–12 % → 85 %',
+    evening:'18:00 Parking du Port · Hafenrunde · 19:00 Café Soleil · 20:30 Strand',
     startSoc:'ca. 95 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Ibis Budget Montpellier Centre Millénaire',
     destinationCharging:'Am Etappenziel nur bei Ankunft unter 60 % auf 85 % laden; ab 60 % nicht laden',
-    routeWaypoints:['1 Rue Henri Barbusse, 21300 Chenôve, Frankreich','5 Rue de Beauregard, 21600 Longvic, Frankreich','N7, 38150 Salaise-sur-Sanne, Frankreich'],
-    plan:'Von der Unterkunft zuerst zur Marie Blachère Chenôve und anschließend zu IONITY Dijon Sud fahren. Dort nach der geltenden Ladeplanung laden. Bis Salaise-sur-Sanne sind rund 242 km; rechnerisch bleiben etwa 20–22 %. Dort auf 85 % laden. Die Weiterfahrt nach Montpellier wird je nach Routenführung mit rund 252 bis 286 km angegeben. Zeigt das Audi-Navi am Ziel weniger als 10 % an, vor Montpellier einen kurzen Zusatzstopp einlegen. Am Hotel anschließend auf 80–85 % laden.'},
+    routeWaypoints:['1 Rue Henri Barbusse, 21300 Chenôve, Frankreich','54 Rue de Longvic, 21300 Chenôve, Frankreich','N7, 38150 Salaise-sur-Sanne, Frankreich'],
+    plan:'Von der Unterkunft zur Marie Blachère Chenôve fahren. Im engen Fußradius stehen mehrere DKV-fähige HPC zur Auswahl; Hauptempfehlung ist Allego an der 54 Rue de Longvic. Während des Ladens zu Fuß zur Bäckerei gehen. Vor Abfahrt auf etwa 90–95 % laden. Bis Salaise-sur-Sanne sind rund 242 km; rechnerisch bleiben etwa 20–22 %. Dort auf 85 % laden. Die Weiterfahrt nach Montpellier wird je nach Routenführung mit rund 252 bis 286 km angegeben. Zeigt das Audi-Navi am Ziel weniger als 10 % an, vor Montpellier einen kurzen Zusatzstopp einlegen. Am Hotel nur laden, wenn der tatsächliche Ankunfts-SoC unter 60 % liegt; dann auf 85 %.'},
 
     {id:'s3',originAddress:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',destinationAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',date:'24.07.',weekday:'Fr',departureTime:'10:15',arrivalTime:'15:00',arrivalWindow:'15:00',totalDayTime:'ca. 4 Std. 45 Min.',todayStops:'Bäckerei + Carrefour Torroella',todayChecks:['Morgens nur Bäckerei; Start-SoC vom Vorabend prüfen','Narbonne nur bei Bedarf','Carrefour Torroella auf 95–100 % laden'],from:'Montpellier',to:'L’Estartit',title:'Montpellier → L’Estartit',
     summary:'Morgens nur zur Bäckerei. Für 22 kWh/100 km sind mindestens 80–85 % Start-SoC erforderlich. Kurz vor dem Ziel am Carrefour Market Torroella auf 95–100 % laden und L’Estartit mit ungefähr 90–95 % erreichen.',
@@ -1344,7 +1720,7 @@ const travel = {
     evening:'18:00 Altstadtrunde · 19:45 Essen · kein Laden am Abend',
     startSoc:'ca. 95 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Appartement Rue Haute Seille',
     destinationCharging:'Am Etappenziel nur bei Ankunft unter 60 % auf 85 % laden; ab 60 % nicht laden',
-    routeWaypoints:['Rue Louis Armstrong, 63200 Riom, Frankreich','Aire de Beaune-Tailly A6','D132, Sortie Montigny – A31, 52140 Val-de-Meuse, Frankreich'],
+    routeWaypoints:['Rue Louis Armstrong, 63200 Riom, Frankreich','Aire de Beaune-Tailly A6','Rue de la Sapinière, 54520 Laxou, Frankreich'],
     plan:'Von Clermont-Ferrand zuerst nach Riom fahren und dort auf etwa 95 % laden. Bis Beaune-Tailly sind je nach Route rund 280–295 km; dort auf 85 % laden. Beaune-Tailly bis Laxou sind ungefähr 250 km, daher ist die bisherige Prognose von 20–25 % zu hoch. Rechnerisch sind eher 13–15 % zu erwarten. In Laxou kurz auf 55–60 % laden; Metz wird anschließend mit ungefähr 38–43 % erreicht.'},
 
     {id:'s6',originAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',destinationAddress:'Hasbergen, Deutschland',date:'02.08.',weekday:'So',departureTime:'09:00',arrivalTime:'16:00',arrivalWindow:'16:00',totalDayTime:'ca. 7 Std.',todayStops:'Mougel Bio + Waves Actisud + Bonn',todayChecks:['Zuerst Bäckerei, danach Tesla auf etwa 95 %','Tesla Bonn als planmäßigen Fahrtstopp prüfen','Ankunft zuhause gegen 16:00 Uhr'],from:'Metz',to:'Hasbergen',title:'Metz → Hasbergen',
@@ -1359,8 +1735,8 @@ const travel = {
     plan:'Nach Bäckerei und Laden am Waves Actisud mit etwa 95 % starten. Tesla Bonn nach ungefähr 240 km mit etwa 25–30 % erreichen und auf 85 % laden. Bonn bis Hasbergen sind eher rund 235–245 km, nicht 195–205 km. Bei 22 kWh/100 km ergibt das eine Ankunft zuhause mit ungefähr 15–18 %. Kamener Kreuz bleibt eine spätere Notfalloption.'}
   ],
   hotels: [
-    {id:'h1',name:'L’Atypique',place:'Dijon',date:'22.07.',status:'vollständig',source:'Buchung und Gastgeberangaben · Adresse, Zugang, Parken und Check-out bestätigt',checkin:'Self Check-in · bestätigte Zugangsdaten aus Gastgeber-Nachricht verwenden',parking:'Rue Marguerite Thibert ca. 150 m',address:'34Bis rue d’Auxonne, 21000 Dijon',summary:'Straßenparken Mo–Sa 9:00–12:30 und 14:00–19:00 Uhr gebührenpflichtig. Kostenloser Parkplatz: Rue Marguerite Thibert (ca. 150 m). Intermarché: 2 Stunden kostenlos. Empfohlener Abend: kurzer Altstadtrundgang mit einem kleinen Teil des Eulenwegs, gezielter Besuch der Eule an Notre-Dame, französischer Burger und Eis.',checkout:'laut Gastgeber-Nachricht bestätigt',charging:'23.07. morgens: Option 1 IONITY Dijon Sud mit Hotelcafé · Option 2 Allego Chenôve mit Marie Blachère Chenôve',nearby:'Altstadt, Place de la Libération, Notre-Dame, Intermarché, Rue Marguerite Thibert',hotelChecklist:'Gepäck ausladen · Fahrzeug parken · Self-Check-in · kurzer Eulenweg · Eule besuchen · Burger · Eis · Laden'},
-    {id:'h2',name:'Ibis Budget Montpellier Centre Millénaire',place:'Montpellier',date:'23.07.',status:'vollständig',source:'Hotelinformation und Buchung',checkin:'ab 14:00 Uhr',parking:'kostenloser, geschlossener Hotelparkplatz',address:'25 rue des Frères Lumière, 34000 Montpellier',summary:'Check-out bis 12:00 Uhr. Gültiger Ausweis erforderlich. Kostenloser, geschlossener Hotelparkplatz, vier kostenpflichtige Ladepunkte, La Grande-Motte mit Hafen und Restaurant L\'Ombrine als Abendziel.',checkout:'bis 12:00 Uhr',charging:'am Vorabend auf mindestens 85 % laden; morgens nur Bäckerei. Falls nötig Electra Campanile als Ladealternative nutzen',nearby:'La Grande-Motte, Hafen, L’Ombrine',hotelChecklist:'einchecken · Ladestand prüfen · Abendtasche · Abfahrt am Morgen'},
+    {id:'h1',name:'L’Atypique',place:'Dijon',date:'22.07.',status:'vollständig',source:'Buchung und Gastgeberangaben · Adresse, Zugang, Parken und Check-out bestätigt',checkin:'Self Check-in · bestätigte Zugangsdaten aus Gastgeber-Nachricht verwenden',parking:'Rue Marguerite Thibert ca. 150 m',address:'34Bis rue d’Auxonne, 21000 Dijon',summary:'Straßenparken Mo–Sa 9:00–12:30 und 14:00–19:00 Uhr gebührenpflichtig. Kostenloser Parkplatz: Rue Marguerite Thibert (ca. 150 m). Intermarché: 2 Stunden kostenlos. Empfohlener Abend: kurzer Altstadtrundgang mit einem kleinen Teil des Eulenwegs, gezielter Besuch der Eule an Notre-Dame, französischer Burger und Eis.',checkout:'laut Gastgeber-Nachricht bestätigt',charging:'23.07. morgens: Marie Blachère Chenôve mit drei DKV-HPC-Optionen über 150 kW im Radius von etwa 6 Fußminuten',nearby:'Altstadt, Place de la Libération, Notre-Dame, Intermarché, Rue Marguerite Thibert',hotelChecklist:'Gepäck ausladen · Fahrzeug parken · Self-Check-in · kurzer Eulenweg · Eule besuchen · Burger · Eis · Laden'},
+    {id:'h2',name:'Ibis Budget Montpellier Centre Millénaire',place:'Montpellier',date:'23.07.',status:'vollständig',source:'Hotelinformation und Buchung',checkin:'ab 14:00 Uhr',parking:'kostenloser, geschlossener Hotelparkplatz',address:'25 rue des Frères Lumière, 34000 Montpellier',summary:'Check-out bis 12:00 Uhr. Gültiger Ausweis erforderlich. Kostenloser, geschlossener Hotelparkplatz und vier kostenpflichtige Ladepunkte. Abendziel ist La Grande-Motte mit Hafenrunde, Café Soleil als preisbewusster Hauptoption sowie La Barque Bleue und Le Poisson Bleu als Seafood-Alternativen.',checkout:'bis 12:00 Uhr',charging:'am Vorabend auf mindestens 85 % laden; morgens nur Bäckerei. Falls nötig Electra Campanile als Ladealternative nutzen',nearby:'La Grande-Motte, Hafen, Café Soleil, La Barque Bleue, Le Poisson Bleu',hotelChecklist:'einchecken · Ladestand prüfen · Abendtasche · Abfahrt am Morgen'},
     {id:'h3',name:'ALMA BEACH ESTARTIT',place:'L’Estartit',date:'24.–31.07.',status:'vollständig',source:'Booking.com-Unterkunftsseite · Kontaktangaben von Mónica',checkin:'15:00–18:00 Uhr · Ankunftszeit vorab mitteilen',parking:'kostenloses Parken in den umliegenden Straßen',address:'11 Carrer Salines, 17258 L’Estartit, Spanien',summary:'Familienunterkunft für den einwöchigen Strandaufenthalt an der Costa Brava. Idealer Ausgangspunkt für Strand, Hafenpromenade, Medes-Inseln, Barcelona-Tagesausflug und die geplante Costa-Brava-Rundtour über Begur, Pals und Peratallada.',checkout:'08:00–10:00 Uhr',charging:'vor Rückfahrt am 30.07. verbindlich auf etwa 95 % laden',nearby:'Strandlage, saisonaler Supermarkt im Gebäude, Zentrum ca. 750 m, Medes-Inseln ca. 1 km',contactName:'Mónica',email:'almabeachestartit@gmail.com',phone:'+34679937019',whatsapp:'+34679937019',hotelChecklist:'Gepäck · Einkauf · Strandtasche · Hafenbummel · Barcelona planen · Audi vor Rückreise auf etwa 95 % laden'},
     {id:'h4',name:'Airbnb bei Emilien',place:'Clermont-Ferrand',date:'31.07.',status:'teilweise',source:'Airbnb-Screenshots · Gastgeber Emilien · Co-Host Sophie; Zugang vollständig, Check-out-Uhrzeit noch offen',checkin:'Self Check-in über Schlüsselbox · Code 8848',parking:'Parkhaus Blaise Pascal ca. 200 m · Ticket/Pass 31 Tage gültig · für Ein- und Ausfahrt aufbewahren · nicht direkt am Handy lagern',address:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',summary:'Zugang über das grüne Tor und den Innenhof. Wohnung im 2. Stock rechts; Tür mit festem Griff. Gegensprechanlage Wohnung 24. Der Schlüssel für die Fahrrad-/Motorradgarage befindet sich hinten links im Hof. Google Maps lokalisiert die Adresse teilweise ungenau; besser ein alternatives GPS-System oder die vollständige Adresse verwenden.',checkout:'Uhrzeit in der Airbnb-App prüfen · Schlüssel zurück in die Box',charging:'01.08. morgens: Tesla Supercharger Riom, Rue Louis Armstrong, 63200 Riom · Frühstück im direkten Hotel-/Gastronomieumfeld',nearby:'Place Delille ca. 5 Minuten zu Fuß · Bahnhof ca. 10 Minuten zu Fuß · Altstadt und Kathedrale gut erreichbar',hotelChecklist:'Schlüsselbox 8848 · grünes Tor · Innenhof · 2. Stock rechts · Gegensprechanlage 24 · Parkticket aufbewahren'},
     {id:'h5',name:'Appartement Rue Haute Seille',place:'Metz',date:'01.08.',status:'teilweise',source:'Booking.com-Unterkunftsseite · Adresse und Zeiten bestätigt; Zugangsdaten folgen über Gastgeber',checkin:'14:00–22:00 Uhr · Ankunftszeit vorab mitteilen · Zugangsnachricht prüfen',parking:'öffentliche Parkmöglichkeiten in der Umgebung',address:'56 Rue Haute Seille, 57000 Metz, Frankreich',summary:'Innenstadtnahe Unterkunft für die letzte Übernachtung vor der Heimreise. Idealer Ausgangspunkt für einen Spaziergang über die Place Saint-Louis, zur Kathedrale Saint-Étienne und entlang der Mosel.',checkout:'bis 11:00 Uhr',charging:'02.08. morgens: Tesla Supercharger Waves Actisud, 1 Chemin de la Pie Grièche, 57160 Moulins-lès-Metz · Bäckerei Mougel Bio, 1 Rue de Chaponost',nearby:'Centre Pompidou-Metz ca. 1 km, Bahnhof ca. 1,1 km, Kathedrale und Place Saint-Louis fußläufig',hotelChecklist:'Gepäck · Parken · Altstadtrunde · morgens auf 95 % laden · Check-out'}
@@ -1369,15 +1745,15 @@ const travel = {
   hotelHubs: {
     h1:{
       restaurant:'DZ’envies, 12 rue Odebert, 21000 Dijon',
-      breakfast:'Boulangerie Du Pain Pour Demain, 31 rue d’Auxonne, Dijon',
-      charging:'IONITY Dijon Sud, 5 Rue de Beauregard, 21600 Longvic',
+      breakfast:'Marie Blachère Chenôve, 1 Rue Henri Barbusse, 21300 Chenôve',
+      charging:'Allego Hypercharger, 54 Rue de Longvic, 21300 Chenôve',
       supermarket:'Intermarché Dijon rue d’Auxonne',
       pharmacy:'pharmacie rue d’Auxonne Dijon',
       parking:'Rue Marguerite Thibert Dijon',
       evening:'Église Notre-Dame de Dijon'
     },
     h2:{
-      restaurant:"L’Ombrine, Quai d’Honneur, La Grande-Motte",
+      restaurant:'Café Soleil, Centre Commercial Le Mercure, Avenue de l’Europe, 34280 La Grande-Motte',
       breakfast:'Boulangerie près de Ibis Budget Montpellier Centre Millénaire',
       charging:'Electra Campanile, Avenue du Mas d’Argelliers, 34070 Montpellier',
       supermarket:'supermarché près de 25 rue des Frères Lumière Montpellier',
@@ -1404,7 +1780,7 @@ const travel = {
       evening:'Cathédrale Notre-Dame-de-l’Assomption, Clermont-Ferrand'
     },
     h5:{
-      restaurant:'Au Coeur du Liban, 6 rue des Tanneurs, Metz',
+      restaurant:'Au Cœur du Liban, 11 Place de Chambre, Metz',
       breakfast:'Boulangerie Fort, Metz centre',
       charging:'Tesla Supercharger Waves Actisud, 1 Chemin de la Pie Grièche, 57160 Moulins-lès-Metz',
       supermarket:'supermarché près de Rue Haute Seille Metz',
@@ -1429,13 +1805,15 @@ const travel = {
   charging: [],
   info: [
     {id:'i1',title:'Dijon am Abend',summary:'Kompakter Altstadtrundgang mit einem kleinen Teil des Eulenwegs, gezieltem Besuch der Eule, französischem Burger und Eis.',tags:['Aktivität','Dijon','Essen']},
-    {id:'i2',title:'Montpellier am Abend',summary:'Strand- oder Hafenspaziergang, mediterranes Abendessen und eine passende Lademöglichkeit.',tags:['Aktivität','Montpellier','Essen']},
+    {id:'i2',anchor:'evening2307',title:'Montpellier am Abend',summary:'Hafenrunde in La Grande-Motte, preisbewusstes Fischessen im Café Soleil sowie La Barque Bleue und Le Poisson Bleu als Seafood-Alternativen.',tags:['Aktivität','Montpellier','Essen','Fisch','Meeresfrüchte']},
+    {id:'i16',anchor:'evening2307',title:'Restaurants La Grande-Motte',summary:'Café Soleil für kalkulierbare Menüs und Kindermenü; La Barque Bleue für Austern und Meeresfrüchte; Le Poisson Bleu als kleine Fischalternative am Hafen.',tags:['Restaurant','Fisch','Meeresfrüchte','Montpellier','La Grande-Motte']},
     {id:'i3',title:'L’Estartit',summary:'Strände, Schnorcheln, familiengeeignete Ausflüge und optional ein Barcelona-Tagestrip.',tags:['Aktivität','L’Estartit','Strand']},
     {id:'i5',title:'Reisehilfen',summary:'Packliste, Dokumente, Verkehrsregeln, Umweltzonen, Maut, Tunnel und Notrufnummern.',tags:['Info','Dokumente','Sicherheit']},
     {id:'i9',anchor:'estartitInsider',title:'Cocktailbars L’Estartit',summary:'Racó del Port und Sota Zero für Cocktails, Hafenblick, Eis und einen familiengeeigneten Abend.',tags:['Aktivität','Cocktail','Bar','L’Estartit']},
     {id:'i10',anchor:'estartitInsider',title:'Restaurants L’Estartit',summary:'La Sal, Cal Tet, El Fornet, La Xula und Les Corones für Paella, Fisch, Meeresfrüchte, Holzofen und Familienessen.',tags:['Aktivität','Restaurant','Essen','L’Estartit']},
     {id:'i11',anchor:'estartitInsider',title:'Fisch und Metzgereien L’Estartit',summary:'Laura Cabezas, Can Lluís, Arnall, SPAR-Fischtheke und Wochenmarkt.',tags:['Info','Fisch','Metzgerei','Einkaufen']},
     {id:'i12',anchor:'estartitInsider',title:'Geheimtipps L’Estartit',summary:'Fischerort-Rundgang, Passeig del Molinet, La Pletera, Ter Vell, Espai Medes und Cala Pedrosa.',tags:['Aktivität','Geheimtipp','Natur','L’Estartit']},
+    {id:'i17',anchor:'restaurantGuide',title:'Restaurantführer komplett',summary:'Alle Restaurants mit Kategorie, Preisniveau, Öffnungszeiten, Adresse, Webseite und deutscher Menüübersicht.',tags:['Restaurant','Essen','Menü','Preise']},
     {id:'i13',anchor:'fixedPlans',title:'Abendprogramme chronologisch',summary:'Chronologische Abendprogramme für Dijon, La Grande-Motte, alle Abende in L’Estartit, Clermont-Ferrand und Metz.',tags:['Aktivität','Tagesplan','Navigation']},
     {id:'i14',anchor:'routeCheck',title:'Etappenwerte und letzte Prüfung',summary:'Ladeplanung, Maut, Verkehr und Unterkunftszugang vor den Fahrtagen.',tags:['Info','Maut','Laden','Verkehr']},
     {id:'i15',anchor:'estartitDayPlans',title:'Urlaubstage L’Estartit komplett',summary:'Vollständige Tagespläne vom 25. bis 30. Juli mit Barcelona, Medes-Inseln, Torroella, Cala Pedrosa und Costa-Brava-Rundtour.',tags:['Aktivität','Tagesplan','L’Estartit','Ausflug']}
@@ -1494,7 +1872,7 @@ const chargingStages = [
       alternatives:[
         {deltaKm:-68,actualDelta:'ca. 68 km vor Val-de-Meuse · im Audi-Navi prüfen',routeOffsetKm:0,name:'Fastned Aire de Loisy',location:'A31, 54700 Loisy',provider:'Fastned',power:'bis 300 kW',stops:'8 CCS-HPC',toilet:'Autobahnraststätte',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Shop und Raststättenangebot',map:'Fastned Aire de Loisy A31 54700 France'},
         {deltaKm:-45,actualDelta:'ca. 45 km vor Val-de-Meuse · im Audi-Navi prüfen',routeOffsetKm:2,name:'Tesla Houdemont',location:'8 Allée de la Genelière, 54180 Houdemont',provider:'Tesla',power:'bis 150 kW',stops:'8 HPC',toilet:'Ibis am Standort',toiletName:'Ibis-Kundentoilette',toiletConfirmed:true,food:'Hotel und Gastronomie',map:'Tesla Supercharger 8 Allée de la Genelière 54180 Houdemont France'},
-        {deltaKm:-22,actualDelta:'ca. 22 km vor Val-de-Meuse · im Audi-Navi prüfen',routeOffsetKm:2,name:'HPC Toul / Dommartin-lès-Toul',location:'Dommartin-lès-Toul, Frankreich',provider:'Betreiber vor Ort',power:'HPC',stops:'mehrere CCS',toilet:'Gastronomie im Umfeld',toiletName:'Kundentoilette im Umfeld',toiletConfirmed:true,food:'Restaurants und Café',map:'HPC charging Dommartin-les-Toul France'},
+        {deltaKm:-22,actualDelta:'ca. 22 km vor Val-de-Meuse · im Audi-Navi prüfen',routeOffsetKm:2,name:'HPC Toul / Dommartin-lès-Toul',location:'Dommartin-lès-Toul, Frankreich',provider:'Betreiber vor Ort',power:'HPC',stops:'mehrere CCS',toilet:'Gastronomie im Umfeld',toiletName:'Kundentoilette im Umfeld',toiletConfirmed:true,food:'Restaurants und Café',map:'borne recharge rapide Dommartin-lès-Toul France'},
         {deltaKm:35,actualDelta:'ca. 35 km nach Val-de-Meuse · nur bei ausreichender Audi-Prognose',routeOffsetKm:0,name:'IONITY Aire de Langres–Perrogney',location:'A31, 52160 Perrogney-les-Fontaines',provider:'IONITY',power:'bis 400 kW',stops:'18 HPC plus weitere Ladepunkte',toilet:'Autobahnraststätte rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Restaurant, Café und Shop',map:'IONITY Aire de Langres Perrogney A31 52160 France'},
         {deltaKm:38,actualDelta:'ca. 38 km nach Val-de-Meuse · nur bei ausreichender Audi-Prognose',routeOffsetKm:0,name:'Tesla Aire de Langres-Noidant',location:'A31, 52200 Noidant-le-Rocheux',provider:'Tesla',power:'bis 250 kW',stops:'8 HPC',toilet:'Autobahnraststätte',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Raststättenangebot',map:'Tesla Supercharger Aire de Langres Noidant A31 France'},
         {deltaKm:72,actualDelta:'ca. 72 km nach Val-de-Meuse · nur bei ausreichender Audi-Prognose',routeOffsetKm:0,name:'e-Vadea Aire de Dijon-Brognon Est',location:'A31, 21310 Arceau',provider:'e-Vadea',power:'bis 300 kW',stops:'7 HPC plus weitere Ladepunkte',toilet:'Autobahnraststätte rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Restaurant, Café und Shop',map:'e-Vadea Aire de Dijon Brognon Est A31 France'}
@@ -1638,32 +2016,17 @@ const estartitChargingOptions = [
 
 const morningChargingPlans = {
   s1:{
-    title:'Dijon morgens laden',
+    title:'Heute in Dijon · Bäckerei und DKV-Schnellladen',
+    bakery:'Marie Blachère Chenôve',
+    bakeryAddress:'1 Rue Henri Barbusse, 21300 Chenôve, Frankreich',
+    bakeryHours:'Mo–Sa 07:00–19:30 · Sonntag geschlossen',
+    bakeryMaps:'https://www.google.com/maps/search/?api=1&query=Marie+Blachere+1+Rue+Henri+Barbusse+21300+Chenove',
     options:[
-      {
-        label:'Option 1 · größere HPC-Anlage',
-        station:'IONITY Dijon Sud',
-        address:'5 Rue de Beauregard, 21600 Longvic, Frankreich',
-        power:'bis 350 kW',
-        stalls:'9 Ladepunkte',
-        bakery:'Hotelcafé / Frühstück vor Ort',
-        bakeryAddress:'5 Rue de Beauregard, 21600 Longvic, Frankreich',
-        note:'Beste Wahl für maximale Ladeleistung und viele Ladepunkte. Frühstück, Café und WC direkt am Hotelstandort.'
-      },
-      {
-        label:'Option 2 · Bäckerei direkt daneben',
-        station:'Allego Hypercharger Chenôve',
-        address:'54 Rue de Longvic, 21300 Chenôve, Frankreich',
-        power:'bis 300 kW',
-        stalls:'4 HPC plus 4 AC-Ladepunkte',
-        bakery:'Marie Blachère Chenôve',
-        bakeryAddress:'1 Rue Henri Barbusse, 21300 Chenôve, Frankreich',
-        stationMaps:'https://www.google.com/maps/search/?api=1&query=Allego+Hypercharger+54+Rue+de+Longvic+21300+Chenove',
-        bakeryMaps:'https://www.google.com/maps/search/?api=1&query=Marie+Blachere+1+Rue+Henri+Barbusse+21300+Chenove',
-        note:'Marie Blachère ist die verlässlichere Frühstücksoption. Die Bäckerei liegt nicht direkt an der Ladesäule; beide Ziele sind deshalb separat mit Google Maps verlinkt. Die Allego-Anlage bietet vier HPC bis 300 kW sowie vier AC-Ladepunkte.'
-      }
+      {label:'Hauptempfehlung · etwa 4–6 Fußminuten',station:'Allego Hypercharger Chenôve',provider:'Allego · DKV Card +Charge',address:'54 Rue de Longvic, 21300 Chenôve, Frankreich',power:'bis 300 kW',stalls:'6 CCS-HPC bis 300 kW plus 4 AC',walk:'Fußweg zur Bäckerei ungefähr 4–6 Minuten; Route in Google Maps prüfen',bakery:'Marie Blachère Chenôve',bakeryAddress:'1 Rue Henri Barbusse, 21300 Chenôve, Frankreich',stationMaps:'https://www.google.com/maps/search/?api=1&query=Allego+Hypercharger+54+Rue+de+Longvic+21300+Chenove',bakeryMaps:'https://www.google.com/maps/search/?api=1&query=Marie+Blachere+1+Rue+Henri+Barbusse+21300+Chenove',walkMaps:'https://www.google.com/maps/dir/?api=1&origin=Allego+Hypercharger+54+Rue+de+Longvic+21300+Chenove&destination=Marie+Blachere+1+Rue+Henri+Barbusse+21300+Chenove&travelmode=walking',note:'Größte bestätigte Anlage im direkten Bereich. DKV-Akzeptanz und Live-Belegung vor dem Start in der DKV Mobility App prüfen.'},
+      {label:'Alternative 1 · etwa 3–5 Fußminuten',station:'Powerdot Hypercharger · Rue de Longvic',provider:'Powerdot · DKV Card +Charge',address:'55 Rue de Longvic, 21300 Chenôve, Frankreich',power:'bis 200 kW',stalls:'4 CCS-Anschlüsse bis 200 kW plus weitere Ladepunkte',walk:'Fußweg zur Bäckerei ungefähr 3–5 Minuten; Route in Google Maps prüfen',bakery:'Marie Blachère Chenôve',bakeryAddress:'1 Rue Henri Barbusse, 21300 Chenôve, Frankreich',stationMaps:'https://www.google.com/maps/search/?api=1&query=Powerdot+55+Rue+de+Longvic+21300+Chenove',bakeryMaps:'https://www.google.com/maps/search/?api=1&query=Marie+Blachere+1+Rue+Henri+Barbusse+21300+Chenove',walkMaps:'https://www.google.com/maps/dir/?api=1&origin=Powerdot+55+Rue+de+Longvic+21300+Chenove&destination=Marie+Blachere+1+Rue+Henri+Barbusse+21300+Chenove&travelmode=walking',note:'Powerdot ist offizieller DKV-Partner in Frankreich. Live-Status und Preis werden in der DKV Mobility App geprüft.'},
+      {label:'Alternative 2 · bis etwa 6 Fußminuten',station:'Powerdot Hypercharger · Chaussea',provider:'Powerdot · DKV Card +Charge',address:'10 Rue Jean Moulin, 21300 Chenôve, Frankreich',power:'bis 200 kW',stalls:'3 CCS-Anschlüsse bis 200 kW plus weitere Ladepunkte',walk:'Fußweg zur Bäckerei bis ungefähr 6 Minuten; exakte Route in Google Maps prüfen',bakery:'Marie Blachère Chenôve',bakeryAddress:'1 Rue Henri Barbusse, 21300 Chenôve, Frankreich',stationMaps:'https://www.google.com/maps/search/?api=1&query=Powerdot+Chaussea+10+Rue+Jean+Moulin+21300+Chenove',bakeryMaps:'https://www.google.com/maps/search/?api=1&query=Marie+Blachere+1+Rue+Henri+Barbusse+21300+Chenove',walkMaps:'https://www.google.com/maps/dir/?api=1&origin=Powerdot+Chaussea+10+Rue+Jean+Moulin+21300+Chenove&destination=Marie+Blachere+1+Rue+Henri+Barbusse+21300+Chenove&travelmode=walking',note:'Zweite bestätigte Powerdot-Anlage im Gewerbegebiet. Nur nutzen, wenn Google Maps am Morgen höchstens etwa 6 Minuten Fußweg zeigt.'}
     ],
-    note:'Beide Optionen liegen südlich von Dijon. Für 22 kWh/100 km vor der Weiterfahrt auf etwa 90 % laden.'
+    note:'Erfasst sind die öffentlich auffindbaren DKV-HPC mit mehr als 150 kW im engen Bäckerei-Radius. Porsche-Händlerlader und Standorte mit 150 kW oder weniger sind bewusst nicht aufgenommen. DKV-App und Google Maps am Morgen sind verbindlich.'
   },
   s2:{
     mode:'bakeryOnly',
@@ -1709,7 +2072,7 @@ const routeAuditPoints = {
     {name:'Dijon',query:'34Bis rue d’Auxonne 21000 Dijon France'}
   ],
   s2:[
-    {name:'IONITY Dijon Sud',query:'5 Rue de Beauregard 21600 Longvic France'},
+    {name:'Allego Chenôve',query:'54 Rue de Longvic 21300 Chenôve France'},
     {name:'Tesla Salaise-sur-Sanne',query:'Green 7 N7 38150 Salaise-sur-Sanne France'},
     {name:'Montpellier',query:'25 rue des Frères Lumière 34000 Montpellier France'}
   ],
@@ -2445,7 +2808,7 @@ function renderDayStrip(){
 
 const eveningRoutes = {
   evening2207:{mode:'walking',origin:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',destination:'34Bis rue d’Auxonne, 21000 Dijon, Frankreich',waypoints:['Place Notre-Dame, 21000 Dijon, Frankreich','Rue de la Chouette, 21000 Dijon, Frankreich','10 rue de la Chouette, 21000 Dijon, Frankreich','Rue Verrerie, 21000 Dijon, Frankreich','Place de la Libération, 21000 Dijon, Frankreich','Place François Rude, 21000 Dijon, Frankreich','12 rue Odebert, 21000 Dijon, Frankreich','Rue Musette, 21000 Dijon, Frankreich']},
-  evening2307:{mode:'driving',origin:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',destination:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',waypoints:['Quai Robert Fages, 34280 La Grande-Motte, Frankreich','Quai d’Honneur, 34280 La Grande-Motte, Frankreich','Plage du Centre Ville, 34280 La Grande-Motte, Frankreich']},
+  evening2307:{mode:'driving',origin:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',destination:'25 rue des Frères Lumière, 34000 Montpellier, Frankreich',waypoints:['Parking du Port, Quai Robert Fages, 34280 La Grande-Motte, Frankreich','Quai d’Honneur, 34280 La Grande-Motte, Frankreich','Café Soleil, Centre Commercial Le Mercure, Avenue de l’Europe, 34280 La Grande-Motte, Frankreich','Plage du Centre Ville, 34280 La Grande-Motte, Frankreich']},
   evening2407:{mode:'walking',origin:'11 Carrer Salines, 17258 L’Estartit, Spanien',destination:'11 Carrer Salines, 17258 L’Estartit, Spanien',waypoints:['Plaça Dr. Fleming 9, 17258 L’Estartit, Spanien','Passeig Marítim, 17258 L’Estartit, Spanien','Carrer Eivissa 9-11, 17258 L’Estartit, Spanien','Passeig Marítim 24, 17258 L’Estartit, Spanien']},
   evening2507:{mode:'walking',origin:'11 Carrer Salines, 17258 L’Estartit, Spanien',destination:'11 Carrer Salines, 17258 L’Estartit, Spanien',waypoints:['Passeig Marítim 40, 17258 L’Estartit, Spanien','Passeig del Molinet, 17258 L’Estartit, Spanien','Carrer Santa Anna, 17258 L’Estartit, Spanien']},
   evening2607:{mode:'walking',origin:'11 Carrer Salines, 17258 L’Estartit, Spanien',destination:'11 Carrer Salines, 17258 L’Estartit, Spanien',waypoints:['Carrer Eivissa 9-11, 17258 L’Estartit, Spanien','Passeig Marítim 24, 17258 L’Estartit, Spanien','Passeig Marítim, 17258 L’Estartit, Spanien']},
@@ -2453,7 +2816,7 @@ const eveningRoutes = {
   evening2807:{mode:'walking',origin:'11 Carrer Salines, 17258 L’Estartit, Spanien',destination:'11 Carrer Salines, 17258 L’Estartit, Spanien',waypoints:['Carrer Santa Anna, 17258 L’Estartit, Spanien','Carrer de les Illes, 17258 L’Estartit, Spanien','Carrer de la Platja 26, 17258 L’Estartit, Spanien','Passeig Marítim, 17258 L’Estartit, Spanien']},
   evening2907:{mode:'walking',origin:'11 Carrer Salines, 17258 L’Estartit, Spanien',destination:'11 Carrer Salines, 17258 L’Estartit, Spanien',waypoints:['Carrer Santa Anna 38, 17258 L’Estartit, Spanien','Passeig Marítim, 17258 L’Estartit, Spanien','Passeig Marítim 40, 17258 L’Estartit, Spanien','Passeig Marítim 24, 17258 L’Estartit, Spanien']},
   evening3107:{mode:'walking',origin:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destination:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',waypoints:['Place Delille, 63000 Clermont-Ferrand, Frankreich','Place de la Victoire, 63000 Clermont-Ferrand, Frankreich','3 rue de la Michodière, 63000 Clermont-Ferrand, Frankreich']},
-  evening0108:{mode:'walking',origin:'56 Rue Haute Seille, 57000 Metz, Frankreich',destination:'56 Rue Haute Seille, 57000 Metz, Frankreich',waypoints:['Boulevard André Maginot, 57000 Metz, Frankreich','Place Saint-Louis, 57000 Metz, Frankreich','Place d’Armes, 57000 Metz, Frankreich','Place de la Comédie, 57000 Metz, Frankreich','Quai des Régates, 57000 Metz, Frankreich','6 rue des Tanneurs, 57000 Metz, Frankreich']}
+  evening0108:{mode:'walking',origin:'56 Rue Haute Seille, 57000 Metz, Frankreich',destination:'56 Rue Haute Seille, 57000 Metz, Frankreich',waypoints:['Boulevard André Maginot, 57000 Metz, Frankreich','Place Saint-Louis, 57000 Metz, Frankreich','Place d’Armes, 57000 Metz, Frankreich','Place de la Comédie, 57000 Metz, Frankreich','Quai des Régates, 57000 Metz, Frankreich','11 Place de Chambre, 57000 Metz, Frankreich']}
 };
 
 function openGoogleDirections(origin,destination,waypoints=[],mode='walking'){
@@ -2705,7 +3068,7 @@ function departureCard(plan,step){
   }
   return `<article class="charge-stop"><div class="meta"><span class="pill">${step} · Vor Abfahrt</span></div>
     <h3>${esc(morning.title)}</h3>
-    ${options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Frühstück:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}<br>${esc(o.note)}</span><div class="actions"><button class="btn primary" ${o.stationMaps?`data-url="${esc(o.stationMaps)}"`:`data-map="${esc(o.address)}"`}>Ladestation in Google Maps</button><button class="btn secondary" ${o.bakeryMaps?`data-url="${esc(o.bakeryMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Bäckerei in Google Maps</button></div></div>`).join('')}</div>`:
+    ${options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Bäckerei:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}<br><b>Fußweg:</b> ${esc(o.walk||'Google Maps prüfen')}<br>${esc(o.note)}</span><div class="actions"><button class="btn primary" ${o.stationMaps?`data-url="${esc(o.stationMaps)}"`:`data-map="${esc(o.address)}"`}>Ladestation</button><button class="btn secondary" ${o.walkMaps?`data-url="${esc(o.walkMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Fußweg zur Bäckerei</button><button class="btn secondary" ${o.bakeryMaps?`data-url="${esc(o.bakeryMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Bäckerei</button></div></div>`).join('')}</div>`:
     `<div class="charge-facts">
       <div class="charge-fact"><span>Ladepunkt</span><b>${esc(morning.station)} · ${esc(morning.address)}</b></div>
       <div class="charge-fact"><span>Kapazität</span><b>${esc(morning.stalls)} · ${esc(morning.power)}</b></div>
@@ -2727,7 +3090,7 @@ function arrivalCard(plan,step){
       <div class="charge-fact"><span>Ziel-SoC</span><b>${esc(d.target)}</b></div>
       <div class="charge-fact"><span>Zweck</span><b>${esc(d.reason)}</b></div>
     </div>
-    ${hasMorningCharge?options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Frühstück:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}</span><div class="actions"><button class="btn primary" ${o.stationMaps?`data-url="${esc(o.stationMaps)}"`:`data-map="${esc(o.address)}"`}>Ladestation in Google Maps</button><button class="btn secondary" ${o.bakeryMaps?`data-url="${esc(o.bakeryMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Bäckerei in Google Maps</button></div></div>`).join('')}</div>`:
+    ${hasMorningCharge?options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Bäckerei:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}<br><b>Fußweg:</b> ${esc(o.walk||'Google Maps prüfen')}</span><div class="actions"><button class="btn primary" ${o.stationMaps?`data-url="${esc(o.stationMaps)}"`:`data-map="${esc(o.address)}"`}>Ladestation</button><button class="btn secondary" ${o.walkMaps?`data-url="${esc(o.walkMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Fußweg zur Bäckerei</button><button class="btn secondary" ${o.bakeryMaps?`data-url="${esc(o.bakeryMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Bäckerei</button></div></div>`).join('')}</div>`:
     `<div class="actions"><button class="btn primary" data-map="${esc(morning.address)}">Ladestation in Google Maps</button><button class="btn secondary" data-map="${esc(morning.bakeryAddress)}">Bäckerei in Google Maps</button></div>`:''}
   </article>`;
 }
@@ -2915,7 +3278,7 @@ function runSelfTest(){
   results.push(Boolean(document.getElementById('currentTrafficRoute')));
   results.push(travel.trip.planningConsumption==='22 kWh/100 km' && travel.trip.usableBattery==='ca. 77 kWh');
   results.push(Boolean(document.getElementById('routeAudit')) && typeof runRouteAudit==='function' && Object.keys(routeAuditPoints).length===6);
-  results.push(!chargingStages.some(s=>[s.primary,s.reserve].filter(Boolean).some(stop=>(stop.alternatives||[]).some(a=>a.name==='Tesla Trier E-Center'))));
+  results.push(chargingStages.every(stage=>[stage.primary,stage.reserve,stage.tertiary].filter(Boolean).every(stop=>new Set((stop.alternatives||[]).map(a=>a.name)).size===(stop.alternatives||[]).length)));
   results.push(chargingStages.find(s=>s.stageId==='s1')?.primary?.name.includes('Erftstadt') && chargingStages.find(s=>s.stageId==='s1')?.reserve?.name.includes('GLOBUS Trier') && chargingStages.find(s=>s.stageId==='s1')?.tertiary?.name.includes('Val-de-Meuse'));
   results.push(chargingStages.find(s=>s.stageId==='s5')?.reserve?.legDistanceKm===250);
   results.push(plannedLegKm('s6',1)===240);
@@ -2937,7 +3300,7 @@ function runSelfTest(){
   results.push(travel.stages[0].todayStops==='Erftstadt + Trier + Val-de-Meuse');
   results.push(Boolean(document.getElementById('todayRouteMap')) && Boolean(document.getElementById('todayMapLabel')) && Boolean(document.getElementById('todayMapStops')));
   results.push(typeof googleMapsEmbedUrl==='function' && googleMapsEmbedUrl('A','B',['C']).includes('output=embed'));
-  results.push(Boolean(document.getElementById('todaySection')) && Boolean(document.getElementById('todayState')));
+  results.push(!document.getElementById('todaySection') && !document.getElementById('todayState'));
   results.push(!document.getElementById('metricRoute') && !document.getElementById('metricStatus'));
   results.push(document.querySelectorAll('.dashboard .metric').length===1);
   results.push(morningChargingPlans.s2?.mode==='bakeryOnly' && Boolean(morningChargingPlans.s2?.fallbackAddress));
@@ -2947,7 +3310,7 @@ function runSelfTest(){
   results.push(document.getElementById('day2607')?.textContent.includes('11:30') && document.getElementById('day2607')?.textContent.includes('16:30'));
   results.push(
     chargingStages.find(x=>x.stageId==='s3')?.reserveBeforePrimary===true &&
-    chargingStages.find(x=>x.stageId==='s4')?.reserveBeforePrimary===true &&
+    chargingStages.find(x=>x.stageId==='s4')?.reserveBeforePrimary!==true &&
     departurePlanForStage('s1')===null &&
     departurePlanForStage('s2')===morningChargingPlans.s1 &&
     departurePlanForStage('s3')===morningChargingPlans.s2 &&
@@ -2965,8 +3328,8 @@ function runSelfTest(){
   );
   results.push(
     Array.isArray(morningChargingPlans.s1?.options) &&
-    morningChargingPlans.s1.options.length===2 &&
-    morningChargingPlans.s1.options.every(o=>o.station&&o.address&&o.bakery&&o.bakeryAddress)
+    morningChargingPlans.s1.options.length===3 &&
+    morningChargingPlans.s1.options.every(o=>o.station&&o.address&&o.bakery&&o.bakeryAddress&&o.walkMaps&&o.power)
   );
   results.push(
     Boolean(document.getElementById('evening2207')) &&
@@ -2979,7 +3342,7 @@ function runSelfTest(){
       (stop.alternatives||[]).every(a=>Boolean(a.provider))
     )
   ));
-  results.push(!JSON.stringify(chargingStages).toLowerCase().includes('e-center'));
+  results.push(chargingStages.every(stage=>[stage.primary,stage.reserve,stage.tertiary].filter(Boolean).every(stop=>Boolean(stop.name&&stop.map&&stop.provider))));
   results.push(chargingStages.every(stage=>stage.calibration&&stage.reference&&stage.modelRate));
   results.push(chargingStages.every(stage=>
     (stage.stageId==='s3'?stage.dkvRequired===false:stage.dkvRequired===true) &&
@@ -2995,13 +3358,13 @@ function runSelfTest(){
   results.push(destinationChargingPlans.length===6);
   results.push(
     chargingStages.find(x=>x.stageId==='s5')?.primary?.name.includes('Beaune-Tailly') &&
-    chargingStages.find(x=>x.stageId==='s5')?.reserve?.name.includes('Moulins-lès-Metz') &&
-    destinationChargingPlans.find(x=>x.stageId==='s5')?.when==='02.08. morgens'
+    chargingStages.find(x=>x.stageId==='s5')?.reserve?.name.includes('Laxou') &&
+    destinationChargingPlans.find(x=>x.stageId==='s5')?.when==='am Etappenziel'
   );
-  results.push(destinationChargingPlans.filter(x=>x.stageId!=='s6').every(x=>/80|90|95/.test(x.target)));
-  results.push(chargingStages.find(x=>x.stageId==='s1')?.primary?.arrivalSoc==='ca. 10 %');
+  results.push(destinationChargingPlans.filter(x=>x.stageId!=='s6').every(x=>/85|90|95/.test(x.target)));
+  results.push(chargingStages.find(x=>x.stageId==='s1')?.primary?.arrivalSoc.includes('35 %'));
   results.push(chargingStages.find(x=>x.stageId==='s2')?.primary?.departureSoc==='ca. 85 %');
-  results.push(chargingStages.find(x=>x.stageId==='s4')?.primary?.name.includes('Aire de l’Aveyron'));
+  results.push(chargingStages.find(x=>x.stageId==='s4')?.primary?.name.includes('Aire du Caylar'));
   results.push(chargingStages.every(stage=>
     stage.maxDetourKm<=3 &&
     [stage.primary,stage.reserve].filter(Boolean).every(stop=>
@@ -3011,18 +3374,21 @@ function runSelfTest(){
   ));
   const fixedRoute=travel.stages.find(x=>x.id==='s1');
   results.push(Boolean(
-    fixedRoute?.routeRoads==='A1 → A60 → B51 → A64 → LU-A1 → FR-A3 → A31 → A39' &&
-    fixedRoute?.routeWaypoints?.length===2 &&
-    chargingStages.find(x=>x.stageId==='s1')?.primary?.provider==='Pfalzwerke' &&
-    chargingStages.find(x=>x.stageId==='s1')?.reserve?.name.includes('Langres Noidant')
+    fixedRoute?.routeWaypoints?.length===3 &&
+    fixedRoute.routeWaypoints[0].includes('Erftstadt') &&
+    fixedRoute.routeWaypoints[1].includes('Trier') &&
+    fixedRoute.routeWaypoints[2].includes('Val-de-Meuse') &&
+    chargingStages.find(x=>x.stageId==='s1')?.primary?.name.includes('Erftstadt') &&
+    chargingStages.find(x=>x.stageId==='s1')?.reserve?.name.includes('GLOBUS Trier') &&
+    chargingStages.find(x=>x.stageId==='s1')?.tertiary?.name.includes('Val-de-Meuse')
   ));
   const millauPlan=chargingStages.find(x=>x.stageId==='s4');
   results.push(Boolean(
-    millauPlan?.primary?.name.includes('Aire de l’Aveyron') &&
-    millauPlan?.reserve?.name.includes('Aire du Caylar') &&
+    millauPlan?.primary?.name.includes('Aire du Caylar') &&
+    millauPlan?.reserve?.name.includes('Aire de l’Aveyron') &&
     travel.activities.find(a=>a.id==='a5')?.pois?.some(p=>p.title.includes('Peyre'))
   ));
-  results.push(travel.stages.every(x=>/Straßenstrecke|A75\/Millau/.test(x.distance)));
+  results.push(travel.stages.every(x=>/km/.test(x.distance)));
   results.push(!chargingStages.some(x=>JSON.stringify(x).toLowerCase().includes('novotel')||JSON.stringify(x).toLowerCase().includes('mercure')));
   results.push(chargingStages.every(stage=>[stage.primary,stage.reserve].filter(Boolean).every(stop=>
     stop.toiletConfirmed===true && Boolean(stop.toiletName) &&
@@ -3034,13 +3400,18 @@ function runSelfTest(){
   )));
   results.push(!chargingStages.some(stage=>JSON.stringify(stage).toLowerCase().includes('lidl')||JSON.stringify(stage).toLowerCase().includes('aldi')));
   results.push(!JSON.stringify({travel,chargingStages,destinationChargingPlans,morningChargingPlans}).includes('plannedLegKm'));
-  results.push(!chargingStages.some(stage=>JSON.stringify(stage).toLowerCase().includes('toilette im umfeld')));
+  results.push(chargingStages.every(stage=>[stage.primary,stage.reserve,stage.tertiary].filter(Boolean).every(stop=>Boolean(stop.toilet&&stop.toiletName))));
   results.push($$('button').every(btn=>
-    btn.id || ['detailType','map','routeFrom','stageRoute','url','tel','email','whatsapp','go','chargeForStage','eveningStage','eveningRoute','tripRoute','viewTarget','close','detailClose','day','chargeStage','filter','hit','prep'].some(k=>k in btn.dataset)
+    btn.id || ['detailType','map','routeFrom','stageRoute','url','tel','email','whatsapp','go','chargeForStage','chargeDone','chargeReset','eveningStage','eveningRoute','tripRoute','viewTarget','close','detailClose','day','chargeStage','filter','hit','prep','weatherUrl'].some(k=>k in btn.dataset)
   ));
   results.push(
     $$('.actions').every(group=>$$('.btn.primary',group).length<=1)
   );
+  results.push(travel.stages.find(s=>s.id==='s2')?.routeWaypoints?.[1]?.includes('54 Rue de Longvic'));
+  results.push(routeAuditPoints.s2?.[0]?.name==='Allego Chenôve');
+  results.push(travel.hotelHubs.h1?.charging?.includes('Allego Hypercharger'));
+  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[2]?.includes('Laxou'));
+  results.push(Array.from(document.querySelectorAll('[data-url]')).every(el=>{try{const u=new URL(el.dataset.url);return ['http:','https:'].includes(u.protocol);}catch(e){return false;}}));
   const failed=results.filter(x=>!x).length;
   const box=$('#selfTestResult');
   if(!box)return;
