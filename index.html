@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 18</title>
+<title>Spanien Travelbook 2026 · Version 19</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -510,13 +510,33 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
   #holidayOverview{position:static}
   #holidayOverview .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+#holidayOverview{
+  position:static;
+  top:auto;
+  z-index:auto;
+  background:transparent;
+  padding:0;
+  scroll-margin-top:90px;
+}
+#holidayOverview .quick-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+section.view[data-view="home"] #holidayOverview{
+  margin-top:24px;
+}
+@media(max-width:620px){
+  #holidayOverview .quick-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 18 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 19 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -581,7 +601,23 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <article class="today-panel"><span class="badge" id="todayHotelLabel">Nächste Unterkunft</span><h3 id="todayHotelName">ALMA BEACH ESTARTIT</h3><p id="todayHotelInfo">L’Estartit · Aufenthalt bis 31.07.</p><div class="actions"><button class="btn primary" id="todayHotelNav">Navigation</button><button class="btn secondary" id="todayHotelDetails">Details</button></div></article>
 <article class="today-panel"><span class="badge">Nächster Ladestopp</span><h3 id="todayChargeName">Laden nur bei Bedarf</h3><p id="todayChargeInfo">Öffentliche Ladepunkte vor Nutzung live prüfen</p><div class="actions"><button class="btn primary" id="todayChargeNav">Zum Ladepunkt</button><button class="btn secondary" id="todayChargePlan">Ladeplan</button></div></article>
 </div>
+</div><section class="section" id="holidayOverview">
+<div class="section-title">
+<h2>L’Estartit – Schnellzugriff</h2>
+<span class="badge">24.–31.07. · direkt auswählen</span>
 </div>
+<div class="quick-grid">
+<button class="quick-action" data-jump="estartitAccommodation"><span>🏨</span>Unterkunft</button>
+<button class="quick-action" data-jump="estartitFood"><span>🍽️</span>Restaurants &amp; Cocktails</button>
+<button class="quick-action" data-jump="estartitShoppingGuide"><span>🛒</span>Einkaufen</button>
+<button class="quick-action" data-jump="estartitBeaches"><span>🏖️</span>Strände</button>
+<button class="quick-action" data-jump="estartitActivities"><span>🚤</span>Aktivitäten</button>
+<button class="quick-action" data-jump="estartitExcursions"><span>🚗</span>Ausflüge</button>
+<button class="quick-action" data-jump="estartitChargingTopic"><span>⚡</span>Laden</button>
+<button class="quick-action" data-jump="estartitBadWeather"><span>☔</span>Schlechtwetter</button>
+<button class="quick-action" data-jump="estartitReturn"><span>🚙</span>Rückreise</button>
+</div>
+</section>
 <section class="section" id="dailyWarnings">
 <div class="section-title"><h2>Hinweise für heute</h2><span class="badge">vor Abfahrt prüfen</span></div>
 <div class="notice"><div class="notice-icon">⚠️</div><div><strong>Verkehr, Hitze, Waldbrand und Ladeverfügbarkeit</strong><p id="dailyWarningText">Vor jeder Fahrt aktuelle Verkehrslage, Sperrungen, Wetterwarnungen, Waldbrandgefahr sowie den Live-Status der geplanten Ladepunkte prüfen.</p></div></div>
@@ -605,7 +641,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 <button class="quick-action" data-detail-type="hotel" data-id="h1"><span>🏨</span>Unterkunft</button>
 <button class="quick-action" data-go="charging"><span>⚡</span>Laden</button>
 <button class="quick-action" id="quickRoute"><span>🗺</span>Route</button>
-<button class="quick-action" id="quickHoliday"><span>🏖️</span>L’Estartit</button>
+<button class="quick-action" data-home-jump="holidayOverview" id="quickHoliday"><span>🏖️</span>L’Estartit</button>
 </div></section>
 <section class="section"><div class="section-title"><h2>Reisetage</h2><span class="badge">22.07.–02.08.</span></div><div class="day-strip" id="dayStrip"></div></section>
 </div>
@@ -658,23 +694,7 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 </section>
 <section class="view" data-view="more">
 <div class="page">
-<div class="section-title"><h2>L’Estartit</h2><span class="badge">Aufenthalt 24.–31.07.</span></div><section class="section" id="holidayOverview">
-<div class="section-title">
-<h2>Untermenü L’Estartit</h2>
-<span class="badge">geordnet nach Themen</span>
-</div>
-<div class="quick-grid">
-<button class="quick-action" data-jump="estartitAccommodation"><span>🏨</span>Unterkunft</button>
-<button class="quick-action" data-jump="estartitFood"><span>🍽️</span>Restaurants &amp; Cocktails</button>
-<button class="quick-action" data-jump="estartitShoppingGuide"><span>🛒</span>Einkaufen</button>
-<button class="quick-action" data-jump="estartitBeaches"><span>🏖️</span>Strände</button>
-<button class="quick-action" data-jump="estartitActivities"><span>🚤</span>Aktivitäten</button>
-<button class="quick-action" data-jump="estartitExcursions"><span>🚗</span>Ausflüge</button>
-<button class="quick-action" data-jump="estartitChargingTopic"><span>⚡</span>Laden</button>
-<button class="quick-action" data-jump="estartitBadWeather"><span>☔</span>Schlechtwetter</button>
-<button class="quick-action" data-jump="estartitReturn"><span>🚙</span>Rückreise</button>
-</div>
-</section><section class="section" id="estartitAccommodation"><div class="section-title"><h2>Unterkunft</h2><span class="badge">ALMA BEACH ESTARTIT</span></div>
+<div class="section-title"><h2>L’Estartit – Inhalte</h2><span class="badge">über Startseite auswählen</span></div><section class="section" id="estartitAccommodation"><div class="section-title"><h2>Unterkunft</h2><span class="badge">ALMA BEACH ESTARTIT</span></div>
 <div class="cards two">
 <article class="card">
 <h3>ALMA BEACH ESTARTIT</h3>
@@ -3276,6 +3296,23 @@ function bindDynamic(root=document){
     openExternal('https://wa.me/'+number);
   });});
   $$('[data-go]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>showView(b.dataset.go));});
+  $$('[data-jump]',root).forEach(b=>{
+    if(b.dataset.bound)return;
+    b.dataset.bound='1';
+    b.addEventListener('click',()=>{
+      const targetId=b.dataset.jump;
+      const target=document.getElementById(targetId);
+      if(!target)return;
+      const targetView=target.closest('.view');
+      const viewName=targetView?.dataset.view;
+      if(viewName) showView(viewName);
+      setTimeout(()=>{
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+        target.setAttribute('tabindex','-1');
+        target.focus({preventScroll:true});
+      },100);
+    });
+  });
   $$('[data-charge-for-stage]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>openChargingForStage(b.dataset.chargeForStage));});
   $$('[data-charge-done]',root).forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>{
     const [stageId,slot]=String(b.dataset.chargeDone||'').split(':');
@@ -3521,8 +3558,8 @@ navButtons.forEach(el=>el.addEventListener('click',()=>showView(el.dataset.viewT
 $('#searchInput').addEventListener('input',runSearch);
 
 if($('#quickHoliday')) $('#quickHoliday').addEventListener('click',()=>{
-  showView('more');
-  setTimeout(()=>document.getElementById('estartitInsider')?.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  showView('home');
+  setTimeout(()=>document.getElementById('holidayOverview')?.scrollIntoView({behavior:'smooth',block:'start'}),80);
 });
 
 if($('#resetPrep')) $('#resetPrep').addEventListener('click',()=>{
