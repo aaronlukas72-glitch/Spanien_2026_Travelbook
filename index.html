@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 27</title>
+<title>Spanien Travelbook 2026 · Version 28</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -595,13 +595,30 @@ section.view[data-view="home"] #holidayOverview{
 #day2607 .notice{margin-bottom:4px}
 #day2607 .feature-item{border-left:4px solid var(--blue)}
 #day2607 .actions .btn{min-height:44px}
+
+/* V28: Barcelona-Fußroute mit Sehenswürdigkeiten, Essen und Eis */
+.barcelona-guide{margin-top:16px;display:grid;gap:14px}
+.barcelona-guide-card{border:1px solid var(--line);border-radius:22px;background:var(--panel);padding:16px;box-shadow:var(--shadow2)}
+.barcelona-guide-card h4{margin:0 0 8px;font-size:18px}
+.barcelona-stop-list{display:grid;gap:9px;margin-top:12px}
+.barcelona-stop{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:start;padding:11px 12px;border-radius:15px;background:var(--panel2)}
+.barcelona-stop-number{width:32px;height:32px;border-radius:11px;background:var(--text);color:var(--bg);display:grid;place-items:center;font-weight:900}
+.barcelona-stop b{display:block;font-size:13px}
+.barcelona-stop span{display:block;margin-top:3px;color:var(--muted);font-size:12px;line-height:1.45}
+.barcelona-food-grid{display:grid;gap:10px;margin-top:12px}
+.barcelona-food{padding:12px 13px;border-radius:16px;background:var(--panel2);border-left:5px solid var(--green)}
+.barcelona-food.ice{border-left-color:var(--blue)}
+.barcelona-food.alt{border-left-color:var(--amber)}
+.barcelona-food b{display:block}
+.barcelona-food span{display:block;margin-top:4px;color:var(--muted);font-size:12px;line-height:1.45}
+@media(min-width:760px){.barcelona-guide{grid-template-columns:1.25fr .75fr}.barcelona-guide-card.full{grid-column:1/-1}.barcelona-food-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 27 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 28 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -986,30 +1003,77 @@ section.view[data-view="home"] #holidayOverview{
 <article class="stop" id="day2607">
 <div class="date"><div><b>26.07.</b><span>Sonntag · fest</span></div></div>
 <div class="stop-card">
-<div class="meta">
-<span class="pill">Barcelona</span><span class="pill">Start 10:00</span><span class="pill">Audi-Ladeplanung</span><span class="pill">Camp Nou</span><span class="pill">Kolumbus &amp; Altstadt</span>
-</div>
-<h3>Barcelona: Camp Nou, Kolumbus, Barri Gòtic und Port Vell</h3>
-<div class="notice"><div class="notice-icon">⚡</div><div><strong>Audi-Planung ist die verbindliche Ladegrundlage</strong><p>Übernommen aus deiner Audi-Route: Zunder Transports Mariné mit etwa 30 → 61 % in 14 Minuten, danach Camp Nou; auf dem Rückweg Zunder C31 Calonge mit etwa 15 → 99 % in 57 Minuten. Da der Innenstadtstopp von Sagrada Família auf Hafen/Altstadt geändert wurde, berechnet der Audi die exakten SoC-Werte am Fahrtag neu.</p></div></div>
+<div class="meta"><span class="pill">Barcelona</span><span class="pill">Start 10:00</span><span class="pill">Audi-Ladeplanung</span><span class="pill">Camp Nou</span><span class="pill">5 km Fußrunde</span></div>
+<h3>Barcelona: Camp Nou, Altstadt, Kolumbus und Port Vell</h3>
+<div class="notice"><div class="notice-icon">⚡</div><div><strong>Audi-Navigation bleibt für Laden und SoC verbindlich</strong><p>Referenz aus deiner Audi-Route: Zunder Transports Mariné etwa 30 → 61 % in 14 Minuten und auf dem Rückweg Zunder C31 Calonge etwa 15 → 99 % in 57 Minuten. Die Live-Prognose des Audi hat Vorrang.</p></div></div>
 <div class="day-plan">
-<div><b>10:00</b><span>Abfahrt ALMA BEACH ESTARTIT mit 63 % SoC. Ziel und beide Zunder-Lader vor Abfahrt in die Audi-Navigation übernehmen.</span></div>
-<div><b>ca. 11:15</b><span><b>Zunder Transports Mariné</b>, Koordinaten 41.53876, 2.16374. Audi-Referenz: Ankunft etwa 30 %, Laden bis etwa 61 %, rund 14 Minuten, bis 360 kW.</span></div>
-<div><b>ca. 11:55</b><span>Ankunft am Camp-Nou-Parkplatz. Außenansichten des Spotify Camp Nou und Besuch des offiziellen Barça-Fanshops; keine Stadiontour und kein Museum.</span></div>
-<div><b>11:55–13:10</b><span>Camp Nou und Fanshop. Danach Weiterfahrt zum zweiten Parkplatz am südlichen Rand der Altstadt.</span></div>
-<div><b>ca. 13:35</b><span>Parken im <b>Garaje Atarazanas</b>, Carrer del Portal de Santa Madrona 10. Empfehlung wegen 2,10 m Einfahrtshöhe, breiten Stellplätzen, WC, 24-Stunden-Betrieb und maximal 18 € bis 12 Stunden. Direkt bei Kolumbus, Rambla und Port Vell.</span></div>
-<div><b>13:45</b><span>Beginn des Rundwegs an der <b>Kolumbus-Statue</b>. Das Monument wird von außen angesehen; eine Auffahrt ist nicht eingeplant.</span></div>
-<div><b>13:45–17:30</b><span>Rundweg: Kolumbus-Statue → untere La Rambla → Plaça Reial → Plaça Sant Jaume → Kathedrale von Barcelona <b>nur von außen</b> → Plaça del Rei → Barri Gòtic → Port Vell → Rambla de Mar → zurück zum Garaje Atarazanas. Etwa 4–5 km; Essen, Eis und Pausen flexibel einbauen.</span></div>
-<div><b>ca. 17:30</b><span>Abfahrt aus Barcelona Richtung Calonge. Audi-Navigation erneut prüfen; sie hat Vorrang vor allen hier genannten Zeit- und SoC-Werten.</span></div>
-<div><b>ca. 18:50</b><span><b>Zunder C31 Km 321 Calonge</b>, Koordinaten 41.85359, 3.08129. Audi-Referenz: Ankunft etwa 15 %, Laden bis 99 %, rund 57 Minuten, bis 400 kW.</span></div>
-<div><b>ca. 19:50</b><span>Weiterfahrt nach L’Estartit. Nur falls der Audi bei 99 % in Calonge eine Ankunft unter 90 % prognostiziert, einen kurzen lokalen Top-up bei Torroella einplanen; sonst kein zusätzlicher Ladestopp.</span></div>
-<div><b>ca. 20:35–21:00</b><span>Ankunft ALMA BEACH ESTARTIT. Ziel bleibt mindestens 90 % SoC; maßgeblich ist ausschließlich die Live-Prognose des Audi.</span></div>
+<div><b>10:00</b><span>Abfahrt ALMA BEACH ESTARTIT mit 63 % SoC.</span></div>
+<div><b>ca. 11:15</b><span><b>Zunder Transports Mariné</b>, 41.53876, 2.16374. Audi-Referenz: etwa 30 → 61 %, rund 14 Minuten.</span></div>
+<div><b>ca. 11:55</b><span>Camp Nou: Außenansicht und offizieller Barça-Fanshop; keine Stadiontour und kein Museum.</span></div>
+<div><b>ca. 13:35</b><span>Parken im <b>Garaje Atarazanas</b>, Carrer del Portal de Santa Madrona 10. Von dort beginnt und endet die komplette Fußrunde.</span></div>
+<div><b>13:45–17:30</b><span>Barcelona-Fußrunde mit Sehenswürdigkeiten, Mittagessen und Eis. Reine Gehzeit etwa 70–90 Minuten, Gesamtstrecke ungefähr 4,5–5,5 km.</span></div>
+<div><b>ca. 17:30</b><span>Abfahrt aus Barcelona Richtung Calonge.</span></div>
+<div><b>ca. 18:50</b><span><b>Zunder C31 Km 321 Calonge</b>, 41.85359, 3.08129. Audi-Referenz: etwa 15 → 99 %, rund 57 Minuten.</span></div>
+<div><b>ca. 20:35–21:00</b><span>Ankunft ALMA BEACH ESTARTIT. Ein zusätzlicher Top-up in Torroella nur, falls der Audi eine Ankunft unter 90 % prognostiziert.</span></div>
 </div>
+
+<div class="barcelona-guide">
+<article class="barcelona-guide-card full">
+<div class="meta"><span class="pill">Komplette Fußroute</span><span class="pill">ca. 4,5–5,5 km</span><span class="pill">familiengeeignet</span></div>
+<h4>Rundweg ab Garaje Atarazanas</h4>
+<p>Die Reihenfolge vermeidet unnötige Doppelwege und verbindet die besprochenen Sehenswürdigkeiten mit einer guten, bezahlbaren Essenspause und einer Eisdiele.</p>
+<div class="barcelona-stop-list">
+<div class="barcelona-stop"><div class="barcelona-stop-number">1</div><div><b>Garaje Atarazanas → Kolumbus-Denkmal · ca. 3–5 Min.</b><span>Startpunkt der Runde. Am Monument a Colom gute Fotos mit Säule, Palmen und Hafen; keine Auffahrt eingeplant.</span></div></div>
+<div class="barcelona-stop"><div class="barcelona-stop-number">2</div><div><b>Untere La Rambla → Plaça Reial · ca. 8–10 Min.</b><span>Kurzer Abschnitt der Rambla, danach Abstecher zur arkadengesäumten Plaça Reial. Taschen und Handys eng am Körper tragen.</span></div></div>
+<div class="barcelona-stop"><div class="barcelona-stop-number">3</div><div><b>Plaça Reial → Plaça Sant Jaume · ca. 8 Min.</b><span>Durch die Gassen des Barri Gòtic zum politischen Zentrum mit Rathaus und Palau de la Generalitat.</span></div></div>
+<div class="barcelona-stop"><div class="barcelona-stop-number">4</div><div><b>Plaça Sant Jaume → Kathedrale · ca. 5 Min.</b><span>Kathedrale von Barcelona nur von außen. Besonders schön sind die Fassade und der Pla de la Seu.</span></div></div>
+<div class="barcelona-stop"><div class="barcelona-stop-number">5</div><div><b>Kathedrale → Plaça del Rei · ca. 3 Min.</b><span>Kompakter mittelalterlicher Platz und einer der stimmungsvollsten Fotopunkte der Altstadt.</span></div></div>
+<div class="barcelona-stop"><div class="barcelona-stop-number">6</div><div><b>Plaça del Rei → Mittagspause bei La Fonda · ca. 10–12 Min.</b><span>Günstige katalanisch-mediterrane Hauptoption. Alternativ Bacoa Ferran für Burger oder Tapa Tapa Maremagnum am Hafen.</span></div></div>
+<div class="barcelona-stop"><div class="barcelona-stop-number">7</div><div><b>La Fonda → Gelaaati di Marco · ca. 6–8 Min.</b><span>Empfohlene Eispause im Barri Gòtic. Bei großer Schlange alternativ Amorino an der Rambla.</span></div></div>
+<div class="barcelona-stop"><div class="barcelona-stop-number">8</div><div><b>Gelaaati di Marco → Port Vell · ca. 10–12 Min.</b><span>Durch die Altstadt Richtung Wasser. Am Hafen gibt es Sitzmöglichkeiten, Schatten und Toiletten im Maremagnum.</span></div></div>
+<div class="barcelona-stop"><div class="barcelona-stop-number">9</div><div><b>Rambla de Mar → Kolumbus → Parkhaus · ca. 12–15 Min.</b><span>Über die Holzbrücke Rambla de Mar, anschließend am Wasser zurück zum Kolumbus-Denkmal und Garaje Atarazanas.</span></div></div>
+</div>
+<div class="actions"><button class="btn primary" data-trip-route="barcelonaWalkFood">Fußroute mit Essen &amp; Eis</button><button class="btn secondary" data-trip-route="barcelonaWalk">Fußroute ohne Restaurantstopp</button></div>
+</article>
+
+<article class="barcelona-guide-card">
+<div class="meta"><span class="pill">Essen</span><span class="pill">gutes Preis-Leistungs-Verhältnis</span></div>
+<h4>Restaurants direkt an oder nahe der Route</h4>
+<div class="barcelona-food-grid">
+<div class="barcelona-food"><b>La Fonda · Hauptempfehlung · €€</b><span>Katalanisch und mediterran, große Auswahl und für eine fünfköpfige Familie meist unkomplizierter als kleine Tapasbars.</span></div>
+<div class="barcelona-food"><b>Bacoa Ferran · Burger · €€</b><span>Gute Alternative für Burger; liegt nahe Plaça Reial und passt ohne großen Umweg in die Runde.</span></div>
+<div class="barcelona-food alt"><b>Tapa Tapa Maremagnum · Hafen · €€</b><span>Praktisch bei späterem Hunger: Tapas direkt am Port Vell, große Terrasse und unkompliziert mit Kindern.</span></div>
+<div class="barcelona-food alt"><b>Vapiano Maremagnum · sehr unkompliziert · €€</b><span>Pizza und Pasta, sinnvoll als stressfreie Familienalternative am Ende der Runde.</span></div>
+</div>
+<div class="actions"><button class="btn primary" data-map="La Fonda Carrer dels Escudellers 10 Barcelona">La Fonda</button><button class="btn secondary" data-map="Bacoa Ferran Barcelona">Bacoa</button><button class="btn secondary" data-map="Tapa Tapa Maremagnum Barcelona">Tapa Tapa</button><button class="btn secondary" data-map="Vapiano Maremagnum Barcelona">Vapiano</button></div>
+</article>
+
+<article class="barcelona-guide-card">
+<div class="meta"><span class="pill">Eis</span><span class="pill">auf der Runde</span></div>
+<h4>Eisdielen</h4>
+<div class="barcelona-food-grid">
+<div class="barcelona-food ice"><b>Gelaaati di Marco · Hauptempfehlung · €</b><span>Liegt sehr passend zwischen Altstadt und Rückweg zum Hafen. Gute Sortenauswahl und nur kleiner Umweg.</span></div>
+<div class="barcelona-food ice"><b>Amorino · Alternative · €</b><span>Nahe La Rambla und praktisch, falls ihr früher Eis möchtet oder Gelaaati zu voll ist.</span></div>
+<div class="barcelona-food alt"><b>Rocambolesc · besondere Option · €€</b><span>Kreative Desserts und Eis; nur wählen, wenn die aktuelle Filiale ohne deutlichen Umweg erreichbar ist.</span></div>
+</div>
+<div class="actions"><button class="btn primary" data-map="Gelaaati di Marco Barcelona">Gelaaati di Marco</button><button class="btn secondary" data-map="Amorino La Rambla Barcelona">Amorino</button><button class="btn secondary" data-map="Rocambolesc Barcelona">Rocambolesc</button></div>
+</article>
+
+<article class="barcelona-guide-card full">
+<h4>Praktische Hinweise</h4>
 <div class="feature-list">
-<div class="feature-item"><b>Parkplatz Altstadt/Hafen – feste Empfehlung</b><span>Garaje Atarazanas, Portal de Santa Madrona 10: 2,10 m Höhe, 24 Stunden, WC und maximal 18 € bis 12 Stunden. Nur etwa eine Minute zur Kolumbus-Statue.</span></div>
-<div class="feature-item"><b>Warum nicht direkt an der Kathedrale?</b><span>Engere Zufahrt, meist teurer und kein Vorteil für den Rundweg. Atarazanas ist günstiger, leichter erreichbar und liegt ideal zwischen Kolumbus, Rambla, Barri Gòtic und Port Vell.</span></div>
-<div class="feature-item"><b>Kathedrale</b><span>Nur Außenansicht. Es ist ausdrücklich keine Innenbesichtigung und kein Eintritt eingeplant.</span></div>
-<div class="feature-item"><b>Audi-Ladeprinzip</b><span>Die beiden Zunder-Stopps aus deinem Screenshot bleiben erhalten. Alle Prozentwerte sind Referenzwerte der Audi-Planung; nach Änderung des Innenstadtziels muss der Audi live neu rechnen.</span></div>
-<div class="feature-item"><b>Plan B bei Hitze oder Zeitverlust</b><span>Plaça Reial kürzen. Kolumbus-Statue, Kathedrale außen, Barri Gòtic und Port Vell bleiben die Kernpunkte.</span></div>
+<div class="feature-item"><b>Toiletten</b><span>Im Garaje Atarazanas sowie im Einkaufszentrum Maremagnum. Restauranttoiletten während der Essenspause nutzen.</span></div>
+<div class="feature-item"><b>Hitze</b><span>Wasser mitnehmen, möglichst durch schattige Altstadtgassen gehen und die Hafenrunde bei großer Hitze kürzen.</span></div>
+<div class="feature-item"><b>Taschendiebe</b><span>Besonders auf La Rambla, Plaça Reial und in dichtem Gedränge aufmerksam sein. Handys nicht offen in Gesäßtaschen tragen.</span></div>
+<div class="feature-item"><b>Kurzversion bei Zeitverlust</b><span>Kolumbus → Plaça Reial → Kathedrale außen → Plaça del Rei → Eis → Port Vell → Parkhaus.</span></div>
+</div>
+</article>
+</div>
+
+<div class="feature-list">
+<div class="feature-item"><b>Parkhaus</b><span>Garaje Atarazanas: 2,10 m Einfahrtshöhe, WC, 24-Stunden-Betrieb; Preis und freie Plätze am Fahrtag prüfen.</span></div>
+<div class="feature-item"><b>Kathedrale</b><span>Nur Außenansicht; kein Eintritt und keine Innenbesichtigung eingeplant.</span></div>
+<div class="feature-item"><b>Audi-Ladeprinzip</b><span>Die beiden Zunder-Stopps bleiben bestehen. Prozentwerte und Zeiten sind Audi-Referenzwerte und werden live neu berechnet.</span></div>
 </div>
 <div class="actions">
 <button class="btn primary" data-trip-route="barcelonaDrive">Komplette Autoroute</button>
@@ -1017,11 +1081,9 @@ section.view[data-view="home"] #holidayOverview{
 <button class="btn secondary" data-map="Parking Camp Nou Avda Madrid Carrer de Lluçà 3 Barcelona">Parken Camp Nou</button>
 <button class="btn secondary" data-map="FC Barcelona Official Store Spotify Camp Nou">Fanshop</button>
 <button class="btn secondary" data-map="Garaje Atarazanas Carrer del Portal de Santa Madrona 10 Barcelona">Parken Altstadt/Hafen</button>
-<button class="btn secondary" data-map="Monument a Colom Barcelona">Kolumbus-Statue</button>
-<button class="btn secondary" data-trip-route="barcelonaWalk">Kompletter Rundweg</button>
+<button class="btn secondary" data-map="Monument a Colom Barcelona">Kolumbus</button>
+<button class="btn secondary" data-trip-route="barcelonaWalkFood">Fußroute komplett</button>
 <button class="btn secondary" data-map="Zunder C31 Km 321 Calonge">Zunder Calonge</button>
-<button class="btn secondary" data-map="Carrefour Market Camí del Molí Torroella de Montgrí">Top-up nur bei Bedarf</button>
-<button class="btn secondary" data-url="https://www.garajeatarazanas.com/index_en.html">Parkhaus-Infos</button>
 </div>
 </div>
 </article>
@@ -2916,6 +2978,21 @@ const tripRoutes = {
       'Rambla de Mar, Barcelona, Spanien'
     ]
   },
+  barcelonaWalkFood:{
+    mode:'walking',
+    origin:'Garaje Atarazanas, Carrer del Portal de Santa Madrona 10, Barcelona, Spanien',
+    destination:'Garaje Atarazanas, Carrer del Portal de Santa Madrona 10, Barcelona, Spanien',
+    waypoints:[
+      'Monument a Colom, Plaça Portal de la Pau, Barcelona, Spanien',
+      'Plaça Reial, Barcelona, Spanien',
+      'Plaça de Sant Jaume, Barcelona, Spanien',
+      'Catedral de Barcelona, Pla de la Seu, Barcelona, Spanien',
+      'Plaça del Rei, Barcelona, Spanien',
+      'La Fonda, Carrer dels Escudellers 10, Barcelona, Spanien',
+      'Gelaaati di Marco, Barcelona, Spanien',
+      'Rambla de Mar, Barcelona, Spanien'
+    ]
+  },
   costaBravaDrive:{
     mode:'driving',
     origin:'11 Carrer Salines, 17258 L’Estartit, Spanien',
@@ -3362,7 +3439,7 @@ function runSelfTest(){
   results.push(travel.stages.find(s=>s.id==='s4')?.routeWaypoints?.some(x=>x.includes('Aire du Viaduc de Millau')));
   results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[0]?.includes('Rue Louis Armstrong'));
   results.push(travel.stages.find(s=>s.id==='s6')?.routeWaypoints?.[0]?.includes('Rue de Chaponost') && travel.stages.find(s=>s.id==='s6')?.routeWaypoints?.[1]?.includes('Pie Grièche'));
-  results.push(document.getElementById('day2607')?.textContent.includes('10:00') && document.getElementById('day2607')?.textContent.includes('Kolumbus-Statue') && document.getElementById('day2607')?.textContent.includes('nur von außen'));
+  results.push(document.getElementById('day2607')?.textContent.includes('10:00') && document.getElementById('day2607')?.textContent.includes('Kolumbus') && document.getElementById('day2607')?.textContent.includes('nur von außen') && document.getElementById('day2607')?.textContent.includes('Gelaaati di Marco') && document.getElementById('day2607')?.textContent.includes('La Fonda'));
   results.push(
     chargingStages.find(x=>x.stageId==='s3')?.reserveBeforePrimary===true &&
     chargingStages.find(x=>x.stageId==='s4')?.reserveBeforePrimary!==true &&
