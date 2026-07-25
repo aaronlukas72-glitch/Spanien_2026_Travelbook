@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 24</title>
+<title>Spanien Travelbook 2026 · Version 25</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -172,31 +172,6 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 
 .status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.16)}
 .today-main{display:grid;gap:14px;margin-top:14px}
-.weather-card{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:15px;box-shadow:var(--shadow2)}
-.weather-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px}
-.weather-head h3{margin:0;font-size:18px}
-.weather-head button{border:0;background:var(--panel2);color:var(--text);border-radius:12px;padding:8px 10px;font-weight:800}
-.weather-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.weather-day{padding:13px;border-radius:18px;background:var(--panel2);min-width:0}
-.weather-day-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.weather-day-label{font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
-.weather-place{font-size:16px;font-weight:850;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.weather-icon{font-size:30px;line-height:1}
-.weather-temp{font-size:22px;font-weight:900;margin-top:10px}
-.weather-condition{font-size:12px;color:var(--muted);margin-top:2px}
-.weather-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.weather-meta span{font-size:11px;padding:6px 8px;border-radius:999px;background:var(--panel)}
-.weather-note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.4}
-.weather-error{padding:12px;border-radius:15px;background:color-mix(in srgb,var(--amber) 10%,var(--panel));color:var(--muted);font-size:12px;line-height:1.4}
-.weather-local-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.weather-local-tile{padding:14px;border-radius:18px;background:var(--panel2)}
-.weather-local-tile b{display:block;font-size:16px}
-.weather-local-tile span{display:block;margin-top:4px;font-size:12px;color:var(--muted)}
-.weather-local-tile button{width:100%;margin-top:11px;border:0;border-radius:13px;padding:10px;background:var(--brand);color:#fff;font-weight:850}
-@media(max-width:520px){.weather-local-actions{grid-template-columns:1fr}}
-
-@media(max-width:520px){.weather-grid{grid-template-columns:1fr}}
-
 .today-brief{margin-top:14px;padding:15px;border-radius:20px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.16);position:relative;z-index:1}
 .today-brief-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
 .today-brief-head b{font-size:17px}
@@ -535,71 +510,6 @@ section.view[data-view="home"] #holidayOverview{
   .shopping-map-frame{height:240px}
 }
 
-/* V21: vereinfachter Einkaufsfilter */
-.shopping-premium-tools,.shopping-map-panel{display:none!important}
-.shopping-simple-filter{
-  margin-top:16px;
-  padding:16px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:var(--panel);
-  box-shadow:var(--shadow2);
-}
-.shopping-simple-filter label{
-  display:block;
-  margin-bottom:8px;
-  font-weight:850;
-  font-size:16px;
-}
-.shopping-simple-filter select{
-  width:100%;
-  min-height:50px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:12px 13px;
-  background:var(--panel2);
-  color:var(--text);
-  font-weight:750;
-}
-.shopping-filter-status{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-top:11px;
-}
-.shopping-filter-status span{
-  color:var(--muted);
-  font-size:13px;
-  font-weight:750;
-}
-.shopping-filter-status button{
-  border:0;
-  border-radius:12px;
-  padding:10px 12px;
-  background:var(--text);
-  color:var(--bg);
-  font-weight:850;
-}
-.shop-card.shop-hidden,
-.shopping-category.shop-hidden{display:none!important}
-.shopping-no-results{
-  margin-top:18px;
-  padding:18px;
-  text-align:center;
-  border:1px dashed var(--line);
-  border-radius:18px;
-  color:var(--muted);
-  background:var(--panel);
-}
-@media(max-width:520px){
-  .shopping-filter-status{
-    align-items:stretch;
-    flex-direction:column;
-  }
-  .shopping-filter-status button{width:100%}
-}
-
 /* V22: robuster Einkaufsfilter mit direkten Kategoriebuttons */
 .shopping-simple-filter{display:none!important}
 .shopping-button-filter{
@@ -672,13 +582,20 @@ section.view[data-view="home"] #holidayOverview{
   #homeDaySelection{margin-top:12px}
   #holidayOverview .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+/* V25: konsolidierte Tagesnavigation */
+#homeDaySelection .day-chip{min-width:76px}
+#homeDaySelection .day-chip span{white-space:nowrap}
+@media(max-width:520px){
+  #homeDaySelection .day-chip{min-width:72px}
+}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 24 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 25 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -704,9 +621,7 @@ section.view[data-view="home"] #holidayOverview{
 </div>
 </div>
 </article>
-
 </div><section class="section" id="homeDaySelection"><div class="section-title"><h2>Reisetage</h2><span class="badge">Tag direkt auswählen</span></div><div class="day-strip" id="dayStrip"></div></section>
-
 <div class="today-main" id="homeDriverView">
 <article class="today-route">
 <div class="route-head"><div><span class="badge" id="todayDateBadge">Ausgewählter Tag</span><h3 id="todayRouteTitle">Aufenthalt L’Estartit</h3></div><span class="badge" id="todayDistance">je nach Tageswahl</span></div>
@@ -760,8 +675,6 @@ section.view[data-view="home"] #holidayOverview{
 <button class="btn secondary" id="currentTrafficRoute">Aktuelle Route &amp; Verkehr</button>
 </div>
 </section>
-
-
 </div>
 </section>
 <section class="view" data-view="trip">
@@ -771,17 +684,7 @@ section.view[data-view="home"] #holidayOverview{
 <h2>Startpunkte &amp; Etappenziele</h2>
 <p>Die Reise ist nach Abfahrtsort und Tagesziel gegliedert. Route, Laden, Unterkunft und Abendprogramm stehen jeweils direkt beim passenden Ziel.</p>
 </div>
-<section class="section">
-<div class="section-title"><h2>Reiseverlauf</h2><span class="badge">vom Start bis nach Hause</span></div>
-<div class="journey-overview">
-<div class="journey-leg"><div class="journey-leg-number">1</div><div><b>Hasbergen → Dijon</b><span>Start zuhause · Zwischenübernachtung in Dijon</span></div></div>
-<div class="journey-leg"><div class="journey-leg-number">2</div><div><b>Dijon → Montpellier</b><span>Start an der Unterkunft · Tagesziel Montpellier</span></div></div>
-<div class="journey-leg"><div class="journey-leg-number">3</div><div><b>Montpellier → L’Estartit</b><span>Start am Hotel · Ankunft am Urlaubsort</span></div></div>
-<div class="journey-leg"><div class="journey-leg-number">4</div><div><b>L’Estartit → Clermont-Ferrand</b><span>Rückreise über Millau · Tagesziel Clermont-Ferrand</span></div></div>
-<div class="journey-leg"><div class="journey-leg-number">5</div><div><b>Clermont-Ferrand → Metz</b><span>Start an der Unterkunft · letzter Zwischenstopp</span></div></div>
-<div class="journey-leg"><div class="journey-leg-number">6</div><div><b>Metz → Hasbergen</b><span>Heimfahrt · Ziel zuhause</span></div></div>
-</div>
-</section>
+
 <div class="stage-selector" id="stageBookSelector"></div>
 <div id="stageBookContent"></div>
 </div>
@@ -800,14 +703,27 @@ section.view[data-view="home"] #holidayOverview{
 <div id="chargingStageContent" style="margin-top:14px"></div>
 <div hidden="" id="chargeList"></div>
 <section class="section" id="estartitLocalCharging">
-<div class="section-title"><h2>Laden während des Aufenthalts</h2><span class="badge">Prüfstand 24.07.2026</span></div>
-<div class="notice"><div class="notice-icon">⚡</div><div><strong>Nur öffentlich nachgewiesene Nutzung innerhalb der letzten 24 Stunden</strong><p>Ein Ladepunkt wird hier nur empfohlen, wenn DKV-Akzeptanz, mindestens 40 kW Ladeleistung und eine öffentlich nachvollziehbare Nutzung innerhalb der letzten 24 Stunden gleichzeitig belegt sind.</p></div></div>
-<div class="section-title" style="margin-top:18px"><h2>Empfohlene DKV-Lader ab 40 kW</h2><span class="badge">0 aktuell bestätigt</span></div>
-<div class="verified-charge-empty"><h3>Derzeit keine Station freigegeben</h3><p>Für keinen Ladepunkt rund um L’Estartit konnte eine öffentlich nachvollziehbare Nutzung innerhalb der letzten 24 Stunden zusammen mit der DKV-Akzeptanz belegt werden. Deshalb wird aktuell kein Lader als Empfehlung angezeigt.</p><div class="actions" style="justify-content:center"><button class="btn primary" data-url="https://www.dkv-mobility.com/es/es/digital-solutions/customer-portal/dkv-mobility-app">DKV-App öffnen</button><button class="btn secondary" data-url="https://www.electromaps.com/es/puntos-carga/espana/girona/torroella-de-montgri">Electromaps prüfen</button></div></div>
-<div class="section-title" style="margin-top:22px"><h2>Alle DKV-Lader über 20 kW</h2><span class="badge">gleiche 24-h-Regel</span></div>
-<div class="verified-charge-empty"><h3>Keine Station erfüllt derzeit alle Nachweise</h3><p>Auch in der erweiterten Klasse über 20 kW wird kein Ladepunkt angezeigt, solange keine Nutzung innerhalb der letzten 24 Stunden öffentlich dokumentiert und die DKV-Akzeptanz bestätigt ist.</p></div>
-<div class="verification-rule"><b>Bekannte, aber nicht freigegebene Standorte:</b> Carrefour Market Torroella (bis 60 kW), Repsol Ullà (50 kW), ALDI Torroella (50 kW) sowie der kommunale Ladepunkt L’Estartit in der Carrer de Guillem de Montgrí (2 × 22 kW). Diese Stationen bleiben aus der Empfehlungsliste ausgeschlossen, bis der geforderte 24-Stunden-Nachweis vorliegt. Der kommunale Ladepunkt ist öffentlich mit 2 × Typ 2 und 22 kW gelistet; DKV-Akzeptanz ist dort nicht öffentlich bestätigt.</div>
-</section>
+<div class="section-title"><h2>Laden während des Aufenthalts</h2><span class="badge">vor Nutzung live prüfen</span></div>
+<div class="notice"><div class="notice-icon">⚡</div><div><strong>DKV-Akzeptanz, Leistung und Live-Status vor der Anfahrt prüfen</strong><p>Die Datei kann keine dauerhaft aktuelle Belegung garantieren. Deshalb vor jeder Anfahrt den Ladepunkt in der DKV-App auf Akzeptanz, Leistung und Verfügbarkeit prüfen.</p></div></div>
+
+
+
+
+
+<div class="cards two" style="margin-top:16px">
+<article class="card">
+<h3>Bekannte Ladeoptionen</h3>
+<p>Carrefour Market Torroella, Repsol Ullà, ALDI Torroella und der kommunale Ladepunkt in L’Estartit bleiben als bekannte Optionen hinterlegt.</p>
+<div class="actions">
+<button class="btn primary" data-url="https://www.dkv-mobility.com/es/es/digital-solutions/customer-portal/dkv-mobility-app">DKV-App öffnen</button>
+<button class="btn secondary" data-url="https://www.electromaps.com/es/puntos-carga/espana/girona/torroella-de-montgri">Electromaps prüfen</button>
+</div>
+</article>
+<article class="card">
+<h3>Nutzungsregel</h3>
+<p>Nur anfahren, wenn DKV-Akzeptanz, passende Ladeleistung und aktueller Live-Status unmittelbar vor der Fahrt bestätigt sind.</p>
+</article>
+</div></section>
 </div>
 </section>
 <section class="view" data-view="more">
@@ -1019,20 +935,20 @@ section.view[data-view="home"] #holidayOverview{
 <article class="card">
 <h3>🤿 Cala Pedrosa</h3>
 <p>Kleine, felsige Bucht mit interessanter Unterwasserwelt. Am besten morgens bei ruhigem Wasser; Wasserschuhe und vollständige Schnorchelausrüstung mitnehmen.</p>
-<div class="actions"><button class="btn primary" data-map="Cala%20Pedrosa%20L%27Estartit">Navigation</button></div>
+<div class="actions"><button class="btn primary" data-map="Cala Pedrosa L'Estartit">Navigation</button></div>
 </article>
 <article class="card">
 <h3>⛵ Medes-Inseln</h3>
 <p>Glasbodenboot, Bootstour, Kajak oder geführtes Schnorcheln. Für die Familie ist das Glasbodenboot die einfachste Variante; für Schnorcheln einen geführten Anbieter wählen.</p>
 <div class="actions">
-<button class="btn primary" data-map="Medes%20Islands%20boat%20tour%20L%27Estartit">Anbieter</button>
+<button class="btn primary" data-map="Medes Islands boat tour L'Estartit">Anbieter</button>
 <button class="btn secondary" data-url="https://visitestartit.com/en/plan/activity-companies/companies/">Nautikstation</button>
 </div>
 </article>
 <article class="card">
 <h3>🐠 Espai Medes</h3>
 <p>Meeres-Interpretationszentrum am Hafen. Gut als kürzeres Familienprogramm, Ergänzung zur Bootstour oder Schlechtwetter-Alternative.</p>
-<div class="actions"><button class="btn primary" data-map="Espai%20Medes%20L%27Estartit">Navigation</button></div>
+<div class="actions"><button class="btn primary" data-map="Espai Medes L'Estartit">Navigation</button></div>
 </article>
 <article class="card">
 <h3>🌊 Beste Bedingungen</h3>
@@ -1167,154 +1083,6 @@ section.view[data-view="home"] #holidayOverview{
 </div>
 </article>
 </div>
-</section><section class="section" id="barcelonaPlan">
-<div class="section-title"><h2>Barcelona – Sonntag 26.07.</h2><button class="link-btn" data-detail-type="activity" data-id="a1">Details</button></div>
-<div class="notice"><div class="notice-icon">🚙</div><div><strong>Ohne Metro · Fahrzeughöhe 2,10 m</strong><p>Drei Parkabschnitte: zuerst Camp Nou, danach Sagrada Família und anschließend das Parkhaus Bailèn für Altstadt und Hafen. Nur Parkhäuser verwenden, deren Einfahrt mindestens 2,10 m erlaubt. SABA Catedral ist mit 1,95 m zu niedrig und wird nicht genutzt.</p></div></div>
-<div class="cards two" style="margin-top:14px">
-<article class="card"><h3>1 · Camp Nou</h3><p>Parken im Parking Camp Nou – Avda. Madrid, Carrer de Lluçà 3. Maximale Höhe 2,10 m. Von dort zu Fuß zum Stadionumfeld.</p><div class="actions"><button class="btn primary" data-map="Carrer de Lluçà 3, 08028 Barcelona, Spanien">Parken Camp Nou</button></div></article>
-<article class="card"><h3>2 · Sagrada Família</h3><p>Weiterfahrt zum Parking Sagrada Família, Carrer de Lepant 325. Maximale Höhe 2,10 m. Sagrada Família zu Fuß besuchen.</p><div class="actions"><button class="btn primary" data-map="Carrer de Lepant 325, 08025 Barcelona, Spanien">Parken Sagrada Família</button></div></article>
-<article class="card"><h3>3 · Kathedrale und Altstadt</h3><p>Da das SABA Catedral zu niedrig ist, als dachboxgeeignete Alternative Aparcament de Bailèn, Carrer de Bailèn 225, mit 2,10 m nutzen. Von dort längerer Fußweg oder kurze Taxifahrt zur Kathedrale und ins Barri Gòtic.</p><div class="actions"><button class="btn primary" data-map="Carrer de Bailèn 225, 08037 Barcelona, Spanien">Parken Innenstadt</button></div></article>
-<article class="card"><h3>Tagesroute</h3><div class="day-plan"><div><b>07:15</b><span>Abfahrt L’Estartit</span></div><div><b>09:15</b><span>Camp Nou und Stadionumfeld</span></div><div><b>11:00</b><span>Fahrt zur Sagrada Família</span></div><div><b>11:30</b><span>Sagrada Família</span></div><div><b>14:00</b><span>Fahrt zum Parkhaus Bailèn</span></div><div><b>14:30</b><span>Kathedrale, Barri Gòtic und Port Vell</span></div><div><b>18:00</b><span>Rückfahrt nach L’Estartit</span></div></div><div class="actions"><button class="btn primary" data-trip-route="barcelonaDrive">Komplette Autoroute</button></div></article>
-</div>
-</section><section class="section" id="costaBravaPlan">
-<div class="section-title"><h2>Costa Brava – Rundtour · Do 30.07.</h2><button class="link-btn" data-detail-type="activity" data-id="a2">Details</button></div>
-<div class="cards two">
-<article class="card"><h3>Reihenfolge</h3><div class="day-plan">
-<div><b>09:00</b><span>Abfahrt nach Begur</span></div>
-<div><b>09:45</b><span>Begur: Aussicht und kurzer Ortsrundgang</span></div>
-<div><b>11:30</b><span>Sa Tuna oder Aiguablava – Badepause</span></div>
-<div><b>14:30</b><span>Pals – mittelalterlicher Ortskern</span></div>
-<div><b>16:30</b><span>Peratallada – Abschluss und frühes Abendessen</span></div>
-<div><b>19:00</b><span>Rückfahrt und Audi auf 90–95 % laden</span></div>
-</div></article>
-<article class="card"><h3>Schwerpunkt</h3><p>Nur eine Badebucht auswählen. Dadurch bleibt genügend Zeit für Begur, Pals und Peratallada ohne unnötige Hektik.</p><div class="actions"><button class="btn primary" data-map="Begur%2C%20Girona">Begur</button><button class="btn secondary" data-map="Peratallada%2C%20Girona">Peratallada</button></div></article>
-<article class="card"><h3>Laden in und um L’Estartit</h3><p>Für den Aufenthalt wird kein fester Ladepunkt vorgegeben. Vor der Anfahrt muss in der DKV-App ein Ladepunkt mit aktuellem Status gewählt werden; im Travelbook erscheinen nur Stationen mit öffentlich belegter Nutzung innerhalb der letzten 24 Stunden.</p><div class="actions"><button class="btn primary" data-map="GIMOLITORROELLATORROELLA01 Camí del Molí 1 Torroella de Montgrí Spanien">Carrefour 60 kW</button><button class="btn secondary" data-map="Repsol Ullà Carrer de la Roqueta 7 Ullà Spanien">Repsol Ullà</button><button class="btn secondary" data-map="ALDI Carretera de L'Estartit 99 Torroella de Montgrí Spanien">ALDI 50 kW</button><button class="btn secondary" data-url="https://www.dkv-mobility.com/es/es/digital-solutions/customer-portal/dkv-mobility-app">DKV-Live-Status</button></div></article>
-<article class="card"><h3>Plan B</h3><p>Bei sehr großer Hitze: Begur kurz halten, Badepause verlängern und nur einen der beiden Orte Pals oder Peratallada besuchen.</p></article>
-</div>
-</section><section class="section" id="regionalFood">
-<div class="section-title"><h2>Cidre-Farm &amp; regionale Küche</h2><button class="link-btn" data-detail-type="activity" data-id="a3">Details</button></div>
-<div class="cards two">
-<article class="card">
-<div class="meta"><span class="pill">Hof</span><span class="pill">Cidre</span><span class="pill">Grillküche</span></div>
-<h3>🍎 Mooma Palau-sator</h3>
-<p><b>Adresse:</b> Ctra. Fontanilles · Mas Saulot s/n · Palau-sator. Cidrerie mit Apfelplantagen, eigenen Cidres und Säften sowie Restaurant mit mediterraner Grillküche, Reisgerichten, Fisch und Fleisch.</p>
-<div class="feature-list">
-<div class="feature-item"><b>Beste Kombination</b><span>Vormittags Pals besuchen, anschließend bei Mooma essen und Cidre probieren.</span></div>
-<div class="feature-item"><b>Planung</b><span>Für Juli möglichst reservieren. Je nach Angebot Plantage oder Kellerei mit einplanen.</span></div>
-<div class="feature-item"><b>Telefon</b><span>+34 872 02 60 88</span></div>
-</div>
-<div class="actions">
-<button class="btn primary" data-map="Sidreria%20Mooma%20Palau-sator">Navigation</button>
-<button class="btn secondary" data-url="https://mooma.myrestoo.net/en/reservar">Reservieren</button>
-<button class="btn secondary" data-tel="+34872026088">Anrufen</button>
-</div>
-</article>
-<article class="card">
-<div class="meta"><span class="pill">Alternative</span><span class="pill">Katalanische Masia</span></div>
-<h3>🌿 Mas Pou · Palau-sator</h3>
-<p><b>Adresse:</b> Plaça de la Mota 4 · Palau-sator. Traditionelles Restaurant in einer historischen katalanischen Masia mit Terrasse und Garten.</p>
-<div class="feature-list">
-<div class="feature-item"><b>Passt zu</b><span>Pals und Palau-sator; gute Alternative oder Ergänzung zu Mooma.</span></div>
-<div class="feature-item"><b>Hinweis</b><span>Außenplätze im Juli und August stark gefragt; vorab reservieren. Montag laut bisherigem Stand Ruhetag.</span></div>
-<div class="feature-item"><b>Telefon</b><span>+34 972 63 41 25</span></div>
-</div>
-<div class="actions">
-<button class="btn primary" data-map="Mas%20Pou%20Palau-sator">Navigation</button>
-<button class="btn secondary" data-url="https://maspou.com/reserves-restaurant/">Webseite</button>
-<button class="btn secondary" data-tel="+34972634125">Anrufen</button>
-</div>
-</article>
-</div>
-</section><section class="section" id="estartitCurated30km">
-<div class="section-title">
-<h2>Qualitätsauswahl L’Estartit · 30 km</h2>
-<span class="badge">Mehrquellenprüfung · Stand 24.07.2026</span>
-</div>
-<div class="notice">
-<div class="notice-icon">✓</div>
-<div>
-<strong>Nicht nach einer einzelnen Bewertungsplattform ausgewählt</strong>
-<p>Berücksichtigt werden aktuelle Bewertungsbilder, Zahl und Aktualität der Rezensionen, offizielle Fach- oder Tourismusquellen, erkennbare regionale Herkunft sowie Preis-Leistung und Familientauglichkeit. Einzelne Spitzenbewertungen mit sehr wenigen Rezensionen reichen nicht aus.</p>
-</div>
-</div>
-<div class="method-grid">
-<div class="method-box"><b>Bewertungen</b><span>Mehrere Plattformen, Anzahl, Aktualität und wiederkehrende Kritikpunkte.</span></div>
-<div class="method-box"><b>Fachquellen</b><span>Zum Beispiel Michelin, Produzenten- und Tourismusinformationen.</span></div>
-<div class="method-box"><b>Reiseeignung</b><span>Familie mit drei Kindern, Fahrtstrecke, Parken und Zeitaufwand.</span></div>
-<div class="method-box"><b>Urteil</b><span>Top-Empfehlung, gute Option oder nur mit Einschränkung.</span></div>
-</div>
-<div class="curated-grid">
-<article class="curated-card top">
-<div class="meta"><span class="pill">Top-Empfehlung</span><span class="pill">Fisch</span><span class="pill">L’Estartit</span></div>
-<h3>Les Corones</h3>
-<p>Die stärkste abgesicherte Fisch-Empfehlung im Ort: sehr große und überwiegend stabile Bewertungsbasis, zusätzlich im Michelin Guide für gute Küche und frischen Grillfisch genannt.</p>
-<div class="curated-score"><span class="source-chip">Tripadvisor: 4,4 · 901</span><span class="source-chip">Michelin Guide</span><span class="source-chip">offizielle Webseite</span></div>
-<div class="verdict"><b>Urteil:</b> Erste Wahl für einen besonderen Fischabend. Tagesfisch und Preis vor Bestellung erfragen; für fünf Personen reservieren.</div>
-<div class="actions"><button class="btn primary" data-map="Restaurant Les Corones Avinguda de Roma 50 L'Estartit">Navigation</button><button class="btn secondary" data-url="https://lescorones.cat/en/">Webseite</button></div>
-</article>
-<article class="curated-card top">
-<div class="meta"><span class="pill">Top-Ausflug</span><span class="pill">Direktvermarkter</span><span class="pill">Palau-sator</span></div>
-<h3>Mooma</h3>
-<p>Cidrerie mit eigenen Apfelprodukten, Restaurant und Hofcharakter. Die große Bewertungsbasis ist insgesamt stark; aktuelle Rezensionen zeigen aber auch Schwankungen bei Service und Preis-Leistung.</p>
-<div class="curated-score"><span class="source-chip">Tripadvisor: 4,5 · 689</span><span class="source-chip">Travellers’ Choice 2025</span><span class="source-chip">eigene Produktion</span></div>
-<div class="verdict"><b>Urteil:</b> Sehr empfehlenswert als Kombination aus regionalem Einkauf, Cidre und Familienausflug. Nicht allein wegen des Restaurants anfahren; reservieren und Stoßzeit vermeiden.</div>
-<div class="actions"><button class="btn primary" data-map="Mooma Mas Saulot Palau-sator">Navigation</button><button class="btn secondary" data-url="https://mooma.cat/">Webseite</button></div>
-</article>
-<article class="curated-card top">
-<div class="meta"><span class="pill">Top-Einkauf</span><span class="pill">Sardellen</span><span class="pill">L’Escala</span></div>
-<h3>Anxoves Solés</h3>
-<p>Traditioneller Produzent für Sardellen aus L’Escala. Die Kombination aus Herstellerprofil, regionaler Spezialisierung und positiven Besucherberichten macht den Betrieb zu einer besseren Wahl als ein beliebiger Souvenirshop.</p>
-<div class="curated-score"><span class="source-chip">Produzent</span><span class="source-chip">Tripadvisor-Erfahrungen</span><span class="source-chip">regionale Spezialität</span></div>
-<div class="verdict"><b>Urteil:</b> Beste gezielte Adresse für essbare Mitbringsel aus L’Escala. Mit Sant Martí d’Empúries oder dem Strand verbinden.</div>
-<div class="actions"><button class="btn primary" data-map="Anxoves Solés Avinguda Closa d'en Llop 40 L'Escala">Navigation</button><button class="btn secondary" data-url="https://www.anxoves.com/">Webseite</button></div>
-</article>
-<article class="curated-card good">
-<div class="meta"><span class="pill">Sehr gute Option</span><span class="pill">Katalanisch</span><span class="pill">Palau-sator</span></div>
-<h3>Mas Pou</h3>
-<p>Historische Masia mit sehr großer Bewertungsbasis. In Palau-sator liegt Mas Pou in der Plattformauswertung vor Mooma und ist als klassisch-katalanische Restaurantalternative besonders belastbar.</p>
-<div class="curated-score"><span class="source-chip">Tripadvisor: 4,5 · über 1.000</span><span class="source-chip">offizielle Webseite</span><span class="source-chip">Familienempfehlung</span></div>
-<div class="verdict"><b>Urteil:</b> Bessere Wahl als Mooma, wenn das Essen wichtiger ist als Cidre und Produzenten-Erlebnis. Außenplatz reservieren.</div>
-<div class="actions"><button class="btn primary" data-map="Mas Pou Plaça de la Mota 4 Palau-sator">Navigation</button><button class="btn secondary" data-url="https://maspou.com/en/">Webseite</button></div>
-</article>
-<article class="curated-card good">
-<div class="meta"><span class="pill">Regionaler Einkauf</span><span class="pill">Reis</span><span class="pill">Pals</span></div>
-<h3>Arròs Molí de Pals</h3>
-<p>Regionaler Reis aus dem Pals-Gebiet mit nachvollziehbarer Herkunft. Besucherberichte zur Reisroute und zur historischen Mühle heben die Erklärung des Anbaus und den direkten Produkteinkauf hervor.</p>
-<div class="curated-score"><span class="source-chip">Direktvermarkter</span><span class="source-chip">Besucherberichte</span><span class="source-chip">historische Mühle</span></div>
-<div class="verdict"><b>Urteil:</b> Sehr guter regionaler Einkauf und sinnvoll mit Pals kombinierbar. Für einen reinen Einkauf genügt der Hofladen; Führung nur bei echtem Interesse am Reisanbau.</div>
-<div class="actions"><button class="btn primary" data-map="Arròs Molí de Pals C-31 km 343.9 Pals">Navigation</button><button class="btn secondary" data-url="https://www.arrosmolidepals.com/">Webseite</button></div>
-</article>
-<article class="curated-card good">
-<div class="meta"><span class="pill">Praktische Empfehlung</span><span class="pill">Großeinkauf</span><span class="pill">Torroella</span></div>
-<h3>Mercadona + Bonpreu</h3>
-<p>Für den normalen Ferienwohnungseinkauf zählen Sortiment, Frische, Parken und Verlässlichkeit stärker als touristische Sterne. Mercadona ist die pragmatische Vollsortimentswahl; Bonpreu ist interessanter für katalanische Marken und regionale Produkte.</p>
-<div class="curated-score"><span class="source-chip">Alltagstauglichkeit</span><span class="source-chip">Sortiment</span><span class="source-chip">Parken</span></div>
-<div class="verdict"><b>Urteil:</b> Mercadona für den großen Basiseinkauf, Bonpreu für regionale Ergänzungen. SPAR in L’Estartit nur für den schnellen Einkauf zu Fuß.</div>
-<div class="actions"><button class="btn primary" data-map="Mercadona Torroella de Montgrí">Mercadona</button><button class="btn secondary" data-map="Bonpreu Torroella de Montgrí">Bonpreu</button></div>
-</article>
-<article class="curated-card caution">
-<div class="meta"><span class="pill">Nur mit Einschränkung</span><span class="pill">Paella</span><span class="pill">Promenade</span></div>
-<h3>La Sal</h3>
-<p>Schöne Lage, klare Speisekarte und einzelne sehr gute aktuelle Erfahrungen, aber das Gesamtbild über viele Bewertungen ist deutlich uneinheitlicher als bei den Top-Empfehlungen.</p>
-<div class="curated-score"><span class="source-chip">Tripadvisor: 3,6 · 516</span><span class="source-chip">aktuelle Rezensionen gemischt</span><span class="source-chip">offizielle Karte</span></div>
-<div class="verdict"><b>Urteil:</b> Praktische Promenadenoption, aber nicht als beste Paella-Adresse auszeichnen. Bei Qualitätsfokus eher Arrosseria l’Escalada prüfen.</div>
-<div class="actions"><button class="btn primary" data-map="Restaurant La Sal Passeig Marítim 19 L'Estartit">Navigation</button></div>
-</article>
-<article class="curated-card caution">
-<div class="meta"><span class="pill">Nur mit Einschränkung</span><span class="pill">Seafood</span><span class="pill">L’Estartit</span></div>
-<h3>Cal Tet</h3>
-<p>Bekannte Seafood-Adresse mit großer Bewertungsbasis, aber nur mittlerem Gesamtbild und wiederkehrenden Hinweisen auf hohe Preise. Für Hummer oder Meeresfrüchteplatte kann es passen, ist jedoch keine automatische Top-Wahl.</p>
-<div class="curated-score"><span class="source-chip">Tripadvisor: 4,1 · 542</span><span class="source-chip">Preis-Leistung gemischt</span></div>
-<div class="verdict"><b>Urteil:</b> Vorher Tagesangebot und Preis erfragen. Für gegrillten Fisch ist Les Corones besser abgesichert.</div>
-<div class="actions"><button class="btn primary" data-map="Marisqueria Cal Tet Carrer Santa Anna 38 L'Estartit">Navigation</button></div>
-</article>
-</div>
-</section><section class="section" id="spontaneousOptions">
-<div class="section-title"><h2>Zusätzliche spontane Optionen</h2><span class="badge">ergänzend zum Tagesplan</span></div>
-<div class="cards two">
-<article class="card"><h3>Strand &amp; Hafen</h3><p>Platja Gran, Platja de Griells und Hafenpromenade bleiben die unkomplizierten Standardziele.</p><div class="actions"><button class="btn primary" data-map="Platja%20Gran%2C%20L%27Estartit">Strand</button><button class="btn secondary" data-map="Port%20de%20L%27Estartit">Hafen</button></div></article>
-<article class="card"><h3>Aktivitäten</h3><p>Glasbodenboot zu den Medes-Inseln, Schnorcheln am Vormittag oder kurzer Ausflug nach Torroella de Montgrí.</p><div class="actions"><button class="btn primary" data-map="Medes%20Islands%20boat%20L%27Estartit">Bootstouren</button></div></article>
-</div>
 </section><section class="section" id="estartitChargingTopic"><div class="section-title"><h2>Laden in und um L’Estartit</h2><span class="badge">DKV-Live-Status prüfen</span></div>
 <div class="cards two">
 <article class="card">
@@ -1347,343 +1115,6 @@ section.view[data-view="home"] #holidayOverview{
 <article class="card">
 <h3>Etappenstruktur bleibt unverändert</h3>
 <p>Ladeplanung, Unterkunft, Abendprogramm, lokale Lademöglichkeiten sowie Bäckerei oder Café am Morgen bleiben beim Ein-Nacht-Ziel Clermont-Ferrand in der bisherigen chronologischen Etappenansicht.</p>
-</article>
-</div>
-</section><section class="section" id="travelGeneral"><div class="section-title"><h2>Weitere Reiseinformationen</h2><span class="badge">Etappenorte unverändert</span></div>
-<div class="notice"><div class="notice-icon">🧭</div><div><strong>Durchreiseorte bleiben chronologisch</strong><p>Dijon, Montpellier, Clermont-Ferrand und Metz behalten die bestehende Etappenstruktur mit Ladeplanung, Unterkunft, Abendprogramm, lokalen Lademöglichkeiten und Bäckerei oder Café am Morgen.</p></div></div>
-</section><section class="section" id="restaurantGuide">
-<div class="section-title"><h2>Restaurantführer</h2><span class="badge">15 Restaurants · Stand 23.07.2026</span></div>
-<div class="notice"><div class="notice-icon">🍽</div><div><strong>Restaurants nach Ort, Küche und Preis</strong><p>Preisniveau: € günstig, €€ mittel, €€€ gehoben. Öffnungszeiten und Reservierung sind direkt bei den Restaurants hinterlegt.</p></div></div>
-<div class="restaurant-grid" style="margin-top:14px">
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">Dijon</span><span class="pill">€€€ · abends gehoben</span></div>
-<h3>DZ’envies</h3>
-<p class="restaurant-category">Moderne französische Bistroküche · Burgund</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€€ · abends gehoben</b></div>
-<div><span>Öffnungszeiten</span><b>Di–Sa 19:00–22:00; mittags Di–Fr 12:00–14:00, Sa 12:00–14:30</b></div>
-<div class="wide"><span>Adresse</span><b>12 Rue Odebert, 21000 Dijon, Frankreich</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Abends wechselndes 3-Gänge-Menü mit saisonalen Marktprodukten; moderne französische Küche mit burgundischen und internationalen Einflüssen. Kein klassisches Burgerrestaurant.</p>
-</details>
-<p class="restaurant-note">Für einen besonderen Bistroabend; Reservierung sinnvoll.</p>
-<div class="actions">
-<button class="btn primary" data-map="12 Rue Odebert, 21000 Dijon, Frankreich">Navigation</button>
-<button class="btn secondary" data-url="https://dzenvies.com/">Webseite</button>
-<button class="btn secondary" data-url="https://dzenvies.com/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">La Grande-Motte / Montpellier</span><span class="pill">€€ · Menüs 24,90–31,90 €; Kindermenü 9,50 €</span></div>
-<h3>Café Soleil</h3>
-<p class="restaurant-category">Fisch · Meeresfrüchte · Muscheln · Pizza · Familienküche</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€ · Menüs 24,90–31,90 €; Kindermenü 9,50 €</b></div>
-<div><span>Öffnungszeiten</span><b>Täglich 08:00–23:30; im Juli/August Küche durchgehend 12:00–23:00</b></div>
-<div class="wide"><span>Adresse</span><b>Centre Commercial Le Mercure, Avenue de l’Europe, 34280 La Grande-Motte, Frankreich</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>24,90-€-Menü: z. B. Calamari, Fischsuppe oder gratinierte Muscheln; danach Moules-frites oder Kabeljau-Fish-and-Chips. 27,90 €: u. a. Meeresfrüchteteller, gegrillte Sepia oder Lachs. 31,90 €: sechs Austern, Dorade oder gegrillte Gambas. Kindermenü mit Moules-frites, Pizza oder Fleischgericht.</p>
-</details>
-<p class="restaurant-note">Beste kalkulierbare Preis-Leistungs-Option für die Familie.</p>
-<div class="actions">
-<button class="btn primary" data-map="Centre Commercial Le Mercure, Avenue de l’Europe, 34280 La Grande-Motte, Frankreich">Navigation</button>
-<button class="btn secondary" data-url="https://www.cafe-soleil-restaurant-la-grande-motte.fr/">Webseite</button>
-<button class="btn secondary" data-url="https://www.cafe-soleil-restaurant-la-grande-motte.fr/menus-cafe-soleil-la-grande-motte">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">La Grande-Motte / Montpellier</span><span class="pill">€€ · Auswahl nach Stückzahl oder Platte</span></div>
-<h3>La Barque Bleue</h3>
-<p class="restaurant-category">Austern · Muscheln · Krustentiere · Meeresfrüchte</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€ · Auswahl nach Stückzahl oder Platte</b></div>
-<div><span>Öffnungszeiten</span><b>Täglich 09:00–14:00 und 18:00–22:00</b></div>
-<div class="wide"><span>Adresse</span><b>35 Avenue Pierre Racine, 34280 La Grande-Motte, Frankreich</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Frische Austern, Garnelen, Muscheln und Meeresfrüchteplatten; außerdem gratinierte Austern und Muscheln sowie Moules-frites. Vor Ort, zum Mitnehmen oder Verkauf an der Theke.</p>
-</details>
-<p class="restaurant-note">Unkomplizierter Seafood-Geheimtipp; Auswahl und Preise wechseln nach Tagesfang.</p>
-<div class="actions">
-<button class="btn primary" data-map="35 Avenue Pierre Racine, 34280 La Grande-Motte, Frankreich">Navigation</button>
-<button class="btn secondary" data-url="https://www.lagrandemotte.com/restaurants-cafes/135/La-Barque-Bleue/">Webseite</button>
-<button class="btn secondary" data-url="https://www.lagrandemotte.com/restaurants-cafes/135/La-Barque-Bleue/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">La Grande-Motte / Montpellier</span><span class="pill">€€–€€€ · Tagesangebot</span></div>
-<h3>Le Poisson Bleu</h3>
-<p class="restaurant-category">Fisch · Meeresfrüchte</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€–€€€ · Tagesangebot</b></div>
-<div><span>Öffnungszeiten</span><b>Keine verlässlich veröffentlichten festen Zeiten; am Besuchstag telefonisch oder in Maps prüfen</b></div>
-<div class="wide"><span>Adresse</span><b>130 Rue du Port, 34280 La Grande-Motte, Frankreich</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Kleine Fisch- und Meeresfrüchtekarte am Hafen; Schwerpunkt auf frischem Fisch und wechselnden Tagesgerichten. Eine vollständige aktuelle Karte ist online nicht verlässlich veröffentlicht.</p>
-</details>
-<p class="restaurant-note">Vorher Öffnung, Tagesfang und Preise telefonisch prüfen.</p>
-<div class="actions">
-<button class="btn primary" data-map="130 Rue du Port, 34280 La Grande-Motte, Frankreich">Navigation</button>
-<button class="btn secondary" data-url="https://www.lagrandemotte.com/restaurants-cafes/345/LE-POISSON-BLEU/">Webseite</button>
-<button class="btn secondary" data-url="https://www.lagrandemotte.com/restaurants-cafes/345/LE-POISSON-BLEU/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">L’Estartit</span><span class="pill">€€ · gutes mittleres Preisniveau</span></div>
-<h3>Racó del Port</h3>
-<p class="restaurant-category">Tapas · Fisch · Fleisch · Cocktails · Gastrobar</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€ · gutes mittleres Preisniveau</b></div>
-<div><span>Öffnungszeiten</span><b>Laut eigener Webseite täglich 12:00–01:00; saisonale Schließhinweise beachten</b></div>
-<div class="wide"><span>Adresse</span><b>Passeig Marítim 40, 17258 L’Estartit, Spanien</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Tapas und kleine Teller, hausgemachte und internationale Gerichte, frischer Fisch, Fleisch, Salate, Desserts, Vermut, Wein, Cava und Cocktails.</p>
-</details>
-<p class="restaurant-note">Sehr flexibel für Familien und einen entspannten Hafenabend.</p>
-<div class="actions">
-<button class="btn primary" data-map="Passeig Marítim 40, 17258 L’Estartit, Spanien">Navigation</button>
-<button class="btn secondary" data-url="https://www.elracodelportestartit.com/en/">Webseite</button>
-<button class="btn secondary" data-url="https://www.elracodelportestartit.com/en/menu/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">L’Estartit</span><span class="pill">€ · günstig bis mittel</span></div>
-<h3>Sota Zero</h3>
-<p class="restaurant-category">Eis · Crêpes · Waffeln · Café · Cocktails</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€ · günstig bis mittel</b></div>
-<div><span>Öffnungszeiten</span><b>Saisonal; aktuell keine verlässlich veröffentlichten festen Öffnungszeiten</b></div>
-<div class="wide"><span>Adresse</span><b>Passeig Marítim 24, 17258 L’Estartit, Spanien</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Eisbecher und Kugeln, Crêpes, Waffeln, Kaffee, Milchshakes und Cocktails. Die aktuelle Sorten- und Preisliste ist online nicht vollständig veröffentlicht.</p>
-</details>
-<p class="restaurant-note">Ideal, wenn Kinder Eis und Erwachsene einen Cocktail möchten.</p>
-<div class="actions">
-<button class="btn primary" data-map="Passeig Marítim 24, 17258 L’Estartit, Spanien">Navigation</button>
-<button class="btn secondary" data-url="https://sotazero.net/">Webseite</button>
-<button class="btn secondary" data-url="https://sotazero.net/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">L’Estartit</span><span class="pill">€€ · Paellas meist ca. 21,50 €; Menü 32 €</span></div>
-<h3>La Sal</h3>
-<p class="restaurant-category">Paella · Reisgerichte · Fisch · Meeresfrüchte · Tapas</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€ · Paellas meist ca. 21,50 €; Menü 32 €</b></div>
-<div><span>Öffnungszeiten</span><b>Täglich 12:30–15:30 und 19:00–22:00</b></div>
-<div class="wide"><span>Adresse</span><b>Passeig Marítim 19, 17258 L’Estartit, Spanien</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Tapas ab etwa 8,90 €, Muscheln ca. 12,50–13,90 €, Calamari ca. 16,80 €. Paella mit Meeresfrüchten, gemischte Paella, schwarzer Reis, Fideuà und Arroz a Banda meist ca. 21,50 €. Fischgerichte etwa 19,90–29 €. Paella-Menü mit Vorspeisen und Dessert 32 €.</p>
-</details>
-<p class="restaurant-note">Schöne Lage und klare Karte, aber gemischtes Gesamtbild; nicht als beste Paella-Adresse eingestuft.</p>
-<div class="actions">
-<button class="btn primary" data-map="Passeig Marítim 19, 17258 L’Estartit, Spanien">Navigation</button>
-<button class="btn secondary" data-url="https://www.restaurantlasal.com/de/">Webseite</button>
-<button class="btn secondary" data-url="https://www.restaurantlasal.com/fr/the-menu/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">L’Estartit</span><span class="pill">€€€ · besonderer Abend</span></div>
-<h3>Marisqueria Cal Tet</h3>
-<p class="restaurant-category">Meeresfrüchte · Austern · Hummer · frischer Fisch</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€€ · besonderer Abend</b></div>
-<div><span>Öffnungszeiten</span><b>Keine verlässlich bestätigten aktuellen Zeiten online; Reservierung und Öffnung telefonisch prüfen</b></div>
-<div class="wide"><span>Adresse</span><b>Carrer Santa Anna 38, 17258 L’Estartit, Spanien</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Meeresfrüchteplatten, Austern, Hummer und frischer Fisch nach Tagesangebot. Eine offizielle aktuelle Online-Speisekarte ist nicht zuverlässig verfügbar.</p>
-</details>
-<p class="restaurant-note">Vorher reservieren und Tagespreise erfragen.</p>
-<div class="actions">
-<button class="btn primary" data-map="Carrer Santa Anna 38, 17258 L’Estartit, Spanien">Navigation</button>
-<button class="btn secondary" data-url="https://www.google.com/maps/search/?api=1&amp;query=Marisqueria+Cal+Tet+Carrer+Santa+Anna+38+L%27Estartit">Webseite</button>
-<button class="btn secondary" data-url="https://www.google.com/maps/search/?api=1&amp;query=Marisqueria+Cal+Tet+Carrer+Santa+Anna+38+L%27Estartit+menu">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">L’Estartit</span><span class="pill">€ · familienfreundlich</span></div>
-<h3>El Fornet</h3>
-<p class="restaurant-category">Pizza · Hähnchen · Rippchen · Holzofen · Take-away</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€ · familienfreundlich</b></div>
-<div><span>Öffnungszeiten</span><b>Saisonal; aktuelle Öffnungszeiten am Besuchstag telefonisch oder in Maps prüfen</b></div>
-<div class="wide"><span>Adresse</span><b>Carrer d’Eivissa 9–11, 17258 L’Estartit, Spanien</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Hausgemachte Pizza aus dem Holzofen, Hähnchen und Rippchen vom Holzfeuer, Kartoffelbeilagen, abwechslungsreiche Menüs, Take-away sowie hausgemachte Desserts wie Tiramisu und Käsekuchen.</p>
-</details>
-<p class="restaurant-note">Die günstigste und unkomplizierteste Familienoption im Travelbook.</p>
-<div class="actions">
-<button class="btn primary" data-map="Carrer d’Eivissa 9–11, 17258 L’Estartit, Spanien">Navigation</button>
-<button class="btn secondary" data-url="https://www.elfornetestartit.com/en/">Webseite</button>
-<button class="btn secondary" data-url="https://www.elfornetestartit.com/en/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">L’Estartit</span><span class="pill">€€ · mittleres Preisniveau</span></div>
-<h3>La Xula</h3>
-<p class="restaurant-category">Katalanisch · mediterran · Fisch</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€ · mittleres Preisniveau</b></div>
-<div><span>Öffnungszeiten</span><b>Keine verlässlich veröffentlichten aktuellen Zeiten; am Tag prüfen</b></div>
-<div class="wide"><span>Adresse</span><b>Carrer de la Platja 26, 17258 L’Estartit, Spanien</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Katalanische und mediterrane Fischküche mit wechselnden Tagesgerichten. Eine offizielle vollständige Online-Karte ist aktuell nicht verlässlich veröffentlicht.</p>
-</details>
-<p class="restaurant-note">Ruhigere Alternative zu den Restaurants direkt an der Promenade.</p>
-<div class="actions">
-<button class="btn primary" data-map="Carrer de la Platja 26, 17258 L’Estartit, Spanien">Navigation</button>
-<button class="btn secondary" data-url="https://visitestartit.com/restaurant/la-xula/">Webseite</button>
-<button class="btn secondary" data-url="https://www.google.com/maps/search/?api=1&amp;query=La+Xula+Carrer+de+la+Platja+26+L%27Estartit+menu">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">L’Estartit</span><span class="pill">€€–€€€ · Michelin-Kategorie €€</span></div>
-<h3>Les Corones</h3>
-<p class="restaurant-category">Frischer Fisch vom Holzkohlegrill · mediterran</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€–€€€ · Michelin-Kategorie €€</b></div>
-<div><span>Öffnungszeiten</span><b>Aktuelle offizielle Angabe: täglich 13:00–15:00 und 20:00–22:00; einzelne Seiten nennen Dienstag als Ruhetag – Reservierung prüfen</b></div>
-<div class="wide"><span>Adresse</span><b>Avinguda de Roma 50, 17258 L’Estartit, Spanien</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Frischer Tagesfang vom Grill, etwa Steinbutt, Wolfsbarsch oder Petersfisch; außerdem gegrillter Oktopus, Garnelen-Carpaccio und mediterrane Vorspeisen. Preise hängen stark vom Tagesfisch ab.</p>
-</details>
-<p class="restaurant-note">Für fünf Personen vorher telefonisch reservieren.</p>
-<div class="actions">
-<button class="btn primary" data-map="Avinguda de Roma 50, 17258 L’Estartit, Spanien">Navigation</button>
-<button class="btn secondary" data-url="https://lescorones.cat/en/">Webseite</button>
-<button class="btn secondary" data-url="https://lescorones.cat/en/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">Palau-sator</span><span class="pill">€€ · Ausflugsrestaurant</span></div>
-<h3>Mooma Palau-sator</h3>
-<p class="restaurant-category">Mediterran · Grill · Reisgerichte · Fisch · Cidre</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€ · Ausflugsrestaurant</b></div>
-<div><span>Öffnungszeiten</span><b>Saisonal nach Kalender und Reservierungsseite; vor Fahrt online prüfen</b></div>
-<div class="wide"><span>Adresse</span><b>Mas Saulot s/n, 17257 Palau-sator, Spanien</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Zeitgemäße mediterrane Küche mit regionalen und saisonalen Zutaten: Gerichte zum Teilen, Salate, Tapas, Reisgerichte, Grillfleisch, Fisch sowie hauseigene Säfte und Cidres. Vegetarische, vegane und glutenfreie Optionen vorhanden.</p>
-</details>
-<p class="restaurant-note">Gut mit Pals oder Torroella kombinierbar; Reservierung im Sommer empfohlen.</p>
-<div class="actions">
-<button class="btn primary" data-map="Mas Saulot s/n, 17257 Palau-sator, Spanien">Navigation</button>
-<button class="btn secondary" data-url="https://mooma.cat/en/mooma-palau-sator/">Webseite</button>
-<button class="btn secondary" data-url="https://mooma.cat/en/mooma-palau-sator/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">Palau-sator</span><span class="pill">€€ · mittleres Preisniveau</span></div>
-<h3>Mas Pou</h3>
-<p class="restaurant-category">Traditionell katalanisch · Masia · Fleisch · regionale Küche</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€ · mittleres Preisniveau</b></div>
-<div><span>Öffnungszeiten</span><b>Di–So 13:00–15:30 und 20:00–22:30; im Juli/August montags geschlossen</b></div>
-<div class="wide"><span>Adresse</span><b>Plaça de la Mota 4, 17256 Palau-sator, Spanien</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Traditionelle katalanische Küche in historischer Masia; regionale Vorspeisen, Fleisch- und Grillgerichte, saisonale Spezialitäten und Desserts. Die vollständige aktuelle Karte ist auf der Webseite über „La Nostra Carta“ erreichbar.</p>
-</details>
-<p class="restaurant-note">Eigener Kundenparkplatz; nicht im eingeschränkten Ortskern parken.</p>
-<div class="actions">
-<button class="btn primary" data-map="Plaça de la Mota 4, 17256 Palau-sator, Spanien">Navigation</button>
-<button class="btn secondary" data-url="https://maspou.com/en/">Webseite</button>
-<button class="btn secondary" data-url="https://maspou.com/">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">Clermont-Ferrand</span><span class="pill">€€ · Menü mittags ab 10,80–17,80 €</span></div>
-<h3>Le Puy de la Lune</h3>
-<p class="restaurant-category">Auvergnatisch · Truffade · Burger · Tartare · vegetarisch</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€ · Menü mittags ab 10,80–17,80 €</b></div>
-<div><span>Öffnungszeiten</span><b>Mi 18:00–22:00; Do–So 11:45–22:00; spätes Essen nur auf Reservierung</b></div>
-<div class="wide"><span>Adresse</span><b>3 Rue de la Michodière, 63000 Clermont-Ferrand, Frankreich</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Auvergnatische Hausmannskost mit Truffade, Tartare, Burgern und Froschschenkeln; außerdem moderne Gerichte und vegane Option. Mittags: Hauptgericht etwa 10,80 €, zwei Gänge etwa 13,80 €, drei Gänge etwa 17,80 €; abends und sonntags meist 2 € Aufpreis.</p>
-</details>
-<p class="restaurant-note">Gute Preis-Leistung und regionale Küche.</p>
-<div class="actions">
-<button class="btn primary" data-map="3 Rue de la Michodière, 63000 Clermont-Ferrand, Frankreich">Navigation</button>
-<button class="btn secondary" data-url="https://www.lepuydelalune.com/le-restaurant">Webseite</button>
-<button class="btn secondary" data-url="https://www.lepuydelalune.com/la-carte">Original-Menü</button>
-</div>
-</article>
-<article class="restaurant-card">
-<div class="restaurant-card-head">
-<div><span class="pill">Metz</span><span class="pill">€€ · mittleres Preisniveau</span></div>
-<h3>Au Cœur du Liban</h3>
-<p class="restaurant-category">Libanesisch · Mezze · Falafel · Grillgerichte</p>
-</div>
-<div class="restaurant-facts">
-<div><span>Preisniveau</span><b>€€ · mittleres Preisniveau</b></div>
-<div><span>Öffnungszeiten</span><b>Di–Do 11:45–13:30 und 18:45–21:30; Fr–Sa bis 21:45; So–Mo geschlossen</b></div>
-<div class="wide"><span>Adresse</span><b>11 Place de Chambre, 57000 Metz, Frankreich</b></div>
-</div>
-<details class="restaurant-menu">
-<summary>Menü auf Deutsch</summary>
-<p>Kalte und warme Mezze wie Hummus, Taboulé und Falafel; libanesische Grillgerichte, Fleischspieße und traditionelle Schmorgerichte. Die aktuelle Karte ist auf der Restaurantseite als Vollbild/PDF verfügbar.</p>
-</details>
-<p class="restaurant-note">Aktuelle offizielle Adresse ersetzt die ältere Travelbook-Angabe Rue des Tanneurs.</p>
-<div class="actions">
-<button class="btn primary" data-map="11 Place de Chambre, 57000 Metz, Frankreich">Navigation</button>
-<button class="btn secondary" data-url="https://www.aucoeurduliban.com/">Webseite</button>
-<button class="btn secondary" data-url="https://aucoeurduliban.com/carte-menus">Original-Menü</button>
-</div>
 </article>
 </div>
 </section><section class="section" id="fixedPlans">
@@ -2000,8 +1431,8 @@ section.view[data-view="home"] #holidayOverview{
 </div></section>
 </main></div>
 <nav class="bottom-nav">
-<button class="nav-btn active" data-view-target="home"><span>⌂</span>Start</button>
-<button class="nav-btn" data-view-target="trip"><span>🗺</span>Ziele</button>
+<button class="nav-btn active" data-view-target="home"><span>⌂</span>Heute</button>
+<button class="nav-btn" data-view-target="trip"><span>🗺</span>Etappen</button>
 <button class="nav-btn" data-view-target="hotels"><span>▣</span>Hotels</button>
 <button class="nav-btn" data-view-target="charging"><span>⚡</span>Laden</button>
 <button class="nav-btn" id="moreBtn"><span>☀️</span>L’Estartit</button>
@@ -2216,7 +1647,6 @@ const travel = {
     {id:'i11',anchor:'estartitShoppingGuide',title:'Einkaufsführer L’Estartit komplett',summary:'Supermärkte, Fisch, Meeresfrüchte, Metzgereien, Obst, Gemüse, Bäckereien, Feinkost, Wochenmärkte und Direktvermarkter bis ca. 20 km.',tags:['Info','Fisch','Metzgerei','Einkaufen','Supermarkt','Direktvermarkter','Bäckerei','Feinkost']},
     {id:'i12',anchor:'estartitInsider',title:'Geheimtipps L’Estartit',summary:'Fischerort-Rundgang, Passeig del Molinet, La Pletera, Ter Vell, Espai Medes und Cala Pedrosa.',tags:['Aktivität','Geheimtipp','Natur','L’Estartit']},
     {id:'i18',anchor:'montpellierDeparture',title:'Montpellier Abfahrt mit Brioche Dorée Odysseum',summary:'09:45 Uhr Hotelstart, einfacher Parkplatz und Sandwich-Stopp direkt an der A709, danach Tesla Rivesaltes und Carrefour Torroella.',tags:['Bäckerei','Sandwiches','Montpellier','Odysseum','Parken','Tagesplan']},
-    {id:'i17',anchor:'restaurantGuide',title:'Restaurantführer komplett',summary:'Alle Restaurants mit Kategorie, Preisniveau, Öffnungszeiten, Adresse, Webseite und deutscher Menüübersicht.',tags:['Restaurant','Essen','Menü','Preise']},
     {id:'i13',anchor:'fixedPlans',title:'Abendprogramme chronologisch',summary:'Chronologische Abendprogramme für Dijon, La Grande-Motte, alle Abende in L’Estartit, Clermont-Ferrand und Metz.',tags:['Aktivität','Tagesplan','Navigation']},
     {id:'i14',anchor:'routeCheck',title:'Etappenwerte und letzte Prüfung',summary:'Ladeplanung, Maut, Verkehr und Unterkunftszugang vor den Fahrtagen.',tags:['Info','Maut','Laden','Verkehr']},
     {id:'i15',anchor:'estartitDayPlans',title:'Urlaubstage L’Estartit komplett',summary:'Vollständige Tagespläne vom 25. bis 30. Juli mit Barcelona, Medes-Inseln, Torroella, Cala Pedrosa und Costa-Brava-Rundtour.',tags:['Aktivität','Tagesplan','L’Estartit','Ausflug']}
@@ -3209,8 +2639,10 @@ function renderToday(){
   if(arrivalLabel) arrivalLabel.textContent=isHoliday?'Tagesende':'Zielankunft';
   if(stopsLabel) stopsLabel.textContent=isHoliday?'Programm':'Ladestopps';
 
-  $('#metricHotel').textContent=hotel?hotel.name:'Zuhause';
-  $('#metricHotelSub').textContent=hotel?(isHoliday?'L’Estartit · Aufenthalt bis 31.07.':`${hotel.place} · ${hotel.date}`):'keine weitere Unterkunft';
+  const metricHotel=$('#metricHotel');
+  const metricHotelSub=$('#metricHotelSub');
+  if(metricHotel) metricHotel.textContent=hotel?hotel.name:'Zuhause';
+  if(metricHotelSub) metricHotelSub.textContent=hotel?(isHoliday?'L’Estartit · Aufenthalt bis 31.07.':`${hotel.place} · ${hotel.date}`):'keine weitere Unterkunft';
   $('#todayHotelName').textContent=hotel?hotel.name:'Zuhause';
   $('#todayHotelInfo').textContent=hotel?(isHoliday?'L’Estartit · Aufenthalt bis 31.07.':`${hotel.place} · ${hotel.checkin}`):'Reise abgeschlossen';
   $('#todayChargeName').textContent=c[0]; $('#todayChargeInfo').textContent=`${c[2]} · DKV-Kompatibilität und Live-Status prüfen`;
@@ -3333,25 +2765,56 @@ function renderToday(){
 
 }
 function renderDayStrip(){
-  const days=[['22.07.','Dijon','trip'],['23.07.','Montpellier','trip'],['24.07.','L’Estartit','trip'],['25.–30.07.','Urlaub','more'],['31.07.','Clermont','trip'],['01.08.','Metz','trip'],['02.08.','Zuhause','trip']];
+  const days=[
+    {date:'22.07.',label:'Dijon',type:'stage',stage:'s1'},
+    {date:'23.07.',label:'Montpellier',type:'stage',stage:'s2'},
+    {date:'24.07.',label:'L’Estartit',type:'stage',stage:'s3'},
+    {date:'25.07.',label:'Aufenthalt',type:'holiday',anchor:'holidayOverview'},
+    {date:'26.07.',label:'Barcelona',type:'holiday',anchor:'day2607'},
+    {date:'27.07.',label:'Aufenthalt',type:'holiday',anchor:'holidayOverview'},
+    {date:'28.07.',label:'Aufenthalt',type:'holiday',anchor:'holidayOverview'},
+    {date:'29.07.',label:'Aufenthalt',type:'holiday',anchor:'holidayOverview'},
+    {date:'30.07.',label:'Aufenthalt',type:'holiday',anchor:'holidayOverview'},
+    {date:'31.07.',label:'Clermont',type:'stage',stage:'s4'},
+    {date:'01.08.',label:'Metz',type:'stage',stage:'s5'},
+    {date:'02.08.',label:'Zuhause',type:'stage',stage:'s6'}
+  ];
+
   const ctx=getTodayContext();
-  let activeIndex=0;
-  if(ctx.mode==='stage') activeIndex=travel.stages.findIndex(s=>s.id===ctx.stage.id);
-  if(ctx.mode==='holiday') activeIndex=3;
-  if(ctx.mode==='after') activeIndex=6;
-  $('#dayStrip').innerHTML=days.map((d,i)=>`<button class="day-chip ${i===activeIndex?'active':''}" data-day="${i}" data-day-view="${d[2]}"><b>${d[0]}</b><span>${d[1]}</span></button>`).join('');
-  $$('#dayStrip .day-chip').forEach(btn=>btn.addEventListener('click',()=>{
-    $$('#dayStrip .day-chip').forEach(x=>x.classList.remove('active'));
-    btn.classList.add('active');
-    const index=Number(btn.dataset.day);
-    if(index===3){
-      showView('more');
+  const now=new Date();
+  const todayKey=`${String(now.getDate()).padStart(2,'0')}.${String(now.getMonth()+1).padStart(2,'0')}.`;
+  let activeIndex=days.findIndex(day=>day.date===todayKey);
+  if(activeIndex<0){
+    if(ctx.mode==='before') activeIndex=0;
+    else if(ctx.mode==='after') activeIndex=days.length-1;
+    else if(ctx.mode==='stage') activeIndex=days.findIndex(day=>day.stage===ctx.stage.id);
+    else activeIndex=3;
+  }
+
+  const strip=$('#dayStrip');
+  if(!strip) return;
+  strip.innerHTML=days.map((day,index)=>`
+    <button class="day-chip ${index===activeIndex?'active':''}" data-day-index="${index}">
+      <b>${day.date}</b><span>${day.label}</span>
+    </button>`).join('');
+
+  $$('#dayStrip .day-chip').forEach(button=>button.addEventListener('click',()=>{
+    $$('#dayStrip .day-chip').forEach(item=>item.classList.remove('active'));
+    button.classList.add('active');
+    const day=days[Number(button.dataset.dayIndex)];
+    if(!day) return;
+
+    if(day.type==='stage'){
+      const selected=travel.stages.find(stage=>stage.id===day.stage);
+      if(!selected) return;
+      showView('trip');
+      setTimeout(()=>openDetail('stage',selected.id),60);
       return;
     }
-    const stageIndex=index<3?index:index-1;
-    const selected=travel.stages[stageIndex];
-    showView('trip');
-    if(selected) setTimeout(()=>openDetail('stage',selected.id),60);
+
+    showView('more');
+    const target=document.getElementById(day.anchor||'holidayOverview');
+    if(target) setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),80);
   }));
 }
 
@@ -4145,7 +3608,6 @@ function destinationHub(st,hotel){
      </div>
      <div class="destination-links">
       <button class="btn primary" data-target-section="estartitShoppingGuide">Direktvermarkter öffnen</button>
-      <button class="btn secondary" data-target-section="estartitCurated30km">Qualitätsauswahl</button>
      </div>
     </div>
    </details>
@@ -4161,7 +3623,6 @@ function destinationHub(st,hotel){
      </div>
      <div class="destination-links">
       <button class="btn primary" data-target-section="estartitInsider">Empfehlungen öffnen</button>
-      <button class="btn secondary" data-target-section="restaurantGuide">Restaurantführer</button>
      </div>
     </div>
    </details>
@@ -4456,64 +3917,6 @@ document.querySelectorAll('[data-jump]').forEach(button=>{
   }
   window.addEventListener('pageshow',setupShoppingButtons);
   setTimeout(setupShoppingButtons,100);
-})();
-</script>
-
-<script>
-(function(){
-  function openMapsQuery(query){
-    if(!query) return;
-    var url='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query);
-    window.open(url,'_blank','noopener');
-  }
-
-  function bindStartPageFallbacks(){
-    var home=document.querySelector('section.view[data-view="home"]');
-    if(!home || home.getAttribute('data-v24-ready')==='1') return;
-
-    var nav=document.getElementById('todayNavigate');
-    if(nav){
-      nav.addEventListener('click',function(){
-        if(typeof nav.onclick==='function') return;
-        var from=document.getElementById('todayFrom');
-        var to=document.getElementById('todayTo');
-        var origin=from?from.textContent.trim():'';
-        var destination=to?to.textContent.trim():'';
-        if(destination){
-          var url='https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(origin)+'&destination='+encodeURIComponent(destination);
-          window.open(url,'_blank','noopener');
-        }
-      });
-    }
-
-    var hotelNav=document.getElementById('todayHotelNav');
-    if(hotelNav){
-      hotelNav.addEventListener('click',function(){
-        if(typeof hotelNav.onclick==='function') return;
-        var name=document.getElementById('todayHotelName');
-        openMapsQuery(name?name.textContent.trim():'');
-      });
-    }
-
-    var stageDetails=document.getElementById('todayStageDetails');
-    if(stageDetails){
-      stageDetails.addEventListener('click',function(){
-        if(typeof stageDetails.onclick==='function') return;
-        var tripButton=document.querySelector('.nav-btn[data-view-target="trip"]');
-        if(tripButton) tripButton.click();
-      });
-    }
-
-    home.setAttribute('data-v24-ready','1');
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',bindStartPageFallbacks);
-  }else{
-    bindStartPageFallbacks();
-  }
-  window.addEventListener('pageshow',bindStartPageFallbacks);
-  setTimeout(bindStartPageFallbacks,150);
 })();
 </script>
 
