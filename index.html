@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 28</title>
+<title>Spanien Travelbook 2026 · Version 30</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -590,13 +590,13 @@ section.view[data-view="home"] #holidayOverview{
   #homeDaySelection .day-chip{min-width:72px}
 }
 
-/* V27: Barcelona-Tagesausflug · Audi-Ladeplanung · Kolumbus-Rundweg */
+/* V30: Barcelona-Tagesausflug · Dachboxhöhe 2,05 m · Parkhäuser mindestens 2,10 m */
 #day2607 .stop-card{border-top:6px solid var(--brand)}
 #day2607 .notice{margin-bottom:4px}
 #day2607 .feature-item{border-left:4px solid var(--blue)}
 #day2607 .actions .btn{min-height:44px}
 
-/* V28: Barcelona-Fußroute mit Sehenswürdigkeiten, Essen und Eis */
+/* V30: Barcelona-Parkplätze nur ab 2,10 m Einfahrtshöhe */
 .barcelona-guide{margin-top:16px;display:grid;gap:14px}
 .barcelona-guide-card{border:1px solid var(--line);border-radius:22px;background:var(--panel);padding:16px;box-shadow:var(--shadow2)}
 .barcelona-guide-card h4{margin:0 0 8px;font-size:18px}
@@ -618,7 +618,7 @@ section.view[data-view="home"] #holidayOverview{
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 28 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 30 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -1009,7 +1009,7 @@ section.view[data-view="home"] #holidayOverview{
 <div class="day-plan">
 <div><b>10:00</b><span>Abfahrt ALMA BEACH ESTARTIT mit 63 % SoC.</span></div>
 <div><b>ca. 11:15</b><span><b>Zunder Transports Mariné</b>, 41.53876, 2.16374. Audi-Referenz: etwa 30 → 61 %, rund 14 Minuten.</span></div>
-<div><b>ca. 11:55</b><span>Camp Nou: Außenansicht und offizieller Barça-Fanshop; keine Stadiontour und kein Museum.</span></div>
+<div><b>ca. 11:55</b><span>Parken im Parking APK2 Parc Científic – Camp Nou, Avinguda del Doctor Marañón 8. Einfahrtshöhe 2,10 m und damit für den 2,05 m hohen Audi mit Dachbox geeignet. Danach Außenansicht und offizieller Barça-Fanshop; keine Stadiontour und kein Museum.</span></div>
 <div><b>ca. 13:35</b><span>Parken im <b>Garaje Atarazanas</b>, Carrer del Portal de Santa Madrona 10. Von dort beginnt und endet die komplette Fußrunde.</span></div>
 <div><b>13:45–17:30</b><span>Barcelona-Fußrunde mit Sehenswürdigkeiten, Mittagessen und Eis. Reine Gehzeit etwa 70–90 Minuten, Gesamtstrecke ungefähr 4,5–5,5 km.</span></div>
 <div><b>ca. 17:30</b><span>Abfahrt aus Barcelona Richtung Calonge.</span></div>
@@ -1071,14 +1071,15 @@ section.view[data-view="home"] #holidayOverview{
 </div>
 
 <div class="feature-list">
-<div class="feature-item"><b>Parkhaus</b><span>Garaje Atarazanas: 2,10 m Einfahrtshöhe, WC, 24-Stunden-Betrieb; Preis und freie Plätze am Fahrtag prüfen.</span></div>
+<div class="feature-item"><b>Fahrzeughöhe mit Dachbox</b><span>Der Audi ist 2,05 m hoch. Es werden ausschließlich Parkhäuser mit mindestens 2,10 m bestätigter Einfahrtshöhe verwendet; 2,20 m oder mehr bleiben bevorzugt.</span></div>
+<div class="feature-item"><b>Parkhaus</b><span>Garaje Atarazanas: bestätigte Einfahrtshöhe 2,10 m, WC und 24-Stunden-Betrieb. Bei 2,05 m Fahrzeughöhe bleiben nur 5 cm Reserve; langsam einfahren und Dachboxhöhe vorher kontrollieren. Preis und freie Plätze am Fahrtag prüfen.</span></div>
 <div class="feature-item"><b>Kathedrale</b><span>Nur Außenansicht; kein Eintritt und keine Innenbesichtigung eingeplant.</span></div>
 <div class="feature-item"><b>Audi-Ladeprinzip</b><span>Die beiden Zunder-Stopps bleiben bestehen. Prozentwerte und Zeiten sind Audi-Referenzwerte und werden live neu berechnet.</span></div>
 </div>
 <div class="actions">
 <button class="btn primary" data-trip-route="barcelonaDrive">Komplette Autoroute</button>
 <button class="btn secondary" data-map="Zunder Transports Mariné 41.53876 2.16374">Zunder Mariné</button>
-<button class="btn secondary" data-map="Parking Camp Nou Avda Madrid Carrer de Lluçà 3 Barcelona">Parken Camp Nou</button>
+<button class="btn secondary" data-map="Parking APK2 Parc Científic Camp Nou Av. Doctor Marañón 8 Barcelona">Parken Camp Nou</button>
 <button class="btn secondary" data-map="FC Barcelona Official Store Spotify Camp Nou">Fanshop</button>
 <button class="btn secondary" data-map="Garaje Atarazanas Carrer del Portal de Santa Madrona 10 Barcelona">Parken Altstadt/Hafen</button>
 <button class="btn secondary" data-map="Monument a Colom Barcelona">Kolumbus</button>
@@ -1706,7 +1707,7 @@ const travel = {
     }
   },
   activities: [
-    {id:'a1',title:'Barcelona – Premium-Tagesplan',place:'Barcelona',summary:'Camp Nou, Sagrada Família, Kathedrale, Barri Gòtic und Port Vell ohne Metro und mit drei dachboxgeeigneten Parkhäusern.',map:'Sagrada Família Barcelona',extra:'Camp Nou an Carrer de Lluçà 3, danach Sagrada Família und Aparcament de Bailèn. Fahrzeughöhe 2,10 m beachten.'},
+    {id:'a1',title:'Barcelona – Premium-Tagesplan',place:'Barcelona',summary:'Camp Nou, Sagrada Família, Kathedrale, Barri Gòtic und Port Vell ohne Metro und mit drei dachboxgeeigneten Parkhäusern.',map:'Sagrada Família Barcelona',extra:'Camp Nou an Avinguda del Doctor Marañón 8, danach Sagrada Família und Aparcament de Bailèn. Fahrzeughöhe 2,10 m beachten.'},
     {id:'a2',title:'Costa Brava – Rundtour',place:'Begur · Pals · Peratallada',summary:'Begur, eine Badebucht, Pals und Peratallada in sinnvoller Reihenfolge.',map:'Begur Girona',extra:'Nur eine Badebucht auswählen und den Audi danach auf 90–95 % laden.'},
     {id:'a3',title:'Mooma Palau-sator',place:'Palau-sator',summary:'Cidrerie mit Apfelplantage und mediterraner Grillküche.',map:'Mooma Mas Saulot s/n 17257 Palau-sator',extra:'Mit Pals kombinieren und im Juli möglichst reservieren.',url:'https://mooma.myrestoo.net/en/reservar',tel:'+34872026088'},
     {id:'a4',title:'Schnorcheln & Medes-Inseln',place:"L'Estartit",summary:'Cala Pedrosa, Glasbodenboot, geführtes Schnorcheln und Espai Medes.',map:"Medes Islands boat tour L'Estartit",extra:'Morgens starten, ruhiges Wasser wählen und Wasserschuhe mitnehmen.'},
@@ -2959,7 +2960,7 @@ const tripRoutes = {
     destination:'11 Carrer Salines, 17258 L’Estartit, Spanien',
     waypoints:[
       '41.53876, 2.16374',
-      'Carrer de Lluçà 3, 08028 Barcelona, Spanien',
+      'Avinguda del Doctor Marañón 8, 08028 Barcelona, Spanien',
       'Carrer del Portal de Santa Madrona 10, 08001 Barcelona, Spanien',
       '41.85359, 3.08129'
     ]
