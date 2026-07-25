@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 23</title>
+<title>Spanien Travelbook 2026 · Version 24</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -647,13 +647,38 @@ section.view[data-view="home"] #holidayOverview{
 @media(min-width:720px){
   .shopping-filter-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
+
+/* V24: schlanke, tagesabhängige Startseite */
+#homeDaySelection{margin-top:16px}
+#homeDaySelection .section-title{margin-bottom:9px}
+#homeDriverView{margin-top:16px}
+#holidayOverview{margin-top:18px!important}
+.home-holiday-free #homeDriverView{display:none!important}
+.home-holiday-free #homeTravelFacts{display:none!important}
+.home-holiday-free #dailyWarnings{display:none!important}
+.home-holiday-free .hero-card{padding-bottom:20px}
+.home-holiday-free #holidayOverview{display:block!important}
+.home-driving #holidayOverview{display:none!important}
+.home-holiday-fixed #holidayOverview{display:block!important}
+.home-holiday-fixed #dailyWarnings{display:block!important}
+.home-holiday-fixed #homeDriverView{display:grid!important}
+.home-holiday-fixed #homeTravelFacts{display:block!important}
+#todayDateBadge{display:none!important}
+#todayDistance:empty{display:none!important}
+#todayEveningPlan[style*="display: none"]{display:none!important}
+#todayStageDetails:disabled,#todayEveningPlan:disabled,#todayHotelNav:disabled,
+#todayHotelDetails:disabled,#todayChargeNav:disabled,#todayChargePlan:disabled{display:none!important}
+@media(max-width:520px){
+  #homeDaySelection{margin-top:12px}
+  #holidayOverview .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 23 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 24 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -665,7 +690,7 @@ section.view[data-view="home"] #holidayOverview{
 <h1 id="todayTitle">Heute</h1>
 <p id="todaySubtitle">Im Mittelpunkt stehen Abfahrtzeiten, Tagesroute und Ladeplanung.</p>
 <div class="today-status"><span class="status-dot"></span><span id="todayStatus">Reisetag und Ladeplanung im Blick</span></div>
-<div class="today-brief" id="todayBrief">
+<div class="today-brief" id="homeTravelFacts">
 <div class="today-brief-head"><b id="todayBriefTitle">Heute: Aufenthalt L’Estartit</b><span id="todayBriefWindow">flexibler Urlaubstag</span></div>
 <div class="today-brief-grid">
 <div class="today-brief-item"><span id="todayBriefDepartureLabel">Start</span><b id="todayBriefDeparture">flexibel</b></div>
@@ -679,23 +704,12 @@ section.view[data-view="home"] #holidayOverview{
 </div>
 </div>
 </article>
-<div class="dashboard">
-<article class="metric"><div class="label" id="metricHotelLabel">Nächste Unterkunft</div><div class="value" id="metricHotel">ALMA BEACH ESTARTIT</div><div class="sub" id="metricHotelSub">L’Estartit · 24.–31.07.</div></article>
-</div>
-</div>
-<section class="weather-card" id="weatherCard">
-<div class="weather-head">
-<h3>Wetter heute &amp; morgen</h3>
-<button id="refreshWeather" type="button">Aktualisieren</button>
-</div>
-<div class="weather-grid" id="weatherGrid">
-<div class="weather-error">Wetterdaten werden geladen …</div>
-</div>
-<div class="weather-note">Wetter für den jeweiligen Reiseort.</div>
-</section>
-<div class="today-main">
+
+</div><section class="section" id="homeDaySelection"><div class="section-title"><h2>Reisetage</h2><span class="badge">Tag direkt auswählen</span></div><div class="day-strip" id="dayStrip"></div></section>
+
+<div class="today-main" id="homeDriverView">
 <article class="today-route">
-<div class="route-head"><div><span class="badge" id="todayDateBadge">Nächster Reisetag</span><h3 id="todayRouteTitle">Aufenthalt L’Estartit</h3></div><span class="badge" id="todayDistance">je nach Tageswahl</span></div>
+<div class="route-head"><div><span class="badge" id="todayDateBadge">Ausgewählter Tag</span><h3 id="todayRouteTitle">Aufenthalt L’Estartit</h3></div><span class="badge" id="todayDistance">je nach Tageswahl</span></div>
 <div class="route-line"><div class="route-marker"><i></i></div><div class="route-place"><b id="todayFrom">ALMA BEACH ESTARTIT</b><span>Start</span></div></div>
 <div class="route-line"><div class="route-marker last"><i></i></div><div class="route-place"><b id="todayTo">L’Estartit und Umgebung</b><span>Ziel</span></div></div>
 <div class="route-grid">
@@ -712,7 +726,7 @@ section.view[data-view="home"] #holidayOverview{
 </div>
 <iframe class="today-map" id="todayRouteMap" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google-Maps-Karte der Tagesroute"></iframe>
 </div>
-<div class="actions"><button class="btn primary" id="todayNavigate">Navigation starten</button><button class="btn secondary" id="todayStageDetails">Etappendetails</button><button class="btn secondary" id="todayEveningPlan">Abendprogramm</button><button class="btn secondary" id="todayEveningRoute">Abendroute Maps</button></div>
+<div class="actions"><button class="btn primary" id="todayNavigate">Navigation starten</button><button class="btn secondary" id="todayStageDetails">Etappendetails</button><button class="btn secondary" id="todayEveningPlan">Abendprogramm</button></div>
 </article>
 <div class="today-columns">
 <article class="today-panel"><span class="badge" id="todayHotelLabel">Nächste Unterkunft</span><h3 id="todayHotelName">ALMA BEACH ESTARTIT</h3><p id="todayHotelInfo">L’Estartit · Aufenthalt bis 31.07.</p><div class="actions"><button class="btn primary" id="todayHotelNav">Navigation</button><button class="btn secondary" id="todayHotelDetails">Details</button></div></article>
@@ -720,8 +734,8 @@ section.view[data-view="home"] #holidayOverview{
 </div>
 </div><section class="section" id="holidayOverview">
 <div class="section-title">
-<h2>L’Estartit – Schnellzugriff</h2>
-<span class="badge">24.–31.07. · direkt auswählen</span>
+<h2>L’Estartit</h2>
+<span class="badge">Unterkunft, Essen, Einkauf und Aktivitäten</span>
 </div>
 <div class="quick-grid">
 <button class="quick-action" data-jump="estartitAccommodation"><span>🏨</span>Unterkunft</button>
@@ -747,13 +761,7 @@ section.view[data-view="home"] #holidayOverview{
 </div>
 </section>
 
-<section class="section"><div class="section-title"><h2>Schnellzugriff</h2><span class="badge">Unterwegs</span></div><div class="quick-grid">
-<button class="quick-action" data-detail-type="hotel" data-id="h1"><span>🏨</span>Unterkunft</button>
-<button class="quick-action" data-go="charging"><span>⚡</span>Laden</button>
-<button class="quick-action" id="quickRoute"><span>🗺</span>Route</button>
-<button class="quick-action" data-home-jump="holidayOverview" id="quickHoliday"><span>🏖️</span>L’Estartit</button>
-</div></section>
-<section class="section"><div class="section-title"><h2>Reisetage</h2><span class="badge">22.07.–02.08.</span></div><div class="day-strip" id="dayStrip"></div></section>
+
 </div>
 </section>
 <section class="view" data-view="trip">
@@ -3292,6 +3300,21 @@ function renderToday(){
     else if(ctx.mode==='holiday') warningText.textContent='L’Estartit: Wind, Wellengang, UV-/Hitzeentwicklung, Waldbrandwarnungen und Zufahrten zu Buchten oder Ausflugsorten vor der Auswahl prüfen.';
     else warningText.textContent='Vor Reisebeginn Verkehr, Wetterwarnungen, Waldbrandlage und Ladeverfügbarkeit für die nächste Etappe prüfen.';
   }
+  const homeView=document.querySelector('section.view[data-view="home"]');
+  if(homeView){
+    homeView.classList.remove('home-driving','home-holiday-free','home-holiday-fixed');
+    if(ctx.mode==='holiday' && !stage.fixedHolidayPlan){
+      homeView.classList.add('home-holiday-free');
+      $('#todayTitle').textContent='L’Estartit';
+      $('#todaySubtitle').textContent='Wähle unten direkt Unterkunft, Restaurants, Einkaufen, Strände, Aktivitäten oder Ausflüge.';
+      $('#todayStatus').textContent='Aufenthalt 24.–31.07.';
+    }else if(ctx.mode==='holiday' && stage.fixedHolidayPlan){
+      homeView.classList.add('home-holiday-fixed');
+    }else{
+      homeView.classList.add('home-driving');
+    }
+  }
+
   const realStage=actualStage;
   const quickRoute=$('#quickRoute');
   if(quickRoute){
@@ -3829,7 +3852,7 @@ function runSelfTest(){
   results.push(chargingStages.find(s=>s.stageId==='s6')?.primary?.name.includes('Bonn'));
   results.push(travel.stages.every(s=>/^\d{2}:\d{2}$/.test(s.departureTime) && /^\d{2}:\d{2}$/.test(s.arrivalTime)));
   results.push(Boolean(document.getElementById('todayBrief')) && Boolean(document.getElementById('todayDeparture')) && !document.getElementById('todaySection') && !document.getElementById('todayState'));
-  results.push(Boolean(document.getElementById('weatherCard')) && Boolean(document.getElementById('weatherGrid')) && typeof renderWeather==='function');
+  results.push(document.getElementById('weatherCard')===null);
   results.push(travel.stages[0].todayStops==='Erftstadt + Trier + Val-de-Meuse');
   results.push(Boolean(document.getElementById('todayRouteMap')) && Boolean(document.getElementById('todayMapLabel')) && Boolean(document.getElementById('todayMapStops')));
   results.push(typeof googleMapsEmbedUrl==='function' && googleMapsEmbedUrl('A','B',['C']).includes('output=embed'));
@@ -3961,9 +3984,6 @@ renderPreparation();
 renderDayStrip();
 render();
 renderToday();
-renderWeather();
-if($('#refreshWeather')) $('#refreshWeather').addEventListener('click',renderWeather);
-
 const STAGEBOOK_HIDE_KEY='spain2026:stagebook:hideDone';
 let activeStageBookId=safeStorage.get('spain2026:stagebook:active')||'s1';
 
@@ -4438,5 +4458,64 @@ document.querySelectorAll('[data-jump]').forEach(button=>{
   setTimeout(setupShoppingButtons,100);
 })();
 </script>
+
+<script>
+(function(){
+  function openMapsQuery(query){
+    if(!query) return;
+    var url='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query);
+    window.open(url,'_blank','noopener');
+  }
+
+  function bindStartPageFallbacks(){
+    var home=document.querySelector('section.view[data-view="home"]');
+    if(!home || home.getAttribute('data-v24-ready')==='1') return;
+
+    var nav=document.getElementById('todayNavigate');
+    if(nav){
+      nav.addEventListener('click',function(){
+        if(typeof nav.onclick==='function') return;
+        var from=document.getElementById('todayFrom');
+        var to=document.getElementById('todayTo');
+        var origin=from?from.textContent.trim():'';
+        var destination=to?to.textContent.trim():'';
+        if(destination){
+          var url='https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(origin)+'&destination='+encodeURIComponent(destination);
+          window.open(url,'_blank','noopener');
+        }
+      });
+    }
+
+    var hotelNav=document.getElementById('todayHotelNav');
+    if(hotelNav){
+      hotelNav.addEventListener('click',function(){
+        if(typeof hotelNav.onclick==='function') return;
+        var name=document.getElementById('todayHotelName');
+        openMapsQuery(name?name.textContent.trim():'');
+      });
+    }
+
+    var stageDetails=document.getElementById('todayStageDetails');
+    if(stageDetails){
+      stageDetails.addEventListener('click',function(){
+        if(typeof stageDetails.onclick==='function') return;
+        var tripButton=document.querySelector('.nav-btn[data-view-target="trip"]');
+        if(tripButton) tripButton.click();
+      });
+    }
+
+    home.setAttribute('data-v24-ready','1');
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',bindStartPageFallbacks);
+  }else{
+    bindStartPageFallbacks();
+  }
+  window.addEventListener('pageshow',bindStartPageFallbacks);
+  setTimeout(bindStartPageFallbacks,150);
+})();
+</script>
+
 </body>
 </html>
