@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026</title>
+<title>Spanien Travelbook 2026 · Version 13</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -460,13 +460,31 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
 .method-box span{display:block;margin-top:4px;color:var(--muted);font-size:12px;line-height:1.4}
 @media(min-width:760px){.curated-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.method-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:520px){.method-grid{grid-template-columns:1fr}}
+
+.chrono-day{display:grid;gap:14px;margin-top:14px}
+.chrono-block{background:var(--panel);border:1px solid var(--line);border-radius:25px;padding:17px;box-shadow:var(--shadow2)}
+.chrono-block.morning{border-top:6px solid var(--blue)}
+.chrono-block.road{border-top:6px solid var(--green)}
+.chrono-block.arrival{border-top:6px solid var(--brand)}
+.chrono-block h3{margin:0 0 10px}
+.chrono-list{display:grid;gap:9px}
+.chrono-row{display:grid;grid-template-columns:125px 1fr;gap:10px;padding:11px 12px;border-radius:15px;background:var(--panel2)}
+.chrono-row b{font-size:13px}
+.chrono-row span{font-size:13px;color:var(--muted);line-height:1.45}
+.estartit-destination-grid{display:grid;gap:12px;margin-top:14px}
+.estartit-destination-card{padding:14px;border-radius:18px;background:var(--panel2)}
+.estartit-destination-card h4{margin:0 0 6px}
+.estartit-destination-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+@media(min-width:800px){.chrono-day{grid-template-columns:1fr 1fr}.chrono-block.road{grid-column:1/-1}.estartit-destination-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.chrono-row{grid-template-columns:1fr;gap:3px}}
+
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 13 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -3561,12 +3579,32 @@ function renderStageBookSelector(){
  const el=document.getElementById('stageBookSelector'); if(!el) return;
  el.innerHTML=travel.stages.map(st=>`<button class="stage-select ${st.id===activeStageBookId?'active':''}" data-stagebook="${esc(st.id)}"><b>Ziel: ${esc(st.to)}</b><span>Start: ${esc(st.from)} · ${esc(st.date)}</span></button>`).join('');
 }
+function originHotelForStage(st){return travel.hotels.find(h=>h.place===st.from)||null;}
+function destinationHotelForStage(st){return travel.hotels.find(h=>h.place===st.to)||null;}
+function serviceByType(stageId,needle){return (stageServices[stageId]||[]).find(x=>x.type.toLowerCase().includes(needle.toLowerCase()))||null;}
+function localChargingText(st,hotel){
+ if(st.id==='s3') return 'Nach der Ankunft nur laden, wenn der tatsächliche SoC unter 60 % liegt. Bekannte Optionen rund um Torroella und L’Estartit bleiben im Bereich „Laden während des Aufenthalts“ hinterlegt; Live-Status und DKV-Akzeptanz vor Nutzung prüfen.';
+ if(st.id==='s4') return 'Am Ziel nur bei Ankunft unter 60 % laden. Der geplante Hauptladevorgang erfolgt am nächsten Morgen in Riom.';
+ if(st.id==='s5') return 'Am Abend ist kein Laden vorgesehen. Der geplante Hauptladevorgang erfolgt am nächsten Morgen am Waves Actisud.';
+ if(st.id==='s6') return 'Ziel ist Zuhause; keine weitere Reiseetappe.';
+ return hotel?.charging||st.destinationCharging||'Lademöglichkeit am Ziel nach tatsächlichem Ankunfts-SoC prüfen.';
+}
+function plannedCheckout(st,originHotel){
+ if(st.id==='s1') return `Abfahrt zuhause um ${st.departureTime} Uhr.`;
+ if(originHotel) return `${originHotel.checkout}. Geplante Abfahrt: ${st.departureTime} Uhr, damit die Zielankunft ${st.arrivalWindow||st.arrivalTime} Uhr erreicht wird.`;
+ return `Abfahrt ${st.departureTime} Uhr, ausgerichtet auf die Zielankunft ${st.arrivalWindow||st.arrivalTime} Uhr.`;
+}
+function breakfastText(st){
+ const breakfast=serviceByType(st.id,'frühstück')||serviceByType(st.id,'früher start');
+ return breakfast?`${breakfast.name}: ${breakfast.info}`:'Frühstück beziehungsweise Proviant gemäß bestehendem Etappenplan.';
+}
 function renderStageBook(){
  const host=document.getElementById('stageBookContent'); if(!host) return;
  const st=travel.stages.find(x=>x.id===activeStageBookId)||travel.stages[0];
  activeStageBookId=st.id; safeStorage.set('spain2026:stagebook:active',st.id);
  const plan=chargingStages.find(x=>x.stageId===st.id);
- const hotel=travel.hotels.find(x=>x.stageId===st.id)||travel.hotels.find(x=>x.city===st.to);
+ const originHotel=originHotelForStage(st);
+ const hotel=destinationHotelForStage(st);
  const hideDone=safeStorage.get(STAGEBOOK_HIDE_KEY)==='1';
  const slots=stageChargingSlots(plan);
  let firstOpenFound=false;
@@ -3582,7 +3620,7 @@ function renderStageBook(){
       <div class="stage-charge-fact"><span>SoC</span><b>${esc(c.targetSoc||`${c.arrivalSoc||''} → ${c.departureSoc||''}`)}</b></div>
       <div class="stage-charge-fact"><span>Toilette</span><b>${esc(c.toiletName||c.toilet||'vor Ort prüfen')}</b></div>
       <div class="stage-charge-fact"><span>Gastronomie</span><b>${esc(c.food||'vor Ort prüfen')}</b></div>
-      <div class="stage-charge-fact"><span>Weitere Ladeoptionen</span><b>${alt.length} hinterlegt</b></div>
+      <div class="stage-charge-fact"><span>Alternativen</span><b>${alt.length} hinterlegt</b></div>
     </div>
     <div class="stage-charge-actions">
       <button class="btn primary" data-map="${esc(c.map||c.location)}">Navigation</button>
@@ -3592,52 +3630,65 @@ function renderStageBook(){
    </article>`;
  }).join('')||'<div class="charge-empty">Für diese Etappe ist kein separater Ladehalt erforderlich.</div>';
 
- const services=(stageServices[st.id]||[]).map(x=>`<div class="stage-service"><strong>${esc(x.type)} · ${esc(x.name)}</strong><span>${esc(x.info)}</span></div>`).join('');
- host.innerHTML=`<div class="stage-layout">
-  <section class="stage-block full">
-   <div class="section-title"><h2>${esc(st.from)} → ${esc(st.to)}</h2><span class="badge">${esc(st.date)} · ${esc(st.weekday)}</span></div>
-   <div class="stage-location-band">
-    <div class="stage-location"><small>Startpunkt</small><b>${esc(st.from)}</b></div>
-    <div class="stage-arrow">→</div>
-    <div class="stage-location"><small>Etappenziel</small><b>${esc(st.to)}</b></div>
-   </div>
+ const estartitExtra=st.id==='s3'?`
+  <div class="estartit-destination-grid">
+   <div class="estartit-destination-card"><h4>Einkaufen</h4><p>Supermärkte, Fisch, Metzgereien, Bäckereien und weitere Einkaufsmöglichkeiten rund um L’Estartit und Torroella.</p><div class="actions"><button class="btn primary" data-target-section="estartitShoppingGuide">Einkaufen öffnen</button></div></div>
+   <div class="estartit-destination-card"><h4>Direktvermarkter</h4><p>Mooma, Reis, Olivenöl, Obst, Gemüse, Fisch und weitere bereits besprochene regionale Produzenten.</p><div class="actions"><button class="btn primary" data-target-section="estartitCurated30km">Direktvermarkter öffnen</button></div></div>
+   <div class="estartit-destination-card"><h4>Ausflüge</h4><p>Barcelona, Costa-Brava-Rundtour und die freien Ausflugsoptionen während des Aufenthalts.</p><div class="actions"><button class="btn primary" data-target-section="estartitDayPlans">Ausflüge öffnen</button></div></div>
+  </div>`:'';
+
+ host.innerHTML=`<section class="stage-block">
+   <div class="section-title"><h2>${esc(st.date)} · ${esc(st.from)} → ${esc(st.to)}</h2><span class="badge">${esc(st.weekday)}</span></div>
    <div class="stage-kpis">
-    <div class="stage-kpi"><span>Abfahrt</span><b>${esc(st.departureTime)}</b></div>
-    <div class="stage-kpi"><span>Ankunft</span><b>${esc(st.arrivalWindow||st.arrivalTime)}</b></div>
+    <div class="stage-kpi"><span>Geplante Abfahrt</span><b>${esc(st.departureTime)}</b></div>
+    <div class="stage-kpi"><span>Geplante Ankunft</span><b>${esc(st.arrivalWindow||st.arrivalTime)}</b></div>
     <div class="stage-kpi"><span>Strecke</span><b>${esc(st.distance)}</b></div>
     <div class="stage-kpi"><span>Start-SoC</span><b>${esc(st.startSoc)}</b></div>
    </div>
-   <div class="actions"><button class="btn primary" data-stage-route="${esc(st.id)}">Route vom Start zum Ziel</button><button class="btn secondary" data-detail-type="stage" data-id="${esc(st.id)}">Tagesdetails</button></div>
   </section>
-
-  <section class="stage-block stage-start-block">
-   <h3>Am Startpunkt · ${esc(st.from)}</h3>
-   <p>Abfahrt, Frühstück, Proviant und die letzten Vorbereitungen vor der Etappe.</p>
-   <div class="stage-service-grid">${services||'<div class="stage-service"><strong>Direkt starten</strong><span>Für diesen Startpunkt ist kein zusätzlicher Servicehalt vorgesehen.</span></div>'}</div>
-  </section>
-
-  <section class="stage-block stage-destination-block">
-   <h3>Am Etappenziel · ${esc(st.to)}</h3>
-   <p><b>${esc(st.overnight||st.to)}</b><br>${esc(st.evening||'')}</p>
-   <div class="actions">
-    ${hotel?`<button class="btn primary" data-detail-type="hotel" data-id="${esc(hotel.id)}">Unterkunft am Ziel</button><button class="btn secondary" data-map="${esc(hotel.address||st.destinationAddress)}">Zum Etappenziel</button>`:`<button class="btn primary" data-map="${esc(st.destinationAddress)}">Zum Etappenziel</button>`}
-    <button class="btn secondary" data-evening-stage="${esc(st.id)}">Abend am Ziel</button>
-   </div>
-  </section>
-
-  <section class="stage-block full stage-road-block">
-   <div class="section-title"><h2>Unterwegs von ${esc(st.from)} nach ${esc(st.to)}</h2><span class="badge">${slots.length} Ladehalt${slots.length===1?'':'e'}</span></div>
-   ${chargeHtml}
-  </section>
- </div>`; renderStageBookSelector();
+  <div class="chrono-day">
+   <section class="chrono-block morning">
+    <h3>Morgens · ${esc(st.from)}</h3>
+    <div class="chrono-list">
+     <div class="chrono-row"><b>Check-out / Start</b><span>${esc(plannedCheckout(st,originHotel))}</span></div>
+     <div class="chrono-row"><b>Frühstück</b><span>${esc(breakfastText(st))}</span></div>
+     <div class="chrono-row"><b>Ladevorbereitung</b><span>${esc(st.chargingPlan)}</span></div>
+    </div>
+    <div class="actions">${originHotel?`<button class="btn primary" data-detail-type="hotel" data-id="${esc(originHotel.id)}">Unterkunft am Start</button>`:''}<button class="btn secondary" data-stage-route="${esc(st.id)}">Tagesroute</button></div>
+   </section>
+   <section class="chrono-block arrival">
+    <h3>Ankunft · ${esc(st.to)}</h3>
+    <div class="chrono-list">
+     <div class="chrono-row"><b>Ankunftszeit</b><span>${esc(st.arrivalWindow||st.arrivalTime)} Uhr</span></div>
+     <div class="chrono-row"><b>Check-in</b><span>${esc(hotel?`${hotel.name}: ${hotel.checkin}`:(st.to==='Hasbergen'?'Ankunft zuhause.':'Check-in gemäß bestehender Unterkunftsangabe.'))}</span></div>
+     <div class="chrono-row"><b>Laden vor Ort</b><span>${esc(localChargingText(st,hotel))}</span></div>
+     <div class="chrono-row"><b>Abendprogramm</b><span>${esc(st.evening||'Ankunft am Ziel.')}</span></div>
+    </div>
+    <div class="actions">${hotel?`<button class="btn primary" data-detail-type="hotel" data-id="${esc(hotel.id)}">Unterkunft am Ziel</button><button class="btn secondary" data-map="${esc(hotel.address||st.destinationAddress)}">Zum Check-in</button>`:`<button class="btn primary" data-map="${esc(st.destinationAddress)}">Zum Ziel</button>`}<button class="btn secondary" data-evening-stage="${esc(st.id)}">Abendprogramm öffnen</button></div>
+    ${estartitExtra}
+   </section>
+   <section class="chrono-block road">
+    <div class="section-title"><h3>Unterwegs · ${esc(st.from)} → ${esc(st.to)}</h3><span class="badge">${slots.length} Ladehalt${slots.length===1?'':'e'}</span></div>
+    <div class="chrono-list" style="margin-bottom:12px"><div class="chrono-row"><b>Fahrplan</b><span>${esc(st.plan)}</span></div></div>
+    ${chargeHtml}
+   </section>
+  </div>`;
+ renderStageBookSelector();
  bindStageBookLocal();
 }
+
 function bindStageBookLocal(){
  document.querySelectorAll('[data-stagebook]').forEach(b=>b.onclick=()=>{activeStageBookId=b.dataset.stagebook;renderStageBook();});
  const hide=document.getElementById('stagebookHideDone');
  if(hide) hide.onclick=()=>{const now=safeStorage.get(STAGEBOOK_HIDE_KEY)==='1'; if(now)safeStorage.remove(STAGEBOOK_HIDE_KEY);else safeStorage.set(STAGEBOOK_HIDE_KEY,'1');renderStageBook();};
  document.querySelectorAll('[data-stagebook-done]').forEach(b=>b.onclick=()=>{
   const [sid,slot]=b.dataset.stagebookDone.split(':'); setChargeStopDone(sid,slot,!isChargeStopDone(sid,slot)); renderStageBook();
+ });
+
+ document.querySelectorAll('[data-target-section]').forEach(b=>b.onclick=()=>{
+  showView('more');
+  const target=document.getElementById(b.dataset.targetSection);
+  if(target) setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),80);
  });
 }
 
