@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 22</title>
+<title>Spanien Travelbook 2026 · Version 23</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -122,29 +122,12 @@ linear-gradient(135deg,#0f172a,#334155 56%,#64748b)}
   .cards.two{grid-template-columns:repeat(2,1fr)}
 }
 
-.prep-progress{display:grid;gap:10px;margin-bottom:14px}
-.prep-progress-head{display:flex;justify-content:space-between;gap:12px;align-items:center}
-.prep-progress-head b{font-size:15px}
-.prep-progress-head span{font-size:13px;color:var(--muted)}
-.prep-bar{height:10px;background:var(--panel2);border-radius:999px;overflow:hidden}
-.prep-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue));transition:width .25s ease}
-.prep-groups{display:grid;gap:14px}
-.prep-group{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:17px;box-shadow:var(--shadow2)}
-.prep-group h3{margin:0 0 10px}
-.prep-item{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--line)}
-.prep-item:first-of-type{border-top:0}
-.prep-item input{width:20px;height:20px;margin-top:1px}
-.prep-item span{line-height:1.4}
-.prep-item.done span{text-decoration:line-through;color:var(--muted)}
-.reset-btn{border:0;background:transparent;color:var(--blue);font-weight:800;padding:0}
-@media(min-width:720px){.prep-groups{grid-template-columns:repeat(2,1fr)}}
-
 @media print{
   .topbar,.bottom-nav,.drawer,.sheet,.search-overlay,.detail-sheet,.actions,.link-btn,.icon-btn,.today-map-wrap{display:none!important}
   body{background:#fff;color:#000}
   .app{max-width:none;padding-bottom:0}
   .view{display:block!important}
-  .card,.metric,.today-card,.stop-card,.hotel-card,.prep-group{box-shadow:none;break-inside:avoid}
+  .card,.metric,.today-card,.stop-card,.hotel-card{box-shadow:none;break-inside:avoid}
   .hero-card{background:#111827!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 
@@ -670,7 +653,7 @@ section.view[data-view="home"] #holidayOverview{
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 22 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 23 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -680,8 +663,8 @@ section.view[data-view="home"] #holidayOverview{
 <article class="hero-card">
 <div class="eyebrow" id="todayEyebrow">Spanien Travelbook 2026</div>
 <h1 id="todayTitle">Heute</h1>
-<p id="todaySubtitle">Dein persönlicher Reisebegleiter zeigt automatisch den passenden Reisetag.</p>
-<div class="today-status"><span class="status-dot"></span><span id="todayStatus">Reisevorbereitung läuft</span></div>
+<p id="todaySubtitle">Im Mittelpunkt stehen Abfahrtzeiten, Tagesroute und Ladeplanung.</p>
+<div class="today-status"><span class="status-dot"></span><span id="todayStatus">Reisetag und Ladeplanung im Blick</span></div>
 <div class="today-brief" id="todayBrief">
 <div class="today-brief-head"><b id="todayBriefTitle">Heute: Aufenthalt L’Estartit</b><span id="todayBriefWindow">flexibler Urlaubstag</span></div>
 <div class="today-brief-grid">
@@ -763,14 +746,7 @@ section.view[data-view="home"] #holidayOverview{
 <button class="btn secondary" id="currentTrafficRoute">Aktuelle Route &amp; Verkehr</button>
 </div>
 </section>
-<section class="section" id="preparationSection">
-<div class="section-title"><h2>Reisevorbereitung</h2><button class="reset-btn" id="resetPrep">Zurücksetzen</button></div>
-<div class="prep-progress">
-<div class="prep-progress-head"><b id="prepLabel">0 von 17 erledigt</b><span id="prepPercent">0 %</span></div>
-<div class="prep-bar"><span id="prepBar"></span></div>
-</div>
-<div class="prep-groups" id="prepGroups"></div>
-</section>
+
 <section class="section"><div class="section-title"><h2>Schnellzugriff</h2><span class="badge">Unterwegs</span></div><div class="quick-grid">
 <button class="quick-action" data-detail-type="hotel" data-id="h1"><span>🏨</span>Unterkunft</button>
 <button class="quick-action" data-go="charging"><span>⚡</span>Laden</button>
@@ -3767,17 +3743,6 @@ if($('#quickHoliday')) $('#quickHoliday').addEventListener('click',()=>{
   setTimeout(()=>document.getElementById('holidayOverview')?.scrollIntoView({behavior:'smooth',block:'start'}),80);
 });
 
-if($('#resetPrep')) $('#resetPrep').addEventListener('click',()=>{
-  if(confirm('Reisevorbereitung wirklich zurücksetzen?')){
-    $$('[data-prep]').forEach(cb=>{
-      safeStorage.remove('travelprep:'+cb.dataset.prep);
-      cb.checked=false;
-      cb.closest('.prep-item').classList.remove('done');
-    });
-    updatePreparationProgress();
-  }
-});
-
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLayers();});
 
@@ -4410,7 +4375,6 @@ document.querySelectorAll('[data-jump]').forEach(button=>{
 
 })();
 </script>
-
 <script>
 (function(){
   function setupShoppingButtons(){
@@ -4474,6 +4438,5 @@ document.querySelectorAll('[data-jump]').forEach(button=>{
   setTimeout(setupShoppingButtons,100);
 })();
 </script>
-
 </body>
 </html>
