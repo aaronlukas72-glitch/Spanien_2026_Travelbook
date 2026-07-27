@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 31</title>
+<title>Spanien Travelbook 2026 · Version 32</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -630,13 +630,14 @@ section.view[data-view="home"] #holidayOverview{
 @media(min-width:760px){.snorkel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.snorkel-map{grid-column:1/-1}}
 @media(max-width:520px){.snorkel-facts{grid-template-columns:1fr}}
 
+/* V32: Rücketappe L’Estartit–Clermont-Ferrand · Start 09:30 mit 85 % · Millau-Besucherzentrum */
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 31 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 32 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -1194,7 +1195,7 @@ section.view[data-view="home"] #holidayOverview{
 <div class="cards two">
 <article class="card">
 <h3>Abreise aus L’Estartit</h3>
-<p>Gepäck, Unterkunft, Fahrzeug und Ladezustand am Vorabend vorbereiten. Audi möglichst auf 90–95 % laden.</p>
+<p>Gepäck, Unterkunft und Fahrzeug am Vorabend vorbereiten. Geplanter Start am 31.07. um 09:30 Uhr mit 85 % SoC.</p>
 <div class="actions">
 <button class="btn primary" data-stage-route="s4">Tagesroute öffnen</button>
 <button class="btn secondary" data-go="trip">Etappenziel Clermont-Ferrand</button>
@@ -1621,18 +1622,18 @@ const travel = {
     routeWaypoints:['Brioche Dorée Odysseum, 2 Place de Lisbonne, 34000 Montpellier, Frankreich','Centre Commercial Cap Roussillon, Avenue Georges Méliès, 66600 Rivesaltes, Frankreich','Camí del Molí, s/n, 17257 Torroella de Montgrí, Spanien'],
     plan:'Um 09:45 Uhr mit fest eingeplanten 85 % am Ibis Budget starten und zuerst Brioche Dorée im Einkaufszentrum Odysseum, 2 Place de Lisbonne, anfahren. Odysseum liegt direkt an der A709, Ausfahrt 29, und bietet große reguläre Parkflächen; die ersten zwei Stunden sind kostenlos. Etwa 20–30 Minuten für Anfahrt, Parken, Einkauf und Weiterfahrt einplanen. Gegen 10:20 Uhr direkt über A709/A9 Richtung Spanien starten. Tesla Rivesaltes am Centre Commercial Cap Roussillon ist der Hauptladestopp. Bei einem erwarteten Ankunfts-SoC von ungefähr 35–45 % wird dort bis exakt 90 % geladen. Dafür realistisch etwa 35–40 Minuten inklusive Anschließen und Ladeende einplanen. Anschließend nach Torroella fahren; dort werden ungefähr 60–70 % erwartet. Am Carrefour Market Torroella mit bis zu 60 kW bis exakt 95 % laden. Dafür realistisch etwa 25–35 Minuten einplanen. Danach direkt zur Unterkunft nach L’Estartit fahren. Audi-Prognose, Tesla-App, DKV-App und Live-Status bleiben am Fahrtag verbindlich.'},
 
-    {id:'s4',originAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',destinationAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',date:'31.07.',weekday:'Fr',departureTime:'06:45',arrivalTime:'16:30',arrivalWindow:'16:30',totalDayTime:'ca. 9 Std. 45 Min.',todayStops:'Caylar + Peyre + Viadukt + Aire de l’Aveyron',todayChecks:['Mit 95 % starten','Aire du Caylar ist Pflichtstopp','Peyre, Viadukt und Belvédère zeitlich berücksichtigen'],from:'L’Estartit',to:'Clermont-Ferrand',title:'L’Estartit → Clermont-Ferrand',
-    summary:'Start mit 95 %. Bei 22 kWh/100 km wird der Caylar zum ersten Pflichtstopp. Nach Peyre, Viadukt und Belvédère folgt eine kurze zweite Ladung an der Aire de l’Aveyron.',
-    tags:['Etappe','Millau','Rückfahrt'],distance:'ca. 530 km Straßenstrecke über A75/Millau',driveTime:'ca. 9–9,75 Std. inkl. zwei Ladungen, Peyre, Viadukt und Belvédère',
-    toll:'A75 größtenteils mautfrei; Millau-Viadukt Sommerpreis 2026: 13,80 € für Klasse 1',
-    chargingPlan:'Aire du Caylar ca. 18–22 % → 85 % · Peyre → Viadukt → Belvédère → Aire de l’Aveyron ca. 50–55 % → 80 %',
-    evening:'18:45 Kathedrale und Place de la Victoire · 20:00 Le Puy de la Lune',
-    startSoc:'95 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Airbnb bei Emilien',
-    destinationCharging:'Am Etappenziel nur bei Ankunft unter 60 % auf 85 % laden; ab 60 % nicht laden',
-    routeWaypoints:['Aire du Caylar A75 34520 Le Caylar Frankreich','Parking Haut Peyre 12100 Comprégnac','Viaduc de Millau A75','Aire du Viaduc de Millau Brocuéjouls 12100 Millau Frankreich','Aire de l’Aveyron A75 Sévérac-d’Aveyron'],
-    plan:'L’Estartit mit 95 % verlassen. Nach etwa 260 km Aire du Caylar mit rund 18–22 % erreichen und auf 85 % laden. Danach Peyre, Viadukt und Belvédère besuchen. An der Aire de l’Aveyron liegt der SoC voraussichtlich noch bei etwa 50–55 %; dort nur kurz bis ungefähr 80 % nachladen. Clermont-Ferrand wird mit etwa 28–35 % erreicht. Am nächsten Morgen in Riom auf ungefähr 95 % laden.'},
+    {id:'s4',originAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',destinationAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',date:'31.07.',weekday:'Fr',departureTime:'09:30',arrivalTime:'ca. 19:00',arrivalWindow:'18:45–19:30',totalDayTime:'ca. 9 Std. 30 Min.',todayStops:'Aire du Caylar + Millau-Besucherzentrum + Aire de l’Aveyron',todayChecks:['Mit 85 % starten','DKV-/Tesla-Live-Status vor Abfahrt prüfen','Am Besucherzentrum 75–90 Minuten für Ausstellung und Aussichtspunkt einplanen'],from:'L’Estartit',to:'Clermont-Ferrand',title:'L’Estartit → Clermont-Ferrand',
+summary:'Start um 09:30 Uhr mit 85 %. Erster HPC- und Mittagstopp an der Aire du Caylar. Danach Fahrt über das Millau-Viadukt, Besuch des Besucherzentrums und Spaziergang zum markierten Aussichtspunkt. Nördlich von Millau folgt eine zweite kurze HPC-Ladung an der Aire de l’Aveyron.',
+tags:['Etappe','Millau','Besucherzentrum','Rückfahrt'],distance:'ca. 530 km Straßenstrecke über A75 und Millau',driveTime:'ca. 9–10 Std. inklusive zwei Ladepausen und 75–90 Minuten Viadukt-Besichtigung',
+toll:'A75 größtenteils mautfrei; Maut für das Millau-Viadukt am Fahrtag prüfen',
+chargingPlan:'Aire du Caylar voraussichtlich ca. 15–20 % → 80–85 % · Aire de l’Aveyron voraussichtlich ca. 20 % → 80 %',
+evening:'Nach Ankunft Check-in und nur noch ein unkompliziertes Abendessen in Clermont-Ferrand',
+startSoc:'85 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Airbnb bei Emilien',
+destinationCharging:'Voraussichtliche Ankunft mit ausreichender Reserve. Am Etappenziel nur laden, wenn der Audi weniger als etwa 35 % prognostiziert.',
+routeWaypoints:['Tesla Supercharger Aire du Caylar A75 34520 Le Caylar Frankreich','Viaduc de Millau A75','Aire du Viaduc de Millau Brocuéjouls 12100 Millau Frankreich','Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron Frankreich'],
+plan:'09:30 Uhr Abfahrt in L’Estartit mit 85 % SoC. Gegen 12:10–12:20 Uhr Ankunft an der Aire du Caylar mit voraussichtlich 15–20 %. Während einer Mittagspause auf 80–85 % laden und ungefähr um 12:50 Uhr weiterfahren. Gegen 14:05–14:20 Uhr das Millau-Viadukt überqueren und anschließend direkt an der Aire du Viaduc de Millau beziehungsweise am Besucherzentrum parken. Für Besucherzentrum, Ausstellung und den Spaziergang zum markierten Belvédère 75–90 Minuten einplanen. Gegen 15:40–15:50 Uhr weiterfahren. Etwa 16:20 Uhr zweite kurze HPC-Pause an der Aire de l’Aveyron; bei ungefähr 20 % bis 80 % laden. Danach direkte Weiterfahrt nach Clermont-Ferrand. Geplante Ankunft etwa 18:45–19:15 Uhr. Audi-Navigation, DKV-App, Tesla-App, Verkehr und Ladeverfügbarkeit bleiben am Fahrtag verbindlich.'},
 
-    {id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'07:45',arrivalTime:'16:30',arrivalWindow:'16:30',totalDayTime:'ca. 8 Std. 45 Min.',todayStops:'Riom + Beaune-Tailly + Laxou',todayChecks:['Vor Abfahrt in Riom auf etwa 95 % laden','Tesla-App mit DKV Card +Charge nutzen','Beaune-Tailly auf etwa 85 % laden'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
+{id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'07:45',arrivalTime:'16:30',arrivalWindow:'16:30',totalDayTime:'ca. 8 Std. 45 Min.',todayStops:'Riom + Beaune-Tailly + Laxou',todayChecks:['Vor Abfahrt in Riom auf etwa 95 % laden','Tesla-App mit DKV Card +Charge nutzen','Beaune-Tailly auf etwa 85 % laden'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
     summary:'Nach dem morgendlichen Laden in Riom mit 95 % starten. Bei 22 kWh/100 km sind zwei Fahrtstopps erforderlich: Beaune-Tailly und eine kurze Nachladung in Laxou.',
     tags:['Etappe','Metz','Rückfahrt'],distance:'ca. 600–615 km inklusive Riom und Laxou',driveTime:'ca. 8–8,75 Std. inkl. zwei Ladepausen',
     toll:'Richtwert ca. 35–50 € je nach gewählter Route über A89/A6/A31',
@@ -1848,33 +1849,31 @@ const chargingStages = [
     },primaryLabel:'Hauptstopp',secondaryLabel:'Letzter Nachladestopp'
   },
   {
-    stageId:'s4',date:'31.07.',route:'L’Estartit → Clermont-Ferrand',distance:'ca. 530 km über Millau',
-    maxDetourKm:2,minimumStalls:6,dkvRequired:true,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',
-    calibration:'Planungsmodell',reference:'22 kWh/100 km · Start 95 %',modelRate:'Peyre und Viadukt berücksichtigt',
-    note:'Zwei Pflichtstopps: Caylar und eine kurze Nachladung an der Aire de l’Aveyron.',
-    primary:{
-      name:'1. Ladestopp · Aire du Caylar',legFrom:'L’Estartit',legTo:'Aire du Caylar',location:'A75, 34520 Le Caylar',
-      provider:'Tesla · Start über Tesla-App, DKV Card +Charge hinterlegen',power:'bis 250 kW',stops:'16 HPC',routeOffsetKm:0,legDistanceKm:260,
-      arrivalSoc:'Zielkorridor 5–12 % · Audi-Prognose maßgeblich',departureSoc:'ca. 85 %',
-      toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
-      food:'Raststättenrestaurant, Café und Shop',
-      map:'Tesla Supercharger Aire du Caylar A75 France',
-      routeRole:'erster Pflichtstopp',nextLeg:'Caylar → Peyre → Viadukt → Aire de l’Aveyron',targetSoc:'5–12 % → 85 %',alternatives:[]
-    },
-    reserve:{
-      name:'2. Ladestopp · Aire de l’Aveyron',legFrom:'Caylar über Peyre und Millau',legTo:'Aire de l’Aveyron',location:'A75, 12150 Sévérac-d’Aveyron',
-      provider:'Aire de l’Aveyron HPC',power:'HPC',stops:'8 Ladepunkte',routeOffsetKm:0,legDistanceKm:100,
-      arrivalSoc:'nur anfahren, wenn Audi 5–12 % prognostiziert',departureSoc:'85 %',
-      toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
-      food:'Léo Resto, Cafeteria, Sandwiches und Shop',
-      map:'Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron France',
-      routeRole:'kurze zweite Pflichtladung',nextLeg:'Aire de l’Aveyron → Clermont-Ferrand',targetSoc:'nur bei 5–12 % Ankunft laden · dann 85 %',
-      alternatives:[
-        {deltaKm:65,actualDelta:'ungefähr 65 km später · im Navi prüfen',routeOffsetKm:0,name:'Aire de La Garde',location:'A75, 48200 Albaret-Sainte-Marie',provider:'Tesla',power:'bis 250 kW',stops:'20 HPC',toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Café und Shop',map:'Tesla Supercharger Aire de la Garde France'}
-      ]
-    },secondaryLabel:'2. Ladestopp'
-  },
-  {
+stageId:'s4',date:'31.07.',route:'L’Estartit → Clermont-Ferrand',distance:'ca. 530 km über Millau',
+maxDetourKm:2,minimumStalls:6,dkvRequired:true,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',
+calibration:'Planungsmodell',reference:'22 kWh/100 km · Start 85 % um 09:30 Uhr',modelRate:'Besucherzentrum und Spaziergang berücksichtigt',
+note:'Zwei geplante HPC-Stopps: Mittagspause am Caylar und kurze Nachladung nördlich von Millau an der Aire de l’Aveyron.',
+primary:{name:'1. Ladestopp · Aire du Caylar',legFrom:'L’Estartit',legTo:'Aire du Caylar',location:'A75, 34520 Le Caylar',
+provider:'Tesla · DKV Card +Charge beziehungsweise Tesla-App vor Abfahrt prüfen',power:'bis 250 kW',stops:'16 HPC',routeOffsetKm:0,legDistanceKm:260,
+arrivalSoc:'voraussichtlich ca. 15–20 % · Audi-Prognose maßgeblich',departureSoc:'80–85 %',
+toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
+food:'Raststättenrestaurant, Café und Shop · Mittagspause einplanen',
+map:'Tesla Supercharger Aire du Caylar A75 France',routeRole:'Mittags- und Hauptladestopp',
+nextLeg:'Caylar → Millau-Viadukt → Besucherzentrum',targetSoc:'ca. 15–20 % → 80–85 %',alternatives:[]},
+reserve:{name:'2. Ladestopp · Aire de l’Aveyron',legFrom:'Millau-Besucherzentrum',legTo:'Aire de l’Aveyron',
+location:'A75, 12150 Sévérac-d’Aveyron',provider:'HPC · DKV-Akzeptanz und Live-Status unmittelbar vor Anfahrt prüfen',
+power:'HPC ≥150 kW bevorzugt',stops:'8 Ladepunkte',routeOffsetKm:0,legDistanceKm:50,
+arrivalSoc:'voraussichtlich ca. 20 % · Audi-Prognose maßgeblich',departureSoc:'ca. 80 %',
+toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
+food:'Léo Resto, Cafeteria, Sandwiches und Shop',map:'Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron France',
+routeRole:'kurze zweite Ladung nördlich von Millau',nextLeg:'Aire de l’Aveyron → Clermont-Ferrand',
+targetSoc:'ca. 20 % → 80 %',alternatives:[
+{deltaKm:65,actualDelta:'ungefähr 65 km später · nur wählen, wenn Audi ausreichend Reserve bestätigt',routeOffsetKm:0,
+name:'Aire de La Garde',location:'A75, 48200 Albaret-Sainte-Marie',provider:'Tesla',power:'bis 250 kW',stops:'20 HPC',
+toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,food:'Café und Shop',
+map:'Tesla Supercharger Aire de la Garde France'}]},secondaryLabel:'2. Ladestopp'
+},
+{
     stageId:'s5',date:'01.08.',route:'Clermont-Ferrand → Metz',distance:'ca. 610 km',
     maxDetourKm:2,minimumStalls:6,dkvRequired:true,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',
     calibration:'Planungsmodell',reference:'22 kWh/100 km · Start 95 % nach Riom',modelRate:'zwei Fahrtstopps',
@@ -2005,10 +2004,10 @@ const routeAuditPoints = {
   ],
   s4:[
     {name:'L’Estartit',query:'11 Carrer Salines 17258 L’Estartit Spain'},
-    {name:'Aire du Caylar',query:'Aire du Caylar A75 34520 Le Caylar France'},
-    {name:'Peyre',query:'Parking Haut Peyre 12100 Comprégnac France'},
-    {name:'Belvédère Millau',query:'Aire du Viaduc de Millau Brocuéjouls France'},
-    {name:'Aire de l’Aveyron',query:'Aire de l’Aveyron A75 Sévérac-d’Aveyron France'},
+    {name:'Aire du Caylar',query:'Tesla Supercharger Aire du Caylar A75 34520 Le Caylar France'},
+    {name:'Millau-Viadukt',query:'Viaduc de Millau A75 France'},
+    {name:'Besucherzentrum und Belvédère',query:'Aire du Viaduc de Millau Brocuéjouls 12100 Millau France'},
+    {name:'Aire de l’Aveyron',query:'Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron France'},
     {name:'Clermont-Ferrand',query:'13 Boulevard Trudaine 63000 Clermont-Ferrand France'}
   ],
   s5:[
@@ -2626,7 +2625,7 @@ function chargingForStage(id){
     s1:['Tesla · Erftstadt','Tesla Supercharger An der Patria 21 50374 Erftstadt Deutschland','3 Stopps'],
     s2:['Tesla · Salaise-sur-Sanne','Tesla Supercharger Green 7 N7 38150 Salaise-sur-Sanne France','1 Stopp'],
     s3:['Carrefour Torroella · 150 kW','Camí del Molí s/n 17257 Torroella de Montgrí Spanien','1 Zielstopp + Reserve'],
-    s4:['Tesla · Aire du Caylar','Tesla Supercharger Aire du Caylar A75 France','2 Stopps'],
+    s4:['Tesla · Aire du Caylar','Tesla Supercharger Aire du Caylar A75 France','2 HPC-Stopps + Millau'],
     s5:['TotalEnergies · Beaune-Tailly','Aire de Beaune-Tailly A6 21190 Merceuil France','2 Stopps'],
     s6:['Tesla · Bonn Kameha Grand','Tesla Supercharger Am Bonner Bogen 1 53227 Bonn Deutschland','1 Stopp']
   })[id]||['Direktfahrt','IONITY Aire de Service Narbonne-Vinassan Nord A9 11110 Vinassan France','flexibel'];
@@ -3584,9 +3583,10 @@ const stageServices={
   {type:'Ankunft',name:'L’Estartit',info:'Check-in ALMA BEACH, Einkauf, Strand und El Fornet.'}
  ],
  s4:[
-  {type:'Früher Start',name:'Proviant am Vorabend',info:'Abfahrt 06:45 Uhr. Frühstück und Getränke bereits am Vorabend besorgen.'},
-  {type:'Ladepause',name:'Aire du Caylar',info:'Autobahnraststätte mit Toiletten und Gastronomie; Pflichtstopp.'},
-  {type:'Erlebnis',name:'Peyre und Millau',info:'Aussichtspunkt, Viadukt und Belvédère ohne großen Umweg kombinieren.'}
+  {type:'Start',name:'ALMA BEACH ESTARTIT',info:'Abfahrt 09:30 Uhr mit 85 % SoC.'},
+  {type:'Mittag und Laden',name:'Aire du Caylar',info:'HPC, Toiletten und Gastronomie; auf 80–85 % laden.'},
+  {type:'Erlebnis',name:'Millau-Viadukt und Besucherzentrum',info:'Viadukt überqueren, am Besucherzentrum parken und 75–90 Minuten bis zum markierten Aussichtspunkt einplanen.'},
+  {type:'Ladepause',name:'Aire de l’Aveyron',info:'Kurze zweite HPC-Ladung nördlich von Millau auf etwa 80 %.'}
  ],
  s5:[
   {type:'Frühstück/Laden',name:'Riom',info:'Morgendlicher HPC-Stopp; Frühstück nur an öffentlich zugänglicher Bäckerei, Tankstelle oder Gastronomie – keine Hoteloption.'},
