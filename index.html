@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 30</title>
+<title>Spanien Travelbook 2026 · Version 31</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -612,13 +612,31 @@ section.view[data-view="home"] #holidayOverview{
 .barcelona-food b{display:block}
 .barcelona-food span{display:block;margin-top:4px;color:var(--muted);font-size:12px;line-height:1.45}
 @media(min-width:760px){.barcelona-guide{grid-template-columns:1.25fr .75fr}.barcelona-guide-card.full{grid-column:1/-1}.barcelona-food-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* V31: Kostenloser Schnorchelguide L’Estartit */
+.snorkel-grid{display:grid;gap:14px;margin-top:14px}
+.snorkel-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:17px;box-shadow:var(--shadow2);border-left:6px solid var(--blue)}
+.snorkel-card.top{border-left-color:var(--green)}
+.snorkel-card.easy{border-left-color:var(--amber)}
+.snorkel-card h3{margin:0 0 7px}
+.snorkel-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.snorkel-fact{padding:10px 11px;border-radius:14px;background:var(--panel2)}
+.snorkel-fact span{display:block;font-size:10px;color:var(--muted);font-weight:800;text-transform:uppercase}
+.snorkel-fact b{display:block;margin-top:3px;font-size:12px;line-height:1.4}
+.snorkel-map{margin-top:14px;border:1px solid var(--line);border-radius:20px;padding:15px;background:var(--panel)}
+.snorkel-map h3{margin:0 0 7px}
+.snorkel-safety{display:grid;gap:8px;margin-top:12px}
+.snorkel-safety div{padding:11px 12px;border-radius:14px;background:var(--panel2);font-size:13px;line-height:1.45;color:var(--muted)}
+@media(min-width:760px){.snorkel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.snorkel-map{grid-column:1/-1}}
+@media(max-width:520px){.snorkel-facts{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 30 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 31 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -943,36 +961,21 @@ section.view[data-view="home"] #holidayOverview{
 <div class="cards two">
 <article class="card"><h3>Platja Gran</h3><p>Großer Sandstrand und unkomplizierter Standardstrand für die Familie.</p><div class="actions"><button class="btn primary" data-map="Platja Gran L'Estartit">Navigation</button></div></article>
 <article class="card"><h3>Platja de Griells</h3><p>Ruhigere Strandoption südlich des Zentrums und gut für eine entspannte Badepause.</p><div class="actions"><button class="btn primary" data-map="Platja de Griells L'Estartit">Navigation</button></div></article>
-<article class="card"><h3>Cala Pedrosa</h3><p>Kleine felsige Bucht für Schnorcheln bei ruhigem Meer. Wasserschuhe und ausreichend Wasser mitnehmen.</p><div class="actions"><button class="btn primary" data-map="Cala Pedrosa L'Estartit">Navigation</button></div></article>
+<article class="card"><h3>Cala Pedrosa</h3><p>Abgelegene felsige Bucht, die nur über eine anspruchsvollere Wanderung erreichbar ist. Zum Schnorcheln ausschließlich bei ruhigem Meer, guter Kondition und mit ausreichend Wasser nutzen.</p><div class="actions"><button class="btn primary" data-map="Cala Pedrosa L'Estartit">Navigation</button></div></article>
 <article class="card"><h3>La Pletera</h3><p>Ruhiger Naturbereich mit Dünen und Feuchtgebieten südlich des Orts.</p><div class="actions"><button class="btn primary" data-map="La Pletera L'Estartit">Navigation</button></div></article>
 </div>
-</section><section class="section" id="estartitActivities">
-<div class="section-title"><h2>Aktivitäten</h2><button class="link-btn" data-detail-type="activity" data-id="a4">Details</button></div>
-<div class="cards two">
-<article class="card">
-<h3>🤿 Cala Pedrosa</h3>
-<p>Kleine, felsige Bucht mit interessanter Unterwasserwelt. Am besten morgens bei ruhigem Wasser; Wasserschuhe und vollständige Schnorchelausrüstung mitnehmen.</p>
-<div class="actions"><button class="btn primary" data-map="Cala Pedrosa L'Estartit">Navigation</button></div>
-</article>
-<article class="card">
-<h3>⛵ Medes-Inseln</h3>
-<p>Glasbodenboot, Bootstour, Kajak oder geführtes Schnorcheln. Für die Familie ist das Glasbodenboot die einfachste Variante; für Schnorcheln einen geführten Anbieter wählen.</p>
-<div class="actions">
-<button class="btn primary" data-map="Medes Islands boat tour L'Estartit">Anbieter</button>
-<button class="btn secondary" data-url="https://visitestartit.com/en/plan/activity-companies/companies/">Nautikstation</button>
-</div>
-</article>
-<article class="card">
-<h3>🐠 Espai Medes</h3>
-<p>Meeres-Interpretationszentrum am Hafen. Gut als kürzeres Familienprogramm, Ergänzung zur Bootstour oder Schlechtwetter-Alternative.</p>
-<div class="actions"><button class="btn primary" data-map="Espai Medes L'Estartit">Navigation</button></div>
-</article>
-<article class="card">
-<h3>🌊 Beste Bedingungen</h3>
-<p>Morgens starten, ruhigen Wellengang wählen und UV-Shirt, Wasserschuhe, Maske, Schnorchel und Flossen bereithalten.</p>
-</article>
-</div>
-</section><section class="section" id="estartitExcursions"><div class="section-title"><h2>Ausflüge</h2><span class="badge">frei wählbar · Barcelona fest am 26.07.</span></div>
+</section>
+<section class="section" id="estartitActivities">
+<div class="section-title"><h2>Aktivitäten &amp; kostenlos schnorcheln</h2><span class="badge">ohne Tour buchbar</span></div>
+<div class="notice"><div class="notice-icon">🤿</div><div><strong>Schnorcheln direkt vom Ufer</strong><p>Die besten Chancen auf Fische habt ihr an felsigen Einstiegen nördlich des Hafens. Morgens ist das Wasser oft ruhiger und klarer. Vor dem Einstieg Wind, Wellen, Strömung und lokale Hinweise prüfen.</p></div></div>
+<div class="snorkel-grid">
+<article class="snorkel-card top"><div class="meta"><span class="pill">Empfehlung Nr. 1</span><span class="pill">nah am Ort</span><span class="pill">felsig</span></div><h3>La Platgeta</h3><p>Kleine felsige Badestelle am nördlichen Ende von L’Estartit. Der felsige Untergrund und die Kanten bieten deutlich bessere Chancen auf Fischbeobachtungen als der große Sandstrand. Besonders geeignet für einen kurzen Schnorchelausflug am Morgen.</p><div class="snorkel-facts"><div class="snorkel-fact"><span>Beste Zeit</span><b>08:00–10:30 Uhr</b></div><div class="snorkel-fact"><span>Geeignet für</span><b>Familien mit sicher schwimmenden Kindern</b></div><div class="snorkel-fact"><span>Mögliche Sichtungen</span><b>Meerbrassen, Lippfische, Meeräschen und kleine Schwarmfische</b></div><div class="snorkel-fact"><span>Einstieg</span><b>Felsig; Wasserschuhe empfohlen</b></div></div><div class="actions"><button class="btn primary" data-map="La Platgeta L'Estartit Girona">Google Maps</button><button class="btn secondary" data-map="ALMA BEACH ESTARTIT to La Platgeta L'Estartit walking">Fußweg ab Unterkunft</button></div></article>
+<article class="snorkel-card"><div class="meta"><span class="pill">Aussicht</span><span class="pill">Felsküste</span><span class="pill">nur bei ruhigem Meer</span></div><h3>Cap de la Barra / Punta de la Barra</h3><p>Felsiger Küstenbereich oberhalb und nördlich des Hafens mit Blick auf die Medes-Inseln. Im Wasser sind strukturreiche Felsen interessant, der Zugang kann jedoch anspruchsvoller sein. Nur an gut zugänglichen Stellen und bei sehr ruhiger See einsteigen.</p><div class="snorkel-facts"><div class="snorkel-fact"><span>Beste Zeit</span><b>Früher Morgen</b></div><div class="snorkel-fact"><span>Geeignet für</span><b>Erfahrene und sichere Schwimmer</b></div><div class="snorkel-fact"><span>Mögliche Sichtungen</span><b>Brassen, Lippfische, Meeräschen; mit Glück Sepien oder Oktopus</b></div><div class="snorkel-fact"><span>Wichtig</span><b>Nicht bei Wellen oder Wind vom Meer</b></div></div><div class="actions"><button class="btn primary" data-map="Cap de la Barra L'Estartit Girona">Google Maps</button></div></article>
+<article class="snorkel-card"><div class="meta"><span class="pill">Naturbucht</span><span class="pill">ca. 30 Min. zu Fuß</span><span class="pill">keine Einrichtungen</span></div><h3>Cala Calella</h3><p>Kleine felsige Naturbucht nördlich von L’Estartit. Der Zugang erfolgt ausschließlich zu Fuß; vom Hafen sind ungefähr 30 Minuten einzuplanen. Die Bucht hat keine Infrastruktur. Wegen der felsigen Umgebung kann die Unterwasserwelt interessant sein, aber nur bei ruhigem Meer nutzen.</p><div class="snorkel-facts"><div class="snorkel-fact"><span>Zugang</span><b>Nur zu Fuß über Küstenweg</b></div><div class="snorkel-fact"><span>Ausstattung</span><b>Keine Toiletten, keine Bewachung, kein Kiosk</b></div><div class="snorkel-fact"><span>Mögliche Sichtungen</span><b>Kleine Fische an Felsen und Seegrasbereichen</b></div><div class="snorkel-fact"><span>Mitnehmen</span><b>Wasser, feste Schuhe, Wasserschuhe und Sonnenschutz</b></div></div><div class="actions"><button class="btn primary" data-map="Cala Calella L'Estartit Girona">Google Maps</button><button class="btn secondary" data-url="https://visitestartit.com/de/platges_cales/cala-la-calella/">Offizielle Beschreibung</button></div></article>
+<article class="snorkel-card easy"><div class="meta"><span class="pill">einfacher Strandtag</span><span class="pill">flach</span><span class="pill">familienfreundlich</span></div><h3>Platja dels Griells</h3><p>Ruhigerer Sandstrand südlich des Zentrums. Der Einstieg ist einfacher und flacher als an den Felsbuchten. Für Anfänger und Kinder angenehm, die Chancen auf viele Fische sind auf dem sandigen Grund aber geringer. Interessanter sind Randbereiche mit Steinen oder Seegras.</p><div class="snorkel-facts"><div class="snorkel-fact"><span>Geeignet für</span><b>Anfänger und jüngere Kinder</b></div><div class="snorkel-fact"><span>Untergrund</span><b>Überwiegend Sand, flacher Einstieg</b></div><div class="snorkel-fact"><span>Fischchance</span><b>Eher geringer als an La Platgeta oder Cala Calella</b></div><div class="snorkel-fact"><span>Vorteil</span><b>Gut mit normalem Familien-Strandtag kombinierbar</b></div></div><div class="actions"><button class="btn primary" data-map="Platja dels Griells L'Estartit Girona">Google Maps</button><button class="btn secondary" data-url="https://visitestartit.com/de/platges_cales/platja-gran-de-lestartit/">Offizielle Strandinfo</button></div></article>
+<article class="snorkel-map"><div class="meta"><span class="pill">Google-Maps-Übersicht</span><span class="pill">alle Spots</span></div><h3>Schnorchelstellen auf einer Karte</h3><p>Die Übersicht öffnet die vier Bereiche in Google Maps. Für einen entspannten Morgen zuerst La Platgeta probieren. Nur wenn das Meer ruhig ist und alle sicher schwimmen, anschließend weiter Richtung Cap de la Barra oder Cala Calella gehen.</p><div class="actions"><button class="btn primary" data-url="https://www.google.com/maps/dir/?api=1&origin=ALMA+BEACH+ESTARTIT,+Carrer+de+les+Salines+11,+L%27Estartit&destination=Cala+Calella,+L%27Estartit&waypoints=La+Platgeta,+L%27Estartit%7CCap+de+la+Barra,+L%27Estartit&travelmode=walking">Küstenroute öffnen</button><button class="btn secondary" data-map="Platja dels Griells L'Estartit Girona">Griells separat</button></div></article>
+<article class="snorkel-map"><h3>Sicherheit und Ausrüstung</h3><div class="snorkel-safety"><div><b>Nur bei ruhigem Meer:</b> Bei Wellen, starkem Wind, schlechter Sicht oder Strömung nicht an Felsküsten einsteigen.</div><div><b>Kinder:</b> Nur sichere Schwimmer schnorcheln lassen und immer eng begleiten. Eine gut sichtbare Schwimmboje erhöht die Sicherheit.</div><div><b>Felsiger Einstieg:</b> Wasserschuhe tragen und nicht auf Seeigel oder bewachsene Steine treten.</div><div><b>Ausrüstung:</b> Maske, Schnorchel, Flossen, UV-Shirt, Trinkwasser und Sonnenschutz mitnehmen.</div><div><b>Tiere schützen:</b> Abstand halten, nichts anfassen, keine Fische füttern und keine Tiere oder Pflanzen mitnehmen.</div></div></article>
+</div></section><section class="section" id="estartitExcursions"><div class="section-title"><h2>Ausflüge</h2><span class="badge">frei wählbar · Barcelona fest am 26.07.</span></div>
 <div class="notice">
 <div class="notice-icon">🚗</div>
 <div><strong>Alle Ausflüge gebündelt</strong><p>Die bestehenden Tagespläne, Barcelona, Costa-Brava-Rundtour sowie Torroella, Pals, Palau-sator und weitere Ziele folgen direkt in diesem Bereich.</p></div>
