@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 33</title>
+<title>Spanien Travelbook 2026 · Version 34</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -631,14 +631,21 @@ section.view[data-view="home"] #holidayOverview{
 @media(max-width:520px){.snorkel-facts{grid-template-columns:1fr}}
 
 /* V32: Rücketappe L’Estartit–Clermont-Ferrand · Start 09:30 mit 85 % · Millau-Besucherzentrum */
-/* V33: Fischhändler im 30-km-Umkreis bereinigt */
+
+.fish-status{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;font-size:12px;font-weight:850}
+.fish-status.green{background:color-mix(in srgb,var(--green) 14%,var(--panel));color:var(--green)}
+.fish-status.amber{background:color-mix(in srgb,var(--amber) 14%,var(--panel));color:var(--amber)}
+.fish-status.red{background:color-mix(in srgb,#ef4444 14%,var(--panel));color:#ef4444}
+.fish-verification{margin-top:10px;padding:10px 11px;border-radius:14px;background:var(--panel2);font-size:12px;color:var(--muted);line-height:1.45}
+
+/* V34: Fischhändler intensiv geprüft · Ampelstatus · Joan Riembau L’Estartit vorübergehend geschlossen */
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 33 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 34 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -841,8 +848,8 @@ section.view[data-view="home"] #holidayOverview{
 </article>
 <article class="card">
 <h3>Fisch und Meeresfrüchte kaufen</h3>
-<p><b>Peixos Xifra im Supermercat GP L’Estartit</b> ist die praktische Hauptempfehlung in unmittelbarer Nähe. Weitere bestätigte Verkaufsstellen sind <b>Joan Riembau Peix i Marisc</b> in L’Estartit und Torroella sowie <b>Peixos Xifra L’Escala</b>. Verbände, Restaurants und nicht eindeutig als Laden belegte Stellen wurden entfernt.</p>
-<div class="actions"><button class="btn primary" data-map="Peixos Xifra Supermercat GP L'Estartit">Peixos Xifra L’Estartit</button><button class="btn secondary" data-map="Joan Riembau Peix i Marisc Carrer Santa Anna L'Estartit">Riembau L’Estartit</button><button class="btn secondary" data-map="Peixos Xifra Carrer Germans Masferrer 17 L'Escala">Peixos Xifra L’Escala</button></div>
+<p><b>Erste Empfehlung:</b> Peixos Xifra im Supermercat GP L’Estartit. <b>Joan Riembau L’Estartit</b> wird von der offiziellen Unternehmensseite weiterhin als Filiale geführt, ist bei Google Maps derzeit jedoch als <b>„vorübergehend geschlossen“</b> gekennzeichnet und deshalb nur mit gelbem Warnstatus enthalten. Als sichere Ausweichziele gelten Peixos Xifra L’Escala und Joan Riembau Torroella.</p>
+<div class="actions"><button class="btn primary" data-map="Peixos Xifra Supermercat GP L'Estartit">Peixos Xifra L’Estartit</button><button class="btn secondary" data-map="Joan Riembau Peix i Marisc Carrer d'Ullà 34 Torroella de Montgrí">Riembau Torroella</button><button class="btn secondary" data-map="Peixos Xifra Carrer Germans Masferrer 17 L'Escala">Peixos Xifra L’Escala</button></div>
 </article>
 <article class="card">
 <h3>Bereits bekannte Favoriten</h3>
@@ -907,71 +914,78 @@ section.view[data-view="home"] #holidayOverview{
 <div class="shopping-filter-result" id="shoppingFilterResult">Alle Kategorien werden angezeigt.</div>
 </div>
 <div class="shopping-category" data-filter-block="supermarkt" data-shopping-category-block="supermarkt"><h3>Supermärkte &amp; Discounter</h3><div class="shopping-grid"><article class="shop-card" data-shop-category="supermarkt" data-shop-distance="ca. 0,8 km" data-shop-name="SPAR Plaça Dr. Fleming" data-shop-search="spar plaça dr. fleming ca. 0,8 km supermarkt kurzer weg adresse / ort plaça dr. fleming, l’estartit sortiment lebensmittel, getränke, haushaltsbedarf und je nach tagesangebot fischtheke navigation webseite"><div class="shop-card-head"><h4>SPAR Plaça Dr. Fleming</h4><span class="shop-distance">ca. 0,8 km</span></div><div class="meta"><span class="pill">Supermarkt</span><span class="pill">kurzer Weg</span></div><div class="shop-facts"><div class="shop-fact"><span>Adresse / Ort</span><b>Plaça Dr. Fleming, L’Estartit</b></div><div class="shop-fact"><span>Sortiment</span><b>Lebensmittel, Getränke, Haushaltsbedarf und je nach Tagesangebot Fischtheke</b></div><div class="shop-fact"><span>Öffnungszeiten</span><b>Saisonale Sommerzeiten; am Besuchstag prüfen</b></div><div class="shop-fact"><span>Parken</span><b>Zu Fuß besonders praktisch; begrenztes Parken im Ortszentrum</b></div><div class="shop-fact"><span>Qualität</span><b>solide</b></div><div class="shop-fact"><span>Preisniveau</span><b>€–€€</b></div><div class="shop-fact"><span>Besondere Empfehlung</span><b>praktisch für den Ferienwohnungseinkauf</b></div></div><div class="actions"><button class="btn primary" data-map="SPAR Plaça Dr Fleming L'Estartit">Navigation</button><button class="btn secondary" data-url="https://www.spar.es/">Webseite</button></div></article><article class="shop-card" data-shop-category="supermarkt" data-shop-distance="ca. 1–2 km" data-shop-name="Jodofi Supermercats L’Estartit" data-shop-search="jodofi supermercats l’estartit ca. 1–2 km supermarkt regional adresse / ort l’estartit sortiment vollsortiment, frischeprodukte, getränke und ferienwohnungsbedarf navigation webseite"><div class="shop-card-head"><h4>Jodofi Supermercats L’Estartit</h4><span class="shop-distance">ca. 1–2 km</span></div><div class="meta"><span class="pill">Supermarkt</span><span class="pill">regional</span></div><div class="shop-facts"><div class="shop-fact"><span>Adresse / Ort</span><b>L’Estartit</b></div><div class="shop-fact"><span>Sortiment</span><b>Vollsortiment, Frischeprodukte, Getränke und Ferienwohnungsbedarf</b></div><div class="shop-fact"><span>Öffnungszeiten</span><b>Saisonale Sommerzeiten; am Besuchstag prüfen</b></div><div class="shop-fact"><span>Parken</span><b>Zu Fuß besonders praktisch; begrenztes Parken im Ortszentrum</b></div><div class="shop-fact"><span>Qualität</span><b>solide</b></div><div class="shop-fact"><span>Preisniveau</span><b>€–€€</b></div><div class="shop-fact"><span>Besondere Empfehlung</span><b>praktisch für den Ferienwohnungseinkauf</b></div></div><div class="actions"><button class="btn primary" data-map="Jodofi Supermercat L'Estartit">Navigation</button><button class="btn secondary" data-url="https://jodofi.com/">Webseite</button></div></article><article class="shop-card" data-shop-category="supermarkt" data-shop-distance="ca. 7 km" data-shop-name="Carrefour Market Torroella" data-shop-search="carrefour market torroella ca. 7 km supermarkt laden kombinieren adresse / ort camí del molí, s/n, torroella de montgrí sortiment großeinkauf, frischeabteilungen, getränke und haushaltswaren navigation webseite"><div class="shop-card-head"><h4>Carrefour Market Torroella</h4><span class="shop-distance">ca. 7 km</span></div><div class="meta"><span class="pill">Supermarkt</span><span class="pill">Laden kombinieren</span></div><div class="shop-facts"><div class="shop-fact"><span>Adresse / Ort</span><b>Camí del Molí, s/n, Torroella de Montgrí</b></div><div class="shop-fact"><span>Sortiment</span><b>Großeinkauf, Frischeabteilungen, Getränke und Haushaltswaren</b></div><div class="shop-fact"><span>Öffnungszeiten</span><b>Sommeröffnungszeiten über Anbieter/Maps prüfen</b></div><div class="shop-fact"><span>Parken</span><b>Kundenparkplatz vorhanden bzw. üblich; Einfahrt vor Ort prüfen</b></div><div class="shop-fact"><span>Qualität</span><b>solide</b></div><div class="shop-fact"><span>Preisniveau</span><b>€–€€</b></div><div class="shop-fact"><span>Besondere Empfehlung</span><b>praktisch für den Ferienwohnungseinkauf</b></div></div><div class="actions"><button class="btn primary" data-map="Carrefour Market Torroella de Montgrí">Navigation</button><button class="btn secondary" data-url="https://www.carrefour.es/">Webseite</button></div></article><article class="shop-card" data-shop-category="supermarkt" data-shop-distance="ca. 7–8 km" data-shop-name="Mercadona Torroella de Montgrí" data-shop-search="mercadona torroella de montgrí ca. 7–8 km vollsortiment großer einkauf adresse / ort torroella de montgrí sortiment obst, gemüse, fleisch, fisch, backwaren und eigenmarken navigation webseite"><div class="shop-card-head"><h4>Mercadona Torroella de Montgrí</h4><span class="shop-distance">ca. 7–8 km</span></div><div class="meta"><span class="pill">Vollsortiment</span><span class="pill">großer Einkauf</span></div><div class="shop-facts"><div class="shop-fact"><span>Adresse / Ort</span><b>Torroella de Montgrí</b></div><div class="shop-fact"><span>Sortiment</span><b>Obst, Gemüse, Fleisch, Fisch, Backwaren und Eigenmarken</b></div><div class="shop-fact"><span>Öffnungszeiten</span><b>Sommeröffnungszeiten über Anbieter/Maps prüfen</b></div><div class="shop-fact"><span>Parken</span><b>Kundenparkplatz vorhanden bzw. üblich; Einfahrt vor Ort prüfen</b></div><div class="shop-fact"><span>Qualität</span><b>solide</b></div><div class="shop-fact"><span>Preisniveau</span><b>€–€€</b></div><div class="shop-fact"><span>Besondere Empfehlung</span><b>praktisch für den Ferienwohnungseinkauf</b></div></div><div class="actions"><button class="btn primary" data-map="Mercadona Torroella de Montgrí">Navigation</button><button class="btn secondary" data-url="https://www.mercadona.es/">Webseite</button></div></article><article class="shop-card" data-shop-category="supermarkt" data-shop-distance="ca. 7–8 km" data-shop-name="Lidl Torroella de Montgrí" data-shop-search="lidl torroella de montgrí ca. 7–8 km discounter parkplatz e-laden adresse / ort ctra. de l’estartit, s/n sortiment obst, gemüse, backwaren, fleisch, fisch, bio- und aktionssortiment navigation webseite"><div class="shop-card-head"><h4>Lidl Torroella de Montgrí</h4><span class="shop-distance">ca. 7–8 km</span></div><div class="meta"><span class="pill">Discounter</span><span class="pill">Parkplatz</span><span class="pill">E-Laden</span></div><div class="shop-facts"><div class="shop-fact"><span>Adresse / Ort</span><b>Ctra. de L’Estartit, s/n</b></div><div class="shop-fact"><span>Sortiment</span><b>Obst, Gemüse, Backwaren, Fleisch, Fisch, Bio- und Aktionssortiment</b></div><div class="shop-fact"><span>Öffnungszeiten</span><b>Sommeröffnungszeiten über Anbieter/Maps prüfen</b></div><div class="shop-fact"><span>Parken</span><b>Kundenparkplatz vorhanden bzw. üblich; Einfahrt vor Ort prüfen</b></div><div class="shop-fact"><span>Qualität</span><b>solide</b></div><div class="shop-fact"><span>Preisniveau</span><b>€</b></div><div class="shop-fact"><span>Besondere Empfehlung</span><b>praktisch für den Ferienwohnungseinkauf</b></div></div><div class="actions"><button class="btn primary" data-map="Lidl Ctra de L'Estartit Torroella de Montgrí">Navigation</button><button class="btn secondary" data-url="https://www.lidl.es/s/es-ES/tiendas/torroella-de-montgri/ctra-de-l-estartit-s-n/">Webseite</button></div></article><article class="shop-card" data-shop-category="supermarkt" data-shop-distance="ca. 8 km" data-shop-name="Bonpreu Torroella de Montgrí" data-shop-search="bonpreu torroella de montgrí ca. 8 km supermarkt katalanische produkte adresse / ort torroella de montgrí sortiment vollsortiment mit regionalen und katalanischen marken navigation webseite"><div class="shop-card-head"><h4>Bonpreu Torroella de Montgrí</h4><span class="shop-distance">ca. 8 km</span></div><div class="meta"><span class="pill">Supermarkt</span><span class="pill">katalanische Produkte</span></div><div class="shop-facts"><div class="shop-fact"><span>Adresse / Ort</span><b>Torroella de Montgrí</b></div><div class="shop-fact"><span>Sortiment</span><b>Vollsortiment mit regionalen und katalanischen Marken</b></div><div class="shop-fact"><span>Öffnungszeiten</span><b>Sommeröffnungszeiten über Anbieter/Maps prüfen</b></div><div class="shop-fact"><span>Parken</span><b>Kundenparkplatz vorhanden bzw. üblich; Einfahrt vor Ort prüfen</b></div><div class="shop-fact"><span>Qualität</span><b>solide</b></div><div class="shop-fact"><span>Preisniveau</span><b>€–€€</b></div><div class="shop-fact"><span>Besondere Empfehlung</span><b>praktisch für den Ferienwohnungseinkauf</b></div></div><div class="actions"><button class="btn primary" data-map="Bonpreu Torroella de Montgrí">Navigation</button><button class="btn secondary" data-url="https://www.bonpreuesclat.cat/">Webseite</button></div></article></div></div><div class="shopping-category" data-filter-block="fisch" data-shopping-category-block="fisch">
-<h3>Fisch &amp; Meeresfrüchte · bestätigte Verkaufsstellen bis 30 km</h3>
-<div class="notice"><div class="notice-icon">🐟</div><div><strong>Bereinigte Auswahl</strong><p>Nur aktuell auffindbare Verkaufsstellen für Endkunden. Verbände, reine Qualitätsmarken, Restaurants und geschlossene oder nicht eindeutig als Laden belegte Stellen sind nicht enthalten. Saisonzeiten am Einkaufstag prüfen.</p></div></div>
+<h3>Fisch &amp; Meeresfrüchte · intensiv geprüft</h3>
+<div class="notice">
+<div class="notice-icon">🐟</div>
+<div><strong>Statusprüfung mit Ampelsystem</strong><p>🟢 aktuell als nutzbare Verkaufsstelle geführt · 🟡 widersprüchliche oder nicht tagesaktuell bestätigte Angaben · 🔴 geschlossen. Stand der Überarbeitung: 27.07.2026. Öffnungszeiten und Google-Maps-Status unmittelbar vor der Anfahrt erneut prüfen.</p></div>
+</div>
 <div class="shopping-grid">
 
-<article class="shop-card" data-shop-category="fisch" data-shop-distance="ca. 3 km" data-shop-name="Peixos Xifra · Supermercat GP L’Estartit">
+<article class="shop-card" data-shop-category="fisch" data-shop-distance="ca. 3 km" data-shop-name="Peixos Xifra · Supermercat GP L’Estartit" data-shop-search="peixos xifra supermercat gp lestartit fisch frisch geöffnet empfehlung">
 <div class="shop-card-head"><h4>🏆 Peixos Xifra · Supermercat GP L’Estartit</h4><span class="shop-distance">ca. 3 km</span></div>
-<div class="meta"><span class="pill">Meine Empfehlung</span><span class="pill">Frischfisch</span><span class="pill">kurze Anfahrt</span></div>
+<div class="meta"><span class="fish-status green">🟢 nutzbare Hauptempfehlung</span><span class="pill">Frischfisch</span><span class="pill">kurze Anfahrt</span></div>
 <div class="shop-facts">
-<div class="shop-fact"><span>Standort</span><b>Supermercat GP, GI-641 / Carretera de Torroella, L’Estartit</b></div>
-<div class="shop-fact"><span>Status</span><b>Bestätigte Verkaufsstelle von Peixos Xifra</b></div>
-<div class="shop-fact"><span>Sortiment</span><b>Frischer Fisch und Meeresfrüchte; Tagesauswahl abhängig von Fang und Lieferung</b></div>
-<div class="shop-fact"><span>Bewertungsbild</span><b>Gelobt werden Frische, Auswahl und persönliche Beratung</b></div>
-<div class="shop-fact"><span>Öffnungszeiten</span><b>Fischthekenzeiten am Einkaufstag prüfen</b></div>
+<div class="shop-fact"><span>Standort</span><b>Supermercat GP, GI-641 / Carretera de Torroella, Bereich L’Estartit</b></div>
+<div class="shop-fact"><span>Sortiment</span><b>Frischer Fisch und Meeresfrüchte, abhängig vom Tagesangebot</b></div>
+<div class="shop-fact"><span>Qualität</span><b>★★★★☆ · gute regionale Empfehlung</b></div>
+<div class="shop-fact"><span>Frischeindex</span><b>hoch, abhängig von Lieferung und Tagesfang</b></div>
+<div class="shop-fact"><span>Öffnungszeiten</span><b>Fischthekenzeiten am Einkaufstag live prüfen</b></div>
 <div class="shop-fact"><span>Parken</span><b>Kundenparkplatz am Supermarkt</b></div>
 <div class="shop-fact"><span>Preisniveau</span><b>€€–€€€</b></div>
-<div class="shop-fact"><span>Empfehlung</span><b>Dorade, Wolfsbarsch, Sepia, Tintenfisch und Garnelen</b></div>
+<div class="shop-fact"><span>Beste Produkte</span><b>Dorade, Wolfsbarsch, Sepia, Tintenfisch und Garnelen</b></div>
 </div>
+<div class="fish-verification"><b>Prüfhinweis:</b> Als Verkaufsstelle von Peixos Xifra geführt. Vor Abfahrt dennoch Öffnungsstatus der Fischtheke kontrollieren.</div>
 <div class="actions"><button class="btn primary" data-map="Peixos Xifra Supermercat GP L'Estartit Girona">Navigation</button><button class="btn secondary" data-tel="+34621196507">Anrufen</button><button class="btn secondary" data-url="https://sompeixaters.com/art/563/peixos-xifra">Anbieterinfo</button></div>
 </article>
 
-<article class="shop-card" data-shop-category="fisch" data-shop-distance="ca. 1–2 km" data-shop-name="Joan Riembau Peix i Marisc · L’Estartit">
+<article class="shop-card" data-shop-category="fisch" data-shop-distance="ca. 1–2 km" data-shop-name="Joan Riembau Peix i Marisc · L’Estartit" data-shop-search="joan riembau peix marisc lestartit vorübergehend geschlossen">
 <div class="shop-card-head"><h4>Joan Riembau Peix i Marisc · L’Estartit</h4><span class="shop-distance">ca. 1–2 km</span></div>
-<div class="meta"><span class="pill">Frischfisch</span><span class="pill">im Ort</span><span class="pill">km 0</span></div>
+<div class="meta"><span class="fish-status amber">🟡 derzeit nicht fest einplanen</span><span class="pill">Google: vorübergehend geschlossen</span></div>
 <div class="shop-facts">
 <div class="shop-fact"><span>Standort</span><b>Carrer Santa Anna, 17258 L’Estartit</b></div>
-<div class="shop-fact"><span>Status</span><b>Offizielle Filiale laut Unternehmensseite</b></div>
-<div class="shop-fact"><span>Sortiment</span><b>Täglich frischer Fisch und Meeresfrüchte aus Palamós und Roses</b></div>
-<div class="shop-fact"><span>Bewertungsbild</span><b>Gute regionale Reputation für Frische und Produktkenntnis</b></div>
-<div class="shop-fact"><span>Öffnungszeiten</span><b>Saison- und filialabhängig; vor dem Weg prüfen</b></div>
-<div class="shop-fact"><span>Parken</span><b>Im Ortszentrum begrenzt; gut zu Fuß erreichbar</b></div>
+<div class="shop-fact"><span>Statuskonflikt</span><b>Offizielle Unternehmensseite führt die Filiale; Google Maps zeigt „vorübergehend geschlossen“</b></div>
+<div class="shop-fact"><span>Google-Bewertung</span><b>4,0 / 5 bei 36 Rezensionen laut Nutzer-Screenshot</b></div>
+<div class="shop-fact"><span>Frischeindex</span><b>nicht aktuell bewertbar, solange geschlossen</b></div>
+<div class="shop-fact"><span>Öffnungszeiten</span><b>Keine verlässliche aktuelle Öffnung bestätigt</b></div>
+<div class="shop-fact"><span>Parken</span><b>Im Ortszentrum begrenzt; von der Unterkunft gut zu Fuß erreichbar</b></div>
 <div class="shop-fact"><span>Preisniveau</span><b>€€–€€€</b></div>
-<div class="shop-fact"><span>Empfehlung</span><b>Spontaner Einkauf ohne Autofahrt</b></div>
+<div class="shop-fact"><span>Empfehlung</span><b>Nur ansteuern, wenn Google Maps oder ein Anruf die Wiederöffnung bestätigt</b></div>
 </div>
-<div class="actions"><button class="btn primary" data-map="Joan Riembau Peix i Marisc Carrer Santa Anna L'Estartit">Navigation</button><button class="btn secondary" data-url="https://joanriembaupeiximarisc.com/es/">Webseite</button></div>
+<div class="fish-verification"><b>Bewertung:</b> Nicht als Hauptempfehlung verwenden. Der widersprüchliche Status wird bewusst transparent dargestellt.</div>
+<div class="actions"><button class="btn secondary" data-map="Joan Riembau Peix i Marisc Carrer Santa Anna L'Estartit">Google Maps prüfen</button><button class="btn secondary" data-url="https://joanriembaupeiximarisc.com/es/">Unternehmensseite</button></div>
 </article>
 
-<article class="shop-card" data-shop-category="fisch" data-shop-distance="ca. 7 km" data-shop-name="Joan Riembau Peix i Marisc · Torroella">
+<article class="shop-card" data-shop-category="fisch" data-shop-distance="ca. 7 km" data-shop-name="Joan Riembau Peix i Marisc · Torroella" data-shop-search="joan riembau peix marisc torroella geöffnet fisch">
 <div class="shop-card-head"><h4>Joan Riembau Peix i Marisc · Torroella</h4><span class="shop-distance">ca. 7 km</span></div>
-<div class="meta"><span class="pill">Frischfisch</span><span class="pill">größere Auswahl</span></div>
+<div class="meta"><span class="fish-status green">🟢 beste Riembau-Alternative</span><span class="pill">Frischfisch</span><span class="pill">Torroella</span></div>
 <div class="shop-facts">
 <div class="shop-fact"><span>Adresse</span><b>Carrer d’Ullà 34, Torroella de Montgrí</b></div>
-<div class="shop-fact"><span>Status</span><b>Offizielle stationäre Filiale</b></div>
-<div class="shop-fact"><span>Sortiment</span><b>Frischer Fisch und Meeresfrüchte</b></div>
-<div class="shop-fact"><span>Bewertungsbild</span><b>Gute regionale Reputation</b></div>
-<div class="shop-fact"><span>Öffnungszeiten</span><b>Am Besuchstag prüfen</b></div>
-<div class="shop-fact"><span>Parken</span><b>Öffentliche Parkmöglichkeiten im Zentrum</b></div>
+<div class="shop-fact"><span>Status</span><b>Als stationäre Filiale geführt</b></div>
+<div class="shop-fact"><span>Qualität</span><b>★★★★☆ · gute regionale Reputation</b></div>
+<div class="shop-fact"><span>Frischeindex</span><b>hoch, je nach Tagesangebot</b></div>
+<div class="shop-fact"><span>Öffnungszeiten</span><b>Am Besuchstag live prüfen</b></div>
+<div class="shop-fact"><span>Parken</span><b>Öffentliche Parkmöglichkeiten im Zentrum; Restweg zu Fuß</b></div>
 <div class="shop-fact"><span>Preisniveau</span><b>€€–€€€</b></div>
-<div class="shop-fact"><span>Empfehlung</span><b>Mit Altstadt oder größerem Einkauf kombinieren</b></div>
+<div class="shop-fact"><span>Beste Produkte</span><b>Frischfisch, Muscheln, Garnelen und Sepia</b></div>
 </div>
-<div class="actions"><button class="btn primary" data-map="Joan Riembau Peix i Marisc Carrer d'Ullà 34 Torroella de Montgrí">Navigation</button><button class="btn secondary" data-url="https://joanriembaupeiximarisc.com/es/">Webseite</button></div>
+<div class="fish-verification"><b>Prüfhinweis:</b> Sinnvollste Alternative innerhalb kurzer Fahrdistanz, falls Peixos Xifra L’Estartit nicht verfügbar ist.</div>
+<div class="actions"><button class="btn primary" data-map="Joan Riembau Peix i Marisc Carrer d'Ullà 34 Torroella de Montgrí">Navigation</button><button class="btn secondary" data-url="https://joanriembaupeiximarisc.com/es/">Unternehmensseite</button></div>
 </article>
 
-<article class="shop-card" data-shop-category="fisch" data-shop-distance="ca. 18–20 km" data-shop-name="Peixos Xifra · L’Escala">
+<article class="shop-card" data-shop-category="fisch" data-shop-distance="ca. 18–20 km" data-shop-name="Peixos Xifra · L’Escala" data-shop-search="peixos xifra lescala geöffnet fisch bewertungen">
 <div class="shop-card-head"><h4>Peixos Xifra · L’Escala</h4><span class="shop-distance">ca. 18–20 km</span></div>
-<div class="meta"><span class="pill">Traditionsbetrieb</span><span class="pill">sehr gute Bewertungen</span></div>
+<div class="meta"><span class="fish-status green">🟢 bestätigte Ausflugsoption</span><span class="pill">Traditionsbetrieb</span><span class="pill">L’Escala</span></div>
 <div class="shop-facts">
 <div class="shop-fact"><span>Adresse</span><b>Carrer Germans Masferrer 17, L’Escala</b></div>
 <div class="shop-fact"><span>Status</span><b>Aktives Fischgeschäft mit aktuellen Rezensionen</b></div>
-<div class="shop-fact"><span>Sortiment</span><b>Frischer Fisch und Meeresfrüchte aus der Region</b></div>
-<div class="shop-fact"><span>Bewertungsbild</span><b>Gelobt werden Frische, Präsentation, Beratung und Service</b></div>
+<div class="shop-fact"><span>Qualität</span><b>★★★★☆ · Frische, Beratung und Präsentation werden gelobt</b></div>
+<div class="shop-fact"><span>Frischeindex</span><b>hoch</b></div>
 <div class="shop-fact"><span>Öffnungszeiten</span><b>Mo geschlossen; Di–Sa ca. 09:00–13:30 und 18:00–20:30; So ca. 09:00–13:00</b></div>
-<div class="shop-fact"><span>Parken</span><b>Öffentliche Parkplätze im Umfeld</b></div>
+<div class="shop-fact"><span>Parken</span><b>Öffentliche Parkplätze und Straßenparkplätze im Umfeld</b></div>
 <div class="shop-fact"><span>Preisniveau</span><b>€€–€€€</b></div>
-<div class="shop-fact"><span>Empfehlung</span><b>Mit L’Escala oder Sardellenkauf verbinden</b></div>
+<div class="shop-fact"><span>Beste Produkte</span><b>Regionale Fische, Meeresfrüchte und Ergänzung zum Sardellenkauf</b></div>
 </div>
+<div class="fish-verification"><b>Prüfhinweis:</b> Gute Wahl, wenn der Einkauf mit L’Escala, Altstadt oder Wochenmarkt verbunden wird.</div>
 <div class="actions"><button class="btn primary" data-map="Peixos Xifra Carrer Germans Masferrer 17 L'Escala">Navigation</button><button class="btn secondary" data-tel="+34972770057">Anrufen</button><button class="btn secondary" data-url="https://sompeixaters.com/art/563/peixos-xifra">Anbieterinfo</button></div>
 </article>
 
