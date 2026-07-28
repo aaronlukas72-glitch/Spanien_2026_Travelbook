@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 40</title>
+<title>Spanien Travelbook 2026 · Version 41</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -683,13 +683,14 @@ section.view[data-view="home"] #holidayOverview{
 
 /* V39: Aufklappbare Einzelkarten für Aktivitäten und sämtliche Ausflugsoptionen */
 /* V40: Günstige Abendessen-Optionen Craft Room und Royal Kebab in Platja d’Aro ergänzt */
+/* V41: Startseiten-Verknüpfungen zu Aktivitäten, Ausflügen und weiteren L’Estartit-Bereichen repariert */
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 40 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 41 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -4312,6 +4313,41 @@ document.querySelectorAll('[data-jump]').forEach(button=>{
   window.addEventListener('pageshow',setupShoppingButtons);
   setTimeout(setupShoppingButtons,100);
 })();
+
+// V41: Robuste Navigation der Startseiten-Kacheln zu Bereichen in der Ansicht "Mehr"
+document.addEventListener('click', function(event){
+  const jumpButton = event.target.closest('[data-jump]');
+  if(!jumpButton) return;
+
+  event.preventDefault();
+  const targetId = jumpButton.dataset.jump;
+  const target = document.getElementById(targetId);
+  if(!target) return;
+
+  // Den Zielbereich sichtbar machen: Inhalte liegen in der Ansicht "more".
+  const targetView = target.closest('.view');
+  if(targetView){
+    document.querySelectorAll('.view').forEach(view => view.classList.remove('active'));
+    targetView.classList.add('active');
+
+    const targetViewName = targetView.dataset.view;
+    document.querySelectorAll('.nav-btn').forEach(button => {
+      button.classList.toggle('active', button.dataset.go === targetViewName);
+    });
+  }
+
+  // Geschlossene übergeordnete Details öffnen.
+  let parent = target.parentElement;
+  while(parent){
+    if(parent.tagName === 'DETAILS') parent.open = true;
+    parent = parent.parentElement;
+  }
+
+  window.requestAnimationFrame(() => {
+    target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+
 </script>
 </body>
 </html>
