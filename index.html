@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 42</title>
+<title>Spanien Travelbook 2026 · Version 43</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -685,13 +685,14 @@ section.view[data-view="home"] #holidayOverview{
 /* V40: Günstige Abendessen-Optionen Craft Room und Royal Kebab in Platja d’Aro ergänzt */
 /* V41: Startseiten-Verknüpfungen zu Aktivitäten, Ausflügen und weiteren L’Estartit-Bereichen repariert */
 /* V42: Craft-Room-Fußroute mit direktem Google-Maps-Link repariert */
+/* V43: Craft-Room-Routenbutton als echter Link plus robuster data-url-Handler umgesetzt */
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 42 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 43 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -1361,7 +1362,7 @@ section.view[data-view="home"] #holidayOverview{
 <button class="btn primary" data-trip-route="platjaDaroDrive">Hinfahrt zum Parkplatz</button>
 <button class="btn secondary" data-trip-route="platjaDaroWalkFeliu">Rundgang mit Feliu</button>
 <button class="btn secondary" data-trip-route="platjaDaroWalkRoma">Rundgang mit La Roma</button>
-<button class="btn secondary" data-url="https://www.google.com/maps/dir/?api=1&origin=Ilusiona%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien&destination=Pp%E2%80%99s%20Park%2C%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien&waypoints=Gelati%20Dino%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien%7CBeach%20Bar%20J%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien%7CBuddha%20Relax%20Beach%20Lounge%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien%7CCraft%20Room%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien&travelmode=walking">Rundgang mit Craft Room</button>
+<a class="btn secondary" href="https://www.google.com/maps/dir/?api=1&origin=Ilusiona%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien&destination=Pp%E2%80%99s%20Park%2C%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien&waypoints=Gelati%20Dino%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien%7CBeach%20Bar%20J%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien%7CBuddha%20Relax%20Beach%20Lounge%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien%7CCraft%20Room%20Platja%20d%E2%80%99Aro%2C%20Girona%2C%20Spanien&travelmode=walking" target="_blank" rel="noopener">Rundgang mit Craft Room</a>
 <button class="btn secondary" data-trip-route="platjaDaroWalkKebab">Rundgang mit Royal Kebab</button>
 <button class="btn secondary" data-map="Parc d'Aro Platja d'Aro Girona">Parken</button>
 <button class="btn secondary" data-map="Ilusiona Platja d'Aro">Ilusiona</button>
@@ -4346,6 +4347,22 @@ document.addEventListener('click', function(event){
     target.scrollIntoView({behavior:'smooth', block:'start'});
   });
 });
+
+
+// V43: Direkte externe Links auf Buttons zuverlässig öffnen
+document.addEventListener('click', function(event){
+  const urlButton = event.target.closest('[data-url]');
+  if(!urlButton) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  const url = urlButton.getAttribute('data-url');
+  if(!url) return;
+
+  // Auf iPhone/Safari ist location.href zuverlässiger als window.open
+  window.location.href = url;
+}, true);
 
 </script>
 </body>
