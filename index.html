@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 38</title>
+<title>Spanien Travelbook 2026 · Version 39</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -643,13 +643,14 @@ section.view[data-view="home"] #holidayOverview{
 /* V36: Platja-d’Aro-Rundgang verkürzt · unnötiges Zwischenziel entfernt · Autoroute nur zum Parkplatz */
 /* V37: Clermont morgens Frühstück + HPC statt Laden am Vorabend oder Start mit 95 % */
 /* V38: Rücketappe Variante A · nur Aire du Viaduc · ein HPC-Stopp · Clermont-Altstadt und Bouillon */
+/* V39: Samstagmorgen Clermont · zuerst Electra laden, währenddessen Frühstück bei Marie Blachère · DKV-Hinweis */
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 38 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 39 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -1544,7 +1545,7 @@ section.view[data-view="home"] #holidayOverview{
 <button class="btn secondary" data-map="Place de Jaude Clermont-Ferrand">Rundgang starten</button>
 <button class="btn secondary" data-map="Cathédrale Notre-Dame-de-l’Assomption Clermont-Ferrand">Kathedrale</button>
 <button class="btn secondary" data-map="Bouillon Clermont Clermont-Ferrand">Bouillon Clermont</button>
-<button class="btn secondary" data-map="Electra Jardiland Boulevard Vincent Auriol Clermont-Ferrand">HPC morgens</button>
+<button class="btn secondary" data-map="Electra Boulevard Vincent Auriol Clermont-Ferrand">Electra morgens</button>
 </div>
 </div>
 </article>
@@ -1758,16 +1759,16 @@ destinationCharging:'Voraussichtliche Ankunft mit etwa 30–40 % Reserve. Kein L
 routeWaypoints:['Viaduc de Millau A75','Aire du Viaduc de Millau Brocuéjouls 12100 Millau Frankreich','Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron Frankreich'],
 plan:'08:30 Uhr Abfahrt in L’Estartit mit 90–95 % SoC. Direkte Fahrt über die A75 Richtung Millau. Gegen 12:30 Uhr Ankunft an der Aire du Viaduc de Millau. Für Toiletten, Fotos und den kurzen Weg zum Aussichtspunkt 20–30 Minuten einplanen. Anschließend weiter zur Aire de l’Aveyron und dort als einzigem planmäßigen Ladestopp von voraussichtlich etwa 10–15 % auf 80–85 % laden; Ladezeit ungefähr 30–35 Minuten. Danach direkte Weiterfahrt nach Clermont-Ferrand. Geplante Ankunft etwa 16:00–16:45 Uhr, Zielwert ca. 16:15 Uhr. Audi-Navigation, DKV-App, Verkehr und Ladeverfügbarkeit bleiben am Fahrtag verbindlich.'},
 
-{id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'08:30',arrivalTime:'16:45',arrivalWindow:'16:30–17:00',totalDayTime:'ca. 8 Std. 15–30 Min.',todayStops:'Marie Blachère + Electra Clermont + Beaune-Tailly + Laxou',todayChecks:['Mit dem tatsächlichen Ankunfts-SoC des Vorabends starten – voraussichtlich etwa 35 %','Frühstück bei Marie Blachère mit dem nahen Electra-HPC kombinieren','Vor Abfahrt Richtung Metz auf etwa 90 % laden','Beaune-Tailly und Laxou anhand der Audi-Prognose prüfen'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
-    summary:'Kein Laden am Vorabend: Um 08:30 Uhr mit voraussichtlich etwa 35 % von der Unterkunft zum kombinierten Frühstücks- und HPC-Stopp fahren. Während des Frühstücks auf etwa 90 % laden; anschließend folgen Beaune-Tailly und bei Bedarf eine kurze Nachladung in Laxou.',
+{id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'08:00',arrivalTime:'16:45',arrivalWindow:'16:30–17:00',totalDayTime:'ca. 8 Std. 30–45 Min.',todayStops:'Electra Clermont + Frühstück Marie Blachère + Beaune-Tailly + Laxou nach Audi-Prognose',todayChecks:['Mit dem tatsächlichen Rest-SoC des Vorabends starten – voraussichtlich etwa 30–40 %','Zuerst zur Electra-Station fahren und den Audi anschließen','Maximal etwa 5 Minuten zu Fuß zu Marie Blachère und während des Ladens frühstücken','Nach dem Frühstück mit 80–85 % Richtung Metz starten','Beaune-Tailly und Laxou anhand der Audi-Prognose prüfen'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
+    summary:'Kein Laden am Freitagabend. Samstag gegen 08:00 Uhr zuerst zur Electra-Station am Boulevard Vincent Auriol fahren und den Audi anschließen. Danach maximal etwa 5 Minuten zu Fuß zu Marie Blachère gehen, während des Ladens frühstücken und gegen 08:40–08:50 Uhr mit 80–85 % Richtung Metz starten. Danach folgen Beaune-Tailly und bei Bedarf eine kurze Nachladung in Laxou.',
     tags:['Etappe','Metz','Rückfahrt','Frühstück + Laden'],distance:'ca. 600–615 km inklusive morgendlichem Clermont-Stopp und Laxou',driveTime:'ca. 8–8,5 Std. inklusive Frühstück/Laden und Fahrtstopps',
     toll:'Richtwert ca. 35–50 € je nach gewählter Route über A89/A6/A31',
     chargingPlan:'Clermont morgens ca. 35 % → 90 % während des Frühstücks · Beaune-Tailly auf etwa 85 % · Tesla Laxou nur so weit laden, dass Metz mit mindestens 30 % erreicht wird',
     evening:'18:00 Altstadtrunde · 19:45 Essen · kein Laden am Abend, sofern Ankunfts-SoC mindestens 30 % beträgt',
     startSoc:'ca. 35 % an der Unterkunft · nach Frühstück/HPC ca. 90 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Appartement Rue Haute Seille',
     destinationCharging:'In Metz nur laden, wenn der Audi weniger als 30 % bei Ankunft prognostiziert; ansonsten Laden auf den nächsten Morgen verlegen',
-    routeWaypoints:['Marie Blachère Clermont Ferrand 2 Boulevard Saint Jean 63000 Clermont-Ferrand','Electra Jardiland Boulevard Vincent Auriol Clermont-Ferrand','Aire de Beaune-Tailly A6','Rue de la Sapinière, 54520 Laxou, Frankreich'],
-    plan:'08:30 Uhr Abfahrt von 13 Boulevard Trudaine mit dem tatsächlichen Rest-SoC des Vorabends, voraussichtlich etwa 35 %. Zuerst in den Bereich Boulevard Saint Jean / Boulevard Vincent Auriol fahren. Während des Frühstücks bei Marie Blachère am nahen Electra-HPC von etwa 35 % auf rund 90 % laden; Weiterfahrt ungefähr 09:15–09:25 Uhr. Danach bis Beaune-Tailly fahren und auf etwa 85 % laden. Vor Laxou entscheidet die Audi-Prognose: nur so weit nachladen, dass Metz mit mindestens 30 % erreicht wird. Erwartete Ankunft etwa 16:30–17:00 Uhr. DKV-Akzeptanz, Öffnung, Live-Belegung und Fußweg am Morgen in DKV-App und Google Maps prüfen.'},
+    routeWaypoints:['Electra Boulevard Vincent Auriol 63000 Clermont-Ferrand','Marie Blachère Boulevard Saint Jean 63000 Clermont-Ferrand','Aire de Beaune-Tailly A6','Rue de la Sapinière, 54520 Laxou, Frankreich'],
+    plan:'Gegen 08:00 Uhr Abfahrt von 13 Boulevard Trudaine mit dem tatsächlichen Rest-SoC des Vorabends, voraussichtlich etwa 30–40 %. Zuerst Electra am Boulevard Vincent Auriol anfahren und den Audi anschließen. Anschließend maximal etwa 5 Minuten zu Fuß zu Marie Blachère am Boulevard Saint Jean gehen. Dort während des Ladevorgangs frühstücken und gegebenenfalls belegte Baguettes als Proviant mitnehmen. Gegen 08:40–08:50 Uhr zum Fahrzeug zurückkehren und mit 80–85 % Richtung Metz starten. Danach bis Beaune-Tailly fahren und auf etwa 85 % laden. Vor Laxou entscheidet die Audi-Prognose: nur so weit nachladen, dass Metz mit mindestens 30 % erreicht wird. Erwartete Ankunft etwa 16:30–17:00 Uhr. Electra ist über DKV-Roaming eingeplant; DKV-Akzeptanz, Preis, Öffnung, Live-Belegung und Fußweg am Morgen in DKV-App und Google Maps prüfen.'},
 
     {id:'s6',originAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',destinationAddress:'Hasbergen, Deutschland',date:'02.08.',weekday:'So',departureTime:'09:00',arrivalTime:'16:00',arrivalWindow:'16:00',totalDayTime:'ca. 7 Std.',todayStops:'Mougel Bio + Waves Actisud + Bonn',todayChecks:['Zuerst Bäckerei, danach Tesla auf etwa 95 %','Tesla Bonn als planmäßigen Fahrtstopp prüfen','Ankunft zuhause gegen 16:00 Uhr'],from:'Metz',to:'Hasbergen',title:'Metz → Hasbergen',
     summary:'Nach dem morgendlichen Laden am Waves Actisud mit etwa 95 % starten. Tesla Bonn liegt nach ungefähr 240 km und wird mit etwa 25–30 % erreicht. Bonn bis Hasbergen sind eher rund 235–245 km; nach Laden auf 85 % wird Hasbergen deshalb mit ungefähr 15–18 % erreicht.',
@@ -1784,7 +1785,7 @@ plan:'08:30 Uhr Abfahrt in L’Estartit mit 90–95 % SoC. Direkte Fahrt über d
     {id:'h1',name:'L’Atypique',place:'Dijon',date:'22.07.',status:'vollständig',source:'Buchung und Gastgeberangaben · Adresse, Zugang, Parken und Check-out bestätigt',checkin:'Self Check-in · bestätigte Zugangsdaten aus Gastgeber-Nachricht verwenden',parking:'Rue Marguerite Thibert ca. 150 m',address:'34Bis rue d’Auxonne, 21000 Dijon',summary:'Straßenparken Mo–Sa 9:00–12:30 und 14:00–19:00 Uhr gebührenpflichtig. Kostenloser Parkplatz: Rue Marguerite Thibert (ca. 150 m). Intermarché: 2 Stunden kostenlos. Empfohlener Abend: kurzer Altstadtrundgang mit einem kleinen Teil des Eulenwegs, gezielter Besuch der Eule an Notre-Dame, französischer Burger und Eis.',checkout:'laut Gastgeber-Nachricht bestätigt',charging:'23.07. morgens: Marie Blachère Chenôve mit drei DKV-HPC-Optionen über 150 kW im Radius von etwa 6 Fußminuten',nearby:'Altstadt, Place de la Libération, Notre-Dame, Intermarché, Rue Marguerite Thibert',hotelChecklist:'Gepäck ausladen · Fahrzeug parken · Self-Check-in · kurzer Eulenweg · Eule besuchen · Burger · Eis · Laden'},
     {id:'h2',name:'Ibis Budget Montpellier Centre Millénaire',place:'Montpellier',date:'23.07.',status:'vollständig',source:'Hotelinformation und Buchung',checkin:'ab 14:00 Uhr',parking:'kostenloser, geschlossener Hotelparkplatz',address:'25 rue des Frères Lumière, 34000 Montpellier',summary:'Check-out bis 12:00 Uhr. Gültiger Ausweis erforderlich. Kostenloser, geschlossener Hotelparkplatz und vier kostenpflichtige Ladepunkte. Abendziel ist La Grande-Motte mit Hafenrunde, Café Soleil als preisbewusster Hauptoption sowie La Barque Bleue und Le Poisson Bleu als Seafood-Alternativen.',checkout:'bis 12:00 Uhr',charging:'24.07. Abfahrt 09:45 Uhr mit 85 % · Tesla Rivesaltes bis 90 % (ca. 35–40 Min.) · Carrefour Torroella bis 95 % (ca. 25–35 Min.)',nearby:'La Grande-Motte, Hafen, Café Soleil, La Barque Bleue, Le Poisson Bleu',hotelChecklist:'einchecken · Ladestand prüfen · 09:45 Uhr auschecken · Brioche Dorée Odysseum · Tesla Rivesaltes · Carrefour Torroella'},
     {id:'h3',name:'ALMA BEACH ESTARTIT',place:'L’Estartit',date:'24.–31.07.',status:'vollständig',source:'Booking.com-Unterkunftsseite · Kontaktangaben von Mónica',checkin:'15:00–18:00 Uhr · Ankunftszeit vorab mitteilen',parking:'kostenloses Parken in den umliegenden Straßen',address:'11 Carrer Salines, 17258 L’Estartit, Spanien',summary:'Familienunterkunft für den einwöchigen Strandaufenthalt an der Costa Brava. Idealer Ausgangspunkt für Strand, Hafenpromenade, Medes-Inseln, Barcelona-Tagesausflug und die geplante Costa-Brava-Rundtour über Begur, Pals und Peratallada.',checkout:'08:00–10:00 Uhr',charging:'Anreise 24.07.: Start Montpellier 85 % · Tesla Rivesaltes bis 90 % · Carrefour Torroella bis 95 %. Vor Rückfahrt am 30.07. erneut auf etwa 95 % laden',nearby:'Strandlage, saisonaler Supermarkt im Gebäude, Zentrum ca. 750 m, Medes-Inseln ca. 1 km',contactName:'Mónica',email:'almabeachestartit@gmail.com',phone:'+34679937019',whatsapp:'+34679937019',hotelChecklist:'Gepäck · Einkauf · Strandtasche · Hafenbummel · Barcelona planen · Audi vor Rückreise auf etwa 95 % laden'},
-    {id:'h4',name:'Airbnb bei Emilien',place:'Clermont-Ferrand',date:'31.07.',status:'teilweise',source:'Airbnb-Screenshots · Gastgeber Emilien · Co-Host Sophie; Zugang vollständig, Check-out-Uhrzeit noch offen',checkin:'Self Check-in über Schlüsselbox · Code 8848',parking:'Parkhaus Blaise Pascal ca. 200 m · Ticket/Pass 31 Tage gültig · für Ein- und Ausfahrt aufbewahren · nicht direkt am Handy lagern',address:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',summary:'Zugang über das grüne Tor und den Innenhof. Wohnung im 2. Stock rechts; Tür mit festem Griff. Gegensprechanlage Wohnung 24. Der Schlüssel für die Fahrrad-/Motorradgarage befindet sich hinten links im Hof. Google Maps lokalisiert die Adresse teilweise ungenau; besser ein alternatives GPS-System oder die vollständige Adresse verwenden.',checkout:'Uhrzeit in der Airbnb-App prüfen · Schlüssel zurück in die Box',charging:'01.08. morgens: Electra Jardiland am Boulevard Vincent Auriol · Frühstück bei Marie Blachère Clermont Ferrand 2 am Boulevard Saint Jean · vor Abfahrt Richtung Metz auf etwa 90 % laden',nearby:'Place Delille ca. 5 Minuten zu Fuß · Bahnhof ca. 10 Minuten zu Fuß · Altstadt und Kathedrale gut erreichbar',hotelChecklist:'Schlüsselbox 8848 · grünes Tor · Innenhof · 2. Stock rechts · Gegensprechanlage 24 · Parkticket aufbewahren'},
+    {id:'h4',name:'Airbnb bei Emilien',place:'Clermont-Ferrand',date:'31.07.',status:'teilweise',source:'Airbnb-Screenshots · Gastgeber Emilien · Co-Host Sophie; Zugang vollständig, Check-out-Uhrzeit noch offen',checkin:'Self Check-in über Schlüsselbox · Code 8848',parking:'Parkhaus Blaise Pascal ca. 200 m · Ticket/Pass 31 Tage gültig · für Ein- und Ausfahrt aufbewahren · nicht direkt am Handy lagern',address:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',summary:'Zugang über das grüne Tor und den Innenhof. Wohnung im 2. Stock rechts; Tür mit festem Griff. Gegensprechanlage Wohnung 24. Der Schlüssel für die Fahrrad-/Motorradgarage befindet sich hinten links im Hof. Google Maps lokalisiert die Adresse teilweise ungenau; besser ein alternatives GPS-System oder die vollständige Adresse verwenden.',checkout:'Uhrzeit in der Airbnb-App prüfen · Schlüssel zurück in die Box',charging:'Samstag 01.08.: zuerst Electra am Boulevard Vincent Auriol anfahren und anschließen · maximal ca. 5 Minuten zu Fuß zu Marie Blachère am Boulevard Saint Jean · während des Ladens frühstücken · mit 80–85 % Richtung Metz starten · DKV-Akzeptanz und Live-Status morgens prüfen',nearby:'Place Delille ca. 5 Minuten zu Fuß · Bahnhof ca. 10 Minuten zu Fuß · Altstadt und Kathedrale gut erreichbar',hotelChecklist:'Schlüsselbox 8848 · grünes Tor · Innenhof · 2. Stock rechts · Gegensprechanlage 24 · Parkticket aufbewahren'},
     {id:'h5',name:'Appartement Rue Haute Seille',place:'Metz',date:'01.08.',status:'teilweise',source:'Booking.com-Unterkunftsseite · Adresse und Zeiten bestätigt; Zugangsdaten folgen über Gastgeber',checkin:'14:00–22:00 Uhr · Ankunftszeit vorab mitteilen · Zugangsnachricht prüfen',parking:'öffentliche Parkmöglichkeiten in der Umgebung',address:'56 Rue Haute Seille, 57000 Metz, Frankreich',summary:'Innenstadtnahe Unterkunft für die letzte Übernachtung vor der Heimreise. Idealer Ausgangspunkt für einen Spaziergang über die Place Saint-Louis, zur Kathedrale Saint-Étienne und entlang der Mosel.',checkout:'bis 11:00 Uhr',charging:'02.08. morgens: Tesla Supercharger Waves Actisud, 1 Chemin de la Pie Grièche, 57160 Moulins-lès-Metz · Bäckerei Mougel Bio, 1 Rue de Chaponost',nearby:'Centre Pompidou-Metz ca. 1 km, Bahnhof ca. 1,1 km, Kathedrale und Place Saint-Louis fußläufig',hotelChecklist:'Gepäck · Parken · Altstadtrunde · morgens auf 95 % laden · Check-out'}
   ],
 
@@ -1819,7 +1820,7 @@ plan:'08:30 Uhr Abfahrt in L’Estartit mit 90–95 % SoC. Direkte Fahrt über d
     h4:{
       restaurant:'Bouillon Clermont, Clermont-Ferrand',
       breakfast:'Marie Blachère Clermont Ferrand 2, Boulevard Saint Jean, 63000 Clermont-Ferrand',
-      charging:'Electra Jardiland, Boulevard Vincent Auriol, Clermont-Ferrand',
+      charging:'Electra, Boulevard Vincent Auriol, Clermont-Ferrand · DKV-Roaming vorgesehen · live prüfen',
       supermarket:'supermarché près de Boulevard Trudaine Clermont-Ferrand',
       pharmacy:'pharmacie près de Boulevard Trudaine Clermont-Ferrand',
       parking:'Parking Blaise Pascal Clermont-Ferrand',
@@ -1991,10 +1992,10 @@ map:'Tesla Supercharger Aire de la Garde France'}]},reserve:null,secondaryLabel:
 {
     stageId:'s5',date:'01.08.',route:'Clermont-Ferrand → Metz',distance:'ca. 610 km',
     maxDetourKm:2,minimumStalls:6,dkvRequired:true,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',
-    calibration:'Planungsmodell',reference:'22 kWh/100 km · Start an Unterkunft ca. 35 %, nach Frühstück/HPC ca. 90 %',modelRate:'zwei Fahrtstopps',
-    note:'Morgens Frühstück und HPC in Clermont kombinieren; danach Beaune-Tailly plus bedarfsgerechte Nachladung in Laxou. Moulins-lès-Metz bleibt Reserve.',
+    calibration:'Planungsmodell',reference:'22 kWh/100 km · Start an Unterkunft voraussichtlich ca. 30–40 %, nach Frühstück/HPC 80–85 %',modelRate:'zwei Fahrtstopps',
+    note:'Samstagmorgen zuerst Electra Clermont anfahren und anschließen; während des Ladens bei Marie Blachère frühstücken. Mit 80–85 % weiter Richtung Metz; danach Beaune-Tailly plus bedarfsgerechte Nachladung in Laxou. Moulins-lès-Metz bleibt Reserve.',
     primary:{
-      name:'1. Fahrt-Ladestopp · Aire de Beaune-Tailly',legFrom:'Clermont-Ferrand nach Frühstück/HPC',legTo:'Beaune-Tailly',location:'A6, 21190 Merceuil',
+      name:'1. Fahrt-Ladestopp · Aire de Beaune-Tailly',legFrom:'Electra Clermont nach Frühstück bei Marie Blachère',legTo:'Beaune-Tailly',location:'A6, 21190 Merceuil',
       provider:'TotalEnergies Charge Rapide',power:'bis 175 kW',stops:'12 Ladepunkte',routeOffsetKm:0,legDistanceKm:290,
       arrivalSoc:'Zielkorridor 5–12 %',departureSoc:'ca. 85 %',
       toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
@@ -2039,7 +2040,7 @@ const destinationChargingPlans = [
   {stageId:'s1',place:'Dijon / Longvic',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
   {stageId:'s2',place:'Montpellier',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
   {stageId:'s3',place:'L’Estartit',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
-  {stageId:'s4',place:'Clermont-Ferrand / Riom',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
+  {stageId:'s4',place:'Clermont-Ferrand',arrival:'voraussichtlich ca. 30–40 %',when:'kein Laden am Freitagabend',target:'—',reason:'Samstagmorgen zuerst Electra anfahren; während des Ladens bei Marie Blachère frühstücken'},
   {stageId:'s5',place:'Metz / Moulins-lès-Metz',arrival:'Audi-Prognose maßgeblich',when:'am Etappenziel',target:'85 %',reason:'nur laden, wenn Ankunfts-SoC unter 60 % liegt'},
   {stageId:'s6',place:'Hasbergen',arrival:'Audi-Prognose maßgeblich',when:'nach Bedarf zuhause',target:'—',reason:'keine Folgetappe'}
 ];
@@ -2075,14 +2076,22 @@ const morningChargingPlans = {
     note:'Der Ladestand wird am Vorabend auf mindestens 80 %, besser 85 % hergestellt. Morgens ist nur die Bäckerei fest; Electra nutzen, wenn Torroella nicht mit mindestens 10–12 % prognostiziert wird.'
   },
   s4:{
-    title:'Clermont-Ferrand morgens · günstig frühstücken und laden',
-    station:'Electra Jardiland Clermont-Ferrand',
-    address:'Boulevard Vincent Auriol, Clermont-Ferrand, Frankreich',
-    power:'bis 150 kW',
-    stalls:'6 Schnellladeanschlüsse',
-    bakery:'Marie Blachère Clermont Ferrand 2',
+    title:'Samstagmorgen Clermont · zuerst laden, währenddessen frühstücken',
+    station:'Electra Clermont-Ferrand · Village des Commerçants / Jardiland',
+    provider:'Electra · DKV Card +Charge über Roaming; Akzeptanz am Morgen in der DKV-App prüfen',
+    address:'Boulevard Vincent Auriol, 63000 Clermont-Ferrand, Frankreich',
+    power:'HPC bis 300 kW; Fahrzeugleistung des Audi ist maßgeblich',
+    stalls:'mehrere CCS-HPC-Ladepunkte · Live-Belegung prüfen',
+    target:'voraussichtlich ca. 30–40 % → 80–85 %',
+    duration:'etwa 25–35 Minuten, abhängig von Ankunfts-SoC und Ladeleistung',
+    bakery:'Marie Blachère Clermont-Ferrand',
     bakeryAddress:'Boulevard Saint Jean, 63000 Clermont-Ferrand, Frankreich',
-    note:'08:30 Uhr Abfahrt von der Unterkunft mit dem tatsächlichen Rest-SoC, voraussichtlich etwa 35 %. Frühstück und Laden kombinieren und auf ungefähr 90 % laden. Marie Blachère ist laut Filialsuche ab 07:00 Uhr geöffnet. DKV-Akzeptanz, Live-Belegung und den kurzen Fußweg am Morgen in DKV-App und Google Maps prüfen; als robuste Reserve steht der offene Tesla Supercharger am Novotel, 32–34 Rue Georges Besse, zur Verfügung.'
+    bakeryHours:'Samstag laut Filialangabe ab 07:00 Uhr; am Morgen live prüfen',
+    walk:'maximal etwa 5 Minuten zu Fuß; die aktuelle Fußroute vor Ort in Google Maps prüfen',
+    stationMaps:'https://www.google.com/maps/search/?api=1&query=Electra+Boulevard+Vincent+Auriol+Clermont-Ferrand',
+    bakeryMaps:'https://www.google.com/maps/search/?api=1&query=Marie+Blachere+Boulevard+Saint+Jean+Clermont-Ferrand',
+    walkMaps:'https://www.google.com/maps/dir/?api=1&origin=Electra+Boulevard+Vincent+Auriol+Clermont-Ferrand&destination=Marie+Blachere+Boulevard+Saint+Jean+Clermont-Ferrand&travelmode=walking',
+    note:'Ablauf am Samstag, 01.08.: etwa 08:00 Uhr von der Unterkunft losfahren, zuerst an der Electra-Station parken und den Audi anschließen. Danach maximal rund 5 Minuten zu Fuß zu Marie Blachère gehen und während des Ladevorgangs frühstücken. Gegen 08:40–08:50 Uhr zum Fahrzeug zurückkehren und mit 80–85 % Richtung Metz starten. Croissants, Pain au Chocolat, Kaffee und belegte Baguettes eignen sich auch als Reiseproviant. DKV-Akzeptanz, Preis, Live-Belegung und Fußweg unmittelbar vor Nutzung in der DKV-App beziehungsweise Google Maps kontrollieren. Reserve: Tesla Supercharger am Novotel, 32–34 Rue Georges Besse.'
   },
   s5:{
     title:'Metz morgens laden',
@@ -2125,7 +2134,8 @@ const routeAuditPoints = {
     {name:'Clermont-Ferrand',query:'13 Boulevard Trudaine 63000 Clermont-Ferrand France'}
   ],
   s5:[
-    {name:'Tesla Riom',query:'Rue Louis Armstrong 63200 Riom France'},
+    {name:'Electra Clermont-Ferrand',query:'Boulevard Vincent Auriol 63000 Clermont-Ferrand France'},
+    {name:'Marie Blachère Clermont-Ferrand',query:'Boulevard Saint Jean 63000 Clermont-Ferrand France'},
     {name:'Beaune-Tailly',query:'Aire de Beaune-Tailly A6 21190 Merceuil France'},
     {name:'Tesla Laxou',query:'Rue de la Sapinière 54520 Laxou France'},
     {name:'Metz',query:'56 Rue Haute Seille 57000 Metz France'}
@@ -3348,9 +3358,16 @@ function departureCard(plan,step){
     ${options?`<div class="feature-list">${options.map(o=>`<div class="feature-item"><b>${esc(o.label)} · ${esc(o.station)}</b><span>${esc(o.address)}<br>${esc(o.stalls)} · ${esc(o.power)}<br><b>Bäckerei:</b> ${esc(o.bakery)} · ${esc(o.bakeryAddress)}<br><b>Fußweg:</b> ${esc(o.walk||'Google Maps prüfen')}<br>${esc(o.note)}</span><div class="actions"><button class="btn primary" ${o.stationMaps?`data-url="${esc(o.stationMaps)}"`:`data-map="${esc(o.address)}"`}>Ladestation</button><button class="btn secondary" ${o.walkMaps?`data-url="${esc(o.walkMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Fußweg zur Bäckerei</button><button class="btn secondary" ${o.bakeryMaps?`data-url="${esc(o.bakeryMaps)}"`:`data-map="${esc(o.bakeryAddress)}"`}>Bäckerei</button></div></div>`).join('')}</div>`:
     `<div class="charge-facts">
       <div class="charge-fact"><span>Ladepunkt</span><b>${esc(morning.station)} · ${esc(morning.address)}</b></div>
-      <div class="charge-fact"><span>Kapazität</span><b>${esc(morning.stalls)} · ${esc(morning.power)}</b></div>
+      <div class="charge-fact"><span>Leistung / Anschlüsse</span><b>${esc(morning.stalls)} · ${esc(morning.power)}</b></div>
+      ${morning.provider?`<div class="charge-fact"><span>DKV / Betreiber</span><b>${esc(morning.provider)}</b></div>`:''}
+      ${morning.target?`<div class="charge-fact"><span>Geplantes Ladefenster</span><b>${esc(morning.target)}</b></div>`:''}
+      ${morning.duration?`<div class="charge-fact"><span>Ladezeit</span><b>${esc(morning.duration)}</b></div>`:''}
       <div class="charge-fact"><span>Bäckerei / Frühstück</span><b>${esc(morning.bakery)} · ${esc(morning.bakeryAddress)}</b></div>
-    </div><div class="actions"><button class="btn primary" data-map="${esc(morning.address)}">Ladepunkt</button><button class="btn secondary" data-map="${esc(morning.bakeryAddress)}">Bäckerei / Frühstück</button></div>`}
+      ${morning.walk?`<div class="charge-fact"><span>Fußweg</span><b>${esc(morning.walk)}</b></div>`:''}
+      ${morning.bakeryHours?`<div class="charge-fact"><span>Öffnung Samstag</span><b>${esc(morning.bakeryHours)}</b></div>`:''}
+    </div>
+    ${morning.note?`<div class="notice"><div class="notice-icon">⚡</div><div><strong>Reihenfolge</strong><p>${esc(morning.note)}</p></div></div>`:''}
+    <div class="actions"><button class="btn primary" ${morning.stationMaps?`data-url="${esc(morning.stationMaps)}"`:`data-map="${esc(morning.address)}"`}>1. Electra anfahren</button><button class="btn secondary" ${morning.walkMaps?`data-url="${esc(morning.walkMaps)}"`:`data-map="${esc(morning.bakeryAddress)}"`}>2. Fußweg zum Bäcker</button><button class="btn secondary" ${morning.bakeryMaps?`data-url="${esc(morning.bakeryMaps)}"`:`data-map="${esc(morning.bakeryAddress)}"`}>Marie Blachère</button></div>`}
   </article>`;
 }
 function arrivalCard(plan,step){
@@ -3720,7 +3737,7 @@ const stageServices={
   {type:'Ankunft',name:'Clermont-Ferrand',info:'Ziel gegen 16:15 Uhr, danach Check-in, Altstadtrunde und Bouillon Clermont.'}
  ],
  s5:[
-  {type:'Frühstück/Laden',name:'Riom',info:'Morgendlicher HPC-Stopp; Frühstück nur an öffentlich zugänglicher Bäckerei, Tankstelle oder Gastronomie – keine Hoteloption.'},
+  {type:'Frühstück/Laden',name:'Electra Clermont + Marie Blachère',info:'08:00 Uhr zuerst Electra am Boulevard Vincent Auriol anfahren und anschließen. Maximal etwa 5 Minuten zu Fuß zu Marie Blachère am Boulevard Saint Jean; während des Ladens frühstücken. Rückkehr gegen 08:40–08:50 Uhr, Weiterfahrt mit 80–85 %. Electra ist über DKV-Roaming vorgesehen; Akzeptanz und Live-Status morgens in der DKV-App prüfen.'},
   {type:'Ladepause',name:'Beaune-Tailly',info:'Autobahnservice mit Toiletten, Shop und Gastronomie.'},
   {type:'Ankunft',name:'Metz',info:'Unterkunft, Altstadtrundgang und Abendessen zu Fuß.'}
  ],
@@ -3744,7 +3761,7 @@ function destinationHotelForStage(st){return travel.hotels.find(h=>h.place===st.
 function serviceByType(stageId,needle){return (stageServices[stageId]||[]).find(x=>x.type.toLowerCase().includes(needle.toLowerCase()))||null;}
 function localChargingText(st,hotel){
  if(st.id==='s3') return 'Nach der Ankunft nur laden, wenn der tatsächliche SoC unter 60 % liegt. Für den Aufenthalt die hinterlegten Standorte rund um Torroella und L’Estartit nutzen; Live-Status und DKV-Akzeptanz vor der Anfahrt prüfen.';
- if(st.id==='s4') return 'Kein Laden am Abend. Frühstück und HPC-Laden erfolgen am nächsten Morgen bei Marie Blachère beziehungsweise Electra Jardiland in Clermont-Ferrand.';
+ if(st.id==='s4') return 'Kein Laden am Freitagabend. Am Samstagmorgen zuerst Electra am Boulevard Vincent Auriol anfahren und anschließen; anschließend maximal etwa 5 Minuten zu Fuß zu Marie Blachère am Boulevard Saint Jean und während des Ladens frühstücken. Abfahrt Richtung Metz mit 80–85 %. DKV-Akzeptanz und Live-Belegung am Morgen prüfen.';
  if(st.id==='s5') return 'Am Abend ist kein Laden vorgesehen. Der geplante Hauptladevorgang erfolgt am nächsten Morgen am Waves Actisud.';
  if(st.id==='s6') return 'Ziel ist Zuhause; keine weitere Reiseetappe.';
  return hotel?.charging||st.destinationCharging||'Lademöglichkeit am Ziel nach tatsächlichem Ankunfts-SoC prüfen.';
@@ -3971,7 +3988,9 @@ function destinationHub(st,hotel){
      <div class="destination-fact"><b>Parken</b><span>Parkhaus Blaise Pascal, etwa 200 m; Ticket für Ein- und Ausfahrten aufbewahren.</span></div>
      <div class="destination-fact"><b>Self-Check-in</b><span>13 Boulevard Trudaine · grünes Tor · Innenhof · 2. Stock rechts · Schlüsselbox 8848 · Gegensprechanlage Wohnung 24.</span></div>
      <div class="destination-fact"><b>Abend</b><span>Place Delille → Kathedrale Notre-Dame-de-l’Assomption → Place de la Victoire → Bouillon Clermont.</span></div>
-     <div class="destination-fact"><b>Nächster Morgen</b><span>Check-out-Zeit in der Airbnb-App prüfen; Schlüssel zurück in die Box; um 08:30 Uhr zur Kombination aus Marie Blachère am Boulevard Saint Jean und Electra-HPC am Boulevard Vincent Auriol fahren.</span></div>
+     <div class="destination-fact"><b>Samstagmorgen 01.08.</b><span>Check-out-Zeit in der Airbnb-App prüfen und Schlüssel in die Box zurücklegen. Gegen 08:00 Uhr zuerst Electra am Boulevard Vincent Auriol anfahren, Audi anschließen und danach maximal etwa 5 Minuten zu Fuß zu Marie Blachère am Boulevard Saint Jean gehen. Während des Ladevorgangs frühstücken; gegen 08:40–08:50 Uhr mit 80–85 % Richtung Metz starten. Electra ist über DKV-Roaming eingeplant; Akzeptanz, Preis und Live-Belegung morgens in der DKV-App prüfen.</span></div>
+     <div class="destination-fact"><b>DKV &amp; Ladeziel</b><span>Electra ist als DKV-Card-+Charge-Roamingpartner eingeplant. Vor dem Anschließen Akzeptanz und Preis in der DKV-App bestätigen. Geplantes Ladefenster: tatsächlicher Rest-SoC, voraussichtlich ca. 30–40 %, bis 80–85 %; etwa 25–35 Minuten.</span></div>
+     <div class="destination-fact"><b>Frühstück während des Ladens</b><span>Marie Blachère: Croissants, Pain au Chocolat, Kaffee sowie belegte Baguettes als Proviant. Fußweg maximal etwa 5 Minuten; aktuelle Route in Google Maps prüfen.</span></div>
     </div>
    </div></details>`;
  }
