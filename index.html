@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 45</title>
+<title>Spanien Travelbook 2026 · Version 46</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -650,13 +650,14 @@ section.view[data-view="home"] #holidayOverview{
 /* V43: dynamische Etappenseite bindet alle Aktionsbuttons nach jedem Rendern neu */
 /* V44: Vollprüfung · robuste Fallback-Aktionen · Zeit- und SoC-Konsistenz der Rückreise */
 /* V45: Clermont–Metz optimiert über A71 · A79/RCEA · A6 · A31; Maut-/Zeit-Kompromiss und Ladeplan synchronisiert */
+/* V46: Google-Maps-Route Clermont–Metz mit Zwangspunkten Montmarault und Digoin gegen automatische A89-Umleitung */
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 45 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 46 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -1771,7 +1772,7 @@ destinationCharging:'Voraussichtliche Ankunft mit etwa 30–40 % Reserve. Kein L
 routeWaypoints:['Viaduc de Millau A75','Aire du Viaduc de Millau Brocuéjouls 12100 Millau Frankreich','Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron Frankreich'],
 plan:'08:30 Uhr Abfahrt in L’Estartit mit 90–95 % SoC. Direkte Fahrt über die A75 Richtung Millau. Gegen 12:30 Uhr Ankunft an der Aire du Viaduc de Millau. Für Toiletten, Fotos und den kurzen Weg zum Aussichtspunkt 20–30 Minuten einplanen. Anschließend weiter zur Aire de l’Aveyron und dort als einzigem planmäßigen Ladestopp von voraussichtlich etwa 10–15 % auf 80–85 % laden; Ladezeit ungefähr 30–35 Minuten. Danach direkte Weiterfahrt nach Clermont-Ferrand. Geplante Ankunft etwa 16:00–16:45 Uhr, Zielwert ca. 16:15 Uhr. Audi-Navigation, DKV-App, Verkehr und Ladeverfügbarkeit bleiben am Fahrtag verbindlich.'},
 
-{id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'08:30',arrivalTime:'16:15',arrivalWindow:'16:00–16:45',totalDayTime:'ca. 7 Std. 30 Min.–8 Std. 15 Min.',todayStops:'Atlante Lempdes + Frühstück Marie Blachère + Mâcon Saint-Albain + kurzer Stopp Laxou',todayChecks:['Mit dem tatsächlichen Rest-SoC des Vorabends starten – voraussichtlich etwa 30–40 %','08:30 Uhr Unterkunft verlassen, zuerst Atlante Lempdes anschließen und währenddessen bei Marie Blachère frühstücken','Mit etwa 85 % über A71, A79/RCEA, A6 und A31 Richtung Metz starten','Mâcon Saint-Albain als Hauptladestopp nutzen','In Laxou nur kurz bis etwa 50–55 % nachladen, damit Metz mit über 30 % erreicht wird'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
+{id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'08:30',arrivalTime:'16:15',arrivalWindow:'16:00–16:45',totalDayTime:'ca. 7 Std. 30 Min.–8 Std. 15 Min.',todayStops:'Atlante Lempdes + Frühstück Marie Blachère + Route via Montmarault/Digoin + Mâcon Saint-Albain + kurzer Stopp Laxou',todayChecks:['Mit dem tatsächlichen Rest-SoC des Vorabends starten – voraussichtlich etwa 30–40 %','08:30 Uhr Unterkunft verlassen, zuerst Atlante Lempdes anschließen und währenddessen bei Marie Blachère frühstücken','Mit etwa 85 % über A71, A79/RCEA, A6 und A31 Richtung Metz starten','Mâcon Saint-Albain als Hauptladestopp nutzen','In Laxou nur kurz bis etwa 50–55 % nachladen, damit Metz mit über 30 % erreicht wird'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
     summary:'Beste Kombination aus Zeit, Maut und Fahrkomfort: nach dem morgendlichen Laden und Frühstück in Lempdes über A71, A79/RCEA, A6 und A31 nach Metz. Bei 23 kWh/100 km ist Mâcon Saint-Albain der Hauptladestopp; in Laxou folgt nur eine kurze Zielreserve-Nachladung. Die rund 500 km lange Route spart gegenüber der weitgehend mautfreien Alternative etwa 1½ bis 2 Stunden und erreicht Metz mit ungefähr 30–35 %.',
     tags:['Etappe','Metz','Rückfahrt','23 kWh/100 km','A71/A79/A6/A31'],distance:'ca. 500–515 km inklusive Lempdes, Mâcon Saint-Albain und Laxou',driveTime:'ca. 7,5–8,25 Std. inklusive Frühstück und zwei Ladepausen',
     toll:'Richtwert ca. 25–27 € über A71, A79/RCEA, A6 und A31; Betrag am Fahrtag in der Navigation prüfen',
@@ -1779,8 +1780,8 @@ plan:'08:30 Uhr Abfahrt in L’Estartit mit 90–95 % SoC. Direkte Fahrt über d
     evening:'Nach Ankunft Check-in, kompakte Altstadtrunde und Abendessen; kein Laden am Abend bei mindestens 30 %',
     startSoc:'ca. 30–40 % an der Unterkunft · nach Frühstück/HPC 85 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Appartement Rue Haute Seille',
     destinationCharging:'Geplante Ankunft in Metz mit etwa 30–35 %. Laden auf Sonntagmorgen verlegen.',
-    routeWaypoints:['Atlante 10 Rue du Pontel 63370 Lempdes','Marie Blachère 3 Rue du Pontel 63370 Lempdes','Aire de Mâcon Saint-Albain A6 71260 La Salle Frankreich','Rue de la Sapinière 54520 Laxou Frankreich'],
-    plan:'08:30 Uhr Abfahrt von der Unterkunft und kurze Fahrt zur Atlante-Station in Lempdes. Audi sofort anschließen und während des Ladens bei Marie Blachère frühstücken. Gegen 09:10–09:20 Uhr mit etwa 85 % über A71 und A79/RCEA Richtung Mâcon starten; anschließend über A6 und A31 weiter nach Metz. Mâcon Saint-Albain ist der Hauptladestopp: erwartete Ankunft etwa 20–25 %, Laden auf ungefähr 85 %. Danach bis Laxou fahren, dort voraussichtlich mit etwa 8–15 % eintreffen und nur kurz auf ungefähr 50–55 % nachladen. Die letzten rund 58 km nach Metz benötigen etwa 17–19 Prozentpunkte; Ankunft daher mit ungefähr 30–35 %. Realistisches Ankunftsfenster 16:00–16:45 Uhr. Die weitgehend mautfreie Alternative spart etwa 20–25 €, verlängert die Fahrt jedoch um ungefähr 1½ bis 2 Stunden und führt über mehr Landstraßen. Audi-Prognose, Verkehr, DKV-Akzeptanz und Live-Status bleiben verbindlich.'},
+    routeWaypoints:['Atlante 10 Rue du Pontel 63370 Lempdes','Échangeur A71 A79 03390 Montmarault Frankreich','N79 71160 Digoin Frankreich','Aire de Mâcon Saint-Albain A6 71260 La Salle Frankreich','Rue de la Sapinière 54520 Laxou Frankreich'],
+    plan:'08:30 Uhr Abfahrt von der Unterkunft und kurze Fahrt zur Atlante-Station in Lempdes. Audi sofort anschließen und während des Ladens bei Marie Blachère frühstücken. Gegen 09:10–09:20 Uhr mit etwa 85 % starten. Die Google-Maps-Route wird über die technischen Zwangspunkte Montmarault und Digoin geführt, damit sie tatsächlich A71 und A79/N79 nutzt und nicht automatisch auf die A89 über Lyon ausweicht. Anschließend über A6 und A31 weiter nach Metz. Mâcon Saint-Albain ist der Hauptladestopp: erwartete Ankunft etwa 20–25 %, Laden auf ungefähr 85 %. Danach bis Laxou fahren, dort voraussichtlich mit etwa 8–15 % eintreffen und nur kurz auf ungefähr 50–55 % nachladen. Die letzten rund 58 km nach Metz benötigen etwa 17–19 Prozentpunkte; Ankunft daher mit ungefähr 30–35 %. Realistisches Ankunftsfenster 16:00–16:45 Uhr. Die weitgehend mautfreie Alternative spart etwa 20–25 €, verlängert die Fahrt jedoch um ungefähr 1½ bis 2 Stunden und führt über mehr Landstraßen. Audi-Prognose, Verkehr, DKV-Akzeptanz und Live-Status bleiben verbindlich.'},
 
     {id:'s6',originAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',destinationAddress:'Hasbergen, Deutschland',date:'02.08.',weekday:'So',departureTime:'08:30',arrivalTime:'16:45',arrivalWindow:'16:30–17:15',totalDayTime:'ca. 8–8,75 Std.',todayStops:'Electra Waves + Columbus Café + Bonn + Münster',todayChecks:['08:30 Uhr Unterkunft verlassen und zuerst Electra Waves anfahren','Audi anschließen; ab 09:00 Uhr im direkt benachbarten Columbus Café frühstücken','Mit etwa 90 % Richtung Deutschland starten','Bonn als ersten Fahrtstopp nutzen','In Münster kurz nachladen, damit Hasbergen mit über 30 % erreicht wird'],from:'Metz',to:'Hasbergen',title:'Metz → Hasbergen',
     summary:'Sonntagmorgen wird zuerst am Electra-HPC im Waves Actisud angeschlossen. Das Columbus Café im selben Einkaufszentrum öffnet sonntags um 09:00 Uhr; der Fußweg beträgt nur wenige Minuten. Danach startet ihr mit etwa 90 %. Bei 23 kWh/100 km sind zwei Fahrtstopps nötig, wenn Hasbergen mit über 30 % erreicht werden soll: Bonn und eine kurze Nachladung in Münster.',
@@ -3722,7 +3723,7 @@ function runSelfTest(){
   results.push(travel.stages.find(s=>s.id==='s2')?.routeWaypoints?.[1]?.includes('54 Rue de Longvic'));
   results.push(routeAuditPoints.s2?.[0]?.name==='Allego Chenôve');
   results.push(travel.hotelHubs.h1?.charging?.includes('Allego Hypercharger'));
-  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[2]?.includes('Mâcon Saint-Albain') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[3]?.includes('Laxou'));
+  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[1]?.includes('Montmarault') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[2]?.includes('Digoin') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[3]?.includes('Mâcon Saint-Albain') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[4]?.includes('Laxou'));
   results.push(Array.from(document.querySelectorAll('[data-url]')).every(el=>{try{const u=new URL(el.dataset.url);return ['http:','https:'].includes(u.protocol);}catch(e){return false;}}));
   const failed=results.filter(x=>!x).length;
   const box=$('#selfTestResult');
