@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 47</title>
+<title>Spanien Travelbook 2026 · Version 50</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -651,14 +651,16 @@ section.view[data-view="home"] #holidayOverview{
 /* V44: Vollprüfung · robuste Fallback-Aktionen · Zeit- und SoC-Konsistenz der Rückreise */
 /* V45: Clermont–Metz optimiert über A71 · A79/RCEA · A6 · A31; Maut-/Zeit-Kompromiss und Ladeplan synchronisiert */
 /* V46: frühere Google-Maps-Zwangspunkte Montmarault und Digoin */
-/* V47: Clermont–Metz über A71 · A79 · E607/N70/N80 · Chalon · A6 · A31; Fastned Saint-Ambreuil + kurzer Zielreserve-Stopp Laxou */
+/* V48: Clermont–Metz vollständig neu gerechnet · sinnvoll verteilte Stopps Saint-Ambreuil und Val-de-Meuse */
+/* V50: Google-Maps-Einbettung auch bei lokal geöffneter Datei aktiviert; direkter Fallback-Link ergänzt. */
+/* V49: fehlerhaften Stop C entfernt · keine Orts-Zwangspunkte Digoin/Montceau · Val-de-Meuse eindeutig Richtung Nancy/Metz */
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 47 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 50 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -1773,16 +1775,16 @@ destinationCharging:'Voraussichtliche Ankunft mit etwa 30–40 % Reserve. Kein L
 routeWaypoints:['Viaduc de Millau A75','Aire du Viaduc de Millau Brocuéjouls 12100 Millau Frankreich','Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron Frankreich'],
 plan:'08:30 Uhr Abfahrt in L’Estartit mit 90–95 % SoC. Direkte Fahrt über die A75 Richtung Millau. Gegen 12:30 Uhr Ankunft an der Aire du Viaduc de Millau. Für Toiletten, Fotos und den kurzen Weg zum Aussichtspunkt 20–30 Minuten einplanen. Anschließend weiter zur Aire de l’Aveyron und dort als einzigem planmäßigen Ladestopp von voraussichtlich etwa 10–15 % auf 80–85 % laden; Ladezeit ungefähr 30–35 Minuten. Danach direkte Weiterfahrt nach Clermont-Ferrand. Geplante Ankunft etwa 16:00–16:45 Uhr, Zielwert ca. 16:15 Uhr. Audi-Navigation, DKV-App, Verkehr und Ladeverfügbarkeit bleiben am Fahrtag verbindlich.'},
 
-{id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'08:30',arrivalTime:'16:30',arrivalWindow:'16:15–17:00',totalDayTime:'ca. 7 Std. 45 Min.–8 Std. 30 Min.',todayStops:'Atlante Lempdes + Frühstück Marie Blachère + E607/N70/N80 + Fastned Saint-Ambreuil + kurzer Stopp Laxou',todayChecks:['Mit dem tatsächlichen Rest-SoC des Vorabends starten – voraussichtlich etwa 30–40 %','08:30 Uhr Unterkunft verlassen, zuerst Atlante Lempdes anschließen und währenddessen bei Marie Blachère frühstücken','Mit etwa 85–90 % über A71, A79, N79/E607 sowie N70/N80 Richtung Chalon-sur-Saône starten','Fastned Aire de Saint-Ambreuil als Hauptladestopp nutzen','In Laxou nur kurz bis etwa 50–55 % nachladen, damit Metz mit über 30 % erreicht wird'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
-    summary:'Optimierte Route nach dem morgendlichen Laden und Frühstück in Lempdes: A71, A79, N79/E607 und N70/N80 über Digoin, Montceau-les-Mines und Chalon-sur-Saône, danach A6 und A31 nach Metz. Fastned Aire de Saint-Ambreuil ist der Hauptladestopp. Ein kurzer Zielreserve-Stopp in Laxou bleibt bei 23 kWh/100 km erforderlich, weil Saint-Ambreuil allein nicht für eine Ankunft in Metz mit mehr als 30 % reicht.',
-    tags:['Etappe','Metz','Rückfahrt','23 kWh/100 km','A71/A79/E607/N80/A6/A31'],distance:'ca. 500–520 km inklusive Lempdes, Saint-Ambreuil und Laxou',driveTime:'ca. 7,75–8,5 Std. inklusive Frühstück und zwei Ladepausen',
+{id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'08:30',arrivalTime:'16:45',arrivalWindow:'16:30–17:15',totalDayTime:'ca. 8–8,75 Std.',todayStops:'Atlante Lempdes + Frühstück Marie Blachère + Fastned Saint-Ambreuil + Val-de-Meuse Richtung Nancy/Metz',todayChecks:['Mit dem tatsächlichen Rest-SoC des Vorabends starten – voraussichtlich etwa 30–40 %','08:30 Uhr Unterkunft verlassen, zuerst Atlante Lempdes anschließen und währenddessen bei Marie Blachère frühstücken','Mit etwa 85–90 % über A71, A79, N79/E607 sowie N70/N80 Richtung Chalon-sur-Saône starten','Fastned Aire de Saint-Ambreuil als Hauptladestopp nutzen','Am Aire du Val de Meuse auf etwa 75 % nachladen; danach Metz mit rund 30–35 % erreichen'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
+    summary:'Bereinigte Route nach dem Frühstücksladen in Lempdes: über A71 und A79/N79 zur N70/N80, anschließend A6 und A31 nach Metz. Die unnötigen Orts-Zwangspunkte Digoin und Montceau-les-Mines wurden entfernt. Unterwegs wird am Fastned Aire de Saint-Ambreuil und später ausschließlich an der A31-Raststätte Val de Meuse in Fahrtrichtung Nancy/Metz geladen.',
+    tags:['Etappe','Metz','Rückfahrt','23 kWh/100 km','A71/A79/E607/N80/A6/A31'],distance:'ca. 580–600 km inklusive Lempdes, Saint-Ambreuil und Val-de-Meuse',driveTime:'ca. 8–8,75 Std. inklusive Frühstück und zwei Ladepausen',
     toll:'Mautoptimierte Route über A71, A79, E607/N70/N80, A6 und A31; aktuellen Betrag am Fahrtag in der Navigation prüfen',
-    chargingPlan:'Lempdes ca. 30–40 % → 85–90 % · Fastned Saint-Ambreuil ca. 10–20 % → 85–90 % · Laxou ca. 10–20 % → etwa 50–55 %',
+    chargingPlan:'Lempdes ca. 30–40 % → 90 % · Fastned Saint-Ambreuil ca. 15–20 % → 85 % · Val-de-Meuse ca. 20–30 % → etwa 75 %',
     evening:'Nach Ankunft Check-in, kompakte Altstadtrunde und Abendessen; kein Laden am Abend bei mindestens 30 %',
     startSoc:'ca. 30–40 % an der Unterkunft · nach Frühstück/HPC 85–90 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'85–95 km/h',overnight:'Appartement Rue Haute Seille',
     destinationCharging:'Geplante Ankunft in Metz mit etwa 30–35 %. Laden auf Sonntagmorgen verlegen.',
-    routeWaypoints:['Atlante 10 Rue du Pontel 63370 Lempdes','Échangeur A71 A79 03390 Montmarault Frankreich','N79 71160 Digoin Frankreich','N70 Montceau-les-Mines Frankreich','Fastned Aire de Saint-Ambreuil A6 71240 Saint-Ambreuil Frankreich','Rue de la Sapinière 54520 Laxou Frankreich'],
-    plan:'08:30 Uhr Abfahrt von der Unterkunft und kurze Fahrt zur Atlante-Station in Lempdes. Audi sofort anschließen und während des Ladens bei Marie Blachère frühstücken. Gegen 09:10–09:20 Uhr mit etwa 85–90 % starten. Die Google-Maps-Route wird über Montmarault, Digoin und Montceau-les-Mines geführt und nutzt damit A71, A79, N79/E607 sowie N70/N80 bis Chalon-sur-Saône; der Umweg über Lyon entfällt. Anschließend auf die A6 und zur Fastned-Station Aire de Saint-Ambreuil. Dort als Hauptladestopp voraussichtlich bei etwa 10–20 % ankommen und auf ungefähr 85–90 % laden. Saint-Ambreuil allein reicht bei 23 kWh/100 km nicht für die geforderte Zielreserve. Deshalb in Laxou bedarfsgerecht kurz auf etwa 50–55 % nachladen. Die letzten rund 58 km nach Metz benötigen etwa 17–19 Prozentpunkte; geplante Ankunft daher mit ungefähr 30–35 %. Realistisches Ankunftsfenster 16:15–17:00 Uhr. Audi-Prognose, Verkehr, DKV-Akzeptanz und Live-Status bleiben verbindlich.'},
+    routeWaypoints:['Atlante 10 Rue du Pontel 63370 Lempdes','Échangeur A71 A79 03390 Montmarault Frankreich','Fastned Aire de Saint-Ambreuil A6 71240 Saint-Ambreuil Frankreich','ENGIE Vianeo A31 Val de Meuse direction Nancy 52140 Val-de-Meuse Frankreich'],
+    plan:'08:30 Uhr Abfahrt von der Unterkunft und kurze Fahrt zur Atlante-Station in Lempdes. Audi sofort anschließen und während des Ladens bei Marie Blachère frühstücken. Gegen 09:10–09:20 Uhr mit etwa 90 % starten. Für Google Maps bleibt nur der Autobahnknoten Montmarault als technischer Zwangspunkt erhalten; die fehlerhaften Ortsstopps Digoin und Montceau-les-Mines sind vollständig entfernt. Danach direkte Fahrt zum Fastned Aire de Saint-Ambreuil, dort nach rund 245 km voraussichtlich mit etwa 15–20 % ankommen und auf ungefähr 85 % laden. Der zweite Ladestopp ist eindeutig als ENGIE Vianeo A31 Val de Meuse in Fahrtrichtung Nancy/Metz hinterlegt, sodass keine Kehrtwende mehr entsteht. Dort bei etwa 20–30 % nur bis ungefähr 75 % nachladen. Von dort verbleiben rund 140 km bis Metz; bei 23 kWh/100 km ergibt sich eine geplante Ankunft mit etwa 30–35 %. Realistisches Ankunftsfenster 16:30–17:15 Uhr. Audi-Prognose, Verkehr, DKV-Akzeptanz und Live-Status bleiben verbindlich.'},
 
     {id:'s6',originAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',destinationAddress:'Hasbergen, Deutschland',date:'02.08.',weekday:'So',departureTime:'08:30',arrivalTime:'16:45',arrivalWindow:'16:30–17:15',totalDayTime:'ca. 8–8,75 Std.',todayStops:'Electra Waves + Columbus Café + Bonn + Münster',todayChecks:['08:30 Uhr Unterkunft verlassen und zuerst Electra Waves anfahren','Audi anschließen; ab 09:00 Uhr im direkt benachbarten Columbus Café frühstücken','Mit etwa 90 % Richtung Deutschland starten','Bonn als ersten Fahrtstopp nutzen','In Münster kurz nachladen, damit Hasbergen mit über 30 % erreicht wird'],from:'Metz',to:'Hasbergen',title:'Metz → Hasbergen',
     summary:'Sonntagmorgen wird zuerst am Electra-HPC im Waves Actisud angeschlossen. Das Columbus Café im selben Einkaufszentrum öffnet sonntags um 09:00 Uhr; der Fußweg beträgt nur wenige Minuten. Danach startet ihr mit etwa 90 %. Bei 23 kWh/100 km sind zwei Fahrtstopps nötig, wenn Hasbergen mit über 30 % erreicht werden soll: Bonn und eine kurze Nachladung in Münster.',
@@ -2005,10 +2007,10 @@ toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
 map:'Tesla Supercharger Aire de la Garde France'}]},reserve:null,secondaryLabel:'Reserve'
 },
 {
-    stageId:'s5',date:'01.08.',route:'Clermont-Ferrand → Metz',distance:'ca. 500–520 km',
+    stageId:'s5',date:'01.08.',route:'Clermont-Ferrand → Metz',distance:'ca. 580–600 km',
     maxDetourKm:2,minimumStalls:6,dkvRequired:true,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'85–95 km/h',
-    calibration:'Planungsmodell',reference:'23 kWh/100 km · Start nach Lempdes 85–90 %',modelRate:'Hauptladung plus kurze Zielreserve-Nachladung',
-    note:'Mautoptimierte Route über A71, A79, N79/E607 und N70/N80 bis Chalon-sur-Saône, anschließend A6 und A31. Fastned Saint-Ambreuil ist der Hauptladestopp; in Laxou nur kurz bis 50–55 % nachladen. Ein einzelner Stopp in Saint-Ambreuil reicht bei 23 kWh/100 km nicht für mehr als 30 % Zielreserve in Metz.',
+    calibration:'Planungsmodell',reference:'23 kWh/100 km · Start nach Lempdes 85–90 %',modelRate:'zwei sinnvoll verteilte Fahrt-Ladestopps',
+    note:'Route über A71, A79, N79/E607 und N70/N80 bis Chalon-sur-Saône, anschließend A6 und A31. Die Stopps liegen sinnvoll verteilt bei Saint-Ambreuil und Val-de-Meuse.',
     primary:{
       name:'1. Fahrt-Ladestopp · Fastned Aire de Saint-Ambreuil',legFrom:'Atlante Lempdes',legTo:'Saint-Ambreuil',location:'A6, Aire de Saint-Ambreuil, 71240 Saint-Ambreuil',
       provider:'Fastned · DKV-Akzeptanz live prüfen',power:'bis 300 kW',stops:'HPC-Ladepark · Anzahl live prüfen',routeOffsetKm:0,legDistanceKm:245,
@@ -2016,16 +2018,16 @@ map:'Tesla Supercharger Aire de la Garde France'}]},reserve:null,secondaryLabel:
       toilet:'rund um die Uhr an der Rastanlage',toiletName:'Raststättentoilette',toiletConfirmed:true,
       food:'Raststättenrestaurant, Café, Sandwiches und Shop',
       map:'Fastned Aire de Saint-Ambreuil A6 71240 Saint-Ambreuil France',
-      routeRole:'Hauptladestopp',nextLeg:'Saint-Ambreuil → Laxou',targetSoc:'10–20 % → 85–90 %',alternatives:[]
+      routeRole:'Hauptladestopp',nextLeg:'Saint-Ambreuil → Val-de-Meuse',targetSoc:'15–20 % → ca. 85 %',alternatives:[]
     },
     reserve:{
-      name:'2. Ladestopp · Tesla Laxou',legFrom:'Saint-Ambreuil',legTo:'Laxou',location:'Rue de la Sapinière, 54520 Laxou',
-      provider:'Tesla · DKV Card +Charge in Tesla-App',power:'bis 250 kW',stops:'28 HPC',routeOffsetKm:1.5,legDistanceKm:230,
-      arrivalSoc:'voraussichtlich ca. 10–20 %',departureSoc:'nur etwa 50–55 %',
-      toilet:'im Auchan während der Öffnungszeiten',toiletName:'Auchan-Kundentoilette',toiletConfirmed:true,
-      food:'Auchan, Flunch, McDonald’s und Bäckerei',
-      map:'Tesla Supercharger Rue de la Sapinière 54520 Laxou France',
-      routeRole:'kurze Zielreserve-Nachladung',nextLeg:'Laxou → Metz · ca. 58 km',targetSoc:'10–20 % → 50–55 %',alternatives:[]
+      name:'2. Fahrt-Ladestopp · Val de Meuse Richtung Nancy/Metz',legFrom:'Saint-Ambreuil',legTo:'Val-de-Meuse',location:'A31, ENGIE Vianeo Val de Meuse · Fahrtrichtung Nancy/Metz, 52140 Val-de-Meuse',
+      provider:'ENGIE Vianeo · DKV-Akzeptanz live prüfen',power:'150–300 kW',stops:'14 Ladeanschlüsse laut Stationsverzeichnis',routeOffsetKm:0,legDistanceKm:200,
+      arrivalSoc:'voraussichtlich ca. 20–30 %',departureSoc:'etwa 75 %',
+      toilet:'rund um die Uhr an der Rastanlage',toiletName:'Raststättentoilette',toiletConfirmed:true,
+      food:'Restaurant, Café, Sandwiches und Shop an der Rastanlage',
+      map:'ENGIE Vianeo A31 Val de Meuse direction Nancy 52140 Val-de-Meuse France',
+      routeRole:'zweiter regulärer Fahrt-Ladestopp',nextLeg:'Val-de-Meuse → Metz · ca. 140 km',targetSoc:'20–30 % → ca. 75 %',alternatives:[]
     },secondaryLabel:'2. Ladestopp'
   },
   {
@@ -2163,7 +2165,7 @@ const routeAuditPoints = {
     {name:'Atlante Lempdes TEDi',query:'Atlante 10 Rue du Pontel 63370 Lempdes France'},
     {name:'Marie Blachère Lempdes Pontel',query:'Marie Blachère 3 Rue du Pontel 63370 Lempdes France'},
     {name:'Fastned Saint-Ambreuil',query:'Fastned Aire de Saint-Ambreuil A6 71240 Saint-Ambreuil France'},
-    {name:'Tesla Laxou',query:'Rue de la Sapinière 54520 Laxou France'},
+    {name:'Val de Meuse Richtung Nancy/Metz',query:'ENGIE Vianeo A31 Val de Meuse direction Nancy 52140 Val-de-Meuse France'},
     {name:'Metz',query:'56 Rue Haute Seille 57000 Metz France'}
   ],
   s6:[
@@ -2200,7 +2202,7 @@ function plannedLegKm(stageId,index){
   if(stageId==='s2') return [242,252][index]??null;
   if(stageId==='s3') return [243,12][index]??null;
   if(stageId==='s4') return [300,15,45,170][index]??null;
-  if(stageId==='s5') return [245,230,58][index]??null;
+  if(stageId==='s5') return [245,200,140][index]??null;
   if(stageId==='s6') return [240,240][index]??null;
   return null;
 }
@@ -2464,7 +2466,7 @@ function googleMapsEmbedUrl(origin,destination,waypoints=[]){
   const end=normalizeMapValue(destination||'');
   const stops=(Array.isArray(waypoints)?waypoints:[]).map(normalizeMapValue).filter(Boolean);
   const destinationChain=[...stops,end].filter(Boolean).map(encodeURIComponent).join('+to:');
-  return `https://maps.google.com/maps?saddr=${encodeURIComponent(start)}&daddr=${destinationChain}&output=embed`;
+  return `https://maps.google.com/maps?output=embed&saddr=${encodeURIComponent(start)}&daddr=${destinationChain}&dirflg=d`;
 }
 function updateTodayMap(stage,mode){
   const frame=$('#todayRouteMap');
@@ -2500,22 +2502,26 @@ function updateTodayMap(stage,mode){
       <div><b>${esc(normalizeMapValue(point))}</b><span>${index===0?'Start':index===points.length-1?'Ziel':`Zwischenstopp ${index}`}</span></div>
     </div>`).join('');
 
-  const canEmbed=location.protocol==='https:'||location.protocol==='http:';
-  if(canEmbed && mode!=='holiday' && mode!=='after'){
+  if(mode!=='holiday' && mode!=='after'){
     const actual=travel.stages.find(x=>x.id===stage?.id)||travel.stages[0];
-    frame.src=googleMapsEmbedUrl(
+    const mapUrl=googleMapsEmbedUrl(
       actual.originAddress||actual.from,
       actual.destinationAddress||actual.to,
       actual.routeWaypoints||[]
     );
+    frame.src=mapUrl;
     frame.style.display='block';
-    note.textContent='Falls Google die eingebettete Karte blockiert, bitte „Navigation starten“ verwenden.';
+    note.innerHTML='Die Karte wird auch in der lokal geöffneten Datei geladen. Falls iOS oder Google die Einbettung blockiert, <button class="link-btn" id="todayMapOpenFallback" type="button">Route direkt in Google Maps öffnen</button>.';
+    const fallback=$('#todayMapOpenFallback');
+    if(fallback) fallback.addEventListener('click',()=>openDirections(
+      actual.originAddress||actual.from,
+      actual.destinationAddress||actual.to,
+      actual.routeWaypoints||[]
+    ));
   }else{
     frame.removeAttribute('src');
     frame.style.display='none';
-    note.textContent=canEmbed
-      ? 'Die vollständige Route öffnet sich über „Navigation starten“ in Google Maps.'
-      : 'Lokale Dateivorschauen blockieren eingebettete Google-Karten. „Navigation starten“ öffnet die vollständige Route mit allen Stopps.';
+    note.textContent='Die vollständige Route öffnet sich über „Navigation starten“ in Google Maps.';
   }
 }
 
@@ -2776,7 +2782,7 @@ function chargingForStage(id){
     s2:['Tesla · Salaise-sur-Sanne','Tesla Supercharger Green 7 N7 38150 Salaise-sur-Sanne France','1 Stopp'],
     s3:['Carrefour Torroella · 150 kW','Camí del Molí s/n 17257 Torroella de Montgrí Spanien','1 Zielstopp + Reserve'],
     s4:['HPC · Aire de l’Aveyron','Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron France','1 HPC-Stopp + Millau'],
-    s5:['Fastned · Aire de Saint-Ambreuil','Fastned Aire de Saint-Ambreuil A6 71240 Saint-Ambreuil France','2 Stopps'],
+    s5:['Fastned Saint-Ambreuil + Val-de-Meuse Richtung Nancy/Metz','ENGIE Vianeo A31 Val de Meuse direction Nancy 52140 Val-de-Meuse France','2 Stopps'],
     s6:['Tesla · Bonn Kameha Grand','Tesla Supercharger Am Bonner Bogen 1 53227 Bonn Deutschland','1 Stopp']
   })[id]||['Direktfahrt','IONITY Aire de Service Narbonne-Vinassan Nord A9 11110 Vinassan France','flexibel'];
 }
@@ -3594,7 +3600,7 @@ function runSelfTest(){
   results.push(Boolean(document.getElementById('routeAudit')) && typeof runRouteAudit==='function' && Object.keys(routeAuditPoints).length===6);
   results.push(chargingStages.every(stage=>[stage.primary,stage.reserve,stage.tertiary].filter(Boolean).every(stop=>new Set((stop.alternatives||[]).map(a=>a.name)).size===(stop.alternatives||[]).length)));
   results.push(chargingStages.find(s=>s.stageId==='s1')?.primary?.name.includes('Erftstadt') && chargingStages.find(s=>s.stageId==='s1')?.reserve?.name.includes('GLOBUS Trier') && chargingStages.find(s=>s.stageId==='s1')?.tertiary?.name.includes('Val-de-Meuse'));
-  results.push(chargingStages.find(s=>s.stageId==='s5')?.primary?.legDistanceKm===245 && chargingStages.find(s=>s.stageId==='s5')?.reserve?.legDistanceKm===230);
+  results.push(chargingStages.find(s=>s.stageId==='s5')?.primary?.legDistanceKm===245 && chargingStages.find(s=>s.stageId==='s5')?.reserve?.legDistanceKm===200);
   results.push(plannedLegKm('s6',1)===240);
   const todayPlan=chargingStages.find(s=>s.stageId==='s1');
   results.push(Boolean(todayPlan?.tertiary) && [todayPlan.primary,todayPlan.reserve,todayPlan.tertiary].every(stop=>(stop.alternatives||[]).filter(a=>a.deltaKm<0).length===3 && (stop.alternatives||[]).filter(a=>a.deltaKm>0).length===3));
@@ -3606,7 +3612,7 @@ function runSelfTest(){
   results.push(chargingStopCard(todayPlan.primary,'Test',true,'s1','primary').includes('data-charge-done="s1:primary"'));
   results.push(chargingStages.find(s=>s.stageId==='s1')?.primary?.name.includes('Erftstadt') && chargingStages.find(s=>s.stageId==='s1')?.reserve?.name.includes('GLOBUS Trier') && chargingStages.find(s=>s.stageId==='s1')?.tertiary?.name.includes('Val-de-Meuse'));
   results.push(chargingStages.find(s=>s.stageId==='s4')?.reserve?.name.includes('Aire de l’Aveyron'));
-  results.push(chargingStages.find(s=>s.stageId==='s5')?.reserve?.name.includes('Laxou'));
+  results.push(chargingStages.find(s=>s.stageId==='s5')?.reserve?.name.includes('Val de Meuse'));
   results.push(chargingStages.find(s=>s.stageId==='s6')?.primary?.name.includes('Bonn'));
   results.push(travel.stages.every(s=>/^\d{2}:\d{2}$/.test(s.departureTime) && /^\d{2}:\d{2}$/.test(s.arrivalTime)));
   results.push(Boolean(document.getElementById('todayBrief')) && Boolean(document.getElementById('todayDeparture')) && !document.getElementById('todaySection') && !document.getElementById('todayState'));
@@ -3672,7 +3678,7 @@ function runSelfTest(){
   results.push(destinationChargingPlans.length===6);
   results.push(
     chargingStages.find(x=>x.stageId==='s5')?.primary?.name.includes('Saint-Ambreuil') &&
-    chargingStages.find(x=>x.stageId==='s5')?.reserve?.name.includes('Laxou') &&
+    chargingStages.find(x=>x.stageId==='s5')?.reserve?.name.includes('Val de Meuse') &&
     destinationChargingPlans.find(x=>x.stageId==='s5')?.when==='am Etappenziel'
   );
   results.push(destinationChargingPlans.filter(x=>x.stageId!=='s6').every(x=>/85|90|95/.test(x.target)));
@@ -3724,7 +3730,7 @@ function runSelfTest(){
   results.push(travel.stages.find(s=>s.id==='s2')?.routeWaypoints?.[1]?.includes('54 Rue de Longvic'));
   results.push(routeAuditPoints.s2?.[0]?.name==='Allego Chenôve');
   results.push(travel.hotelHubs.h1?.charging?.includes('Allego Hypercharger'));
-  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[1]?.includes('Montmarault') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[2]?.includes('Digoin') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[3]?.includes('Montceau') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[4]?.includes('Saint-Ambreuil') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[5]?.includes('Laxou'));
+  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.length===4 && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[1]?.includes('Montmarault') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[2]?.includes('Saint-Ambreuil') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[3]?.includes('direction Nancy'));
   results.push(Array.from(document.querySelectorAll('[data-url]')).every(el=>{try{const u=new URL(el.dataset.url);return ['http:','https:'].includes(u.protocol);}catch(e){return false;}}));
   const failed=results.filter(x=>!x).length;
   const box=$('#selfTestResult');
@@ -3771,7 +3777,7 @@ const stageServices={
  s5:[
   {type:'Frühstück/Laden',name:'Atlante Lempdes + Marie Blachère Pontel',info:'08:30 Uhr zuerst Atlante am TEDi, 10 Rue du Pontel, anfahren und anschließen. Etwa 100–200 m beziehungsweise 2–3 Minuten zu Fuß zu Marie Blachère, 3 Rue du Pontel; während des Ladens frühstücken. Rückkehr gegen 09:10–09:20 Uhr, Weiterfahrt mit 80–85 %. Atlante nennt DKV Mobility in Frankreich als Roamingpartner; Akzeptanz und Live-Status morgens in der DKV-App prüfen.'},
   {type:'Hauptladestopp',name:'Fastned Aire de Saint-Ambreuil',info:'Fastned-HPC an der Rastanlage mit Toiletten, Restaurant, Café und Shop; bei etwa 10–20 % ankommen und auf ungefähr 85–90 % laden.'},
-  {type:'Kurzer Ladestopp',name:'Tesla Laxou',info:'Nur bedarfsgerecht auf etwa 50–55 % nachladen, damit Metz mit ungefähr 30–35 % erreicht wird.'},
+  {type:'2. Fahrt-Ladestopp',name:'Val de Meuse Richtung Nancy/Metz',info:'Nach rund 200 km mit etwa 20–30 % ankommen und auf ungefähr 75 % laden. Danach bleiben rund 140 km bis Metz; geplante Zielreserve etwa 30–35 %.'},
   {type:'Ankunft',name:'Metz',info:'Unterkunft, Altstadtrundgang und Abendessen zu Fuß.'}
  ],
  s6:[
@@ -4021,7 +4027,7 @@ function destinationHub(st,hotel){
      <div class="destination-fact"><b>Parken</b><span>Parkhaus Blaise Pascal, etwa 200 m; Ticket für Ein- und Ausfahrten aufbewahren.</span></div>
      <div class="destination-fact"><b>Self-Check-in</b><span>13 Boulevard Trudaine · grünes Tor · Innenhof · 2. Stock rechts · Schlüsselbox 8848 · Gegensprechanlage Wohnung 24.</span></div>
      <div class="destination-fact"><b>Abend</b><span>Place Delille → Kathedrale Notre-Dame-de-l’Assomption → Place de la Victoire → Bouillon Clermont.</span></div>
-     <div class="destination-fact"><b>Samstagmorgen 01.08.</b><span>Check-out-Zeit in der Airbnb-App prüfen und Schlüssel in die Box zurücklegen. Gegen 08:30 Uhr zuerst Atlante am TEDi, 10 Rue du Pontel in Lempdes, anfahren, Audi anschließen und danach etwa 100–200 m beziehungsweise 2–3 Minuten zu Marie Blachère, 3 Rue du Pontel, gehen. Während des Ladevorgangs frühstücken; gegen 09:10–09:20 Uhr mit 85–90 % über A71, A79, E607/N70/N80, A6 und A31 Richtung Metz starten. Atlante nennt DKV Mobility in Frankreich als Roamingpartner; Akzeptanz, Preis und Live-Belegung morgens in der DKV-App prüfen.</span></div>
+     <div class="destination-fact"><b>Samstagmorgen 01.08.</b><span>Check-out-Zeit in der Airbnb-App prüfen und Schlüssel in die Box zurücklegen. Gegen 08:30 Uhr zuerst Atlante am TEDi, 10 Rue du Pontel in Lempdes, anfahren, Audi anschließen und danach etwa 100–200 m beziehungsweise 2–3 Minuten zu Marie Blachère, 3 Rue du Pontel, gehen. Während des Ladevorgangs frühstücken; gegen 09:10–09:20 Uhr mit etwa 90 % über A71, A79, E607/N70/N80, A6 und A31 Richtung Metz starten. Atlante nennt DKV Mobility in Frankreich als Roamingpartner; Akzeptanz, Preis und Live-Belegung morgens in der DKV-App prüfen.</span></div>
      <div class="destination-fact"><b>DKV &amp; Ladeziel</b><span>Atlante nennt DKV Mobility in Frankreich als Roamingpartner. Vor dem Anschließen Akzeptanz und Preis in der DKV-App bestätigen. Geplantes Ladefenster: tatsächlicher Rest-SoC, voraussichtlich ca. 30–40 %, bis 80–85 %; etwa 25–35 Minuten.</span></div>
      <div class="destination-fact"><b>Frühstück während des Ladens</b><span>Marie Blachère: Croissants, Pain au Chocolat, Kaffee sowie belegte Baguettes als Proviant. Fußweg ca. 100–200 m beziehungsweise 2–3 Minuten; aktuelle Route in Google Maps prüfen.</span></div>
     </div>
