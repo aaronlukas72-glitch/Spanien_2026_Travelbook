@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 42</title>
+<title>Spanien Travelbook 2026 · Version 45</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -647,13 +647,16 @@ section.view[data-view="home"] #holidayOverview{
 /* V40: Samstagmorgen Clermont/Lempdes · Atlante 10 Rue du Pontel + Marie Blachère 3 Rue du Pontel */
 /* V41: Verbrauch 23 kWh/100 km · Clermont–Metz und Metz–Hasbergen neu gerechnet · Sonntagmorgen Metz zuerst laden, dann Frühstück im Waves */
 /* V42: robuste Tagesansicht und statische Unterkunfts-Fallbacks bei blockierter JavaScript-Initialisierung */
+/* V43: dynamische Etappenseite bindet alle Aktionsbuttons nach jedem Rendern neu */
+/* V44: Vollprüfung · robuste Fallback-Aktionen · Zeit- und SoC-Konsistenz der Rückreise */
+/* V45: Clermont–Metz optimiert über A71 · A79/RCEA · A6 · A31; Maut-/Zeit-Kompromiss und Ladeplan synchronisiert */
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 42 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 45 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -689,7 +692,7 @@ section.view[data-view="home"] #holidayOverview{
 <div class="route-kpi"><b id="todayDeparture">08:30</b><span>Tagesstart</span></div>
 <div class="route-kpi"><b id="todayDriveTime">ca. 7½–8 Std.</b><span>Tagesdauer</span></div>
 <div class="route-kpi"><b id="todayChargingCount">1 HPC-Stopp</b><span>Laden</span></div>
-<div class="route-kpi"><b id="todaySoc">Start 90–95 %</b><span>Fahrzeug-SoC</span></div>
+<div class="route-kpi"><b id="todaySoc">Start 90 %</b><span>Fahrzeug-SoC</span></div>
 </div>
 <div class="today-map-wrap">
 <div class="today-map-head"><b>Tagesroute</b><span id="todayMapLabel">Dijon → Montpellier</span></div>
@@ -1329,7 +1332,7 @@ section.view[data-view="home"] #holidayOverview{
 <div class="cards two">
 <article class="card">
 <h3>Abreise aus L’Estartit</h3>
-<p>Gepäck, Unterkunft und Fahrzeug am Vorabend vorbereiten. Geplanter Start am 31.07. um 08:30 Uhr mit 90–95 % SoC.</p>
+<p>Gepäck, Unterkunft und Fahrzeug am Vorabend vorbereiten. Geplanter Start am 31.07. um 08:30 Uhr mit 90 % SoC.</p>
 <div class="actions">
 <button class="btn primary" data-stage-route="s4">Tagesroute öffnen</button>
 <button class="btn secondary" data-go="trip">Etappenziel Clermont-Ferrand</button>
@@ -1757,7 +1760,7 @@ const travel = {
     routeWaypoints:['Brioche Dorée Odysseum, 2 Place de Lisbonne, 34000 Montpellier, Frankreich','Centre Commercial Cap Roussillon, Avenue Georges Méliès, 66600 Rivesaltes, Frankreich','Camí del Molí, s/n, 17257 Torroella de Montgrí, Spanien'],
     plan:'Um 09:45 Uhr mit fest eingeplanten 85 % am Ibis Budget starten und zuerst Brioche Dorée im Einkaufszentrum Odysseum, 2 Place de Lisbonne, anfahren. Odysseum liegt direkt an der A709, Ausfahrt 29, und bietet große reguläre Parkflächen; die ersten zwei Stunden sind kostenlos. Etwa 20–30 Minuten für Anfahrt, Parken, Einkauf und Weiterfahrt einplanen. Gegen 10:20 Uhr direkt über A709/A9 Richtung Spanien starten. Tesla Rivesaltes am Centre Commercial Cap Roussillon ist der Hauptladestopp. Bei einem erwarteten Ankunfts-SoC von ungefähr 35–45 % wird dort bis exakt 90 % geladen. Dafür realistisch etwa 35–40 Minuten inklusive Anschließen und Ladeende einplanen. Anschließend nach Torroella fahren; dort werden ungefähr 60–70 % erwartet. Am Carrefour Market Torroella mit bis zu 60 kW bis exakt 95 % laden. Dafür realistisch etwa 25–35 Minuten einplanen. Danach direkt zur Unterkunft nach L’Estartit fahren. Audi-Prognose, Tesla-App, DKV-App und Live-Status bleiben am Fahrtag verbindlich.'},
 
-    {id:'s4',originAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',destinationAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',date:'31.07.',weekday:'Fr',departureTime:'08:30',arrivalTime:'ca. 16:15',arrivalWindow:'16:00–16:45',totalDayTime:'ca. 7 Std. 30–8 Std.',todayStops:'Aire du Viaduc de Millau + ein HPC-Stopp an der Aire de l’Aveyron',todayChecks:['Mit 90–95 % starten','Audi-Prognose und Live-Status des HPC vor Abfahrt prüfen','Am Aussichtspunkt 20–30 Minuten einplanen','Nur ein planmäßiger Ladestopp'],from:'L’Estartit',to:'Clermont-Ferrand',title:'L’Estartit → Clermont-Ferrand',
+    {id:'s4',originAddress:'11 Carrer Salines, 17258 L’Estartit, Spanien',destinationAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',date:'31.07.',weekday:'Fr',departureTime:'08:30',arrivalTime:'ca. 16:15',arrivalWindow:'16:00–16:45',totalDayTime:'ca. 7 Std. 30–8 Std.',todayStops:'Aire du Viaduc de Millau + ein HPC-Stopp an der Aire de l’Aveyron',todayChecks:['Mit 90 % starten','Audi-Prognose und Live-Status des HPC vor Abfahrt prüfen','Am Aussichtspunkt etwa 30 Minuten einplanen','Nur ein planmäßiger Ladestopp'],from:'L’Estartit',to:'Clermont-Ferrand',title:'L’Estartit → Clermont-Ferrand',
 summary:'Variante A ohne den Umweg zum Dorf: Start um 08:30 Uhr mit 90–95 %. Fahrt direkt über die A75 zum Millau-Viadukt und kurzer Halt an der Aire du Viaduc de Millau. Anschließend ein einziger HPC-Ladestopp an der Aire de l’Aveyron und direkte Weiterfahrt nach Clermont-Ferrand.',
 tags:['Etappe','Millau','Variante A','ein Ladestopp'],distance:'ca. 530 km Straßenstrecke über A75 und Millau',driveTime:'ca. 7,5–8 Std. inklusive Aussichtspunkt und einer Ladepause',
 toll:'A75 größtenteils mautfrei; Maut für das Millau-Viadukt am Fahrtag prüfen',
@@ -1768,16 +1771,16 @@ destinationCharging:'Voraussichtliche Ankunft mit etwa 30–40 % Reserve. Kein L
 routeWaypoints:['Viaduc de Millau A75','Aire du Viaduc de Millau Brocuéjouls 12100 Millau Frankreich','Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron Frankreich'],
 plan:'08:30 Uhr Abfahrt in L’Estartit mit 90–95 % SoC. Direkte Fahrt über die A75 Richtung Millau. Gegen 12:30 Uhr Ankunft an der Aire du Viaduc de Millau. Für Toiletten, Fotos und den kurzen Weg zum Aussichtspunkt 20–30 Minuten einplanen. Anschließend weiter zur Aire de l’Aveyron und dort als einzigem planmäßigen Ladestopp von voraussichtlich etwa 10–15 % auf 80–85 % laden; Ladezeit ungefähr 30–35 Minuten. Danach direkte Weiterfahrt nach Clermont-Ferrand. Geplante Ankunft etwa 16:00–16:45 Uhr, Zielwert ca. 16:15 Uhr. Audi-Navigation, DKV-App, Verkehr und Ladeverfügbarkeit bleiben am Fahrtag verbindlich.'},
 
-{id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'08:00',arrivalTime:'17:15',arrivalWindow:'17:00–17:45',totalDayTime:'ca. 9 Std.–9 Std. 45 Min.',todayStops:'Atlante Lempdes + Frühstück Marie Blachère + Mâcon Saint-Albain + Laxou',todayChecks:['Mit dem tatsächlichen Rest-SoC des Vorabends starten – voraussichtlich etwa 30–40 %','Zuerst Atlante Lempdes anschließen und währenddessen bei Marie Blachère frühstücken','Mit 85 % Richtung Metz starten','Mâcon Saint-Albain als ersten Fahrtstopp nutzen','In Laxou nur bis etwa 50–55 % nachladen, damit Metz mit über 30 % erreicht wird'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
-    summary:'Die Etappe ist auf 23 kWh/100 km neu gerechnet. Nach dem morgendlichen Laden und Frühstück in Lempdes startet ihr mit etwa 85 %. Beaune-Tailly ist als erster Stopp zu weit und wurde ersetzt. Erster Fahrtstopp ist Mâcon Saint-Albain; danach folgt eine kurze, bedarfsgerechte Nachladung in Laxou. Metz wird mit etwa 30–35 % erreicht.',
-    tags:['Etappe','Metz','Rückfahrt','23 kWh/100 km'],distance:'ca. 600–615 km inklusive Lempdes, Mâcon Saint-Albain und Laxou',driveTime:'ca. 9–9,75 Std. inklusive Frühstück und zwei Fahrt-Ladestopps',
-    toll:'Richtwert ca. 35–50 € je nach Route über A89/A6/A31',
+{id:'s5',originAddress:'13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich',destinationAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',date:'01.08.',weekday:'Sa',departureTime:'08:30',arrivalTime:'16:15',arrivalWindow:'16:00–16:45',totalDayTime:'ca. 7 Std. 30 Min.–8 Std. 15 Min.',todayStops:'Atlante Lempdes + Frühstück Marie Blachère + Mâcon Saint-Albain + kurzer Stopp Laxou',todayChecks:['Mit dem tatsächlichen Rest-SoC des Vorabends starten – voraussichtlich etwa 30–40 %','08:30 Uhr Unterkunft verlassen, zuerst Atlante Lempdes anschließen und währenddessen bei Marie Blachère frühstücken','Mit etwa 85 % über A71, A79/RCEA, A6 und A31 Richtung Metz starten','Mâcon Saint-Albain als Hauptladestopp nutzen','In Laxou nur kurz bis etwa 50–55 % nachladen, damit Metz mit über 30 % erreicht wird'],from:'Clermont-Ferrand',to:'Metz',title:'Clermont-Ferrand → Metz',
+    summary:'Beste Kombination aus Zeit, Maut und Fahrkomfort: nach dem morgendlichen Laden und Frühstück in Lempdes über A71, A79/RCEA, A6 und A31 nach Metz. Bei 23 kWh/100 km ist Mâcon Saint-Albain der Hauptladestopp; in Laxou folgt nur eine kurze Zielreserve-Nachladung. Die rund 500 km lange Route spart gegenüber der weitgehend mautfreien Alternative etwa 1½ bis 2 Stunden und erreicht Metz mit ungefähr 30–35 %.',
+    tags:['Etappe','Metz','Rückfahrt','23 kWh/100 km','A71/A79/A6/A31'],distance:'ca. 500–515 km inklusive Lempdes, Mâcon Saint-Albain und Laxou',driveTime:'ca. 7,5–8,25 Std. inklusive Frühstück und zwei Ladepausen',
+    toll:'Richtwert ca. 25–27 € über A71, A79/RCEA, A6 und A31; Betrag am Fahrtag in der Navigation prüfen',
     chargingPlan:'Lempdes ca. 30–40 % → 85 % · Mâcon Saint-Albain ca. 15–20 % → 85 % · Laxou ca. 5–12 % → etwa 50–55 %',
     evening:'Nach Ankunft Check-in, kompakte Altstadtrunde und Abendessen; kein Laden am Abend bei mindestens 30 %',
     startSoc:'ca. 30–40 % an der Unterkunft · nach Frühstück/HPC 85 %',maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',overnight:'Appartement Rue Haute Seille',
     destinationCharging:'Geplante Ankunft in Metz mit etwa 30–35 %. Laden auf Sonntagmorgen verlegen.',
     routeWaypoints:['Atlante 10 Rue du Pontel 63370 Lempdes','Marie Blachère 3 Rue du Pontel 63370 Lempdes','Aire de Mâcon Saint-Albain A6 71260 La Salle Frankreich','Rue de la Sapinière 54520 Laxou Frankreich'],
-    plan:'Gegen 08:00 Uhr zur Atlante-Station in Lempdes fahren, Audi anschließen und während des Ladens bei Marie Blachère frühstücken. Gegen 08:40–08:50 Uhr mit etwa 85 % starten. Bei 23 kWh/100 km ist Beaune-Tailly als erster Stopp nicht sicher erreichbar; deshalb Fahrt bis Mâcon Saint-Albain, Ankunft voraussichtlich etwa 15–20 %, dort auf etwa 85 % laden. Danach bis Tesla Laxou fahren, Ankunft voraussichtlich etwa 5–12 %, und nur bis ungefähr 50–55 % nachladen. Die verbleibenden rund 58 km nach Metz benötigen etwa 17–19 Prozentpunkte; damit wird die Unterkunft mit etwa 30–35 % erreicht. Audi-Prognose und Live-Status bleiben verbindlich.'},
+    plan:'08:30 Uhr Abfahrt von der Unterkunft und kurze Fahrt zur Atlante-Station in Lempdes. Audi sofort anschließen und während des Ladens bei Marie Blachère frühstücken. Gegen 09:10–09:20 Uhr mit etwa 85 % über A71 und A79/RCEA Richtung Mâcon starten; anschließend über A6 und A31 weiter nach Metz. Mâcon Saint-Albain ist der Hauptladestopp: erwartete Ankunft etwa 20–25 %, Laden auf ungefähr 85 %. Danach bis Laxou fahren, dort voraussichtlich mit etwa 8–15 % eintreffen und nur kurz auf ungefähr 50–55 % nachladen. Die letzten rund 58 km nach Metz benötigen etwa 17–19 Prozentpunkte; Ankunft daher mit ungefähr 30–35 %. Realistisches Ankunftsfenster 16:00–16:45 Uhr. Die weitgehend mautfreie Alternative spart etwa 20–25 €, verlängert die Fahrt jedoch um ungefähr 1½ bis 2 Stunden und führt über mehr Landstraßen. Audi-Prognose, Verkehr, DKV-Akzeptanz und Live-Status bleiben verbindlich.'},
 
     {id:'s6',originAddress:'56 Rue Haute Seille, 57000 Metz, Frankreich',destinationAddress:'Hasbergen, Deutschland',date:'02.08.',weekday:'So',departureTime:'08:30',arrivalTime:'16:45',arrivalWindow:'16:30–17:15',totalDayTime:'ca. 8–8,75 Std.',todayStops:'Electra Waves + Columbus Café + Bonn + Münster',todayChecks:['08:30 Uhr Unterkunft verlassen und zuerst Electra Waves anfahren','Audi anschließen; ab 09:00 Uhr im direkt benachbarten Columbus Café frühstücken','Mit etwa 90 % Richtung Deutschland starten','Bonn als ersten Fahrtstopp nutzen','In Münster kurz nachladen, damit Hasbergen mit über 30 % erreicht wird'],from:'Metz',to:'Hasbergen',title:'Metz → Hasbergen',
     summary:'Sonntagmorgen wird zuerst am Electra-HPC im Waves Actisud angeschlossen. Das Columbus Café im selben Einkaufszentrum öffnet sonntags um 09:00 Uhr; der Fußweg beträgt nur wenige Minuten. Danach startet ihr mit etwa 90 %. Bei 23 kWh/100 km sind zwei Fahrtstopps nötig, wenn Hasbergen mit über 30 % erreicht werden soll: Bonn und eine kurze Nachladung in Münster.',
@@ -1986,7 +1989,7 @@ const chargingStages = [
   {
 stageId:'s4',date:'31.07.',route:'L’Estartit → Clermont-Ferrand',distance:'ca. 530 km über Millau',
 maxDetourKm:2,minimumStalls:6,dkvRequired:true,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',
-calibration:'Planungsmodell',reference:'23 kWh/100 km · Start 90–95 % um 08:30 Uhr',modelRate:'Variante A mit kurzem Aussichtsstopp',
+calibration:'Planungsmodell',reference:'23 kWh/100 km · Start 90 % um 08:30 Uhr',modelRate:'Variante A mit kurzem Aussichtsstopp',
 note:'Nur ein planmäßiger HPC-Stopp nach dem Aussichtspunkt an der Aire de l’Aveyron.',
 primary:{name:'Einziger Ladestopp · Aire de l’Aveyron',legFrom:'Aire du Viaduc de Millau',legTo:'Aire de l’Aveyron',location:'A75, 12150 Sévérac-d’Aveyron',
 provider:'HPC · DKV-Akzeptanz und Live-Status unmittelbar vor Anfahrt prüfen',power:'HPC ≥150 kW bevorzugt',stops:'8 Ladepunkte',routeOffsetKm:0,legDistanceKm:350,
@@ -2000,27 +2003,27 @@ toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
 map:'Tesla Supercharger Aire de la Garde France'}]},reserve:null,secondaryLabel:'Reserve'
 },
 {
-    stageId:'s5',date:'01.08.',route:'Clermont-Ferrand → Metz',distance:'ca. 610 km',
+    stageId:'s5',date:'01.08.',route:'Clermont-Ferrand → Metz',distance:'ca. 500–515 km',
     maxDetourKm:2,minimumStalls:6,dkvRequired:true,maxMotorwaySpeed:'130 km/h',expectedAverageSpeed:'90–100 km/h',
     calibration:'Planungsmodell',reference:'23 kWh/100 km · Start nach Lempdes 85 %',modelRate:'zwei Fahrt-Ladestopps',
-    note:'Beaune-Tailly ist bei 23 kWh/100 km als erster Stopp zu weit. Neuer erster Stopp: Mâcon Saint-Albain. In Laxou nur bis 50–55 % nachladen; Ziel Metz über 30 %.',
+    note:'Standardroute über A71, A79/RCEA, A6 und A31. Mâcon Saint-Albain ist der Hauptladestopp; in Laxou nur kurz bis 50–55 % nachladen. Diese Route ist rund 1½ bis 2 Stunden schneller als die weitgehend mautfreie Alternative und erreicht Metz mit über 30 %.',
     primary:{
       name:'1. Fahrt-Ladestopp · Mâcon Saint-Albain',legFrom:'Atlante Lempdes',legTo:'Mâcon Saint-Albain',location:'A6, Aire de Mâcon Saint-Albain, 71260 La Salle',
-      provider:'IONITY oder TotalEnergies · DKV-Akzeptanz live prüfen',power:'175–350 kW',stops:'mindestens 14–15 HPC',routeOffsetKm:0,legDistanceKm:225,
-      arrivalSoc:'voraussichtlich ca. 15–20 %',departureSoc:'ca. 85 %',
+      provider:'IONITY oder TotalEnergies · DKV-Akzeptanz live prüfen',power:'175–350 kW',stops:'mindestens 14–15 HPC',routeOffsetKm:0,legDistanceKm:205,
+      arrivalSoc:'voraussichtlich ca. 20–25 %',departureSoc:'ca. 85 %',
       toilet:'rund um die Uhr',toiletName:'Raststättentoilette',toiletConfirmed:true,
       food:'Restaurant, Café und Shop',
       map:'Aire de Mâcon Saint-Albain A6 71260 La Salle France',
-      routeRole:'erster Fahrtstopp',nextLeg:'Mâcon Saint-Albain → Laxou',targetSoc:'15–20 % → 85 %',alternatives:[]
+      routeRole:'Hauptladestopp',nextLeg:'Mâcon Saint-Albain → Laxou',targetSoc:'20–25 % → 85 %',alternatives:[]
     },
     reserve:{
       name:'2. Ladestopp · Tesla Laxou',legFrom:'Mâcon Saint-Albain',legTo:'Laxou',location:'Rue de la Sapinière, 54520 Laxou',
-      provider:'Tesla · DKV Card +Charge in Tesla-App',power:'bis 250 kW',stops:'28 HPC',routeOffsetKm:1.5,legDistanceKm:270,
-      arrivalSoc:'voraussichtlich ca. 5–12 %',departureSoc:'nur etwa 50–55 %',
+      provider:'Tesla · DKV Card +Charge in Tesla-App',power:'bis 250 kW',stops:'28 HPC',routeOffsetKm:1.5,legDistanceKm:250,
+      arrivalSoc:'voraussichtlich ca. 8–15 %',departureSoc:'nur etwa 50–55 %',
       toilet:'im Auchan während der Öffnungszeiten',toiletName:'Auchan-Kundentoilette',toiletConfirmed:true,
       food:'Auchan, Flunch, McDonald’s und Bäckerei',
       map:'Tesla Supercharger Rue de la Sapinière 54520 Laxou France',
-      routeRole:'kurze Zielreserve-Nachladung',nextLeg:'Laxou → Metz · ca. 58 km',targetSoc:'5–12 % → 50–55 %',alternatives:[]
+      routeRole:'kurze Zielreserve-Nachladung',nextLeg:'Laxou → Metz · ca. 58 km',targetSoc:'8–15 % → 50–55 %',alternatives:[]
     },secondaryLabel:'2. Ladestopp'
   },
   {
@@ -2104,7 +2107,7 @@ const morningChargingPlans = {
     stationMaps:'https://www.google.com/maps/search/?api=1&query=Atlante+10+Rue+du+Pontel+63370+Lempdes',
     bakeryMaps:'https://www.google.com/maps/search/?api=1&query=Marie+Blachere+3+Rue+du+Pontel+63370+Lempdes',
     walkMaps:'https://www.google.com/maps/dir/?api=1&origin=Atlante+10+Rue+du+Pontel+63370+Lempdes&destination=Marie+Blachere+3+Rue+du+Pontel+63370+Lempdes&travelmode=walking',
-    note:'Ablauf am Samstag, 01.08.: etwa 08:00 Uhr von der Unterkunft losfahren, zuerst an der Atlante-Station am TEDi, 10 Rue du Pontel in Lempdes, parken und den Audi anschließen. Danach etwa 100–200 m beziehungsweise 2–3 Minuten zu Fuß zu Marie Blachère, 3 Rue du Pontel, gehen und während des Ladevorgangs frühstücken. Gegen 08:40–08:50 Uhr zum Fahrzeug zurückkehren und mit 80–85 % Richtung Metz starten. Croissants, Pain au Chocolat, Kaffee und belegte Baguettes eignen sich auch als Reiseproviant. Atlante nennt DKV Mobility in Frankreich als Roamingpartner; Akzeptanz, Preis, Live-Belegung und Fußweg unmittelbar vor Nutzung in der DKV-App beziehungsweise Google Maps kontrollieren. Reserve: Tesla Supercharger am Novotel, 32–34 Rue Georges Besse.'
+    note:'Ablauf am Samstag, 01.08.: etwa 08:30 Uhr von der Unterkunft losfahren, zuerst an der Atlante-Station am TEDi, 10 Rue du Pontel in Lempdes, parken und den Audi anschließen. Danach etwa 100–200 m beziehungsweise 2–3 Minuten zu Fuß zu Marie Blachère, 3 Rue du Pontel, gehen und während des Ladevorgangs frühstücken. Gegen 09:10–09:20 Uhr zum Fahrzeug zurückkehren und mit 80–85 % Richtung Metz starten. Croissants, Pain au Chocolat, Kaffee und belegte Baguettes eignen sich auch als Reiseproviant. Atlante nennt DKV Mobility in Frankreich als Roamingpartner; Akzeptanz, Preis, Live-Belegung und Fußweg unmittelbar vor Nutzung in der DKV-App beziehungsweise Google Maps kontrollieren. Reserve: Tesla Supercharger am Novotel, 32–34 Rue Georges Besse.'
   },
   s5:{
     title:'Sonntagmorgen Metz · zuerst laden, währenddessen frühstücken',
@@ -2157,7 +2160,7 @@ const routeAuditPoints = {
   s5:[
     {name:'Atlante Lempdes TEDi',query:'Atlante 10 Rue du Pontel 63370 Lempdes France'},
     {name:'Marie Blachère Lempdes Pontel',query:'Marie Blachère 3 Rue du Pontel 63370 Lempdes France'},
-    {name:'Beaune-Tailly',query:'Aire de Beaune-Tailly A6 21190 Merceuil France'},
+    {name:'Mâcon Saint-Albain',query:'Aire de Mâcon Saint-Albain A6 71260 La Salle France'},
     {name:'Tesla Laxou',query:'Rue de la Sapinière 54520 Laxou France'},
     {name:'Metz',query:'56 Rue Haute Seille 57000 Metz France'}
   ],
@@ -2771,7 +2774,7 @@ function chargingForStage(id){
     s2:['Tesla · Salaise-sur-Sanne','Tesla Supercharger Green 7 N7 38150 Salaise-sur-Sanne France','1 Stopp'],
     s3:['Carrefour Torroella · 150 kW','Camí del Molí s/n 17257 Torroella de Montgrí Spanien','1 Zielstopp + Reserve'],
     s4:['HPC · Aire de l’Aveyron','Aire de l’Aveyron A75 12150 Sévérac-d’Aveyron France','1 HPC-Stopp + Millau'],
-    s5:['TotalEnergies · Beaune-Tailly','Aire de Beaune-Tailly A6 21190 Merceuil France','2 Stopps'],
+    s5:['IONITY / TotalEnergies · Mâcon Saint-Albain','Aire de Mâcon Saint-Albain A6 71260 La Salle France','2 Stopps'],
     s6:['Tesla · Bonn Kameha Grand','Tesla Supercharger Am Bonner Bogen 1 53227 Bonn Deutschland','1 Stopp']
   })[id]||['Direktfahrt','IONITY Aire de Service Narbonne-Vinassan Nord A9 11110 Vinassan France','flexibel'];
 }
@@ -3589,7 +3592,7 @@ function runSelfTest(){
   results.push(Boolean(document.getElementById('routeAudit')) && typeof runRouteAudit==='function' && Object.keys(routeAuditPoints).length===6);
   results.push(chargingStages.every(stage=>[stage.primary,stage.reserve,stage.tertiary].filter(Boolean).every(stop=>new Set((stop.alternatives||[]).map(a=>a.name)).size===(stop.alternatives||[]).length)));
   results.push(chargingStages.find(s=>s.stageId==='s1')?.primary?.name.includes('Erftstadt') && chargingStages.find(s=>s.stageId==='s1')?.reserve?.name.includes('GLOBUS Trier') && chargingStages.find(s=>s.stageId==='s1')?.tertiary?.name.includes('Val-de-Meuse'));
-  results.push(chargingStages.find(s=>s.stageId==='s5')?.reserve?.legDistanceKm===250);
+  results.push(chargingStages.find(s=>s.stageId==='s5')?.primary?.legDistanceKm===205 && chargingStages.find(s=>s.stageId==='s5')?.reserve?.legDistanceKm===250);
   results.push(plannedLegKm('s6',1)===240);
   const todayPlan=chargingStages.find(s=>s.stageId==='s1');
   results.push(Boolean(todayPlan?.tertiary) && [todayPlan.primary,todayPlan.reserve,todayPlan.tertiary].every(stop=>(stop.alternatives||[]).filter(a=>a.deltaKm<0).length===3 && (stop.alternatives||[]).filter(a=>a.deltaKm>0).length===3));
@@ -3614,7 +3617,7 @@ function runSelfTest(){
   results.push(document.querySelectorAll('.dashboard .metric').length===1);
   results.push(morningChargingPlans.s2?.mode==='bakeryOnly' && Boolean(morningChargingPlans.s2?.fallbackAddress));
   results.push(travel.stages.find(s=>s.id==='s4')?.routeWaypoints?.some(x=>x.includes('Aire du Viaduc de Millau')));
-  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[0]?.includes('Rue Louis Armstrong'));
+  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[0]?.includes('Rue du Pontel'));
   results.push(travel.stages.find(s=>s.id==='s6')?.routeWaypoints?.[0]?.includes('Rue de Chaponost') && travel.stages.find(s=>s.id==='s6')?.routeWaypoints?.[1]?.includes('Pie Grièche'));
   results.push(document.getElementById('day2607')?.textContent.includes('10:00') && document.getElementById('day2607')?.textContent.includes('Kolumbus') && document.getElementById('day2607')?.textContent.includes('nur von außen') && document.getElementById('day2607')?.textContent.includes('Gelaaati di Marco') && document.getElementById('day2607')?.textContent.includes('La Fonda'));
   results.push(
@@ -3666,7 +3669,7 @@ function runSelfTest(){
   ));
   results.push(destinationChargingPlans.length===6);
   results.push(
-    chargingStages.find(x=>x.stageId==='s5')?.primary?.name.includes('Beaune-Tailly') &&
+    chargingStages.find(x=>x.stageId==='s5')?.primary?.name.includes('Mâcon Saint-Albain') &&
     chargingStages.find(x=>x.stageId==='s5')?.reserve?.name.includes('Laxou') &&
     destinationChargingPlans.find(x=>x.stageId==='s5')?.when==='am Etappenziel'
   );
@@ -3719,7 +3722,7 @@ function runSelfTest(){
   results.push(travel.stages.find(s=>s.id==='s2')?.routeWaypoints?.[1]?.includes('54 Rue de Longvic'));
   results.push(routeAuditPoints.s2?.[0]?.name==='Allego Chenôve');
   results.push(travel.hotelHubs.h1?.charging?.includes('Allego Hypercharger'));
-  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[2]?.includes('Laxou'));
+  results.push(travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[2]?.includes('Mâcon Saint-Albain') && travel.stages.find(s=>s.id==='s5')?.routeWaypoints?.[3]?.includes('Laxou'));
   results.push(Array.from(document.querySelectorAll('[data-url]')).every(el=>{try{const u=new URL(el.dataset.url);return ['http:','https:'].includes(u.protocol);}catch(e){return false;}}));
   const failed=results.filter(x=>!x).length;
   const box=$('#selfTestResult');
@@ -3758,14 +3761,15 @@ const stageServices={
   {type:'Ankunft',name:'L’Estartit',info:'Check-in ALMA BEACH, Einkauf, Strand und El Fornet.'}
  ],
  s4:[
-  {type:'Start',name:'ALMA BEACH ESTARTIT',info:'Abfahrt 08:30 Uhr mit 90–95 % SoC.'},
+  {type:'Start',name:'ALMA BEACH ESTARTIT',info:'Abfahrt 08:30 Uhr mit 90 % SoC.'},
   {type:'Erlebnis',name:'Aire du Viaduc de Millau',info:'Viadukt überqueren, Toiletten nutzen und 20–30 Minuten für Fotos und Aussicht einplanen.'},
   {type:'Ladepause',name:'Aire de l’Aveyron',info:'Einziger planmäßiger HPC-Stopp; auf etwa 80–85 % laden.'},
   {type:'Ankunft',name:'Clermont-Ferrand',info:'Ziel gegen 16:15 Uhr, danach Check-in, Altstadtrunde und Bouillon Clermont.'}
  ],
  s5:[
-  {type:'Frühstück/Laden',name:'Atlante Lempdes + Marie Blachère Pontel',info:'08:00 Uhr zuerst Atlante am TEDi, 10 Rue du Pontel, anfahren und anschließen. Etwa 100–200 m beziehungsweise 2–3 Minuten zu Fuß zu Marie Blachère, 3 Rue du Pontel; während des Ladens frühstücken. Rückkehr gegen 08:40–08:50 Uhr, Weiterfahrt mit 80–85 %. Atlante nennt DKV Mobility in Frankreich als Roamingpartner; Akzeptanz und Live-Status morgens in der DKV-App prüfen.'},
-  {type:'Ladepause',name:'Beaune-Tailly',info:'Autobahnservice mit Toiletten, Shop und Gastronomie.'},
+  {type:'Frühstück/Laden',name:'Atlante Lempdes + Marie Blachère Pontel',info:'08:30 Uhr zuerst Atlante am TEDi, 10 Rue du Pontel, anfahren und anschließen. Etwa 100–200 m beziehungsweise 2–3 Minuten zu Fuß zu Marie Blachère, 3 Rue du Pontel; während des Ladens frühstücken. Rückkehr gegen 09:10–09:20 Uhr, Weiterfahrt mit 80–85 %. Atlante nennt DKV Mobility in Frankreich als Roamingpartner; Akzeptanz und Live-Status morgens in der DKV-App prüfen.'},
+  {type:'Hauptladestopp',name:'Mâcon Saint-Albain',info:'IONITY/TotalEnergies mit Toiletten, Restaurant, Café und Shop; bei etwa 20–25 % ankommen und auf ungefähr 85 % laden.'},
+  {type:'Kurzer Ladestopp',name:'Tesla Laxou',info:'Nur bedarfsgerecht auf etwa 50–55 % nachladen, damit Metz mit ungefähr 30–35 % erreicht wird.'},
   {type:'Ankunft',name:'Metz',info:'Unterkunft, Altstadtrundgang und Abendessen zu Fuß.'}
  ],
  s6:[
@@ -4015,7 +4019,7 @@ function destinationHub(st,hotel){
      <div class="destination-fact"><b>Parken</b><span>Parkhaus Blaise Pascal, etwa 200 m; Ticket für Ein- und Ausfahrten aufbewahren.</span></div>
      <div class="destination-fact"><b>Self-Check-in</b><span>13 Boulevard Trudaine · grünes Tor · Innenhof · 2. Stock rechts · Schlüsselbox 8848 · Gegensprechanlage Wohnung 24.</span></div>
      <div class="destination-fact"><b>Abend</b><span>Place Delille → Kathedrale Notre-Dame-de-l’Assomption → Place de la Victoire → Bouillon Clermont.</span></div>
-     <div class="destination-fact"><b>Samstagmorgen 01.08.</b><span>Check-out-Zeit in der Airbnb-App prüfen und Schlüssel in die Box zurücklegen. Gegen 08:00 Uhr zuerst Atlante am TEDi, 10 Rue du Pontel in Lempdes, anfahren, Audi anschließen und danach etwa 100–200 m beziehungsweise 2–3 Minuten zu Marie Blachère, 3 Rue du Pontel, gehen. Während des Ladevorgangs frühstücken; gegen 08:40–08:50 Uhr mit 80–85 % Richtung Metz starten. Atlante nennt DKV Mobility in Frankreich als Roamingpartner; Akzeptanz, Preis und Live-Belegung morgens in der DKV-App prüfen.</span></div>
+     <div class="destination-fact"><b>Samstagmorgen 01.08.</b><span>Check-out-Zeit in der Airbnb-App prüfen und Schlüssel in die Box zurücklegen. Gegen 08:30 Uhr zuerst Atlante am TEDi, 10 Rue du Pontel in Lempdes, anfahren, Audi anschließen und danach etwa 100–200 m beziehungsweise 2–3 Minuten zu Marie Blachère, 3 Rue du Pontel, gehen. Während des Ladevorgangs frühstücken; gegen 09:10–09:20 Uhr mit 80–85 % über A71, A79/RCEA, A6 und A31 Richtung Metz starten. Atlante nennt DKV Mobility in Frankreich als Roamingpartner; Akzeptanz, Preis und Live-Belegung morgens in der DKV-App prüfen.</span></div>
      <div class="destination-fact"><b>DKV &amp; Ladeziel</b><span>Atlante nennt DKV Mobility in Frankreich als Roamingpartner. Vor dem Anschließen Akzeptanz und Preis in der DKV-App bestätigen. Geplantes Ladefenster: tatsächlicher Rest-SoC, voraussichtlich ca. 30–40 %, bis 80–85 %; etwa 25–35 Minuten.</span></div>
      <div class="destination-fact"><b>Frühstück während des Ladens</b><span>Marie Blachère: Croissants, Pain au Chocolat, Kaffee sowie belegte Baguettes als Proviant. Fußweg ca. 100–200 m beziehungsweise 2–3 Minuten; aktuelle Route in Google Maps prüfen.</span></div>
     </div>
@@ -4110,6 +4114,7 @@ function renderStageBook(){
   ${destinationHub(st,hotel)}`;
  renderStageBookSelector();
  bindStageBookLocal();
+ bindDynamic(host);
 }
 
 function bindStageBookLocal(){
@@ -4145,8 +4150,25 @@ document.querySelectorAll('[data-jump]').forEach(button=>{
 });
 
 
-
-
+// V44: Delegierter Fallback für Aktionsbuttons. Er greift nur, wenn ein dynamisch
+// erzeugter Button noch nicht durch bindDynamic verbunden wurde.
+document.addEventListener('click',function(event){
+  const b=event.target.closest('button');
+  if(!b || b.dataset.bound==='1' || typeof b.onclick==='function') return;
+  let handled=true;
+  if(b.dataset.map) openMap(b.dataset.map);
+  else if(b.dataset.url) openExternal(b.dataset.url);
+  else if(b.dataset.tel) window.location.href='tel:'+b.dataset.tel;
+  else if(b.dataset.go) showView(b.dataset.go);
+  else if(b.dataset.detailType) openDetail(b.dataset.detailType,b.dataset.id);
+  else if(b.dataset.stageRoute){const st=travel.stages.find(x=>x.id===b.dataset.stageRoute);if(st)openStageRoute(st);}
+  else if(b.dataset.eveningStage) openEveningForStage(b.dataset.eveningStage);
+  else if(b.dataset.eveningRoute) openEveningRoute(b.dataset.eveningRoute);
+  else if(b.dataset.tripRoute) openTripRoute(b.dataset.tripRoute);
+  else if(b.dataset.chargeForStage) openChargingForStage(b.dataset.chargeForStage);
+  else handled=false;
+  if(handled){event.preventDefault();event.stopPropagation();}
+},false);
 
 })();
 </script>
