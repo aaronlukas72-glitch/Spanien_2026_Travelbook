@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#0b1020" name="theme-color"/>
-<title>Spanien Travelbook 2026 · Version 41</title>
+<title>Spanien Travelbook 2026 · Version 42</title>
 <style>
 :root{
   --bg:#f4f6fa;--panel:#ffffff;--panel2:#eef2f7;--text:#101828;--muted:#667085;
@@ -646,13 +646,14 @@ section.view[data-view="home"] #holidayOverview{
 /* V39: Samstagmorgen Clermont · zuerst Electra laden, währenddessen Frühstück bei Marie Blachère · DKV-Hinweis */
 /* V40: Samstagmorgen Clermont/Lempdes · Atlante 10 Rue du Pontel + Marie Blachère 3 Rue du Pontel */
 /* V41: Verbrauch 23 kWh/100 km · Clermont–Metz und Metz–Hasbergen neu gerechnet · Sonntagmorgen Metz zuerst laden, dann Frühstück im Waves */
+/* V42: robuste Tagesansicht und statische Unterkunfts-Fallbacks bei blockierter JavaScript-Initialisierung */
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
 <button aria-label="Menü öffnen" class="icon-btn" id="menuBtn">☰</button>
-<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 41 · 22.07.–02.08. · Familien-Roadtrip</span></div>
+<div class="brand"><strong>Spanien Travelbook 2026</strong><span>Version 42 · 22.07.–02.08. · Familien-Roadtrip</span></div>
 <button aria-label="Suche öffnen" class="icon-btn" id="searchBtn">⌕</button>
 </header>
 <main>
@@ -665,11 +666,11 @@ section.view[data-view="home"] #holidayOverview{
 <p id="todaySubtitle">Im Mittelpunkt stehen Abfahrtzeiten, Tagesroute und Ladeplanung.</p>
 <div class="today-status"><span class="status-dot"></span><span id="todayStatus">Reisetag und Ladeplanung im Blick</span></div>
 <div class="today-brief" id="homeTravelFacts">
-<div class="today-brief-head"><b id="todayBriefTitle">Heute: Aufenthalt L’Estartit</b><span id="todayBriefWindow">flexibler Urlaubstag</span></div>
+<div class="today-brief-head"><b id="todayBriefTitle">Heute: L’Estartit → Clermont-Ferrand</b><span id="todayBriefWindow">Ankunft ca. 16:00–16:45</span></div>
 <div class="today-brief-grid">
-<div class="today-brief-item"><span id="todayBriefDepartureLabel">Start</span><b id="todayBriefDeparture">flexibel</b></div>
-<div class="today-brief-item"><span id="todayBriefArrivalLabel">Abend</span><b id="todayBriefArrival">flexibel</b></div>
-<div class="today-brief-item"><span id="todayBriefStopsLabel">Programm</span><b id="todayBriefStops">Programm frei wählen</b></div>
+<div class="today-brief-item"><span id="todayBriefDepartureLabel">Abfahrt</span><b id="todayBriefDeparture">08:30</b></div>
+<div class="today-brief-item"><span id="todayBriefArrivalLabel">Ankunft</span><b id="todayBriefArrival">ca. 16:15</b></div>
+<div class="today-brief-item"><span id="todayBriefStopsLabel">Stopps</span><b id="todayBriefStops">Millau + 1 HPC</b></div>
 </div>
 <div class="today-checks" id="todayChecks">
 <div class="today-check">Wetter, Wind und Wellengang vor der Tageswahl prüfen.</div>
@@ -681,14 +682,14 @@ section.view[data-view="home"] #holidayOverview{
 </div><section class="section" id="homeDaySelection"><div class="section-title"><h2>Reisetage</h2><span class="badge">Tag direkt auswählen</span></div><div class="day-strip" id="dayStrip"></div></section>
 <div class="today-main" id="homeDriverView">
 <article class="today-route">
-<div class="route-head"><div><span class="badge" id="todayDateBadge">Ausgewählter Tag</span><h3 id="todayRouteTitle">Aufenthalt L’Estartit</h3></div><span class="badge" id="todayDistance">je nach Tageswahl</span></div>
+<div class="route-head"><div><span class="badge" id="todayDateBadge">Ausgewählter Tag</span><h3 id="todayRouteTitle">L’Estartit → Clermont-Ferrand</h3></div><span class="badge" id="todayDistance">ca. 500 km</span></div>
 <div class="route-line"><div class="route-marker"><i></i></div><div class="route-place"><b id="todayFrom">ALMA BEACH ESTARTIT</b><span>Start</span></div></div>
-<div class="route-line"><div class="route-marker last"><i></i></div><div class="route-place"><b id="todayTo">L’Estartit und Umgebung</b><span>Ziel</span></div></div>
+<div class="route-line"><div class="route-marker last"><i></i></div><div class="route-place"><b id="todayTo">13 Boulevard Trudaine, Clermont-Ferrand</b><span>Ziel</span></div></div>
 <div class="route-grid">
-<div class="route-kpi"><b id="todayDeparture">flexibel</b><span>Tagesstart</span></div>
-<div class="route-kpi"><b id="todayDriveTime">frei planbar</b><span>Tagesdauer</span></div>
-<div class="route-kpi"><b id="todayChargingCount">nur bei Bedarf</b><span>Laden</span></div>
-<div class="route-kpi"><b id="todaySoc">prüfen</b><span>Fahrzeug-SoC</span></div>
+<div class="route-kpi"><b id="todayDeparture">08:30</b><span>Tagesstart</span></div>
+<div class="route-kpi"><b id="todayDriveTime">ca. 7½–8 Std.</b><span>Tagesdauer</span></div>
+<div class="route-kpi"><b id="todayChargingCount">1 HPC-Stopp</b><span>Laden</span></div>
+<div class="route-kpi"><b id="todaySoc">Start 90–95 %</b><span>Fahrzeug-SoC</span></div>
 </div>
 <div class="today-map-wrap">
 <div class="today-map-head"><b>Tagesroute</b><span id="todayMapLabel">Dijon → Montpellier</span></div>
@@ -701,8 +702,8 @@ section.view[data-view="home"] #holidayOverview{
 <div class="actions"><button class="btn primary" id="todayNavigate">Navigation starten</button><button class="btn secondary" id="todayStageDetails">Etappendetails</button><button class="btn secondary" id="todayEveningPlan">Abendprogramm</button></div>
 </article>
 <div class="today-columns">
-<article class="today-panel"><span class="badge" id="todayHotelLabel">Nächste Unterkunft</span><h3 id="todayHotelName">ALMA BEACH ESTARTIT</h3><p id="todayHotelInfo">L’Estartit · Aufenthalt bis 31.07.</p><div class="actions"><button class="btn primary" id="todayHotelNav">Navigation</button><button class="btn secondary" id="todayHotelDetails">Details</button></div></article>
-<article class="today-panel"><span class="badge">Nächster Ladestopp</span><h3 id="todayChargeName">Laden nur bei Bedarf</h3><p id="todayChargeInfo">Öffentliche Ladepunkte vor Nutzung live prüfen</p><div class="actions"><button class="btn primary" id="todayChargeNav">Zum Ladepunkt</button><button class="btn secondary" id="todayChargePlan">Ladeplan</button></div></article>
+<article class="today-panel"><span class="badge" id="todayHotelLabel">Nächste Unterkunft</span><h3 id="todayHotelName">Clermont-Ferrand · 13 Boulevard Trudaine</h3><p id="todayHotelInfo">Übernachtung 31.07.–01.08. · 2. Etage</p><div class="actions"><button class="btn primary" id="todayHotelNav">Navigation</button><button class="btn secondary" id="todayHotelDetails">Details</button></div></article>
+<article class="today-panel"><span class="badge">Nächster Ladestopp</span><h3 id="todayChargeName">HPC Aire de l’Aveyron</h3><p id="todayChargeInfo">Ein planmäßiger Schnellladestopp nach dem Millau-Fotostopp</p><div class="actions"><button class="btn primary" id="todayChargeNav">Zum Ladepunkt</button><button class="btn secondary" id="todayChargePlan">Ladeplan</button></div></article>
 </div>
 </div><section class="section" id="holidayOverview">
 <div class="section-title">
@@ -749,7 +750,13 @@ section.view[data-view="home"] #holidayOverview{
 <div class="page">
 <div class="section-title"><h2>Unterkünfte</h2><span class="badge">5 gebucht</span></div>
 <div class="notice"><div class="notice-icon">🏨</div><div><strong>Eine Unterkunft – eine zentrale Detailansicht</strong><p>Alle bekannten Buchungsdaten, Check-in-Hinweise, Parken, Laden, Umgebung und Navigation sind in der jeweiligen Detailansicht gebündelt.</p></div></div>
-<div class="cards two" id="hotelList" style="margin-top:14px"></div>
+<div class="cards two" id="hotelList" style="margin-top:14px">
+<article class="card hotel-card"><h3>L’Atypique · Dijon</h3><p>34Bis rue d’Auxonne, 21000 Dijon · Übernachtung 22.07.</p><div class="actions"><button class="btn primary" data-map="34Bis rue d’Auxonne, 21000 Dijon, Frankreich">Navigation</button></div></article>
+<article class="card hotel-card"><h3>Ibis Budget Montpellier Centre Millénaire</h3><p>25 rue des Frères Lumière, 34000 Montpellier · Übernachtung 23.07.</p><div class="actions"><button class="btn primary" data-map="25 rue des Frères Lumière, 34000 Montpellier, Frankreich">Navigation</button></div></article>
+<article class="card hotel-card"><h3>ALMA BEACH ESTARTIT</h3><p>11 Carrer Salines, Apartment 12, L’Estartit · 24.07.–31.07.</p><div class="actions"><button class="btn primary" data-map="11 Carrer Salines, 17258 L’Estartit, Spanien">Navigation</button></div></article>
+<article class="card hotel-card"><h3>Unterkunft Clermont-Ferrand</h3><p>13 Boulevard Trudaine, 63000 Clermont-Ferrand · Übernachtung 31.07.</p><div class="actions"><button class="btn primary" data-map="13 Boulevard Trudaine, 63000 Clermont-Ferrand, Frankreich">Navigation</button></div></article>
+<article class="card hotel-card"><h3>Appartement Rue Haute Seille · Metz</h3><p>56 Rue Haute Seille, 57000 Metz · Übernachtung 01.08.</p><div class="actions"><button class="btn primary" data-map="56 Rue Haute Seille, 57000 Metz, Frankreich">Navigation</button></div></article>
+</div>
 </div>
 </section>
 <section class="view" data-view="charging">
@@ -3509,6 +3516,11 @@ if($('#quickHoliday')) $('#quickHoliday').addEventListener('click',()=>{
 
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLayers();});
+window.addEventListener('pageshow',()=>{
+  try{render();}catch(error){console.error(error);}
+  try{renderToday();}catch(error){console.error(error);}
+  try{renderDayStrip();}catch(error){console.error(error);}
+});
 
 function runSelfTest(){
   const results=[];
@@ -3721,10 +3733,11 @@ function runSelfTest(){
 if($('#runSelfTest')) $('#runSelfTest').addEventListener('click',runSelfTest);
 
 
-renderPreparation();
-renderDayStrip();
-render();
-renderToday();
+// Kritische Hauptansichten zuerst aufbauen. Einzelne Zusatzmodule dürfen die Initialisierung nicht mehr stoppen.
+try{ render(); }catch(error){ console.error('Travelbook render failed',error); }
+try{ renderToday(); }catch(error){ console.error('Travelbook today view failed',error); }
+try{ renderDayStrip(); }catch(error){ console.error('Travelbook day strip failed',error); }
+try{ renderPreparation(); }catch(error){ console.error('Travelbook preparation failed',error); }
 const STAGEBOOK_HIDE_KEY='spain2026:stagebook:hideDone';
 let activeStageBookId=safeStorage.get('spain2026:stagebook:active')||'s1';
 
